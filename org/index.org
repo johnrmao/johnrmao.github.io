@@ -1,0 +1,5 @@
+#+SETUPFILE: template-0.org
+#+title: Mao's Note Emporium
+
+Welcome to Mao's Note Emporium, where all notes are kept.
+#+INCLUDE: sitemap.org
