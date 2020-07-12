@@ -1,3 +1,4 @@
 #+TITLE: 
 
 - [[file:index.org][Mao's Note Emporium]]
+- [[file:20200712.org][Test Post]]
