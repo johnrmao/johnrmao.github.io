@@ -6,5 +6,32 @@
 ** Usage
 + The command =date= will print the current date.
 
-    RESULTS:
+    : RESULTS:
     : Mon 13 Jul 2020 01:16:10 PDT
++ Shell commands can also be executed with /arguments./
+  #+BEGIN_SRC shell
+echo hello
+  #+END_SRC
+  : RESULTS:
+  : hello
+
+  In this case, ~echo~ was the command, and ~hello~ was the argument.
+  The echo command will print out its arguments.
+  + In order to parse arguments which are multiple words long, use ~'~ or ~"~.
+
+    You could also use ~\~ to escape relevant characters.
+
+
++ ~which~ can be used to find the location of which program is being executed.
+  #+BEGIN_SRC shell
+which python
+  #+END_SRC
+  : RESULTS:
+  : /usr/bin/python
+
+** Connecting Programs
++ Programs contain two streams, an input and an output. Programs will read from the input stream and print into the output stream.
+
+  This way, it is possible to change the the input or output away from the terminal and reroute those streams.
+
+  + 

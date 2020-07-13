@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-13 Mon 01:37 -->
+<!-- 2020-07-13 Mon 01:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lecture 1</title>
@@ -58,12 +58,70 @@
 The command <code>date</code> will print the current date.
 </p>
 
-<p>
-RESULTS:
-</p>
 <pre class="example">
+RESULTS:
 Mon 13 Jul 2020 01:16:10 PDT
 </pre></li>
+<li><p>
+Shell commands can also be executed with <i>arguments.</i>
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #78DCE8;">echo</span> hello
+</pre>
+</div>
+<pre class="example">
+RESULTS:
+hello
+</pre>
+
+
+<p>
+In this case, <code>echo</code> was the command, and <code>hello</code> was the argument.
+The echo command will print out its arguments.
+</p>
+<ul class="org-ul">
+<li><p>
+In order to parse arguments which are multiple words long, use <code>'</code> or <code>"</code>.
+</p>
+
+<p>
+You could also use <code>\</code> to escape relevant characters.
+</p></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+<code>which</code> can be used to find the location of which program is being executed.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #78DCE8;">which</span> python
+</pre>
+</div>
+<pre class="example">
+RESULTS:
+/usr/bin/python
+</pre></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf940ad6" class="outline-3">
+<h3 id="orgf940ad6">Connecting Programs</h3>
+<div class="outline-text-3" id="text-orgf940ad6">
+<ul class="org-ul">
+<li><p>
+Programs contain two streams, an input and an output. Programs will read from the input stream and print into the output stream.
+</p>
+
+<p>
+This way, it is possible to change the the input or output away from the terminal and reroute those streams.
+</p>
+
+<ul class="org-ul">
+<li></li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -71,7 +129,7 @@ Mon 13 Jul 2020 01:16:10 PDT
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: John Mao</p>
-<p class="date">Created: 2020-07-13 Mon 01:37</p>
+<p class="date">Created: 2020-07-13 Mon 01:56</p>
 </div>
 </body>
 </html>
