@@ -32,4 +32,16 @@ which python
 
   This way, it is possible to change the the input or output away from the terminal and reroute those streams.
 
-  + 
+  + ~< file~ and ~> file~ can both be easily used to redirect the input and output streams.
+
+    #+BEGIN_SRC shell
+echo hello > hello.txt
+cat < hello.txt > hello2.txt
+    #+END_SRC
+    This print the argument of ~echo~, which is ~hello~, into =hello.txt=. Then, it will print the contents of =hello.txt= using the ~cat~ command, and pipe it into =hello2.txt=.
+
+  + Furthermore, the use of ~|~ will allow you to "chain" commands together so that the output of one is the input of another.
+    #+BEGIN_SRC shell
+cat coolfile.txt | grep 'cool text'
+    #+END_SRC
+    This will print the contents of =coolfile.txt= and then ~grep~ for the string =cool text=.

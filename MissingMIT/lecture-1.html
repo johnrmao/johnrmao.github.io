@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-13 Mon 02:03 -->
+<!-- 2020-07-13 Mon 02:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lecture 1</title>
@@ -37,9 +37,9 @@
 </head>
 <body>
 <div id="org-div-home-and-up">
- <a accesskey="h" href="../index.html"> UP </a>
+ <a accesskey="h" href="'../index.html'"> UP </a>
  |
- <a accesskey="H" href="../index.html"> HOME </a>
+ <a accesskey="H" href="'../index.html'"> HOME </a>
 </div><div id="content">
 <h1 class="title">Lecture 1</h1>
 <ul class="org-ul">
@@ -114,7 +114,29 @@ This way, it is possible to change the the input or output away from the termina
 </p>
 
 <ul class="org-ul">
-<li></li>
+<li><p>
+<code>&lt; file</code> and <code>&gt; file</code> can both be easily used to redirect the input and output streams.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #78DCE8;">echo</span> hello &gt; hello.txt
+<span style="color: #78DCE8;">cat</span> &lt; hello.txt &gt; hello2.txt
+</pre>
+</div>
+<p>
+This print the argument of <code>echo</code>, which is <code>hello</code>, into <code>hello.txt</code>. Then, it will print the contents of <code>hello.txt</code> using the <code>cat</code> command, and pipe it into <code>hello2.txt</code>.
+</p></li>
+
+<li><p>
+Furthermore, the use of <code>|</code> will allow you to "chain" commands together so that the output of one is the input of another.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #78DCE8;">cat</span> coolfile.txt | <span style="color: #78DCE8;">grep</span> <span style="color: #FFD866;">'cool text'</span>
+</pre>
+</div>
+<p>
+This will print the contents of <code>coolfile.txt</code> and then <code>grep</code> for the string <code>cool text</code>.
+</p></li>
 </ul></li>
 </ul>
 </div>
@@ -123,7 +145,7 @@ This way, it is possible to change the the input or output away from the termina
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: John Mao</p>
-<p class="date">Created: 2020-07-13 Mon 02:03</p>
+<p class="date">Created: 2020-07-13 Mon 02:17</p>
 </div>
 </body>
 </html>
