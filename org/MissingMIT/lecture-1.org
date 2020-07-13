@@ -4,9 +4,7 @@
 
 *  The Shell
 ** Usage
-- The command =date= will print the current date.
++ The command =date= will print the current date.
 
-RESULTS:
-: Mon 13 Jul 2020 01:16:10 PDT
-
-Running `date` will print the current date.
+    RESULTS:
+    : Mon 13 Jul 2020 01:16:10 PDT
