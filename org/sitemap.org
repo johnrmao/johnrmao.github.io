@@ -6,3 +6,4 @@
   - [[file:CPSC110/lecture-1.org][Lecture 1]]
 - MissingMIT
   - [[file:MissingMIT/lecture-1.org][Lecture 1]]
+  - [[file:MissingMIT/lecture-2.org][Lecture 2]]

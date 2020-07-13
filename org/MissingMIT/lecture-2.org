@@ -1,0 +1,3 @@
+#+TITLE: Lecture 2
+#+SETUPFILE: ../template-1.org
+- tags :MIT: :shell:

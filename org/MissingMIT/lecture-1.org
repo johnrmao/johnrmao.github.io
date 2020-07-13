@@ -2,6 +2,13 @@
 #+SETUPFILE: ../template-1.org
 - tags :MIT: :shell:
 
+*** In this section:
++[[Usage]]
+
++[[Connecting Programs]]
+
++[[Users]]
+
 *  The Shell
 ** Usage
 + The command =date= will print the current date.
@@ -28,7 +35,7 @@ which python
   : /usr/bin/python
 
 ** Connecting Programs
-+ Programs contain two streams, an input and an output. Programs will read from the input stream and print into the output stream.
++ Programs contain *two* streams, an input and an output. Programs will read from the input stream and print into the output stream.
 
   This way, it is possible to change the the input or output away from the terminal and reroute those streams.
 
@@ -45,3 +52,24 @@ cat < hello.txt > hello2.txt
 cat coolfile.txt | grep 'cool text'
     #+END_SRC
     This will print the contents of =coolfile.txt= and then ~grep~ for the string =cool text=.
+
+** Users
++ The *root* user has /almost/ all access restrictions, including being able to read, write, update, and delete any file within a system.
+  + The ~sudo~ command will let you /do/ something as a /su/per user, or root.
+
++ An example would be chaing the brightness of your laptop through writing directly to the =sysfs=.
+  #+BEGIN_SRC shell
+sudo echo 3 > brightness
+  #+END_SRC
+  + This will return an error as you must be a root user to write into =sys/*=.
+    
+      The ~sudo~ in this case is acting upon the echo, and does not apply in attempting to write to a file.
+  + In this case, you must first ~echo 3~, then write that output into =brightness=.
+     #+BEGIN_SRC shell
+echo 3 | sudo tee brightness
+     #+END_SRC
+     This *would* work as you're writing using ~tee~ as  a root user.
+
+
+------
++ [[file:lecture-2.org][lecture 2]]

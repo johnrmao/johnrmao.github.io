@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-13 Mon 02:17 -->
+<!-- 2020-07-13 Mon 02:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lecture 1</title>
@@ -37,14 +37,31 @@
 </head>
 <body>
 <div id="org-div-home-and-up">
- <a accesskey="h" href="'../index.html'"> UP </a>
+ <a accesskey="h" href="../index.html"> UP </a>
  |
- <a accesskey="H" href="'../index.html'"> HOME </a>
+ <a accesskey="H" href="../index.html"> HOME </a>
 </div><div id="content">
 <h1 class="title">Lecture 1</h1>
 <ul class="org-ul">
 <li>tags :MIT: :shell:</li>
 </ul>
+
+<div id="outline-container-org54769e4" class="outline-4">
+<h4 id="org54769e4">In this section:</h4>
+<div class="outline-text-4" id="text-org54769e4">
+<p>
++<a href="#orgdd003b1">Usage</a>
+</p>
+
+<p>
++<a href="#orgf940ad6">Connecting Programs</a>
+</p>
+
+<p>
++<a href="#org73144f9">Users</a>
+</p>
+</div>
+</div>
 
 <div id="outline-container-orge752c10" class="outline-2">
 <h2 id="orge752c10">The Shell</h2>
@@ -106,7 +123,7 @@ RESULTS:
 <div class="outline-text-3" id="text-orgf940ad6">
 <ul class="org-ul">
 <li><p>
-Programs contain two streams, an input and an output. Programs will read from the input stream and print into the output stream.
+Programs contain <b>two</b> streams, an input and an output. Programs will read from the input stream and print into the output stream.
 </p>
 
 <p>
@@ -141,11 +158,56 @@ This will print the contents of <code>coolfile.txt</code> and then <code>grep</c
 </ul>
 </div>
 </div>
+
+<div id="outline-container-org73144f9" class="outline-3">
+<h3 id="org73144f9">Users</h3>
+<div class="outline-text-3" id="text-org73144f9">
+<ul class="org-ul">
+<li>The <b>root</b> user has <i>almost</i> all access restrictions, including being able to read, write, update, and delete any file within a system.
+<ul class="org-ul">
+<li>The <code>sudo</code> command will let you <i>do</i> something as a /su/per user, or root.</li>
+</ul></li>
+
+<li><p>
+An example would be chaing the brightness of your laptop through writing directly to the <code>sysfs</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #78DCE8;">sudo</span> <span style="color: #78DCE8;">echo</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> &gt; brightness
+</pre>
+</div>
+<ul class="org-ul">
+<li><p>
+This will return an error as you must be a root user to write into <code>sys/*</code>.
+</p>
+
+<p>
+The <code>sudo</code> in this case is acting upon the echo, and does not apply in attempting to write to a file.
+</p></li>
+<li><p>
+In this case, you must first <code>echo 3</code>, then write that output into <code>brightness</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #78DCE8;">echo</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> | <span style="color: #78DCE8;">sudo</span> tee brightness
+</pre>
+</div>
+<p>
+This <b>would</b> work as you're writing using <code>tee</code> as  a root user.
+</p></li>
+</ul></li>
+</ul>
+
+
+<hr />
+<ul class="org-ul">
+<li><a href="lecture-2.html">lecture 2</a></li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: John Mao</p>
-<p class="date">Created: 2020-07-13 Mon 02:17</p>
+<p class="date">Created: 2020-07-13 Mon 02:48</p>
 </div>
 </body>
 </html>
