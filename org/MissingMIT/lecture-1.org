@@ -18,6 +18,10 @@
   #+BEGIN_SRC shell
 echo hello
   #+END_SRC
+
+  #+RESULTS:
+  : hello
+
   : RESULTS:
   : hello
 
@@ -31,6 +35,10 @@ echo hello
   #+BEGIN_SRC shell
 which python
   #+END_SRC
+
+  #+RESULTS:
+  : /usr/bin/python
+
   : RESULTS:
   : /usr/bin/python
 
@@ -45,12 +53,18 @@ which python
 echo hello > hello.txt
 cat < hello.txt > hello2.txt
     #+END_SRC
+
+    #+RESULTS:
+
     This print the argument of ~echo~, which is ~hello~, into =hello.txt=. Then, it will print the contents of =hello.txt= using the ~cat~ command, and pipe it into =hello2.txt=.
 
   + Furthermore, the use of ~|~ will allow you to "chain" commands together so that the output of one is the input of another.
     #+BEGIN_SRC shell
 cat coolfile.txt | grep 'cool text'
     #+END_SRC
+
+    #+RESULTS:
+
     This will print the contents of =coolfile.txt= and then ~grep~ for the string =cool text=.
 
 ** Users
@@ -61,13 +75,19 @@ cat coolfile.txt | grep 'cool text'
   #+BEGIN_SRC shell
 sudo echo 3 > brightness
   #+END_SRC
+
+  #+RESULTS:
+
   + This will return an error as you must be a root user to write into =sys/*=.
     
-      The ~sudo~ in this case is acting upon the echo, and does not apply in attempting to write to a file.
+    The ~sudo~ in this case is acting upon the echo, and does not apply in attempting to write to a file.
   + In this case, you must first ~echo 3~, then write that output into =brightness=.
      #+BEGIN_SRC shell
 echo 3 | sudo tee brightness
      #+END_SRC
+
+     #+RESULTS:
+
      This *would* work as you're writing using ~tee~ as  a root user.
 
 

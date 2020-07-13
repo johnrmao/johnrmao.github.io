@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-13 Mon 02:48 -->
+<!-- 2020-07-13 Mon 02:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lecture 1</title>
@@ -85,6 +85,7 @@ Shell commands can also be executed with <i>arguments.</i>
 <pre class="src src-shell"><span style="color: #78DCE8;">echo</span> hello
 </pre>
 </div>
+
 <pre class="example">
 RESULTS:
 hello
@@ -110,6 +111,7 @@ You could also use <code>\</code> to escape relevant characters.</li>
 <pre class="src src-shell"><span style="color: #78DCE8;">which</span> python
 </pre>
 </div>
+
 <pre class="example">
 RESULTS:
 /usr/bin/python
@@ -140,6 +142,7 @@ This way, it is possible to change the the input or output away from the termina
 <span style="color: #78DCE8;">cat</span> &lt; hello.txt &gt; hello2.txt
 </pre>
 </div>
+
 <p>
 This print the argument of <code>echo</code>, which is <code>hello</code>, into <code>hello.txt</code>. Then, it will print the contents of <code>hello.txt</code> using the <code>cat</code> command, and pipe it into <code>hello2.txt</code>.
 </p></li>
@@ -151,6 +154,7 @@ Furthermore, the use of <code>|</code> will allow you to "chain" commands togeth
 <pre class="src src-shell"><span style="color: #78DCE8;">cat</span> coolfile.txt | <span style="color: #78DCE8;">grep</span> <span style="color: #FFD866;">'cool text'</span>
 </pre>
 </div>
+
 <p>
 This will print the contents of <code>coolfile.txt</code> and then <code>grep</code> for the string <code>cool text</code>.
 </p></li>
@@ -175,6 +179,7 @@ An example would be chaing the brightness of your laptop through writing directl
 <pre class="src src-shell"><span style="color: #78DCE8;">sudo</span> <span style="color: #78DCE8;">echo</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> &gt; brightness
 </pre>
 </div>
+
 <ul class="org-ul">
 <li><p>
 This will return an error as you must be a root user to write into <code>sys/*</code>.
@@ -190,6 +195,7 @@ In this case, you must first <code>echo 3</code>, then write that output into <c
 <pre class="src src-shell"><span style="color: #78DCE8;">echo</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> | <span style="color: #78DCE8;">sudo</span> tee brightness
 </pre>
 </div>
+
 <p>
 This <b>would</b> work as you're writing using <code>tee</code> as  a root user.
 </p></li>
@@ -207,7 +213,7 @@ This <b>would</b> work as you're writing using <code>tee</code> as  a root user.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: John Mao</p>
-<p class="date">Created: 2020-07-13 Mon 02:48</p>
+<p class="date">Created: 2020-07-13 Mon 02:50</p>
 </div>
 </body>
 </html>
