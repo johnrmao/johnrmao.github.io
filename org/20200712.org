@@ -7,16 +7,16 @@
 *** Level 2
 **** TODO Add More Posts
 - *bold* /italics/ _underline_ =cross= `something?` ~cross?~
-**** PROJ
-**** STRT
-**** WAIT
-**** HOLD
-**** DONE
-**** KILL
-**** [ ]
-**** [-]
-**** [?]
-**** [X]
+**** PROJ Lorem Ipsum
+**** STRT Lorem Ipsum
+**** WAIT Lorem Ipsum
+**** HOLD Lorem Ipsum
+**** DONE Lorem Ipsum
+**** KILL Lorem Ipsum
+**** [ ] Lorem Ipsum
+**** [-] Lorem Ipsum
+**** [?] Lorem Ipsum
+**** [X] Lorem Ipsum
 
 * Examples
 #+BEGIN_SRC python
