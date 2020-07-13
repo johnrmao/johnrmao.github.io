@@ -2,3 +2,7 @@
 
 - [[file:index.org][Mao's Note Emporium]]
 - [[file:20200712.org][Test Post]]
+- CPSC110
+  - [[file:CPSC110/lecture-1.org][Lecture 1]]
+- MissingMIT
+  - [[file:MissingMIT/lecture-1.org][Lecture 1]]
