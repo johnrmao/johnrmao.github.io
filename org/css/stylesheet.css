@@ -10,6 +10,42 @@ body {
     padding: 20px 20px 0 20px;
 }
 
+.TODO {
+    color: #f27874;
+}
+
+.PROJ {
+    color: #fb884a;
+}
+
+.STRT {
+    color: #d6ffc1;
+}
+
+.WAIT {
+    color: #fdf1ab;
+}
+
+.HOLD {
+    color: #fcca8d;
+}
+
+.DONE {
+    color: #8cb74f;
+}
+
+.KILL {
+    color: #bd1613;
+}
+
+.___ {
+    color: #d6ffc1;
+}
+
+._X_ {
+    color: #bd1613;
+}
+
 a:link {
     color: #FFE1A8;
 }
