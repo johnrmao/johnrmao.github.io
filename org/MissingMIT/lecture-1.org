@@ -1,0 +1,14 @@
+#+TITLE: Lecture 1
+#+SETUPFILE: ../template-1.org
+- tags :MIT: :shell:
+
+*  The Shell
+** Usage
+#+BEGIN_SRC shell
+date
+#+END_SRC
+
+RESULTS:
+: Mon 13 Jul 2020 01:16:10 PDT
+
+Running `date` will print the current date.
