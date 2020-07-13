@@ -4,9 +4,7 @@
 
 *  The Shell
 ** Usage
-#+BEGIN_SRC shell
-date
-#+END_SRC
+- The command =date= will print the current date.
 
 RESULTS:
 : Mon 13 Jul 2020 01:16:10 PDT
