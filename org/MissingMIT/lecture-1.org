@@ -1,6 +1,6 @@
 #+TITLE: Lecture 1
 #+SETUPFILE: ../template-1.org
-- tags :MIT: :shell:
+
 
 *** In this section:
 +[[Usage]]
