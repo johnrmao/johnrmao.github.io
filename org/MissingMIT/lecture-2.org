@@ -1,12 +1,6 @@
 #+TITLE: Lecture 2
 #+SETUPFILE: ../template-1.org
-
-*** In this section:
-+ [[Scripting]]
-+ [[Tools]]
-+ [[Search]]
-+ [[Navigation]]
-+ [[Exercises]]
+Created on 2020-07-13/02:21
 
 * Scripting
 ** Defining Variables

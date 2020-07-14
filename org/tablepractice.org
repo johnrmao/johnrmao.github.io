@@ -1,7 +1,6 @@
 #+TITLE: Table Practice
 #+SETUPFILE: template-0.org
-2020-07-13
-
+Created on 2020-07-13/20:19
 * table usage practice
 | Content of first cell          |
 | Press tab to move to next cell |
@@ -29,4 +28,4 @@
 
 + Comma separated values can be turned into tables as well.
   + 1, 2, 3, 3 turns into:
-| 1 | 2 | 3 | 4 |
+| 1 | 2 | 3 | e |

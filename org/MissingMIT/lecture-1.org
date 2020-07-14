@@ -1,13 +1,6 @@
 #+TITLE: Lecture 1
 #+SETUPFILE: ../template-1.org
-
-
-*** In this section:
-+[[Usage]]
-
-+[[Connecting Programs]]
-
-+[[Users]]
+Created on 2020-07-11/20:00
 
 *  The Shell
 ** Usage

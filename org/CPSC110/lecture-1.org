@@ -1,2 +1,3 @@
 #+TITLE: Lecture 1
 #+SETUPFILE: ../template-1.org
+Created on 2020-07-12/14:082
