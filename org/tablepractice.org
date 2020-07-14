@@ -7,8 +7,8 @@
 | Press tab to move to next cell |
 | A table can also be made using |
 + C-c | will also make a new table
- | A | B |
  | D | C |
+ | A | B |
  |---+---|
  | 1 | 3 |
  | 2 | 4 |
