@@ -15,6 +15,10 @@
 foo=bar
 echo $foo
   #+END_SRC
+
+  #+RESULTS:
+  : bar
+
   : RESULTS:
   : bar
 
@@ -29,6 +33,11 @@ echo $foo
     echo "$foo"
     echo '$foo'
   #+END_SRC
+
+  #+RESULTS:
+  | bar  |
+  | $foo |
+
        : RESULTS:
         | bar  |
         | $foo |
@@ -42,6 +51,9 @@ mcd () {
 cd "$1"
 }
   #+END_SRC
+
+  #+RESULTS:
+
 + In this scenario, ~$1~ is the first argument to the function.
     + This function will make a directory with the name of the argument ~$1~ and ~cd~ into that folder.
 
