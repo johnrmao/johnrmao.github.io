@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-13 Mon 02:50 -->
+<!-- 2020-07-13 Mon 17:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lecture 2</title>
@@ -45,10 +45,184 @@
 <ul class="org-ul">
 <li>tags :MIT: :shell:</li>
 </ul>
+
+<div id="outline-container-org911c5a4" class="outline-4">
+<h4 id="org911c5a4">In this section:</h4>
+<div class="outline-text-4" id="text-org911c5a4">
+<ul class="org-ul">
+<li><a href="#orge8821a9">Scripting</a></li>
+<li><a href="#org59b5b49">Tools</a></li>
+<li><a href="#orgd99a6d9">Search</a></li>
+<li><a href="#orgfa278c7">Navigation</a></li>
+<li><a href="#org12533ca">Exercises</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge8821a9" class="outline-2">
+<h2 id="orge8821a9">Scripting</h2>
+<div class="outline-text-2" id="text-orge8821a9">
+</div>
+<div id="outline-container-org0dae2a9" class="outline-3">
+<h3 id="org0dae2a9">Defining Variables</h3>
+<div class="outline-text-3" id="text-org0dae2a9">
+<ul class="org-ul">
+<li><p>
+To define a variable, you can use <code>foo=bar</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #FCFCFA;">foo</span>=bar
+<span style="color: #78DCE8;">echo</span> $<span style="color: #FCFCFA;">foo</span>
+</pre>
+</div>
+<pre class="example">
+RESULTS:
+bar
+</pre></li>
+
+<li><p>
+<code>foo = bar</code> would not work as it is the equivalent as <code>foo</code> calling upon the <code>=</code>, and <code>bar</code> arguments.
+</p>
+
+<ul class="org-ul">
+<li>Strings can be desginated using <code>'</code> and <code>"</code>.
+<ul class="org-ul">
+<li><code>'</code> is used for literal strings and will not subsitute variables.</li>
+<li><code>"</code> will be able to subsitute variables.</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-shell">    <span style="color: #FCFCFA;">foo</span>=bar
+    <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">foo</span><span style="color: #FFD866;">"</span>
+    <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">'$foo'</span>
+</pre>
+</div>
+<pre class="example">
+RESULTS:
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">bar</td>
+</tr>
+
+<tr>
+<td class="org-left">$foo</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org63ce3af" class="outline-3">
+<h3 id="org63ce3af">Functions</h3>
+<div class="outline-text-3" id="text-org63ce3af">
+<ul class="org-ul">
+<li>Bash supports control flow techniques such as <code>if</code>, <code>case</code>, and <code>for</code>.</li>
+<li><p>
+Bash also has functions which take arguments and operate them.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #A9DC76;">mcd</span> <span style="color: #AB9DF2;">()</span> <span style="color: #AB9DF2;">{</span>
+    <span style="color: #78DCE8;">mkdir</span> -p <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">1</span><span style="color: #FFD866;">"</span>
+<span style="color: #78DCE8;">cd</span> <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">1</span><span style="color: #FFD866;">"</span>
+<span style="color: #AB9DF2;">}</span>
+</pre>
+</div></li>
+<li>In this scenario, <code>$1</code> is the first argument to the function.
+<ul class="org-ul">
+<li>This function will make a directory with the name of the argument <code>$1</code> and <code>cd</code> into that folder.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+In bash, there are a number of relevant variables.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">$0</td>
+<td class="org-left">Name of script</td>
+</tr>
+
+<tr>
+<td class="org-left">$1 to $9</td>
+<td class="org-left">Arguments to the script</td>
+</tr>
+
+<tr>
+<td class="org-left">$@</td>
+<td class="org-left">All the arguments</td>
+</tr>
+
+<tr>
+<td class="org-left">$#</td>
+<td class="org-left">Number of arguments</td>
+</tr>
+
+<tr>
+<td class="org-left">$?</td>
+<td class="org-left">Return code of the previous command</td>
+</tr>
+
+<tr>
+<td class="org-left">$$</td>
+<td class="org-left">Process identification number (PID) of the current script</td>
+</tr>
+
+<tr>
+<td class="org-left">!!</td>
+<td class="org-left">Entire last command, including arguments.</td>
+</tr>
+
+<tr>
+<td class="org-left">$_</td>
+<td class="org-left">Last argument from last command.</td>
+</tr>
+</tbody>
+</table></li>
+<li>A full list can be found <a href="https://www.tldp.org/LDP/abs/html/special-chars.html">here.</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org59b5b49" class="outline-2">
+<h2 id="org59b5b49">Tools</h2>
+</div>
+
+<div id="outline-container-orgd99a6d9" class="outline-2">
+<h2 id="orgd99a6d9">Search</h2>
+</div>
+
+<div id="outline-container-orgfa278c7" class="outline-2">
+<h2 id="orgfa278c7">Navigation</h2>
+</div>
+
+<div id="outline-container-org12533ca" class="outline-2">
+<h2 id="org12533ca">Exercises</h2>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: John Mao</p>
-<p class="date">Created: 2020-07-13 Mon 02:50</p>
+<p class="date">Created: 2020-07-13 Mon 17:50</p>
 </div>
 </body>
 </html>

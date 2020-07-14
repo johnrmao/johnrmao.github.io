@@ -1,3 +1,67 @@
 #+TITLE: Lecture 2
 #+SETUPFILE: ../template-1.org
 - tags :MIT: :shell:
+
+*** In this section:
++ [[Scripting]]
++ [[Tools]]
++ [[Search]]
++ [[Navigation]]
++ [[Exercises]]
+
+* Scripting
+** Defining Variables
++ To define a variable, you can use ~foo=bar~.
+  #+BEGIN_SRC shell
+foo=bar
+echo $foo
+  #+END_SRC
+  : RESULTS:
+  : bar
+
++ ~foo = bar~ would not work as it is the equivalent as ~foo~ calling upon the ===, and =bar= arguments.
+
+  + Strings can be desginated using ~'~ and ~"~.
+    + ~'~ is used for literal strings and will not subsitute variables.
+    + ~"~ will be able to subsitute variables.
+      
+  #+BEGIN_SRC shell
+    foo=bar
+    echo "$foo"
+    echo '$foo'
+  #+END_SRC
+       : RESULTS:
+        | bar  |
+        | $foo |
+** Functions
++ Bash supports control flow techniques such as ~if~, ~case~, and ~for~.
++ Bash also has functions which take arguments and operate them.
+
+  #+BEGIN_SRC shell
+mcd () {
+    mkdir -p "$1"
+cd "$1"
+}
+  #+END_SRC
++ In this scenario, ~$1~ is the first argument to the function.
+    + This function will make a directory with the name of the argument ~$1~ and ~cd~ into that folder.
+
+
++ In bash, there are a number of relevant variables.
+  | $0       | Name of script                                            |
+  | $1 to $9 | Arguments to the script                                   |
+  | $@       | All the arguments                                         |
+  | $#       | Number of arguments                                       |
+  | $?       | Return code of the previous command                       |
+  | $$       | Process identification number (PID) of the current script |
+  | !!       | Entire last command, including arguments.                 |
+  | $_       | Last argument from last command.                          |
++ A full list can be found [[https://www.tldp.org/LDP/abs/html/special-chars.html][here.]]
+
+* Tools
+
+* Search
+
+* Navigation
+
+* Exercises
