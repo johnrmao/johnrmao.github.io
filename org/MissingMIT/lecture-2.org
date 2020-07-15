@@ -228,6 +228,10 @@ find . -name '*.png' convert {} {}.jpg \;
 
 + Other useful alternatives for =grep= include =ack=, =ag=, and =rg=.
 
+
 ** Finding shell commands
 +
+
+
+
 * Navigation
