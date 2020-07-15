@@ -3,7 +3,7 @@
 Created on 2020-07-13/02:21
 
 * Scripting
-** Defining Variables
+** Defining variables
 + To define a variable, you can use ~foo=bar~.
   #+BEGIN_SRC shell
 foo=bar
@@ -165,9 +165,69 @@ convert image.{png,jpg}
 mv *.{.sh,.py} new_folder
   #+END_SRC
 + All .sh and .py files will be moved to a new folder.
-  
+
+** SHEBANG!
+
++ It is important to include a *shebang* line at the top of scripts to tell the kernel which interpreter to use.
+  #+BEGIN_SRC python
+#!/usr/local/bin/python
+import sys
+for arg in reversed(sys.argv[1:]):
+    print(arg)
+  #+END_SRC
++ Here, the shebang line tells the kernel to use a python interpreter.
+
+
++ It is important to differentiate between functions and scripts.
+  + Scripts can be written in *any* language, but functions need to be written in the *same* language as the shell.
+
+    
 * Tools
++ Check the man pages.
 
+  
+  ~man CMD~
++ Or, check the tldr.
+
+
+  ~tldr CMD~
 * Search
+** Finding files
++ The ~find~ command can be used to recursively find files.
+  #+BEGIN_SRC shell
+# Find all directories named src
+find . -name src -type d
+# Find all python files that have a folder named test in their path
+find . -path '*/test/*.py' -type f
+# Find all files modified in the last day
+find . -mtime -1
+# Find all zip files with size in range 500k to 10M
+find . -size +500k -size -10M -name '*.tar.gz'
+  #+END_SRC
 
+
++ Actions can also be performed over files which match the search quary.
+  #+BEGIN_SRC shell
+# Delete all files with .tmp extension
+find . -name '*.tmp' -exec rm {} \;
+# Find all PNG files and covert them to jpg
+find . -name '*.png' convert {} {}.jpg \;
+  #+END_SRC
+
+
++ The use of =-iname= will make searches case insensitive.
+
+
+** Finding code
++ =grep= can be used to find patterns from input text.
+  + Some useful flags:
+    | -C | Context around the matching line                    |
+    | -v | Inverting a match, printing all that does not match |
+    | -R | Recursively search directories for files matching string  |
+
+
++ Other useful alternatives for =grep= include =ack=, =ag=, and =rg=.
+
+** Finding shell commands
++
 * Navigation

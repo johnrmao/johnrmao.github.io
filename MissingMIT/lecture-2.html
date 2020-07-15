@@ -47,15 +47,21 @@
 <ul>
 <li><a href="#orge8821a9">Scripting</a>
 <ul>
-<li><a href="#org0dae2a9">Defining Variables</a></li>
+<li><a href="#orga20763a">Defining variables</a></li>
 <li><a href="#org63ce3af">Functions</a></li>
 <li><a href="#org2db4187">Error Codes and Outputs</a></li>
 <li><a href="#org24206fe">Substitutions</a></li>
 <li><a href="#orgcdd2cee">Globbing</a></li>
+<li><a href="#org1efedde">SHEBANG!</a></li>
 </ul>
 </li>
 <li><a href="#org59b5b49">Tools</a></li>
-<li><a href="#orgd99a6d9">Search</a></li>
+<li><a href="#orgd99a6d9">Search</a>
+<ul>
+<li><a href="#org7339ff2">Finding files</a></li>
+<li><a href="#org76b14c4">Finding code</a></li>
+</ul>
+</li>
 <li><a href="#orgfa278c7">Navigation</a></li>
 </ul>
 </div>
@@ -68,9 +74,9 @@ Created on 2020-07-13/02:21
 <h2 id="orge8821a9">Scripting</h2>
 <div class="outline-text-2" id="text-orge8821a9">
 </div>
-<div id="outline-container-org0dae2a9" class="outline-3">
-<h3 id="org0dae2a9">Defining Variables</h3>
-<div class="outline-text-3" id="text-org0dae2a9">
+<div id="outline-container-orga20763a" class="outline-3">
+<h3 id="orga20763a">Defining variables</h3>
+<div class="outline-text-3" id="text-orga20763a">
 <ul class="org-ul">
 <li><p>
 To define a variable, you can use <code>foo=bar</code>.
@@ -408,14 +414,141 @@ Similarly, it can also be used for this:
 </ul>
 </div>
 </div>
+
+<div id="outline-container-org1efedde" class="outline-3">
+<h3 id="org1efedde">SHEBANG!</h3>
+<div class="outline-text-3" id="text-org1efedde">
+<ul class="org-ul">
+<li><p>
+It is important to include a <b>shebang</b> line at the top of scripts to tell the kernel which interpreter to use.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #727072;">#</span><span style="color: #727072;">!/usr/local/bin/python</span>
+<span style="color: #FF6188;">import</span> sys
+<span style="color: #FF6188;">for</span> arg <span style="color: #FF6188;">in</span> <span style="color: #78DCE8;">reversed</span>(sys.argv[<span style="color: #AB9DF2; font-weight: bold;">1</span>:]):
+    <span style="color: #FF6188;">print</span>(arg)
+</pre>
+</div></li>
+<li>Here, the shebang line tells the kernel to use a python interpreter.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>It is important to differentiate between functions and scripts.
+<ul class="org-ul">
+<li>Scripts can be written in <b>any</b> language, but functions need to be written in the <b>same</b> language as the shell.</li>
+</ul></li>
+</ul>
 </div>
+</div>
+</div>
+
 
 <div id="outline-container-org59b5b49" class="outline-2">
 <h2 id="org59b5b49">Tools</h2>
-</div>
+<div class="outline-text-2" id="text-org59b5b49">
+<ul class="org-ul">
+<li>Check the man pages.</li>
+</ul>
 
+
+<p>
+<code>man CMD</code>
+</p>
+<ul class="org-ul">
+<li>Or, check the tldr.</li>
+</ul>
+
+
+<p>
+<code>tldr CMD</code>
+</p>
+</div>
+</div>
 <div id="outline-container-orgd99a6d9" class="outline-2">
 <h2 id="orgd99a6d9">Search</h2>
+<div class="outline-text-2" id="text-orgd99a6d9">
+</div>
+<div id="outline-container-org7339ff2" class="outline-3">
+<h3 id="org7339ff2">Finding files</h3>
+<div class="outline-text-3" id="text-org7339ff2">
+<ul class="org-ul">
+<li><p>
+The <code>find</code> command can be used to recursively find files.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #727072;"># </span><span style="color: #727072;">Find all directories named src</span>
+<span style="color: #78DCE8;">find</span> . -name src -type d
+<span style="color: #727072;"># </span><span style="color: #727072;">Find all python files that have a folder named test in their path</span>
+<span style="color: #78DCE8;">find</span> . -path <span style="color: #FFD866;">'*/test/*.py'</span> -type f
+<span style="color: #727072;"># </span><span style="color: #727072;">Find all files modified in the last day</span>
+<span style="color: #78DCE8;">find</span> . -mtime -1
+<span style="color: #727072;"># </span><span style="color: #727072;">Find all zip files with size in range 500k to 10M</span>
+<span style="color: #78DCE8;">find</span> . -size +500k -size -10M -name <span style="color: #FFD866;">'*.tar.gz'</span>
+</pre>
+</div></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+Actions can also be performed over files which match the search quary.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #727072;"># </span><span style="color: #727072;">Delete all files with .tmp extension</span>
+<span style="color: #78DCE8;">find</span> . -name <span style="color: #FFD866;">'*.tmp'</span> -exec <span style="color: #78DCE8;">rm</span> <span style="color: #AB9DF2;">{}</span> <span style="color: #FFD866;">\;</span>
+<span style="color: #727072;"># </span><span style="color: #727072;">Find all PNG files and covert them to jpg</span>
+<span style="color: #78DCE8;">find</span> . -name <span style="color: #FFD866;">'*.png'</span> convert <span style="color: #AB9DF2;">{}</span> <span style="color: #AB9DF2;">{}</span>.jpg <span style="color: #FFD866;">\;</span>
+</pre>
+</div></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>The use of <code>-iname</code> will make searches case insensitive.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org76b14c4" class="outline-3">
+<h3 id="org76b14c4">Finding code</h3>
+<div class="outline-text-3" id="text-org76b14c4">
+<ul class="org-ul">
+<li><code>grep</code> can be used to find patterns from input text.
+<ul class="org-ul">
+<li><p>
+Some useful flags:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">-C</td>
+<td class="org-left">Context around the matching line</td>
+</tr>
+
+<tr>
+<td class="org-left">-v</td>
+<td class="org-left">Inverting a match, printing all that does not match</td>
+</tr>
+
+<tr>
+<td class="org-left">-R</td>
+<td class="org-left">Recursively search directories for files matching string</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul>
+</div>
+</div>
 </div>
 
 <div id="outline-container-orgfa278c7" class="outline-2">
