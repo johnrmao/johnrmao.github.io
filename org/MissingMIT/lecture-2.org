@@ -232,6 +232,8 @@ find . -name '*.png' convert {} {}.jpg \;
 ** Finding shell commands
 +
 
+src_python[:exports code]{print("arg")}
+
 
 
 * Navigation
