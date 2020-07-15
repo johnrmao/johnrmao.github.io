@@ -49,6 +49,7 @@
 <ul>
 <li><a href="#org0dae2a9">Defining Variables</a></li>
 <li><a href="#org63ce3af">Functions</a></li>
+<li><a href="#orgf36fa96">Error Codes</a></li>
 </ul>
 </li>
 <li><a href="#org59b5b49">Tools</a></li>
@@ -200,7 +201,7 @@ In bash, there are a number of relevant variables.
 
 <tr>
 <td class="org-left">$_</td>
-<td class="org-left">Last argument from last command.</td>
+<td class="org-left">Last argument from previous command.</td>
 </tr>
 </tbody>
 </table></li>
@@ -209,7 +210,72 @@ In bash, there are a number of relevant variables.
 </ul>
 </div>
 </div>
+
+<div id="outline-container-orgf36fa96" class="outline-3">
+<h3 id="orgf36fa96">Error Codes</h3>
+<div class="outline-text-3" id="text-orgf36fa96">
+<ul class="org-ul">
+<li>A return code of <code>0</code> means that the previous function ran without any issues.</li>
+<li>Return code of <code>1</code> means there was an issue.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>True will return error code <code>0</code>.</li>
+<li>False will return error code <code>1</code>.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>This way, error codes can be used conditionally to execute commands.
+<ul class="org-ul">
+<li><code>||</code> is equivalent to <code>or</code>. If error code returns one, it will run the second command.
+<ul class="org-ul">
+<li><p>
+The second command will not run if the first command did not return an error code.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">    <span style="color: #78DCE8;">false</span> || <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"Oops fail"</span>
+    <span style="color: #78DCE8;">true</span> || <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"This prints nothing"</span>
+</pre>
 </div>
+<pre class="example">
+RESULTS:
+Oops fail
+</pre></li>
+</ul></li>
+
+<li><p>
+Similarly <code>&amp;&amp;</code> symbolizes <code>and</code>. If the first command runs successfully, the second will too.
+</p>
+<ul class="org-ul">
+<li>If the first command returns an error code, the second will not run.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #78DCE8;">true</span> &amp;&amp; <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"Prints"</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+Prints
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #78DCE8;">false</span> &amp;&amp; <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"Doesn't print"</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
 
 <div id="outline-container-org59b5b49" class="outline-2">
 <h2 id="org59b5b49">Tools</h2>
