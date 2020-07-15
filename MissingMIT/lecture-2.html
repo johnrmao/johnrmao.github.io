@@ -49,7 +49,8 @@
 <ul>
 <li><a href="#org0dae2a9">Defining Variables</a></li>
 <li><a href="#org63ce3af">Functions</a></li>
-<li><a href="#orgf36fa96">Error Codes</a></li>
+<li><a href="#org2db4187">Error Codes and Outputs</a></li>
+<li><a href="#org24206fe">Substitutions</a></li>
 </ul>
 </li>
 <li><a href="#org59b5b49">Tools</a></li>
@@ -211,23 +212,26 @@ In bash, there are a number of relevant variables.
 </div>
 </div>
 
-<div id="outline-container-orgf36fa96" class="outline-3">
-<h3 id="orgf36fa96">Error Codes</h3>
-<div class="outline-text-3" id="text-orgf36fa96">
+<div id="outline-container-org2db4187" class="outline-3">
+<h3 id="org2db4187">Error Codes and Outputs</h3>
+<div class="outline-text-3" id="text-org2db4187">
 <ul class="org-ul">
-<li>A return code of <code>0</code> means that the previous function ran without any issues.</li>
-<li>Return code of <code>1</code> means there was an issue.</li>
+<li>A return code of <code>0</code> means that the previous function ran <b>without</b> any issues.</li>
+<li>Return code of <code>1</code> means there <b>was</b> an issue.</li>
 </ul>
 
 
 <ul class="org-ul">
-<li>True will return error code <code>0</code>.</li>
-<li>False will return error code <code>1</code>.</li>
+<li><i>True</i> will return error code <code>0</code>.</li>
+<li><i>False</i> will return error code <code>1</code>.</li>
 </ul>
 
 
 <ul class="org-ul">
-<li>This way, error codes can be used conditionally to execute commands.
+<li>This way, error codes can be used conditionally to execute commands.</li>
+</ul>
+
+
 <ul class="org-ul">
 <li><code>||</code> is equivalent to <code>or</code>. If error code returns one, it will run the second command.
 <ul class="org-ul">
@@ -270,7 +274,92 @@ Prints
 <pre class="example">
 RESULTS:
 </pre></li>
+</ul>
+<ul class="org-ul">
+<li>The usage of <code>;</code> will always run the next command.</li>
+
+<li><p>
+The output of a command can be stored within a variable using:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #FCFCFA;">foo</span>=$<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">pwd</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"We are in </span><span style="color: #FF6188; font-weight: bold;">$(</span><span style="color: #FF6188; font-weight: bold;">pwd</span><span style="color: #FF6188; font-weight: bold;">)</span><span style="color: #FFD866;">"</span>
+<span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"We are in </span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">foo</span><span style="color: #FFD866;">"</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">We</td>
+<td class="org-left">are</td>
+<td class="org-left">in</td>
+<td class="org-left">/Users/johnmao/johnrmao.github.io/org/MissingMIT</td>
+</tr>
+
+<tr>
+<td class="org-left">We</td>
+<td class="org-left">are</td>
+<td class="org-left">in</td>
+<td class="org-left">/Users/johnmao/johnrmao.github.io/org/MissingMIT</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org24206fe" class="outline-3">
+<h3 id="org24206fe">Substitutions</h3>
+<div class="outline-text-3" id="text-org24206fe">
+<ul class="org-ul">
+<li>To feed the output of a command as a variable, use <i>command subsitution.</i>
+
+<ul class="org-ul">
+<li><code>$( CMD )</code> will execute <code>CMD</code> and substitute <code>$( CMD )</code> with the output.</li>
 </ul></li>
+
+<li>There is similar feature known as <i>process subsitution.</i>
+
+<ul class="org-ul">
+<li><code>&lt;( CMD )</code> will execute <code>CMD</code> and place the output within a temporary file, replacing <code>&lt;()</code> with that file's name.</li>
+</ul></li>
+
+<li><p>
+An example of what's mentioned above would be:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"Starting program at </span><span style="color: #FF6188; font-weight: bold;">$(</span><span style="color: #FF6188; font-weight: bold;">date</span><span style="color: #FF6188; font-weight: bold;">)</span><span style="color: #FFD866;">"</span> <span style="color: #727072;"># </span><span style="color: #727072;">The current </span><span style="color: #727072;">date</span><span style="color: #727072;"> will replace $(</span><span style="color: #727072;">date</span><span style="color: #727072;">) in this scenario</span>
+<span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"Running program </span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">0</span><span style="color: #FFD866;"> with </span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">#</span><span style="color: #FFD866;"> arguments with pid $$"</span>
+
+<span style="color: #FF6188;">for</span> file<span style="color: #FF6188;"> in</span> <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">@</span><span style="color: #FFD866;">"</span>; <span style="color: #FF6188;">do</span> <span style="color: #727072;"># </span><span style="color: #727072;">-ne is comparing to see if $@ does not equal 0</span>
+    <span style="color: #78DCE8;">grep</span> foobar <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">file</span><span style="color: #FFD866;">"</span> &gt; /dev/null <span style="color: #AB9DF2; font-weight: bold;">2</span>&gt; /dev/null
+    <span style="color: #727072;"># </span><span style="color: #727072;">if nothing is found, </span><span style="color: #727072;">grep</span><span style="color: #727072;"> returns exit status 1</span>
+    <span style="color: #727072;"># </span><span style="color: #727072;">redirected STDOUT and STDERR to null register as they are irrelevant</span>
+    <span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">[</span><span style="color: #78DCE8;">[</span> $<span style="color: #FCFCFA;">?</span> -ne <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">]</span>; <span style="color: #FF6188;">then</span>
+        <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"File </span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">file</span><span style="color: #FFD866;"> does not have any foobar, adding one"</span>
+        <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"# foobar"</span> &gt;&gt; <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">file</span><span style="color: #FFD866;">"</span>
+    <span style="color: #FF6188;">fi</span>
+<span style="color: #FF6188;">done</span>
+</pre>
+</div></li>
+<li>Here, using <code>-ne</code> we can test whether <code>$?</code> was not equal to 0.</li>
+<li>The script above will take arguments and <code>grep</code> them for "foobar" and will add a "foobar" if it was not detected.</li>
 </ul>
 </div>
 </div>
@@ -288,7 +377,6 @@ RESULTS:
 <div id="outline-container-orgfa278c7" class="outline-2">
 <h2 id="orgfa278c7">Navigation</h2>
 </div>
-
 <div id="outline-container-org12533ca" class="outline-2">
 <h2 id="org12533ca">Exercises</h2>
 </div>
