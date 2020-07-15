@@ -51,12 +51,12 @@
 <li><a href="#org63ce3af">Functions</a></li>
 <li><a href="#org2db4187">Error Codes and Outputs</a></li>
 <li><a href="#org24206fe">Substitutions</a></li>
+<li><a href="#orgcdd2cee">Globbing</a></li>
 </ul>
 </li>
 <li><a href="#org59b5b49">Tools</a></li>
 <li><a href="#orgd99a6d9">Search</a></li>
 <li><a href="#orgfa278c7">Navigation</a></li>
-<li><a href="#org12533ca">Exercises</a></li>
 </ul>
 </div>
 </div>
@@ -351,7 +351,7 @@ An example of what's mentioned above would be:
     <span style="color: #78DCE8;">grep</span> foobar <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">file</span><span style="color: #FFD866;">"</span> &gt; /dev/null <span style="color: #AB9DF2; font-weight: bold;">2</span>&gt; /dev/null
     <span style="color: #727072;"># </span><span style="color: #727072;">if nothing is found, </span><span style="color: #727072;">grep</span><span style="color: #727072;"> returns exit status 1</span>
     <span style="color: #727072;"># </span><span style="color: #727072;">redirected STDOUT and STDERR to null register as they are irrelevant</span>
-    <span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">[</span><span style="color: #78DCE8;">[</span> $<span style="color: #FCFCFA;">?</span> -ne <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">]</span>; <span style="color: #FF6188;">then</span>
+    <span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">[</span><span style="color: #78DCE8;">[</span> $<span style="color: #FCFCFA;">?</span> -ne <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">]</span>; <span style="color: #FF6188;">then</span> <span style="color: #727072;"># </span><span style="color: #727072;">$? is referring to the return code of </span><span style="color: #727072;">grep</span><span style="color: #727072;"> here</span>
         <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"File </span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">file</span><span style="color: #FFD866;"> does not have any foobar, adding one"</span>
         <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"# foobar"</span> &gt;&gt; <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">file</span><span style="color: #FFD866;">"</span>
     <span style="color: #FF6188;">fi</span>
@@ -361,10 +361,54 @@ An example of what's mentioned above would be:
 <li>Here, using <code>-ne</code> we can test whether <code>$?</code> was not equal to 0.</li>
 <li>The script above will take arguments and <code>grep</code> them for "foobar" and will add a "foobar" if it was not detected.</li>
 </ul>
-</div>
+
+
+<ul class="org-ul">
+<li>It is generally safer to use <code>[[ ]]</code> instead of single brackets in bash.</li>
+</ul>
 </div>
 </div>
 
+<div id="outline-container-orgcdd2cee" class="outline-3">
+<h3 id="orgcdd2cee">Globbing</h3>
+<div class="outline-text-3" id="text-orgcdd2cee">
+<ul class="org-ul">
+<li>Globbing refers to techniques which makes expanding expressions or filenames easier.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li><code>?</code> and <code>*</code> can be used to match one or any characters respectively.
+
+<ul class="org-ul">
+<li>With files <code>foo, foo1, foo2, foo3, foo12, bar</code>, using <code>rm foo?</code> will delete <code>foo1, foo2,</code> and <code>foo3</code>. Running <code>rm foo*</code> will remove all but <code>bar</code>.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+Curly braces <code>{}</code> can also be used to expand common substrings in a series of commands.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">convert image.png image.jpg
+<span style="color: #727072;"># </span><span style="color: #727072;">equivalent to</span>
+convert image.<span style="color: #AB9DF2;">{</span>png,jpg<span style="color: #AB9DF2;">}</span>
+</pre>
+</div></li>
+
+<li><p>
+Similarly, it can also be used for this:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #78DCE8;">mv</span> *.<span style="color: #AB9DF2;">{</span>.sh,.py<span style="color: #AB9DF2;">}</span> new_folder
+</pre>
+</div></li>
+<li>All .sh and .py files will be moved to a new folder.</li>
+</ul>
+</div>
+</div>
+</div>
 
 <div id="outline-container-org59b5b49" class="outline-2">
 <h2 id="org59b5b49">Tools</h2>
@@ -376,9 +420,6 @@ An example of what's mentioned above would be:
 
 <div id="outline-container-orgfa278c7" class="outline-2">
 <h2 id="orgfa278c7">Navigation</h2>
-</div>
-<div id="outline-container-org12533ca" class="outline-2">
-<h2 id="org12533ca">Exercises</h2>
 </div>
 </div>
 <div id="postamble" class="status">

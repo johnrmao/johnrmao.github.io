@@ -131,7 +131,7 @@ for file in "$@"; do # -ne is comparing to see if $@ does not equal 0
     grep foobar "$file" > /dev/null 2> /dev/null
     # if nothing is found, grep returns exit status 1
     # redirected STDOUT and STDERR to null register as they are irrelevant
-    if [[ $? -ne 0 ]]; then
+    if [[ $? -ne 0 ]]; then # $? is referring to the return code of grep here
         echo "File $file does not have any foobar, adding one"
         echo "# foobar" >> "$file"
     fi
@@ -141,9 +141,33 @@ done
 + The script above will take arguments and ~grep~ them for "foobar" and will add a "foobar" if it was not detected.
 
   
++ It is generally safer to use ~[[ ]]~ instead of single brackets in bash.
+
+** Globbing
+
++ Globbing refers to techniques which makes expanding expressions or filenames easier.
+  
+
+  + =?= and =*= can be used to match one or any characters respectively.
+
+    + With files =foo, foo1, foo2, foo3, foo12, bar=, using ~rm foo?~ will delete =foo1, foo2,= and =foo3=. Running ~rm foo*~ will remove all but =bar=.
+
+
++ Curly braces ={}= can also be used to expand common substrings in a series of commands.
+  #+BEGIN_SRC shell
+convert image.png image.jpg
+# equivalent to
+convert image.{png,jpg}
+  #+END_SRC
+
++ Similarly, it can also be used for this:
+  #+BEGIN_SRC shell
+mv *.{.sh,.py} new_folder
+  #+END_SRC
++ All .sh and .py files will be moved to a new folder.
+  
 * Tools
 
 * Search
 
 * Navigation
-* Exercises
