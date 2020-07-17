@@ -5,6 +5,8 @@
 - [[file:20200712.org][Test Post]]
 - CPSC110
   - [[file:CPSC110/Module-1.org][Module 1]]
+  - Problem Sets
+    - [[file:CPSC110/Problem Sets/Module 1 Questions.org][Module 1 Questions]]
 - MissingMIT
   - [[file:MissingMIT/lecture-1.org][Lecture 1]]
   - [[file:MissingMIT/lecture-2.org][Lecture 2]]
