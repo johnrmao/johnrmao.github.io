@@ -51,6 +51,7 @@
 <li><a href="#orgcb174b4">Expressions</a>
 <ul>
 <li><a href="#orgd5ff08f">Evaluating simple expressions</a></li>
+<li><a href="#org00ebd8d">Terminology</a></li>
 </ul>
 </li>
 <li><a href="#org4b048c2">Strings and images</a>
@@ -64,7 +65,11 @@
 <li><a href="#org306cf3e">Evaluating constant definitions</a></li>
 </ul>
 </li>
-<li><a href="#orgf2b8822"><span class="todo TODO">TODO</span> Function definitions</a></li>
+<li><a href="#orgf2b8822">Function definitions</a>
+<ul>
+<li><a href="#org118ce79">Evaluating functions</a></li>
+</ul>
+</li>
 <li><a href="#orgdbf86fc"><span class="todo TODO">TODO</span> Booleans and if expressions</a></li>
 <li><a href="#org556f8b5"><span class="todo TODO">TODO</span> Using the stepper</a></li>
 <li><a href="#org48e2792"><span class="todo TODO">TODO</span> Discovering primitives</a></li>
@@ -219,7 +224,47 @@ Created on 2020-07-12/14:082
 <hr />
 </div>
 </div>
+<div id="outline-container-org00ebd8d" class="outline-4">
+<h4 id="org00ebd8d">Terminology</h4>
+<div class="outline-text-4" id="text-org00ebd8d">
+<ul class="org-ul">
+<li>Expression
+<ul class="org-ul">
+<li>Element that is evaluated to produce a value.</li>
+</ul></li>
+<li>Value
+<ul class="org-ul">
+<li>Data element such as 1, "foo", (make-cat 10 20).</li>
+</ul></li>
+<li>Evaluate
+<ul class="org-ul">
+<li>In Basic Student Language, the program executes by evaluating expressions and producing values.</li>
+</ul></li>
+<li>Operator
+<ul class="org-ul">
+<li>Primitive operators operate and manipulate primitive data.</li>
+</ul></li>
+<li>Primitive
+<ul class="org-ul">
+<li>Basic building block provided by BSL which is used to design programs.</li>
+</ul></li>
+<li>Operand
+<ul class="org-ul">
+<li>Expressions following function name in a <b>function call expression</b> or the operator name in a <b>primitive call expression.</b></li>
+</ul></li>
+<li>Argument
+<ul class="org-ul">
+<li>Value passed to a function or primitive operation when called.</li>
+</ul></li>
+<li>Number
+<ul class="org-ul">
+<li>Primitive type of data representing any number.</li>
+</ul></li>
+</ul>
 </div>
+</div>
+</div>
+
 <div id="outline-container-org4b048c2" class="outline-3">
 <h3 id="org4b048c2">Strings and images</h3>
 <div class="outline-text-3" id="text-org4b048c2">
@@ -382,6 +427,8 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 <ul class="org-ul">
 <li>Constant definitions greatly improve readability and changeability.</li>
 
+<li>Constants are named values defined using <code class="src src-racket"><span style="color: #FF6188;">define</span></code> and never changes.</li>
+
 <li>Constant definitions give name to a value used in another part of the program.</li>
 </ul>
 
@@ -461,8 +508,105 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 
 
 <div id="outline-container-orgf2b8822" class="outline-3">
-<h3 id="orgf2b8822"><span class="todo TODO">TODO</span> Function definitions</h3>
+<h3 id="orgf2b8822">Function definitions</h3>
+<div class="outline-text-3" id="text-orgf2b8822">
+<ul class="org-ul">
+<li>Functions contain a name and one or more parameters. A function will also have a body, which is an expression that is evaluated to produce the resulting value of the function.</li>
+<li><p>
+Functions will allow a program to produce a different value each time they run.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>above <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span>
+       <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"yellow"</span><span style="color: #78DCE8;">)</span>
+       <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
 </div>
+<ul class="org-ul">
+<li>This code has a lot of redundency as only the colour is changing in each call to circle.</li>
+<li>Using functions, this redundency can be removed.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Within a function, the parameter is the varying value.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">bulb</span> c<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> c<span style="color: #78DCE8;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>In this case, the changing value, <code>c</code> can be used to call <code>circle</code> with varying parameters.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>The beginning example function can therefore be rewritten as:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>above <span style="color: #78DCE8;">(</span>bulb <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span>
+       <span style="color: #78DCE8;">(</span>bulb <span style="color: #FFD866;">"yellow"</span><span style="color: #78DCE8;">)</span>
+       <span style="color: #78DCE8;">(</span>bulb <span style="color: #FFD866;">"green"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org118ce79" class="outline-4">
+<h4 id="org118ce79">Evaluating functions</h4>
+<div class="outline-text-4" id="text-org118ce79">
+<ul class="org-ul">
+<li><p>
+To form a function definition:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">&lt;name&gt;</span> &lt;name of parameter&gt;<span style="color: #78DCE8;">)</span>
+  &lt;expression&gt;<span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">bulb</span> c<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> c<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li><p>
+To form a function call expression:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>&lt;name of defined function&gt; &lt;expression&gt;<span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span>bulb <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"re"</span> <span style="color: #FFD866;">"d"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ul>
+<hr />
+<ul class="org-ul">
+<li><b>To evaluate a function call</b> <code class="src src-racket"><span style="color: #AB9DF2;">(</span>bulb <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"re"</span> <span style="color: #FFD866;">"d"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code>
+<ol class="org-ol">
+<li>First, reduce operands to values, also known as <b>arguments.</b>
+<ul class="org-ul">
+<li>The first operand <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span><span style="color: #AB9DF2;">)</span></code> is a primitive call, and will follow <a href="#orgd5ff08f">primitive call rules.</a></li>
+<li>Since <code>"re"</code> and <code>"d"</code> are already values, the primitive <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span><span style="color: #AB9DF2;">)</span></code> will be applied.</li>
+<li>The expression now looks like this: <code class="src src-racket"><span style="color: #AB9DF2;">(</span>bulb <span style="color: #FFD866;">"red"</span><span style="color: #AB9DF2;">)</span></code></li>
+</ul></li>
+<li>Now all operands are values, the function call will be replaced by the body of the function, and all parameters will be replaced by the argument.
+<ul class="org-ul">
+<li>The expression now looks like this <code class="src src-racket"><span style="color: #AB9DF2;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #AB9DF2;">)</span></code></li>
+<li>After the function call is replaced, the final experssion is a simple primitive call which is evaluated using primitive call rules.</li>
+</ul></li>
+</ol></li>
+</ul>
+
+<hr />
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgdbf86fc" class="outline-3">
 <h3 id="orgdbf86fc"><span class="todo TODO">TODO</span> Booleans and if expressions</h3>
 </div>

@@ -76,6 +76,24 @@ Created on 2020-07-12/14:082
 
 + Intuitively, expressions are evaluated from left to right, and inside to outside.
 ------
+*** Terminology
++ Expression
+  + Element that is evaluated to produce a value.
++ Value
+  + Data element such as 1, "foo", (make-cat 10 20).
++ Evaluate
+  + In Basic Student Language, the program executes by evaluating expressions and producing values.
++ Operator
+  + Primitive operators operate and manipulate primitive data.
++ Primitive
+  + Basic building block provided by BSL which is used to design programs.
++ Operand
+  + Expressions following function name in a *function call expression* or the operator name in a *primitive call expression.*
++ Argument
+  + Value passed to a function or primitive operation when called.
++ Number
+  + Primitive type of data representing any number.
+
 ** Strings and images
 + Strings represent words and names.
 + Images help to build up pictures.
@@ -165,6 +183,8 @@ Created on 2020-07-12/14:082
 ** Constant definitions
 + Constant definitions greatly improve readability and changeability.
 
++ Constants are named values defined using src_racket{define} and never changes.
+
 + Constant definitions give name to a value used in another part of the program.
 
 #+BEGIN_SRC racket
@@ -209,7 +229,65 @@ Created on 2020-07-12/14:082
 + A constant name can only be defined once.
 
 
-** TODO Function definitions
+** Function definitions
++ Functions contain a name and one or more parameters. A function will also have a body, which is an expression that is evaluated to produce the resulting value of the function.
++ Functions will allow a program to produce a different value each time they run.
+
+  #+BEGIN_SRC racket
+(above (circle 40 "solid" "red")
+       (circle 40 "solid" "yellow")
+       (circle 40 "solid" "green"))
+  #+END_SRC
+  + This code has a lot of redundency as only the colour is changing in each call to circle.
+  + Using functions, this redundency can be removed.
+
+
++ Within a function, the parameter is the varying value.
+#+BEGIN_SRC racket
+(define (bulb c)
+  (circle 40 "solid" c)
+#+END_SRC
++ In this case, the changing value, =c= can be used to call =circle= with varying parameters.
+
+
++ The beginning example function can therefore be rewritten as:
+#+BEGIN_SRC racket
+(above (bulb "red")
+       (bulb "yellow")
+       (bulb "green"))
+#+END_SRC
+
+
+*** Evaluating functions
++ To form a function definition:
+  #+BEGIN_SRC racket
+(define (<name> <name of parameter>)
+  <expression>)
+
+(define (bulb c)
+  (circle 40 "solid" c))
+  #+END_SRC
+
+
+
++ To form a function call expression:
+  #+BEGIN_SRC racket
+(<name of defined function> <expression>)
+
+(bulb (string-append "re" "d"))
+  #+END_SRC
+------
++ *To evaluate a function call* src_racket{(bulb (string-append "re" "d"))}
+  1. First, reduce operands to values, also known as *arguments.*
+     + The first operand src_racket{(string-append)} is a primitive call, and will follow [[Evaluating simple expressions][primitive call rules.]]
+     + Since ="re"= and ="d"= are already values, the primitive src_racket{(string-append)} will be applied.
+     + The expression now looks like this: src_racket{(bulb "red")}
+  2. Now all operands are values, the function call will be replaced by the body of the function, and all parameters will be replaced by the argument.
+     + The expression now looks like this src_racket{(circle 40 "solid" "red")}
+     + After the function call is replaced, the final experssion is a simple primitive call which is evaluated using primitive call rules.
+
+------
+
 ** TODO Booleans and if expressions
 ** TODO Using the stepper
 ** TODO Discovering primitives
