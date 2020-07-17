@@ -31,7 +31,7 @@ Created on 2020-07-12/14:082
 + src_racket{(sqrt 16)} => 4
 
 
-*** Question 1
++ *Question 1*
 + Assume that the two short sides of a right triangle have length 3 and 4. What is the length of the long side?
 + Write a BSL expression that produces the the value of ? for this triangle where the other two sides have lengths 3 and 4.
 #+BEGIN_SRC racket
@@ -40,7 +40,7 @@ Created on 2020-07-12/14:082
 => 5
  + /this is pretty much the most difficult math seen in this course/
 
-** Evaluating simple expressions
+*** Evaluating simple expressions
 + How are the expressions evaluated by racket?
 
 
@@ -187,7 +187,7 @@ Created on 2020-07-12/14:082
 + To form a constant definition, src_racket{(define <name> <expression>)}.
 
 ------
-+ *Evaluating constant definitions*
+*** Evaluating constant definitions*
   1. When racket encounters the constant definition, it will evaluate the expression and uses the resulting value as the value of the constant with the given name.
   2. When encountering a defined constant name, it will evaluate that value as the value that the =define= associated it with.
 

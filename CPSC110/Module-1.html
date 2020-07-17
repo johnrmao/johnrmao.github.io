@@ -50,17 +50,20 @@
 <ul>
 <li><a href="#orgcb174b4">Expressions</a>
 <ul>
-<li><a href="#orgfaf7fba">Question 1</a></li>
+<li><a href="#orgd5ff08f">Evaluating simple expressions</a></li>
 </ul>
 </li>
-<li><a href="#orgd5ff08f">Evaluating simple expressions</a></li>
 <li><a href="#org4b048c2">Strings and images</a>
 <ul>
 <li><a href="#org5d16e89">String primitives</a></li>
 <li><a href="#org50d9530">Image primitives</a></li>
 </ul>
 </li>
-<li><a href="#orge08c65a">Constant definitions</a></li>
+<li><a href="#orge08c65a">Constant definitions</a>
+<ul>
+<li><a href="#orgaf525ef">Evaluating constant definitions*</a></li>
+</ul>
+</li>
 <li><a href="#orgf2b8822"><span class="todo TODO">TODO</span> Function definitions</a></li>
 <li><a href="#orgdbf86fc"><span class="todo TODO">TODO</span> Booleans and if expressions</a></li>
 <li><a href="#org556f8b5"><span class="todo TODO">TODO</span> Using the stepper</a></li>
@@ -137,13 +140,10 @@ Created on 2020-07-12/14:082
 <li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code> =&gt; 9</li>
 <li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #AB9DF2; font-weight: bold;">16</span><span style="color: #AB9DF2;">)</span></code> =&gt; 4</li>
 </ul>
-</div>
 
 
-<div id="outline-container-orgfaf7fba" class="outline-4">
-<h4 id="orgfaf7fba">Question 1</h4>
-<div class="outline-text-4" id="text-orgfaf7fba">
 <ul class="org-ul">
+<li><b>Question 1</b></li>
 <li>Assume that the two short sides of a right triangle have length 3 and 4. What is the length of the long side?</li>
 <li>Write a BSL expression that produces the the value of ? for this triangle where the other two sides have lengths 3 and 4.</li>
 </ul>
@@ -158,12 +158,10 @@ Created on 2020-07-12/14:082
 <li><i>this is pretty much the most difficult math seen in this course</i></li>
 </ul>
 </div>
-</div>
-</div>
 
-<div id="outline-container-orgd5ff08f" class="outline-3">
-<h3 id="orgd5ff08f">Evaluating simple expressions</h3>
-<div class="outline-text-3" id="text-orgd5ff08f">
+<div id="outline-container-orgd5ff08f" class="outline-4">
+<h4 id="orgd5ff08f">Evaluating simple expressions</h4>
+<div class="outline-text-4" id="text-orgd5ff08f">
 <ul class="org-ul">
 <li>How are the expressions evaluated by racket?</li>
 </ul>
@@ -219,6 +217,7 @@ Created on 2020-07-12/14:082
 <li>Intuitively, expressions are evaluated from left to right, and inside to outside.</li>
 </ul>
 <hr />
+</div>
 </div>
 </div>
 <div id="outline-container-org4b048c2" class="outline-3">
@@ -416,13 +415,14 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 </ul>
 
 <hr />
-<ul class="org-ul">
-<li><b>Evaluating constant definitions</b>
+</div>
+<div id="outline-container-orgaf525ef" class="outline-4">
+<h4 id="orgaf525ef">Evaluating constant definitions*</h4>
+<div class="outline-text-4" id="text-orgaf525ef">
 <ol class="org-ol">
 <li>When racket encounters the constant definition, it will evaluate the expression and uses the resulting value as the value of the constant with the given name.</li>
 <li>When encountering a defined constant name, it will evaluate that value as the value that the <code>define</code> associated it with.</li>
-</ol></li>
-</ul>
+</ol>
 
 
 <hr />
@@ -455,6 +455,7 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 <ul class="org-ul">
 <li>A constant name can only be defined once.</li>
 </ul>
+</div>
 </div>
 </div>
 
