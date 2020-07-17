@@ -186,11 +186,11 @@ for arg in reversed(sys.argv[1:]):
 + Check the man pages.
 
   
-  ~man CMD~
+  src_sh{man CMD}
 + Or, check the tldr.
 
 
-  ~tldr CMD~
+  src_sh{tldr CMD}
 * Search
 ** Finding files
 + The ~find~ command can be used to recursively find files.
@@ -230,10 +230,8 @@ find . -name '*.png' convert {} {}.jpg \;
 
 
 ** Finding shell commands
-+
-
-src_python[:exports code]{print("arg")}
-
++ Using the src_sh{history} command, you can access your shell history.
++ Using src_sh{history | grep "command"}, you will be able to search for specific substrings.
 
 
-* Navigation
++ The use of =Ctrl+R= can be used to backwards search trhough history.

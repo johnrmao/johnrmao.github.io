@@ -14,3 +14,4 @@
 #+HTML_CONTAINER: div
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 #+OPTIONS: html-style:nil
+#+PROPERTY: header-args :exports code

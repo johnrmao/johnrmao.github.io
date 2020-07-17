@@ -28,3 +28,10 @@ return 2+2
 
 #+RESULTS:
 : 2
+src_sh{echo "this is a shell script"}
+#+BEGIN_SRC shell
+echo "something"
+
+
+#+END_SRC
+src_python{print(1+1)}
