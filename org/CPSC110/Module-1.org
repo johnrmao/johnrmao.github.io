@@ -195,7 +195,7 @@ Created on 2020-07-12/14:082
 ------
 + You can also define images.
 #+BEGIN_SRC racket
-(define CAT :/image/cat.png/:)
+(define CAT /image/cat.png/)
 #+END_SRC
 + In this example, the name constant can be defined directly by an image.
   + Thus, you can use expressions to manipulate the image.
