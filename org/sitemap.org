@@ -4,7 +4,7 @@
 - [[file:tablepractice.org][Tablepractice]]
 - [[file:20200712.org][Test Post]]
 - CPSC110
-  - [[file:CPSC110/lecture-1.org][Lecture 1]]
+  - [[file:CPSC110/Module-1.org][Module 1]]
 - MissingMIT
   - [[file:MissingMIT/lecture-1.org][Lecture 1]]
   - [[file:MissingMIT/lecture-2.org][Lecture 2]]

@@ -1,0 +1,231 @@
+#+TITLE: Module 1
+#+SETUPFILE: ../template-1.org
+Created on 2020-07-12/14:082
+
+* Learning Goals
++ Understand systematic design process.
++ Understand that programs are written both to run and to read.
++ Understand relation between information and data.
++ Understand that the structure of the data a program operates on determines many elements of the program's structure.
++ Understand that one can replace repetitive code with an abstraction in a systematic way.
+  + This is the heart of designing libraries.
++ Understand that programs can be described using notations other than code, and these models facilitate program design.
+
+
+* Beginning Student Language
+** Expressions
++ Simple arithmatic
+  + src_racket{(+ 3 4)} => 7
+    + In this case, src_racket{(+ 3 4)} is the expression, and =7= is the value.
+
+
++ Racket works by parsing expressions to produce values.
+  + src_racket{(+ 3 (* 2 3))} => 9
+  + src_racket{(/ 12 (* 2 3))} => 2
+
+
++ To from an expression, start with src_racket{(<primitive> <expression>)} or simly a =<value>=.
+  + =;= can be used to comment out lines.
+
++ src_racket{(sqr 3)} => 9
++ src_racket{(sqrt 16)} => 4
+
+
+*** Question 1
++ Assume that the two short sides of a right triangle have length 3 and 4. What is the length of the long side?
++ Write a BSL expression that produces the the value of ? for this triangle where the other two sides have lengths 3 and 4.
+#+BEGIN_SRC racket
+(sqrt (+ (sqr 3) (sqr 4)))
+#+END_SRC
+=> 5
+ + /this is pretty much the most difficult math seen in this course/
+
+** Evaluating simple expressions
++ How are the expressions evaluated by racket?
+
+
++ src_racket{(+ 2 (* 3 4) (- (+ 1 2) 3))} => 14
+
++ This expression starts with an open bracket, then a primitive operation, thus, it's called a *primitive call*, or a *call to a primitive*.
+  + Within this primitive call, the =+= is the *operator.*
+  + The expressions following the operator are known as *operands.*
+    + An operand can also have its own operator and operands.
+
+
+------
++ *To evaluate a primitive call*          src_racket{(+ 2 (* 3 4) (- (+ 1 2) 3))}
+  1. First, the operands are reduced to values.
+     + The first operand, =2= is already reduced to a value.
+     + The second operand is still an expression. This primitive call: src_racket{(* 3 4)} needs to be reduced to =12=.
+
+     + The expression now looks like this: src_racket{(+ 2 12    (- (+ 1 2) 3))}
+
+     + The third operand, or expression still needs to be reduced.
+       + Within this operand, the first operand is not a value, and needs to be reduced.
+         + src_racket{(+ 1 2)} will become 3.
+
+       + Now, the evaluation looks like this: src_racket{(+ 2 12 (- 3 3))}.
+
+       + The src_racket{(- 3 3)} will reduce to =0=.
+
+     + Now, the expression looks like this: src_racket{(+ 2 12 0)}
+
+  2. Then, the primitive is applied to all values.
+     src_racket{(+ 2 12 0)} => 14
+
+
++ Intuitively, expressions are evaluated from left to right, and inside to outside.
+------
+** Strings and images
++ Strings represent words and names.
++ Images help to build up pictures.
+
+
++ Calls to string and image primitives work just like calls to number primitives.
+
+
+*** String primitives
++ Strings look like this: src_racket{"apple"}
++ Running:
+#+BEGIN_SRC racket
+"apple"
+"Ada"
+#+END_SRC
+    =>
+#+BEGIN_SRC racket
+"apple"
+"Ada"
+#+END_SRC
++ You can put strings together by using =string-append=.
+  + src_racket{(string-append "Ada" " " "Lovelace")} => "Ada Lovelace"
+
+
++ It is important to differentiate strings and values.
+  + src_racket{"123"} is a string.
+  + src_racket{123} is a number.
++ It is possible to add a number to the value, but you cannot add 1 to a string.
+ #+BEGIN_SRC racket
+(+ 1 "123")
+(+ 1 123)
+#+END_SRC
+==> +: expects a number as 2nd argument, given "123"=
+
+
++ Another string primitive is src_racket{(string-length)}
+  + src_racket{(string-length)} will return the number of characters your given string is.
+
+    
+
++ Using the src_racket{(substring)} primitive, you can remove characters using indexes.
+  + src_racket{(substring "Caribou" 2 4)} will remove all characters from indexes 2 to 4.
+    + => ="ri"=
+
+
+  + =substring= works off of 0-based indexing. The index starts at 0, and will stop just before the final stated index.
+    + src_racket{(substring "012345678" 2 4)} => "23"
+
+
+
+*** Image primitives
++ For this specific lecture, you must tell DrRacket to use the image functions from the 2nd edition of the How to Design Programs book.
+  + To do this, include src_racket{(require 2htdp/image)} at the start of the racket file.
+
+
++ src_racket{(circle 10 "solid" "red")}
+  + This will produce a red, solid circle with a radius of 10 pixels.
++ src_racket{(rectangle 30 60 "outline" "blue")}
+  + This will create a 30x60 pixel blue rectangle outline.
++ src_racket{(text "hello" 24 "orange")}
+  + This will create an image showing "hello", with font-size 24, orange.
+
+
+#+BEGIN_SRC racket
+(above (circle 10 "solid" "red")
+       (circle 20 "solid" "yellow")
+       (circle 30 "solid" "green"))
+#+END_SRC
++ This will create three circles, each stacked ontop of each other.
+
+
+  #+BEGIN_SRC racket
+(beside (circle 10 "solid" "red")
+        (circle 20 "solid" "yellow")
+        (circle 30 "solid" "green"))
+#+END_SRC
++ This will create three circles, each beside each other.
+
+#+BEGIN_SRC racket
+(overlay (circle 10 "solid" "red")
+         (circle 20 "solid" "yellow")
+         (circle 30 "solid" "green"))
+#+END_SRC
++ This will create three circles, stacked ontop of each other.
+
+
+** Constant definitions
++ Constant definitions greatly improve readability and changeability.
+
++ Constant definitions give name to a value used in another part of the program.
+
+#+BEGIN_SRC racket
+(define WIDTH 400)
+(define HEIGHT 600)
+#+END_SRC
+
++ These are two named constants define the width and height of an imaginary web game.
+
++ It is important to note that defining a constant does *not* produce a value.
+
+#+BEGIN_SRC racket
+(* WIDTH HEIGHT)
+#+END_SRC
+
++ We can evaluate this and DrRacket will replace the name of a defined constant with its value.
+  + The expression above is equivalent to src_racket{(* 400 600)}=> 240000
+
+
++ To form a constant definition, src_racket{(define <name> <expression>)}.
+
+------
++ *Evaluating constant definitions*
+  1. When racket encounters the constant definition, it will evaluate the expression and uses the resulting value as the value of the constant with the given name.
+  2. When encountering a defined constant name, it will evaluate that value as the value that the =define= associated it with.
+
+
+------
++ You can also define images.
+#+BEGIN_SRC racket
+(define CAT :/image/cat.png/:)
+#+END_SRC
++ In this example, the name constant can be defined directly by an image.
+  + Thus, you can use expressions to manipulate the image.
+    + For example, src_racket{(rotate -10 CAT)}. This expression will rotate the cat by -10 degrees.
+
+
++ You can also add expressions after the constant name.
+  + For example, src_racket{(define RCAT (rotate -19 CAT))}
+
+
++ A constant name can only be defined once.
+
+
+** TODO Function definitions
+** TODO Booleans and if expressions
+** TODO Using the stepper
+** TODO Discovering primitives
+
+* Intro lab questions
+** Problem 1
++ Use string primitives to create an expression that concatenates =prefix= and =suffix= and adds "_" between them (so you get "hello_world" when you run the program).
+
+** Problem 2
++ Use string primitives to create an expression that adds "_" at position i (the position that is i characters from the left of the string).  Again, in this particular example, the expected result is "hello_world".
+
+** Problem 3
++ Create an expression that counts the number of pixels in the CAT image.
+
+** Problem 4
++ Create an expression that computes whether CAT is "tall" (height is larger than its width), "wide" (width is larger than its height), or "square" (height is the same as its width).
+
+** Problem 5
++ Create an expression that computes whether the first character in STR is "h". In this example, the expected result is true.
