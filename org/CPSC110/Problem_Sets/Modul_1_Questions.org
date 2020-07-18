@@ -4,8 +4,10 @@ Created on 2020-07-17/15:54
 * Module 1 Questions
 ** Expressions
 + *Question 1*
-  [[file:~/johnrmao.github.io/org/CPSC110/screenshots/Expression1.png][Module 1 Question 1]]
-  
+file:../../screenshots/Expression1.png
+file:../../screenshots/Expression1.png
+
+
 #+BEGIN_SRC racket :lang racket
 (sqrt (+ (sqr 3) (sqr 4)))
 #+END_SRC
