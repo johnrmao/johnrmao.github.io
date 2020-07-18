@@ -1,3 +1,0 @@
-#+TITLE: Lecture 1
-#+SETUPFILE: ../template-1.org
-- tags :CPSC:

@@ -1,4 +1,39 @@
 #+TITLE: Module 1 Questions
 #+SETUPFILE: ../../template-2.org
 Created on 2020-07-17/15:54
-* TODO
+* Module 1 Questions
+** Expressions
++ *Question 1*
+  [[file:~/johnrmao.github.io/org/CPSC110/screenshots/Expression1.png][Module 1 Question 1]]
+  
+#+BEGIN_SRC racket :lang racket
+(sqrt (+ (sqr 3) (sqr 4)))
+#+END_SRC
+
+#+RESULTS:
+: 5
+
+: RESULTS:
+: 5
+
+ + /this is pretty much the most difficult math seen in this course/
+
+
+ + *Question 2*
+
+
+* Intro lab questions
+** Problem 1
++ Use string primitives to create an expression that concatenates =prefix= and =suffix= and adds "_" between them (so you get "hello_world" when you run the program).
+
+** Problem 2
++ Use string primitives to create an expression that adds "_" at position i (the position that is i characters from the left of the string).  Again, in this particular example, the expected result is "hello_world".
+
+** Problem 3
++ Create an expression that counts the number of pixels in the CAT image.
+
+** Problem 4
++ Create an expression that computes whether CAT is "tall" (height is larger than its width), "wide" (width is larger than its height), or "square" (height is the same as its width).
+
+** Problem 5
++ Create an expression that computes whether the first character in STR is "h". In this example, the expected result is true.

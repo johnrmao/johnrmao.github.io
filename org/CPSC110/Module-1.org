@@ -31,14 +31,6 @@ Created on 2020-07-12/14:082
 + src_racket{(sqrt 16)} => 4
 
 
-+ *Question 1*
-+ Assume that the two short sides of a right triangle have length 3 and 4. What is the length of the long side?
-+ Write a BSL expression that produces the the value of ? for this triangle where the other two sides have lengths 3 and 4.
-#+BEGIN_SRC racket
-(sqrt (+ (sqr 3) (sqr 4)))
-#+END_SRC
-=> 5
- + /this is pretty much the most difficult math seen in this course/
 
 *** Evaluating simple expressions
 + How are the expressions evaluated by racket?
@@ -292,18 +284,3 @@ Created on 2020-07-12/14:082
 ** TODO Using the stepper
 ** TODO Discovering primitives
 
-* Intro lab questions
-** Problem 1
-+ Use string primitives to create an expression that concatenates =prefix= and =suffix= and adds "_" between them (so you get "hello_world" when you run the program).
-
-** Problem 2
-+ Use string primitives to create an expression that adds "_" at position i (the position that is i characters from the left of the string).  Again, in this particular example, the expected result is "hello_world".
-
-** Problem 3
-+ Create an expression that counts the number of pixels in the CAT image.
-
-** Problem 4
-+ Create an expression that computes whether CAT is "tall" (height is larger than its width), "wide" (width is larger than its height), or "square" (height is the same as its width).
-
-** Problem 5
-+ Create an expression that computes whether the first character in STR is "h". In this example, the expected result is true.
