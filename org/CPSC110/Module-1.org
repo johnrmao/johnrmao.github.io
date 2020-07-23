@@ -1,4 +1,4 @@
-#+TITLE: Module 1
+#+TITLE: Module 1 A
 #+SETUPFILE: ../template-1.org
 Created on 2020-07-12/14:082
 
