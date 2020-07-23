@@ -70,7 +70,7 @@
 <li><a href="#org118ce79">Evaluating functions</a></li>
 </ul>
 </li>
-<li><a href="#orgdbf86fc"><span class="todo TODO">TODO</span> Booleans and if expressions</a></li>
+<li><a href="#orgdbf86fc">Booleans and if expressions</a></li>
 <li><a href="#org556f8b5"><span class="todo TODO">TODO</span> Using the stepper</a></li>
 <li><a href="#org48e2792"><span class="todo TODO">TODO</span> Discovering primitives</a></li>
 </ul>
@@ -568,7 +568,7 @@ To form a function call expression:
 <ul class="org-ul">
 <li>The first operand <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span><span style="color: #AB9DF2;">)</span></code> is a primitive call, and will follow <a href="#orgd5ff08f">primitive call rules.</a></li>
 <li>Since <code>"re"</code> and <code>"d"</code> are already values, the primitive <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span><span style="color: #AB9DF2;">)</span></code> will be applied.</li>
-<li>The expression now looks like this: <code class="src src-racket"><span style="color: #AB9DF2;">(</span>bulb <span style="color: #FFD866;">"red"</span><span style="color: #AB9DF2;">)</span></code></li>
+<li>The expression now looks like this: <code class="src src-racket"><span style="color: #AB9DF2;">(</span>bulb <span style="color: #FFD866;">"r .ed"</span><span style="color: #AB9DF2;">)</span></code></li>
 </ul></li>
 <li>Now all operands are values, the function call will be replaced by the body of the function, and all parameters will be replaced by the argument.
 <ul class="org-ul">
@@ -584,8 +584,38 @@ To form a function call expression:
 </div>
 
 <div id="outline-container-orgdbf86fc" class="outline-3">
-<h3 id="orgdbf86fc"><span class="todo TODO">TODO</span> Booleans and if expressions</h3>
+<h3 id="orgdbf86fc">Booleans and if expressions</h3>
+<div class="outline-text-3" id="text-orgdbf86fc">
+<ul class="org-ul">
+<li>A boolean represents the answer to true or false questions.</li>
+<li>There are two booleans in BSL.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #78DCE8;">true</span>
+<span style="color: #78DCE8;">false</span>
+</pre>
 </div>
+<ul class="org-ul">
+<li>for example:</li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">WIDTH</span> <span style="color: #AB9DF2; font-weight: bold;">100</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">HEIGHT</span> <span style="color: #AB9DF2; font-weight: bold;">100</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> WIDTH HEIGHT<span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+#f
+</pre>
+</div>
+</div>
+
+
 <div id="outline-container-org556f8b5" class="outline-3">
 <h3 id="org556f8b5"><span class="todo TODO">TODO</span> Using the stepper</h3>
 </div>

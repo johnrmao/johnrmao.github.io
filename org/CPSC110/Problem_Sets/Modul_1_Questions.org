@@ -4,12 +4,11 @@ Created on 2020-07-17/15:54
 * Module 1 Questions
 ** Expressions
 + *Question 1*
-file:../../screenshots/Expression1.png
-file:../../screenshots/Expression1.png
+file:../../screenshots/M1S1Q1.png
 
-
-#+BEGIN_SRC racket :lang racket
+#+BEGIN_SRC racket
 (sqrt (+ (sqr 3) (sqr 4)))
+
 #+END_SRC
 
 #+RESULTS:
@@ -22,7 +21,6 @@ file:../../screenshots/Expression1.png
 
 
  + *Question 2*
-
 
 * Intro lab questions
 ** Problem 1

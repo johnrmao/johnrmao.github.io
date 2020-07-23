@@ -273,14 +273,34 @@ Created on 2020-07-12/14:082
   1. First, reduce operands to values, also known as *arguments.*
      + The first operand src_racket{(string-append)} is a primitive call, and will follow [[Evaluating simple expressions][primitive call rules.]]
      + Since ="re"= and ="d"= are already values, the primitive src_racket{(string-append)} will be applied.
-     + The expression now looks like this: src_racket{(bulb "red")}
+     + The expression now looks like this: src_racket{(bulb "r .ed")}
   2. Now all operands are values, the function call will be replaced by the body of the function, and all parameters will be replaced by the argument.
      + The expression now looks like this src_racket{(circle 40 "solid" "red")}
      + After the function call is replaced, the final experssion is a simple primitive call which is evaluated using primitive call rules.
 
 ------
 
-** TODO Booleans and if expressions
+** Booleans and if expressions
++ A boolean represents the answer to true or false questions.
++ There are two booleans in BSL.
+#+BEGIN_SRC racket :lang racket :session
+true
+false
+#+END_SRC
++ for example:
+
+ 
+  #+BEGIN_SRC racket
+(define WIDTH 100)
+(define HEIGHT 100)
+
+(> WIDTH HEIGHT)
+  #+END_SRC
+
+  : RESULTS:
+  : #f
+
+
 ** TODO Using the stepper
 ** TODO Discovering primitives
 
