@@ -46,8 +46,6 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#org6a54410">Learning Goals</a></li>
-<li><a href="#orgfd8a9af">Beginning Student Language</a>
-<ul>
 <li><a href="#orgcb174b4">Expressions</a>
 <ul>
 <li><a href="#orgd5ff08f">Evaluating simple expressions</a></li>
@@ -70,11 +68,23 @@
 <li><a href="#org118ce79">Evaluating functions</a></li>
 </ul>
 </li>
-<li><a href="#orgdbf86fc">Booleans and if expressions</a></li>
-<li><a href="#org556f8b5"><span class="todo TODO">TODO</span> Using the stepper</a></li>
-<li><a href="#org48e2792"><span class="todo TODO">TODO</span> Discovering primitives</a></li>
+<li><a href="#orgdbf86fc">Booleans and if expressions</a>
+<ul>
+<li><a href="#orgc212f80">Booleans</a></li>
+<li><a href="#orgb5461fc">If expressions</a>
+<ul>
+<li><a href="#org18b5da2">Evaluating if expressions</a></li>
 </ul>
 </li>
+<li><a href="#org32de653">And</a>
+<ul>
+<li><a href="#org6d3bc6f">Evaluating and expressions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org556f8b5"><span class="todo TODO">TODO</span> Using the stepper</a></li>
+<li><a href="#org48e2792"><span class="todo TODO">TODO</span> Discovering primitives</a></li>
 </ul>
 </div>
 </div>
@@ -100,13 +110,9 @@ Created on 2020-07-12/14:082
 </div>
 
 
-<div id="outline-container-orgfd8a9af" class="outline-2">
-<h2 id="orgfd8a9af">Beginning Student Language</h2>
-<div class="outline-text-2" id="text-orgfd8a9af">
-</div>
-<div id="outline-container-orgcb174b4" class="outline-3">
-<h3 id="orgcb174b4">Expressions</h3>
-<div class="outline-text-3" id="text-orgcb174b4">
+<div id="outline-container-orgcb174b4" class="outline-2">
+<h2 id="orgcb174b4">Expressions</h2>
+<div class="outline-text-2" id="text-orgcb174b4">
 <ul class="org-ul">
 <li>Simple arithmatic
 <ul class="org-ul">
@@ -140,9 +146,9 @@ Created on 2020-07-12/14:082
 
 
 
-<div id="outline-container-orgd5ff08f" class="outline-4">
-<h4 id="orgd5ff08f">Evaluating simple expressions</h4>
-<div class="outline-text-4" id="text-orgd5ff08f">
+<div id="outline-container-orgd5ff08f" class="outline-3">
+<h3 id="orgd5ff08f">Evaluating simple expressions</h3>
+<div class="outline-text-3" id="text-orgd5ff08f">
 <ul class="org-ul">
 <li>How are the expressions evaluated by racket?</li>
 </ul>
@@ -200,9 +206,9 @@ Created on 2020-07-12/14:082
 <hr />
 </div>
 </div>
-<div id="outline-container-org00ebd8d" class="outline-4">
-<h4 id="org00ebd8d">Terminology</h4>
-<div class="outline-text-4" id="text-org00ebd8d">
+<div id="outline-container-org00ebd8d" class="outline-3">
+<h3 id="org00ebd8d">Terminology</h3>
+<div class="outline-text-3" id="text-org00ebd8d">
 <ul class="org-ul">
 <li>Expression
 <ul class="org-ul">
@@ -241,9 +247,9 @@ Created on 2020-07-12/14:082
 </div>
 </div>
 
-<div id="outline-container-org4b048c2" class="outline-3">
-<h3 id="org4b048c2">Strings and images</h3>
-<div class="outline-text-3" id="text-org4b048c2">
+<div id="outline-container-org4b048c2" class="outline-2">
+<h2 id="org4b048c2">Strings and images</h2>
+<div class="outline-text-2" id="text-org4b048c2">
 <ul class="org-ul">
 <li>Strings represent words and names.</li>
 <li>Images help to build up pictures.</li>
@@ -256,9 +262,9 @@ Created on 2020-07-12/14:082
 </div>
 
 
-<div id="outline-container-org5d16e89" class="outline-4">
-<h4 id="org5d16e89">String primitives</h4>
-<div class="outline-text-4" id="text-org5d16e89">
+<div id="outline-container-org5d16e89" class="outline-3">
+<h3 id="org5d16e89">String primitives</h3>
+<div class="outline-text-3" id="text-org5d16e89">
 <ul class="org-ul">
 <li>Strings look like this: <code class="src src-racket"><span style="color: #FFD866;">"apple"</span></code></li>
 <li>Running:</li>
@@ -335,9 +341,9 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 
 
 
-<div id="outline-container-org50d9530" class="outline-4">
-<h4 id="org50d9530">Image primitives</h4>
-<div class="outline-text-4" id="text-org50d9530">
+<div id="outline-container-org50d9530" class="outline-3">
+<h3 id="org50d9530">Image primitives</h3>
+<div class="outline-text-3" id="text-org50d9530">
 <ul class="org-ul">
 <li>For this specific lecture, you must tell DrRacket to use the image functions from the 2nd edition of the How to Design Programs book.
 <ul class="org-ul">
@@ -397,9 +403,9 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 </div>
 
 
-<div id="outline-container-orge08c65a" class="outline-3">
-<h3 id="orge08c65a">Constant definitions</h3>
-<div class="outline-text-3" id="text-orge08c65a">
+<div id="outline-container-orge08c65a" class="outline-2">
+<h2 id="orge08c65a">Constant definitions</h2>
+<div class="outline-text-2" id="text-orge08c65a">
 <ul class="org-ul">
 <li>Constant definitions greatly improve readability and changeability.</li>
 
@@ -439,9 +445,9 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 
 <hr />
 </div>
-<div id="outline-container-org306cf3e" class="outline-4">
-<h4 id="org306cf3e">Evaluating constant definitions</h4>
-<div class="outline-text-4" id="text-org306cf3e">
+<div id="outline-container-org306cf3e" class="outline-3">
+<h3 id="org306cf3e">Evaluating constant definitions</h3>
+<div class="outline-text-3" id="text-org306cf3e">
 <ol class="org-ol">
 <li>When racket encounters the constant definition, it will evaluate the expression and uses the resulting value as the value of the constant with the given name.</li>
 <li>When encountering a defined constant name, it will evaluate that value as the value that the <code>define</code> associated it with.</li>
@@ -483,9 +489,9 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 </div>
 
 
-<div id="outline-container-orgf2b8822" class="outline-3">
-<h3 id="orgf2b8822">Function definitions</h3>
-<div class="outline-text-3" id="text-orgf2b8822">
+<div id="outline-container-orgf2b8822" class="outline-2">
+<h2 id="orgf2b8822">Function definitions</h2>
+<div class="outline-text-2" id="text-orgf2b8822">
 <ul class="org-ul">
 <li>Functions contain a name and one or more parameters. A function will also have a body, which is an expression that is evaluated to produce the resulting value of the function.</li>
 <li><p>
@@ -530,9 +536,9 @@ Functions will allow a program to produce a different value each time they run.
 </div>
 
 
-<div id="outline-container-org118ce79" class="outline-4">
-<h4 id="org118ce79">Evaluating functions</h4>
-<div class="outline-text-4" id="text-org118ce79">
+<div id="outline-container-org118ce79" class="outline-3">
+<h3 id="org118ce79">Evaluating functions</h3>
+<div class="outline-text-3" id="text-org118ce79">
 <ul class="org-ul">
 <li><p>
 To form a function definition:
@@ -583,9 +589,13 @@ To form a function call expression:
 </div>
 </div>
 
-<div id="outline-container-orgdbf86fc" class="outline-3">
-<h3 id="orgdbf86fc">Booleans and if expressions</h3>
-<div class="outline-text-3" id="text-orgdbf86fc">
+<div id="outline-container-orgdbf86fc" class="outline-2">
+<h2 id="orgdbf86fc">Booleans and if expressions</h2>
+<div class="outline-text-2" id="text-orgdbf86fc">
+</div>
+<div id="outline-container-orgc212f80" class="outline-3">
+<h3 id="orgc212f80">Booleans</h3>
+<div class="outline-text-3" id="text-orgc212f80">
 <ul class="org-ul">
 <li>A boolean represents the answer to true or false questions.</li>
 <li>There are two booleans in BSL.</li>
@@ -605,6 +615,25 @@ To form a function call expression:
 <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">HEIGHT</span> <span style="color: #AB9DF2; font-weight: bold;">100</span><span style="color: #AB9DF2;">)</span>
 
 <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> WIDTH HEIGHT<span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;=</span> WIDTH HEIGHT<span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+#f
+#t
+</pre>
+
+
+
+
+<ul class="org-ul">
+<li><p>
+<b>Predicates</b> are primitives of functions which produce a boolean value.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string=?</span> <span style="color: #FFD866;">"foo"</span> <span style="color: #FFD866;">"bar"</span><span style="color: #AB9DF2;">)</span>
 </pre>
 </div>
 
@@ -612,16 +641,168 @@ To form a function call expression:
 RESULTS:
 #f
 </pre>
+
+<ul class="org-ul">
+<li>These two strings are not equal.</li>
+</ul></li>
+
+<li><p>
+Predicates can also be used to compare two images.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">I1</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">I2</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"blue"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #78DCE8;">(</span>image-width I1<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span>image-wdith I2<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+#t
+</pre></li>
+</ul>
 </div>
 </div>
 
+<div id="outline-container-orgb5461fc" class="outline-3">
+<h3 id="orgb5461fc">If expressions</h3>
+<div class="outline-text-3" id="text-orgb5461fc">
+<ul class="org-ul">
+<li>Allows the program to produce different results depending on result produced by a predicate.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> &lt;expression&gt; <span style="color: #727072;">; </span><span style="color: #727072;">question (must proudce boolean)</span>
+    &lt;expression&gt; <span style="color: #727072;">; </span><span style="color: #727072;">true answer</span>
+    &lt;expression&gt;<span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">false answer.</span>
+</pre>
+</div>
 
-<div id="outline-container-org556f8b5" class="outline-3">
-<h3 id="org556f8b5"><span class="todo TODO">TODO</span> Using the stepper</h3>
+<ul class="org-ul">
+<li><p>
+Using the example from before, lets write an expression which determines the shape of <code>I1</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #FC9867;">(</span>image-width I1<span style="color: #FC9867;">)</span>
+       <span style="color: #FC9867;">(</span>image-height I1<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #FFD866;">"tall"</span> <span style="color: #727072;">; </span><span style="color: #727072;">true answer</span>
+    <span style="color: #FFD866;">"wide"</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">false answer</span>
+</pre>
 </div>
-<div id="outline-container-org48e2792" class="outline-3">
-<h3 id="org48e2792"><span class="todo TODO">TODO</span> Discovering primitives</h3>
+
+<pre class="example">
+RESULT:
+"tall"
+</pre></li>
+</ul>
 </div>
+
+<div id="outline-container-org18b5da2" class="outline-4">
+<h4 id="org18b5da2">Evaluating if expressions</h4>
+<div class="outline-text-4" id="text-org18b5da2">
+<hr />
+<ul class="org-ul">
+<li><b>To evaluate an if expression:</b>
+<ol class="org-ol">
+<li>If the question expression is not a value, evaluate it, and replace with value.</li>
+<li>If the question is true, replace entire if expression with ture answer expression.</li>
+<li>If the question is false, replace entire if expression with false answer expression.</li>
+<li>If the question results anything other than true or false, return error.</li>
+</ol></li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #FC9867;">(</span>image-width I2<span style="color: #FC9867;">)</span>   <span style="color: #727072;">; </span><span style="color: #727072;">here, the question expression is a call to the primitive less than.</span>
+       <span style="color: #FC9867;">(</span>image-height I2<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">the operands must be reduced to values.</span>
+    <span style="color: #78DCE8;">(</span>image-width I2<span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span>image-height I2<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+
+<ul class="org-ul">
+<li>First, the <code class="src src-racket"><span style="color: #AB9DF2;">(</span>image-width I2<span style="color: #AB9DF2;">)</span></code> will be replaced by the image value, then the numerical value.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">10</span><span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">now that both operands are values, the primitive can be called and produce false.</span>
+    <span style="color: #78DCE8;">(</span>image-width I2<span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span>image-height I2<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+
+<ul class="org-ul">
+<li>Now that the question expression has been evaluated, we move on to the remaining rules.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">false</span>
+    <span style="color: #78DCE8;">(</span>image-width I2<span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span>image-height I2<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+
+<ul class="org-ul">
+<li><p>
+Since the question produced false, the if expression will be replaced with the false answer.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>image-height I2<span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">operand is not a value, must be evaluated.</span>
+</pre>
+</div></li>
+<li>It will first return the image value, then the numerical value. Now that all the operands a values, we can call <code>image height</code>.</li>
+</ul>
+<pre class="example">
+RESULTS:
+(10)
+</pre>
+
+<hr />
+</div>
+</div>
+</div>
+<div id="outline-container-org32de653" class="outline-3">
+<h3 id="org32de653">And</h3>
+<div class="outline-text-3" id="text-org32de653">
+<ul class="org-ul">
+<li>The primitive <code class="src src-racket"><span style="color: #FF6188;">and</span></code> is similar to <code class="src src-racket"><span style="color: #FF6188;">if</span></code>.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">and</span> &lt;expression&gt; &lt;expression&gt;<span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">here, all expressions must produce booleans.</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>This primitive <b>short circuits</b> and will stop evaluating the moment it returns false.</li>
+</ul>
+</div>
+<div id="outline-container-org6d3bc6f" class="outline-4">
+<h4 id="org6d3bc6f">Evaluating and expressions</h4>
+<div class="outline-text-4" id="text-org6d3bc6f">
+<hr />
+<ul class="org-ul">
+<li><b>To evaluate an and expression</b>
+<ol class="org-ol">
+<li>Evaluate <code>&lt;expression&gt;</code> one at a time.
+<ul class="org-ul">
+<li>if an <code>&lt;expression&gt;</code> produces false, immediately produce false.</li>
+</ul></li>
+<li>If all <code>&lt;expression&gt;</code> produce true, then produce true.</li>
+</ol></li>
+</ul>
+<hr />
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org556f8b5" class="outline-2">
+<h2 id="org556f8b5"><span class="todo TODO">TODO</span> Using the stepper</h2>
+</div>
+<div id="outline-container-org48e2792" class="outline-2">
+<h2 id="org48e2792"><span class="todo TODO">TODO</span> Discovering primitives</h2>
 </div>
 </div>
 <div id="postamble" class="status">

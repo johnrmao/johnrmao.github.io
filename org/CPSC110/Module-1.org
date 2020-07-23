@@ -12,8 +12,7 @@ Created on 2020-07-12/14:082
 + Understand that programs can be described using notations other than code, and these models facilitate program design.
 
 
-* Beginning Student Language
-** Expressions
+* Expressions
 + Simple arithmatic
   + src_racket{(+ 3 4)} => 7
     + In this case, src_racket{(+ 3 4)} is the expression, and =7= is the value.
@@ -32,7 +31,7 @@ Created on 2020-07-12/14:082
 
 
 
-*** Evaluating simple expressions
+** Evaluating simple expressions
 + How are the expressions evaluated by racket?
 
 
@@ -68,7 +67,7 @@ Created on 2020-07-12/14:082
 
 + Intuitively, expressions are evaluated from left to right, and inside to outside.
 ------
-*** Terminology
+** Terminology
 + Expression
   + Element that is evaluated to produce a value.
 + Value
@@ -86,7 +85,7 @@ Created on 2020-07-12/14:082
 + Number
   + Primitive type of data representing any number.
 
-** Strings and images
+* Strings and images
 + Strings represent words and names.
 + Images help to build up pictures.
 
@@ -94,7 +93,7 @@ Created on 2020-07-12/14:082
 + Calls to string and image primitives work just like calls to number primitives.
 
 
-*** String primitives
+** String primitives
 + Strings look like this: src_racket{"apple"}
 + Running:
 #+BEGIN_SRC racket
@@ -136,7 +135,7 @@ Created on 2020-07-12/14:082
 
 
 
-*** Image primitives
+** Image primitives
 + For this specific lecture, you must tell DrRacket to use the image functions from the 2nd edition of the How to Design Programs book.
   + To do this, include src_racket{(require 2htdp/image)} at the start of the racket file.
 
@@ -172,7 +171,7 @@ Created on 2020-07-12/14:082
 + This will create three circles, stacked ontop of each other.
 
 
-** Constant definitions
+* Constant definitions
 + Constant definitions greatly improve readability and changeability.
 
 + Constants are named values defined using src_racket{define} and never changes.
@@ -199,7 +198,7 @@ Created on 2020-07-12/14:082
 + To form a constant definition, src_racket{(define <name> <expression>)}.
 
 ------
-*** Evaluating constant definitions
+** Evaluating constant definitions
   1. When racket encounters the constant definition, it will evaluate the expression and uses the resulting value as the value of the constant with the given name.
   2. When encountering a defined constant name, it will evaluate that value as the value that the =define= associated it with.
 
@@ -221,7 +220,7 @@ Created on 2020-07-12/14:082
 + A constant name can only be defined once.
 
 
-** Function definitions
+* Function definitions
 + Functions contain a name and one or more parameters. A function will also have a body, which is an expression that is evaluated to produce the resulting value of the function.
 + Functions will allow a program to produce a different value each time they run.
 
@@ -250,7 +249,7 @@ Created on 2020-07-12/14:082
 #+END_SRC
 
 
-*** Evaluating functions
+** Evaluating functions
 + To form a function definition:
   #+BEGIN_SRC racket
 (define (<name> <name of parameter>)
@@ -280,7 +279,8 @@ Created on 2020-07-12/14:082
 
 ------
 
-** Booleans and if expressions
+* Booleans and if expressions
+** Booleans
 + A boolean represents the answer to true or false questions.
 + There are two booleans in BSL.
 #+BEGIN_SRC racket :lang racket :session
@@ -295,12 +295,110 @@ false
 (define HEIGHT 100)
 
 (> WIDTH HEIGHT)
+(>= WIDTH HEIGHT)
   #+END_SRC
 
   : RESULTS:
   : #f
+  : #t
 
 
-** TODO Using the stepper
-** TODO Discovering primitives
 
++ *Predicates* are primitives of functions which produce a boolean value.
+  #+BEGIN_SRC racket
+(string=? "foo" "bar")
+  #+END_SRC
+
+  : RESULTS:
+  : #f
+  + These two strings are not equal.
+
++ Predicates can also be used to compare two images.
+ #+BEGIN_SRC racket
+(require 2htdp/image)
+(define I1 (rectangle 10 20 "solid" "red"))
+(define I2 (rectangle 20 10 "solid" "blue"))
+
+(< (image-width I1)
+   (image-wdith I2))
+    #+END_SRC
+
+    : RESULTS:
+    : #t
+
+** If expressions
++ Allows the program to produce different results depending on result produced by a predicate.
+#+BEGIN_SRC racket
+(if <expression> ; question (must proudce boolean)
+    <expression> ; true answer
+    <expression>) ; false answer.
+#+END_SRC
+
++ Using the example from before, lets write an expression which determines the shape of =I1=.
+  #+BEGIN_SRC racket
+(if (< (image-width I1)
+       (image-height I1))
+    "tall" ; true answer
+    "wide") ; false answer
+  #+END_SRC
+
+  : RESULT:
+  : "tall"
+
+*** Evaluating if expressions
+------
++ *To evaluate an if expression:*
+  1. If the question expression is not a value, evaluate it, and replace with value.
+  2. If the question is true, replace entire if expression with ture answer expression.
+  3. If the question is false, replace entire if expression with false answer expression.
+  4. If the question results anything other than true or false, return error.
+
+
+#+BEGIN_SRC racket
+(if (< (image-width I2)   ; here, the question expression is a call to the primitive less than.
+       (image-height I2)) ; the operands must be reduced to values.
+    (image-width I2)
+    (image-height I2))
+#+END_SRC
+
+
++ First, the src_racket{(image-width I2)} will be replaced by the image value, then the numerical value.
+#+BEGIN_SRC racket
+(if (< 20 10) ; now that both operands are values, the primitive can be called and produce false.
+    (image-width I2)
+    (image-height I2))
+#+END_SRC
+
+
++ Now that the question expression has been evaluated, we move on to the remaining rules.
+#+BEGIN_SRC racket
+(if false
+    (image-width I2)
+    (image-height I2))
+#+END_SRC
+
+
++ Since the question produced false, the if expression will be replaced with the false answer.
+ #+BEGIN_SRC racket
+(image-height I2) ; operand is not a value, must be evaluated.
+  #+END_SRC
++ It will first return the image value, then the numerical value. Now that all the operands a values, we can call =image height=.
+: RESULTS:
+: (10)
+------
+** And
++ The primitive src_racket{and} is similar to src_racket{if}.
+#+BEGIN_SRC racket
+(and <expression> <expression>) ; here, all expressions must produce booleans.
+#+END_SRC
++ This primitive *short circuits* and will stop evaluating the moment it returns false.
+*** Evaluating and expressions
+------
++ *To evaluate an and expression*
+  1. Evaluate =<expression>= one at a time.
+     + if an =<expression>= produces false, immediately produce false.
+  2. If all =<expression>= produce true, then produce true.
+------
+
+* TODO Using the stepper
+* TODO Discovering primitives
