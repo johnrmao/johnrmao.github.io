@@ -400,5 +400,32 @@ false
   2. If all =<expression>= produce true, then produce true.
 ------
 
-* TODO Using the stepper
-* TODO Discovering primitives
+* Using the stepper
++ The stepper is used to understand, step by step, the evaluation of complex expressions.
+#+BEGIN_SRC racket
+(require 2htdp/image)
+
+;; stepper-starter.rkt
+
+(+ (* 3 2) 1)
+
+
+
+(define (max-dim img)
+  (if (> (image-width img) (image-height img))
+      (image-width img)
+      (image-height img)))
+
+
+(max-dim (rectangle 10 20 "solid" "blue"))
+#+END_SRC
+
+: RESULTS:
+: 7
+: 20
+
++ To easily see how the evaluation of expression produced value, run the stepper in DrRacket.
+
+* Discovering primitives
++ You can use /search and scroll/ to find new functions related to what you're working on.
+  + Hover over a related function or primitive, and select /search in help desk./

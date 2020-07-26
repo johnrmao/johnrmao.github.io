@@ -20,7 +20,11 @@ file:../../screenshots/M1S1Q1.png
  + /this is pretty much the most difficult math seen in this course/
 
 
- + *Question 2*
++ *Question 2*
+  + If you see #i2.718281828459045 appear in the interaction pane, it means:
+    + /It's a number very close to 2.718281828459045./
+
+
 
 * Intro lab questions
 ** Problem 1

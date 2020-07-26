@@ -83,8 +83,8 @@
 </li>
 </ul>
 </li>
-<li><a href="#org556f8b5"><span class="todo TODO">TODO</span> Using the stepper</a></li>
-<li><a href="#org48e2792"><span class="todo TODO">TODO</span> Discovering primitives</a></li>
+<li><a href="#org556f8b5">Using the stepper</a></li>
+<li><a href="#org48e2792">Discovering primitives</a></li>
 </ul>
 </div>
 </div>
@@ -799,10 +799,53 @@ RESULTS:
 </div>
 
 <div id="outline-container-org556f8b5" class="outline-2">
-<h2 id="org556f8b5"><span class="todo TODO">TODO</span> Using the stepper</h2>
+<h2 id="org556f8b5">Using the stepper</h2>
+<div class="outline-text-2" id="text-org556f8b5">
+<ul class="org-ul">
+<li>The stepper is used to understand, step by step, the evaluation of complex expressions.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">stepper-starter.rkt</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span>
+
+
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">max-dim</span> img<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2;">(</span>image-width img<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>image-height img<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
+      <span style="color: #FC9867;">(</span>image-width img<span style="color: #FC9867;">)</span>
+      <span style="color: #FC9867;">(</span>image-height img<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+
+<span style="color: #AB9DF2;">(</span>max-dim <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"blue"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
 </div>
+
+<pre class="example">
+RESULTS:
+7
+20
+</pre>
+
+
+<ul class="org-ul">
+<li>To easily see how the evaluation of expression produced value, run the stepper in DrRacket.</li>
+</ul>
+</div>
+</div>
+
 <div id="outline-container-org48e2792" class="outline-2">
-<h2 id="org48e2792"><span class="todo TODO">TODO</span> Discovering primitives</h2>
+<h2 id="org48e2792">Discovering primitives</h2>
+<div class="outline-text-2" id="text-org48e2792">
+<ul class="org-ul">
+<li>You can use <i>search and scroll</i> to find new functions related to what you're working on.
+<ul class="org-ul">
+<li>Hover over a related function or primitive, and select <i>search in help desk.</i></li>
+</ul></li>
+</ul>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
