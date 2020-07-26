@@ -27,6 +27,7 @@ file:../../screenshots/M1S1Q1.png
     3. /It's a number very close to 2.718281828459045./
     4. I thought you said there wouldn't be much math!
 
+
 + *Question 3*
   + Which of the following are expressions:
     1. src_racket{sqr}
@@ -43,9 +44,60 @@ file:../../screenshots/M1S1Q1.png
 
     7. src_racket{)}
 
+
   + /At this point in the course an expression is either a value, or of the form src_racket{(<primitive> <expression> ...)}. We will shortly add to our vocabulary of expressions./
 
+
 + *Question 4*
+  + Which of the folloing are values:
+    1. src_racket{sqr}
+
+    2. src_racket{(+ 2 3)}
+
+    3. src_racket{+}
+
+    4. src_racket{(sqrt 2)}
+
+    5. src_racket{#i1.4142135623730951}  <-
+
+    6. src_racket{1}  <-
+
+    7. src_racket{)}
+
+
++ *Question 5*
+  + What would be the result of evaluating the following expression:
+  + src_racket{(/ (* 2 3) (- 3 1))}
+    1. 18
+
+    2. 6
+
+    3. 2
+
+    4. 3  <-
+
+
++ *Question 6*
+  + Recall that the average of a set of numbers is the sum of the numbers divided by how many numbers there are.
+
+    Which of these expressions produces the average of the numbers 4, 6.2 and -12? Check ALL that are correct.
+    1. src_racket{(/ 3 (+ 6.2 -12 4))}
+
+    2. src_racket{(/ (+ -8 6.2) 3)}  <-
+
+    3. src_racket{(/ (+ 4 6.2 -12) 3)}  <-
+
+    4. src_racket{-0.6}  <-
+
+
++ *Question 7*
+  + Why are we using Beginning Student Language in this course? Select all answers that apply.
+    1. /It is simple to learn, allowing you to focus your attention on the design methods correct/ 
+    2. It is commonly used in industry, so you can get a job programming in BSL
+    3. /It forms the core of many other languages, which will help you transfer what you learn to other languages correct/
+    4. /There are so many popular programming languages that no single language will be useful for many projects correct/
+
+
 * Intro lab questions
 ** Problem 1
 + Use string primitives to create an expression that concatenates =prefix= and =suffix= and adds "_" between them (so you get "hello_world" when you run the program).

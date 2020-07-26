@@ -109,7 +109,10 @@ RESULTS:
 <li>I thought you said there wouldn't be much math!</li>
 </ol></li>
 </ul></li>
+</ul>
 
+
+<ul class="org-ul">
 <li><b>Question 3</b>
 <ul class="org-ul">
 <li>Which of the following are expressions:
@@ -128,15 +131,96 @@ RESULTS:
 
 <li><code class="src src-racket"><span style="color: #CC6666; font-weight: bold;">)</span></code></li>
 </ol></li>
-
-<li><i>At this point in the course an expression is either a value, or of the form <code class="src src-racket"><span style="color: #AB9DF2;">(</span>&lt;primitive&gt; &lt;expression&gt; <span style="color: #FF6188;">...</span><span style="color: #AB9DF2;">)</span></code>. We will shortly add to our vocabulary of expressions.</i></li>
 </ul></li>
+</ul>
 
-<li><b>Question 4</b></li>
+
+<ul class="org-ul">
+<li><i>At this point in the course an expression is either a value, or of the form <code class="src src-racket"><span style="color: #AB9DF2;">(</span>&lt;primitive&gt; &lt;expression&gt; <span style="color: #FF6188;">...</span><span style="color: #AB9DF2;">)</span></code>. We will shortly add to our vocabulary of expressions.</i></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li>Which of the folloing are values:
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">sqr</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #78DCE8;">+</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #2e8b57;">#i1.4142135623730951</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">1</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #CC6666; font-weight: bold;">)</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li>What would be the result of evaluating the following expression:</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code>
+<ol class="org-ol">
+<li>18</li>
+
+<li>6</li>
+
+<li>2</li>
+
+<li>3  &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 6</b>
+<ul class="org-ul">
+<li><p>
+Recall that the average of a set of numbers is the sum of the numbers divided by how many numbers there are.
+</p>
+
+<p>
+Which of these expressions produces the average of the numbers 4, 6.2 and -12? Check ALL that are correct.
+</p>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6.2</span> <span style="color: #2e8b57;">-12</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #2e8b57;">-8</span> <span style="color: #AB9DF2; font-weight: bold;">6.2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">6.2</span> <span style="color: #2e8b57;">-12</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #2e8b57;">-0.6</span></code>  &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 7</b>
+<ul class="org-ul">
+<li>Why are we using Beginning Student Language in this course? Select all answers that apply.
+<ol class="org-ol">
+<li><i>It is simple to learn, allowing you to focus your attention on the design methods correct</i></li>
+<li>It is commonly used in industry, so you can get a job programming in BSL</li>
+<li><i>It forms the core of many other languages, which will help you transfer what you learn to other languages correct</i></li>
+<li><i>There are so many popular programming languages that no single language will be useful for many projects correct</i></li>
+</ol></li>
+</ul></li>
 </ul>
 </div>
 </div>
 </div>
+
+
 <div id="outline-container-orge7f8c0c" class="outline-2">
 <h2 id="orge7f8c0c">Intro lab questions</h2>
 <div class="outline-text-2" id="text-orge7f8c0c">
