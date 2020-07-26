@@ -22,10 +22,30 @@ file:../../screenshots/M1S1Q1.png
 
 + *Question 2*
   + If you see #i2.718281828459045 appear in the interaction pane, it means:
-    + /It's a number very close to 2.718281828459045./
+    1. It's an imaginary number.
+    2. Someone just sent a strange tweet.
+    3. /It's a number very close to 2.718281828459045./
+    4. I thought you said there wouldn't be much math!
 
++ *Question 3*
+  + Which of the following are expressions:
+    1. src_racket{sqr}
 
+    2. src_racket{(+ 2 3)}  <-
 
+    3. src_racket{+}
+
+    4. src_racket{(sqrt 2)}i  <-
+
+    5. src_racket{#i1.4142135623730951}  <-
+
+    6. src_racket{1}  <-
+
+    7. src_racket{)}
+
+  + /At this point in the course an expression is either a value, or of the form src_racket{(<primitive> <expression> ...)}. We will shortly add to our vocabulary of expressions./
+
++ *Question 4*
 * Intro lab questions
 ** Problem 1
 + Use string primitives to create an expression that concatenates =prefix= and =suffix= and adds "_" between them (so you get "hello_world" when you run the program).
