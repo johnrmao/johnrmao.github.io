@@ -427,7 +427,7 @@ false
 : 7
 : 20
 
-+ To easily see how the evaluation of expression produced value, run the stepper in DrRacket.
++ To easily see how the evaluation of an expressin produced a value, run the stepper in DrRacket. It will walk you through the evaluation process step by step.
 
 * Discovering primitives
 + You can use /search and scroll/ to find new functions related to what you're working on.
