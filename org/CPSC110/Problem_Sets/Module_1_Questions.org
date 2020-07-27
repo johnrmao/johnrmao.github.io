@@ -180,6 +180,59 @@ file:../../screenshots/M1S1Q1.png
    4. src_racket{"el"}  <-
    5. src_racket{"he"}
 
+
++ *Question 2*
+  + Will the following produce any errors?
+  + src_racket{(string-append "1" "2")}
+    1. Yes
+    2. /No/  <-
+
+
++ *Question 3*
+  + Which primitive is required in the following expression to produce the stop sign image below?
+#+BEGIN_SRC racket
+(______ (text "STOP" 48 "white")
+        (regular-polygon 60 8 "solid" "red"))
+#+END_SRC
+file:../../screenshots/M1S3Q3.png
+    1. above
+    2. beside
+    3. overlay  <-
+    4. append
+
+
++ *Question 4*
+  + Which image will the following expression produce?
+#+BEGIN_SRC racket
+(beside (square 20 "outline" "blue")
+        (above (circle 15 "solid" "red")
+               (triangle 20 "solid" "green")))
+#+END_SRC
+    1. file:../../screenshots/M1S3Q4A1.png
+    2. file:../../screenshots/M1S3Q4A2.png
+    3. file:../../screenshots/M1S3Q4A3.png
+    4. file:../../screenshots/M1S3Q4A4.png
+
++ The above will produce image 2.
+
+
++ *Question 5*
+  + Assume that the image below shows an entire program file. Why does running the program produce the following error?
+    file:../../screenshots/M1S3Q5.png
+    1. We didn't define a function named src_racket{above} in the program.
+    2. We didn't include src_racket{(require 2htdp/image)} at the beginning of the program.  <-
+    3. src_racket{above} does not accept a square as an argument.
+
+
++ *Question 6*
+  + We have revised the program now, why are we still getting an error?
+    file:../../screenshots/M1S3Q5.png
+    1. We still need to define a function named above.
+    2. We need to find the collection "2htpd."
+    3. We misspelled the name of the required module, so we need to replace "2htpd" with "2htdp." <--
+
+
+
 * Intro lab questions
 
 

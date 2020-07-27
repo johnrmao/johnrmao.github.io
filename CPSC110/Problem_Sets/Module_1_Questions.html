@@ -357,9 +357,99 @@ Which of these expressions produces the average of the numbers 4, 6.2 and -12? C
 </ol></li>
 </ul></li>
 </ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li>Will the following produce any errors?</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"1"</span> <span style="color: #FFD866;">"2"</span><span style="color: #AB9DF2;">)</span></code>
+<ol class="org-ol">
+<li>Yes</li>
+<li><i>No</i>  &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>Which primitive is required in the following expression to produce the stop sign image below?</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>______ <span style="color: #78DCE8;">(</span>text <span style="color: #FFD866;">"STOP"</span> <span style="color: #AB9DF2; font-weight: bold;">48</span> <span style="color: #FFD866;">"white"</span><span style="color: #78DCE8;">)</span>
+        <span style="color: #78DCE8;">(</span>regular-polygon <span style="color: #AB9DF2; font-weight: bold;">60</span> <span style="color: #AB9DF2; font-weight: bold;">8</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<div class="figure">
+<p><img src="../../screenshots/M1S3Q3.png" alt="M1S3Q3.png" />
+</p>
+</div>
+<ol class="org-ol">
+<li>above</li>
+<li>beside</li>
+<li>overlay  &lt;-</li>
+<li>append</li>
+</ol>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li>Which image will the following expression produce?</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>beside <span style="color: #78DCE8;">(</span>square <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"outline"</span> <span style="color: #FFD866;">"blue"</span><span style="color: #78DCE8;">)</span>
+        <span style="color: #78DCE8;">(</span>above <span style="color: #FC9867;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">15</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span>
+               <span style="color: #FC9867;">(</span>triangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><img src="../../screenshots/M1S3Q4A1.png" alt="M1S3Q4A1.png" /></li>
+<li><img src="../../screenshots/M1S3Q4A2.png" alt="M1S3Q4A2.png" /></li>
+<li><img src="../../screenshots/M1S3Q4A3.png" alt="M1S3Q4A3.png" /></li>
+<li><img src="../../screenshots/M1S3Q4A4.png" alt="M1S3Q4A4.png" /></li>
+</ol>
+<ul class="org-ul">
+<li>The above will produce image 2.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li>Assume that the image below shows an entire program file. Why does running the program produce the following error?
+<img src="../../screenshots/M1S3Q5.png" alt="M1S3Q5.png" />
+<ol class="org-ol">
+<li>We didn't define a function named <code class="src src-racket">above</code> in the program.</li>
+<li>We didn't include <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span></code> at the beginning of the program.  &lt;-</li>
+<li><code class="src src-racket">above</code> does not accept a square as an argument.</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 6</b>
+<ul class="org-ul">
+<li>We have revised the program now, why are we still getting an error?
+<img src="../../screenshots/M1S3Q5.png" alt="M1S3Q5.png" />
+<ol class="org-ol">
+<li>We still need to define a function named above.</li>
+<li>We need to find the collection "2htpd."</li>
+<li>We misspelled the name of the required module, so we need to replace "2htpd" with "2htdp." &lt;&#x2013;</li>
+</ol></li>
+</ul></li>
+</ul>
 </div>
 </div>
 </div>
+
+
 
 <div id="outline-container-orge7f8c0c" class="outline-2">
 <h2 id="orge7f8c0c">Intro lab questions</h2>
