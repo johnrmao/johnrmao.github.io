@@ -98,7 +98,84 @@ file:../../screenshots/M1S1Q1.png
     4. /There are so many popular programming languages that no single language will be useful for many projects correct/
 
 
+** Evaluation
++ *Question 1*
+  + Consider the following expression:
+  + src_racket{(* (- 4 2) 3)}
+  + Select all calls to primitives.
+    1. src_racket{(* (- 4 2) 3)}  <-
+
+    2. src_racket{*}
+
+    3. src_racket{(- 4 2)}  <-
+
+    4. src_racket{3}
+
+    5. src_racket{-}
+
+    6. src_racket{4}
+
+    7. src_racket{2}
+       
+  + src_racket{(* (- 4 2) 3) } and src_racket{(- 4 2)} are primitive calls because they are expressions that start with open parenthesis and the name of a primitive operation.
+
+
++ *Question 2*
+  + Consider the following expression:
+  + src_racket{(* (- 4 2) 3)}
+  + Select all the operators.
+    1. src_racket{(* (- 4 2) 3)}
+    2. src_racket{*}  <-
+    3. src_racket{(- 4 2)}
+    4. src_racket{3}
+    5. src_racket{-}  <-
+    6. src_racket{4}
+    7. src_racket{2}
+
+
++ *Question 3*
+  + Consider the following expression:
+  + src_racket{(* (- 4 2) 3)}
+  + Select all operands.
+    1. src_racket{(* (- 4 2) 3)}
+    2. src_racket{(*)}
+    3. src_racket{(- 4 2)}  <-
+    4. src_racket{3}  <-
+    5. src_racket{-}
+    6. src_racket{4}  <-
+    7. src_racket{2}  <-
+
+
++ *Question 4*
+  + What is the next step in the following evaluation?
+    1. src_racket{(/ (* 3 4) (+ (- 7 4) 3))}
+    2. src_racket{(/ 12 (+ (- 7 4) 3))}
+       - src_racket{(/ 12 (+ 3 3))}
+
+
++ *Question 5*
+  + What is the next step in the following evaluation?
+    1. src_racket{(/ (* 3 4) (+ (- 7 4) 3))}
+    2. src_racket{(/ 12 (+ (- 7 4) 3))}
+    3. src_racket{(/ 12 (+ 3 3))}
+       - src_racket{(/ 12 6)}
+
+
++ *Question 6*
+  + What is the next step in the following evaluation?
+    1. src_racket{(/ (* 3 4) (+ (- 7 4) 3))}
+    2. src_racket{(/ 12 (+ (- 7 4) 3))}
+    3. src_racket{(/ 12 (+ 3 3))}
+    4. src_racket{(/ 12 6)}
+       - src_racket{2}
+
+
+** Strings and Images
+
+
 * Intro lab questions
+
+
 ** Problem 1
 + Use string primitives to create an expression that concatenates =prefix= and =suffix= and adds "_" between them (so you get "hello_world" when you run the program).
 
