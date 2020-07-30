@@ -52,6 +52,7 @@
 <li><a href="#org2427568">Strings and Images</a></li>
 <li><a href="#orga42d386">Constant Definitions</a></li>
 <li><a href="#orgfaf2777">Function Definitions</a></li>
+<li><a href="#org589ced3">Booleans and if expressions</a></li>
 </ul>
 </li>
 <li><a href="#orge7f8c0c">Intro lab questions</a>
@@ -848,11 +849,96 @@ After the previous step of the evaluation we are left with:
 </ul>
 </div>
 </div>
+
+
+
+<div id="outline-container-org589ced3" class="outline-3">
+<h3 id="org589ced3">Booleans and if expressions</h3>
+<div class="outline-text-3" id="text-org589ced3">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li><p>
+What is the value of the expression below?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #AB9DF2;">)</span>
+</pre>
 </div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">true</span></code>   &lt;-</li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">false</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"true"</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"false"</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
 
 
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li><p>
+What about this one?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">5</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">true</span></code></li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">false</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"true"</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"false"</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
 
 
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>Which of the following are predicates? Select all that apply.
+<ol class="org-ol">
+<li>+</li>
+<li>=  &lt;-</li>
+<li>string=?  &lt;-</li>
+<li>string-append</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li>Which of the followin expressions produces <code class="src src-racket"><span style="color: #78DCE8;">true</span></code> only when the width of an <code class="src src-racket">img1</code> is greater than 50 pixels?
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-width IMG1 <span style="color: #AB9DF2; font-weight: bold;">50</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-width IMG1<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">50</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;=</span> <span style="color: #78DCE8;">(</span>image-width IMG1<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">50</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">50</span> <span style="color: #78DCE8;">(</span>image-width IMG1<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li>How can we fix the following error:
+<img src="../../screenshots/M1S6Q5.png" alt="M1S6Q5.png" />
+<ol class="org-ol">
+<li>Remove the '(' before if.</li>
+<li>Add ')' after I2) at the end of the code above.</li>
+<li>Add ')' after (image-width I1)</li>
+<li>Add ')' after (image-width I2)</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
 <div id="outline-container-orge7f8c0c" class="outline-2">
 <h2 id="orge7f8c0c">Intro lab questions</h2>
 <div class="outline-text-2" id="text-orge7f8c0c">

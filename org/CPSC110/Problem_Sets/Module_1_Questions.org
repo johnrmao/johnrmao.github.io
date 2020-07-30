@@ -496,7 +496,52 @@ file:../../screenshots/M1S3Q3.png
 
 
 
+** Booleans and if expressions
++ *Question 1*
+  + What is the value of the expression below?
+    #+BEGIN_SRC racket
+(> 10 5)
+    #+END_SRC
+    1. src_racket{true}   <-
+    2. src_racket{false}
+    3. src_racket{"true"}
+    4. src_racket{"false"}
 
+
++ *Question 2*
+  + What about this one?
+    #+BEGIN_SRC racket
+(> 5 5)
+    #+END_SRC
+    1. src_racket{true}
+    2. src_racket{false}  <-
+    3. src_racket{"true"}
+    4. src_racket{"false"}
+
+
++ *Question 3*
+  + Which of the following are predicates? Select all that apply.
+    1. +
+    2. =  <-
+    3. string=?  <-
+    4. string-append
+
+
++ *Question 4*
+  + Which of the followin expressions produces src_racket{true} only when the width of an src_racket{img1} is greater than 50 pixels?
+    1. src_racket{(> (image-width IMG1 50))}
+    2. src_racket{(> (image-width IMG1) 50)}  <-
+    3. src_racket{(>= (image-width IMG1) 50)}
+    4. src_racket{(> 50 (image-width IMG1))}
+
+
++ *Question 5*
+  + How can we fix the following error:
+    file:../../screenshots/M1S6Q5.png
+    1. Remove the '(' before if.
+    2. Add ')' after I2) at the end of the code above.
+    3. Add ')' after (image-width I1)
+    4. Add ')' after (image-width I2)
 * Intro lab questions
 
 
