@@ -377,14 +377,16 @@ Which of these expressions produces the average of the numbers 4, 6.2 and -12? C
 <ul class="org-ul">
 <li><b>Question 3</b>
 <ul class="org-ul">
-<li>Which primitive is required in the following expression to produce the stop sign image below?</li>
-</ul></li>
-</ul>
+<li><p>
+Which primitive is required in the following expression to produce the stop sign image below?
+</p>
 <div class="org-src-container">
 <pre class="src src-racket"><span style="color: #AB9DF2;">(</span>______ <span style="color: #78DCE8;">(</span>text <span style="color: #FFD866;">"STOP"</span> <span style="color: #AB9DF2; font-weight: bold;">48</span> <span style="color: #FFD866;">"white"</span><span style="color: #78DCE8;">)</span>
         <span style="color: #78DCE8;">(</span>regular-polygon <span style="color: #AB9DF2; font-weight: bold;">60</span> <span style="color: #AB9DF2; font-weight: bold;">8</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 </pre>
-</div>
+</div></li>
+</ul></li>
+</ul>
 
 <div class="figure">
 <p><img src="../../screenshots/M1S3Q3.png" alt="M1S3Q3.png" />
@@ -401,9 +403,9 @@ Which of these expressions produces the average of the numbers 4, 6.2 and -12? C
 <ul class="org-ul">
 <li><b>Question 4</b>
 <ul class="org-ul">
-<li>Which image will the following expression produce?</li>
-</ul></li>
-</ul>
+<li><p>
+Which image will the following expression produce?
+</p>
 <div class="org-src-container">
 <pre class="src src-racket"><span style="color: #AB9DF2;">(</span>beside <span style="color: #78DCE8;">(</span>square <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"outline"</span> <span style="color: #FFD866;">"blue"</span><span style="color: #78DCE8;">)</span>
         <span style="color: #78DCE8;">(</span>above <span style="color: #FC9867;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">15</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span>
@@ -415,8 +417,9 @@ Which of these expressions produces the average of the numbers 4, 6.2 and -12? C
 <li><img src="../../screenshots/M1S3Q4A2.png" alt="M1S3Q4A2.png" /></li>
 <li><img src="../../screenshots/M1S3Q4A3.png" alt="M1S3Q4A3.png" /></li>
 <li><img src="../../screenshots/M1S3Q4A4.png" alt="M1S3Q4A4.png" /></li>
-</ol>
-<ul class="org-ul">
+</ol></li>
+</ul></li>
+
 <li>The above will produce image 2.</li>
 </ul>
 
@@ -481,17 +484,16 @@ RESULTS:
 <ul class="org-ul">
 <li><b>Question 2</b>
 <ul class="org-ul">
-<li>Given the following program:</li>
-</ul></li>
-</ul>
+<li><p>
+Given the following program:
+</p>
 <div class="org-src-container">
 <pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 
 <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
 </pre>
-</div>
-<ul class="org-ul">
+</div></li>
 <li>What is the result of the <b>first</b> evaluation step?
 <ol class="org-ol">
 <li><div class="org-src-container">
@@ -524,6 +526,7 @@ RESULTS:
 </div></li>
 </ol></li>
 <li>Answer is <b>#4</b>.</li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -586,6 +589,56 @@ RESULTS:
 <li>Replace <code>i</code> in the program</li>
 <li>Include <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span></code> at the beginning of the program</li>
 <li><i>Replace <code>i</code> with <code>img</code>, which is the name of the parameter for this function</i>  &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li><p>
+Given the function:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">foo</span> a b<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> a<span style="color: #FC9867;">)</span>
+     b
+    <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> b a<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the first step of <code class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code>, and what is the result of that step?
+<ol class="org-ol">
+<li><p>
+Replace <code>a</code> and <code>b</code> with <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span></code> and 4 everywhere.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">foo</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
+     <span style="color: #AB9DF2; font-weight: bold;">4</span>
+     <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+
+<span style="color: #78DCE8;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+Replace <code class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> with the body of <code>foo</code> in which we replace all occurrences of <code>a</code> with <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span></code>, and <code>b</code> with 4.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+<i>Evaluate <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span></code> and replace it in the function call of <code>foo</code>.</i>  &lt;&#x2013;
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
 </ol></li>
 </ul></li>
 </ul>

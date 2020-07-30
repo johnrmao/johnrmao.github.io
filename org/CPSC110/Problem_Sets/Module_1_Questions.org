@@ -190,10 +190,10 @@ file:../../screenshots/M1S1Q1.png
 
 + *Question 3*
   + Which primitive is required in the following expression to produce the stop sign image below?
-#+BEGIN_SRC racket
+    #+BEGIN_SRC racket
 (______ (text "STOP" 48 "white")
         (regular-polygon 60 8 "solid" "red"))
-#+END_SRC
+    #+END_SRC
 file:../../screenshots/M1S3Q3.png
     1. above
     2. beside
@@ -203,11 +203,11 @@ file:../../screenshots/M1S3Q3.png
 
 + *Question 4*
   + Which image will the following expression produce?
-#+BEGIN_SRC racket
+    #+BEGIN_SRC racket
 (beside (square 20 "outline" "blue")
         (above (circle 15 "solid" "red")
                (triangle 20 "solid" "green")))
-#+END_SRC
+    #+END_SRC
     1. file:../../screenshots/M1S3Q4A1.png
     2. file:../../screenshots/M1S3Q4A2.png
     3. file:../../screenshots/M1S3Q4A3.png
@@ -251,12 +251,12 @@ file:../../screenshots/M1S3Q3.png
 
 + *Question 2*
   + Given the following program:
-#+BEGIN_SRC racket
+    #+BEGIN_SRC racket
 (define FOO (* 2 3))
 (define BAR (* FOO 2))
 
 (* FOO BAR)
-#+END_SRC
+    #+END_SRC
   + What is the result of the *first* evaluation step?
      1.
            #+BEGIN_SRC racket
@@ -329,6 +329,38 @@ file:../../screenshots/M1S3Q3.png
     1. Replace =i= in the program
     2. Include src_racket{(require 2htdp/image)} at the beginning of the program
     3. /Replace =i= with =img=, which is the name of the parameter for this function/  <-
+
+
++ *Question 4*
+  + Given the function:
+    #+BEGIN_SRC racket
+(define (foo a b)
+  (+ (* 3 a)
+     b
+    (* b a)))
+    #+END_SRC
+  + What is the first step of src_racket{(foo (+ 1 1) 4)}, and what is the result of that step?
+    1. Replace =a= and =b= with src_racket{(+ 1 1)} and 4 everywhere.
+       #+BEGIN_SRC racket
+(define (foo (+ 1 1) 4)
+  (+ (* 3 (+ 1 1))
+     4
+     (* 4 (+ 1 1)))
+
+(foo 2 4)
+       #+END_SRC
+
+    2. Replace src_racket{(foo 2 4)} with the body of =foo= in which we replace all occurrences of =a= with src_racket{(+ 1 1)}, and =b= with 4.
+       #+BEGIN_SRC racket
+(+ (* 3 2)
+   4
+   (* 4 2))
+       #+END_SRC
+
+    3. /Evaluate src_racket{(+ 1 1)} and replace it in the function call of =foo=./  <--
+       #+BEGIN_SRC racket
+(foo 2 4)
+       #+END_SRC
 * Intro lab questions
 
 
