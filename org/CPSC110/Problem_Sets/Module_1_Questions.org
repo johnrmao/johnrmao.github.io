@@ -197,7 +197,7 @@ file:../../screenshots/M1S1Q1.png
 file:../../screenshots/M1S3Q3.png
     1. above
     2. beside
-    3. overlay  <-
+    3. /overlay/  <-
     4. append
 
 
@@ -220,7 +220,7 @@ file:../../screenshots/M1S3Q3.png
   + Assume that the image below shows an entire program file. Why does running the program produce the following error?
     file:../../screenshots/M1S3Q5.png
     1. We didn't define a function named src_racket{above} in the program.
-    2. We didn't include src_racket{(require 2htdp/image)} at the beginning of the program.  <-
+    2. /We didn't include src_racket{(require 2htdp/image)} at the beginning of the program./  <-
     3. src_racket{above} does not accept a square as an argument.
 
 
@@ -229,12 +229,13 @@ file:../../screenshots/M1S3Q3.png
     file:../../screenshots/M1S3Q5.png
     1. We still need to define a function named above.
     2. We need to find the collection "2htpd."
-    3. We misspelled the name of the required module, so we need to replace "2htpd" with "2htdp." <--
+    3. /We misspelled the name of the required module, so we need to replace "2htpd" with "2htdp."/ <--
 
 
 ** Constant Definitions
 + *Question 1*
- + Consider the following program:
+  + Consider the following program:
+  + What result is produced when the program is run?
 #+BEGIN_SRC racket
 (define FOO (* 2 3))
 ; FOO = 6
@@ -244,9 +245,6 @@ file:../../screenshots/M1S3Q3.png
 (* FOO BAR)
 ; (* FOO BAR) = (* 6 12) = 72
 #+END_SRC
-
-
- + What result is produced when the program is run?
 : RESULTS:
 : 72
 
@@ -260,37 +258,77 @@ file:../../screenshots/M1S3Q3.png
 (* FOO BAR)
 #+END_SRC
   + What is the result of the *first* evaluation step?
+     1.
+           #+BEGIN_SRC racket
+    (define FOO (* 2 3))
+    (define BAR (* FOO 2))
+
+    (* (* 2 3) BAR)
+           #+END_SRC
+     2.
+           #+BEGIN_SRC racket
+    (define FOO (* 2 3))
+    (define BAR (* FOO 2))
+
+    (* 6 BAR)
+           #+END_SRC
+     3.
+           #+BEGIN_SRC racket
+    (define FOO (* 2 3))
+    (define BAR (* (* 2 3) 2))
+
+    (* FOO BAR)
+           #+END_SRC
+     4.
+          #+BEGIN_SRC racket
+   (define FOO 6)
+   (define BAR (* FOO 2))
+
+   (* FOO BAR)
+          #+END_SRC
+  + Answer is *#4*.
+
+
+** Function Definitions
++ *Question 1*
+  + Why should you use function definitions?
+    1. To be lazy
+    2. To make the code easier to read
+    3. To avoid duplicated code
+    4. /All of the above/   <-
+
+
++ *Question 2*
+  + Suppose we want a function that will give the length of the hypotenuse of any right angle triangle. Which of the following would achieve that? Remember that the expression we used when the side lengths were 3 and 4 was: src_racket{(sqrt (+ (sqr 3) (sqr 4)))}
     1.
-        #+BEGIN_SRC racket
- (define FOO (* 2 3))
- (define BAR (* FOO 2))
-
- (* (* 2 3) BAR)
-        #+END_SRC
+          #+BEGIN_SRC racket
+   (define (pythag 3 4)
+     (sqrt (+ (sqr 3) (sqr4))))
+          #+END_SRC
     2.
-        #+BEGIN_SRC racket
- (define FOO (* 2 3))
- (define BAR (* FOO 2))
+          #+BEGIN_SRC racket
+   (sqrt (+ (sqr a) (sqr b)))
 
- (* 6 BAR)
-        #+END_SRC
+          #+END_SRC
     3.
-        #+BEGIN_SRC racket
- (define FOO (* 2 3))
- (define BAR (* (* 2 3) 2))
-
- (* FOO BAR)
-        #+END_SRC
+          #+BEGIN_SRC racket
+   (define c (sqrt (+ (sqr a) (sqr b))))
+          #+END_SRC
     4.
-       #+BEGIN_SRC racket
-(define FOO 6)
-(define BAR (* FOO 2))
+         #+BEGIN_SRC racket
+  (define (pythag a b)
+    (sqrt (+ (sqr a) (sqr b))))
+         #+END_SRC
 
-(* FOO BAR)
-       #+END_SRC
+  + Answer is *$4*.
 
-+ Answer is *#4*.
 
++ *Question 3*
+  + What should we do to fix the following error:
+   file:../../screenshots/M1S4Q3.png
+    1. Replace =i= in the program
+    2. Include src_racket{(require 2htdp/image)} at the beginning of the program
+    3. /Replace =i= with =img=, which is the name of the parameter for this function/  <-
 * Intro lab questions
 
 

@@ -51,6 +51,7 @@
 <li><a href="#org190006c">Evaluation</a></li>
 <li><a href="#org2427568">Strings and Images</a></li>
 <li><a href="#orga42d386">Constant Definitions</a></li>
+<li><a href="#orgfaf2777">Function Definitions</a></li>
 </ul>
 </li>
 <li><a href="#orge7f8c0c">Intro lab questions</a>
@@ -392,7 +393,7 @@ Which of these expressions produces the average of the numbers 4, 6.2 and -12? C
 <ol class="org-ol">
 <li>above</li>
 <li>beside</li>
-<li>overlay  &lt;-</li>
+<li><i>overlay</i>  &lt;-</li>
 <li>append</li>
 </ol>
 
@@ -427,7 +428,7 @@ Which of these expressions produces the average of the numbers 4, 6.2 and -12? C
 <img src="../../screenshots/M1S3Q5.png" alt="M1S3Q5.png" />
 <ol class="org-ol">
 <li>We didn't define a function named <code class="src src-racket">above</code> in the program.</li>
-<li>We didn't include <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span></code> at the beginning of the program.  &lt;-</li>
+<li><i>We didn't include <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span></code> at the beginning of the program.</i>  &lt;-</li>
 <li><code class="src src-racket">above</code> does not accept a square as an argument.</li>
 </ol></li>
 </ul></li>
@@ -442,7 +443,7 @@ Which of these expressions produces the average of the numbers 4, 6.2 and -12? C
 <ol class="org-ol">
 <li>We still need to define a function named above.</li>
 <li>We need to find the collection "2htpd."</li>
-<li>We misspelled the name of the required module, so we need to replace "2htpd" with "2htdp." &lt;&#x2013;</li>
+<li><i>We misspelled the name of the required module, so we need to replace "2htpd" with "2htdp."</i> &lt;&#x2013;</li>
 </ol></li>
 </ul></li>
 </ul>
@@ -457,6 +458,7 @@ Which of these expressions produces the average of the numbers 4, 6.2 and -12? C
 <li><b>Question 1</b>
 <ul class="org-ul">
 <li>Consider the following program:</li>
+<li>What result is produced when the program is run?</li>
 </ul></li>
 </ul>
 <div class="org-src-container">
@@ -469,11 +471,6 @@ Which of these expressions produces the average of the numbers 4, 6.2 and -12? C
 <span style="color: #727072;">; </span><span style="color: #727072;">(* FOO BAR) = (* 6 12) = 72</span>
 </pre>
 </div>
-
-
-<ul class="org-ul">
-<li>What result is produced when the program is run?</li>
-</ul>
 <pre class="example">
 RESULTS:
 72
@@ -498,42 +495,103 @@ RESULTS:
 <li>What is the result of the <b>first</b> evaluation step?
 <ol class="org-ol">
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
- <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket">    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 
- <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> BAR<span style="color: #AB9DF2;">)</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> BAR<span style="color: #AB9DF2;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
- <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket">    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 
- <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">6</span> BAR<span style="color: #AB9DF2;">)</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">6</span> BAR<span style="color: #AB9DF2;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
- <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket">    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 
- <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket">   <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>
+   <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
+   <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
 </pre>
 </div></li>
 </ol></li>
-</ul>
-<ul class="org-ul">
 <li>Answer is <b>#4</b>.</li>
 </ul>
 </div>
 </div>
-</div>
 
+
+<div id="outline-container-orgfaf2777" class="outline-3">
+<h3 id="orgfaf2777">Function Definitions</h3>
+<div class="outline-text-3" id="text-orgfaf2777">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>Why should you use function definitions?
+<ol class="org-ol">
+<li>To be lazy</li>
+<li>To make the code easier to read</li>
+<li>To avoid duplicated code</li>
+<li><i>All of the above</i>   &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li>Suppose we want a function that will give the length of the hypotenuse of any right angle triangle. Which of the following would achieve that? Remember that the expression we used when the side lengths were 3 and 4 was: <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">sqr</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">sqr</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code>
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket">   <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">pythag</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span>
+     <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>sqr4<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket">   <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">sqr</span> a<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">sqr</span> b<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket">   <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">c</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> a<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> b<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">pythag</span> a b<span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> a<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> b<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+
+<li>Answer is <b>$4</b>.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>What should we do to fix the following error:
+<img src="../../screenshots/M1S4Q3.png" alt="M1S4Q3.png" />
+<ol class="org-ol">
+<li>Replace <code>i</code> in the program</li>
+<li>Include <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span></code> at the beginning of the program</li>
+<li><i>Replace <code>i</code> with <code>img</code>, which is the name of the parameter for this function</i>  &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
 <div id="outline-container-orge7f8c0c" class="outline-2">
 <h2 id="orge7f8c0c">Intro lab questions</h2>
 <div class="outline-text-2" id="text-orge7f8c0c">
