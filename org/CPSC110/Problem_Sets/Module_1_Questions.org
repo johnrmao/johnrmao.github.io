@@ -232,6 +232,64 @@ file:../../screenshots/M1S3Q3.png
     3. We misspelled the name of the required module, so we need to replace "2htpd" with "2htdp." <--
 
 
+** Constant Definitions
++ *Question 1*
+ + Consider the following program:
+#+BEGIN_SRC racket
+(define FOO (* 2 3))
+; FOO = 6
+(define BAR (* FOO 2))
+; BAR = 12
+
+(* FOO BAR)
+; (* FOO BAR) = (* 6 12) = 72
+#+END_SRC
+
+
+ + What result is produced when the program is run?
+: RESULTS:
+: 72
+
+
++ *Question 2*
+  + Given the following program:
+#+BEGIN_SRC racket
+(define FOO (* 2 3))
+(define BAR (* FOO 2))
+
+(* FOO BAR)
+#+END_SRC
+  + What is the result of the *first* evaluation step?
+    1.
+        #+BEGIN_SRC racket
+ (define FOO (* 2 3))
+ (define BAR (* FOO 2))
+
+ (* (* 2 3) BAR)
+        #+END_SRC
+    2.
+        #+BEGIN_SRC racket
+ (define FOO (* 2 3))
+ (define BAR (* FOO 2))
+
+ (* 6 BAR)
+        #+END_SRC
+    3.
+        #+BEGIN_SRC racket
+ (define FOO (* 2 3))
+ (define BAR (* (* 2 3) 2))
+
+ (* FOO BAR)
+        #+END_SRC
+    4.
+       #+BEGIN_SRC racket
+(define FOO 6)
+(define BAR (* FOO 2))
+
+(* FOO BAR)
+       #+END_SRC
+
++ Answer is *#4*.
 
 * Intro lab questions
 

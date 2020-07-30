@@ -50,6 +50,7 @@
 <li><a href="#org882c40d">Expressions</a></li>
 <li><a href="#org190006c">Evaluation</a></li>
 <li><a href="#org2427568">Strings and Images</a></li>
+<li><a href="#orga42d386">Constant Definitions</a></li>
 </ul>
 </li>
 <li><a href="#orge7f8c0c">Intro lab questions</a>
@@ -447,9 +448,91 @@ Which of these expressions produces the average of the numbers 4, 6.2 and -12? C
 </ul>
 </div>
 </div>
+
+
+<div id="outline-container-orga42d386" class="outline-3">
+<h3 id="orga42d386">Constant Definitions</h3>
+<div class="outline-text-3" id="text-orga42d386">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>Consider the following program:</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">; </span><span style="color: #727072;">FOO = 6</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">; </span><span style="color: #727072;">BAR = 12</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">; </span><span style="color: #727072;">(* FOO BAR) = (* 6 12) = 72</span>
+</pre>
 </div>
 
 
+<ul class="org-ul">
+<li>What result is produced when the program is run?</li>
+</ul>
+<pre class="example">
+RESULTS:
+72
+</pre>
+
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li>Given the following program:</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>What is the result of the <b>first</b> evaluation step?
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+ <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+ <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> BAR<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+ <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+ <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">6</span> BAR<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+ <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+ <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+</ul>
+<ul class="org-ul">
+<li>Answer is <b>#4</b>.</li>
+</ul>
+</div>
+</div>
+</div>
 
 <div id="outline-container-orge7f8c0c" class="outline-2">
 <h2 id="orge7f8c0c">Intro lab questions</h2>
