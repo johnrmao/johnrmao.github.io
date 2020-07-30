@@ -642,9 +642,217 @@ Replace <code class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <
 </ol></li>
 </ul></li>
 </ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li><p>
+After the previous step of the evaluation we are left with:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #78DCE8;">(</span><span style="color: #2e8b57;">+1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">into</span>
+<span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the next step of the evaluation and what does that leave us with?
+<ol class="org-ol">
+<li><p>
+Replace <code>a</code> and <code>b</code> with 2 and 4 everywhere.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">foo</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span>
+     <span style="color: #AB9DF2; font-weight: bold;">4</span>
+     <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+<i>Replace <code class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> with the body of <code>foo</code> in which we replace all occurrences of <code>a</code> with 2, and <code>b</code> with 4.</i>  &lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+Replace <code class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> with the body of <code>foo</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> a<span style="color: #78DCE8;">)</span>
+   b
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> b a<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 6</b>
+<ul class="org-ul">
+<li><p>
+After the previous step of the evaluation we are left with:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+<span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">into</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the next step of evaluation and what does that leave us with?
+<ol class="org-ol">
+<li><p>
+<code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 6 and <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 8.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+  <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><p>
+<code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 8.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><p>
+<i><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 6.</i>  &lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span><span style="color: #CC6666; font-weight: bold;">)</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 7</b>
+<ul class="org-ul">
+<li><p>
+After the previous step of evaluation we are left with:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+<span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the next step of evaluation and what does that leave us with?
+<ol class="org-ol">
+<li><p>
+6 and 4 are added to produce 10.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">10</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+<i><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 8.</i>  &lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+<code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 8 and 4, 6, and 8, are aded together.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">18</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 8</b>
+<ul class="org-ul">
+<li><p>
+After the previous step of the evaluation we are left with:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+<span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the next step of the evaluation and what does that leave us with?
+<ol class="org-ol">
+<li><p>
+6 and 4 are added to produce 10.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">10</span>
+   <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+6, 4, and 8 are added to produce 14.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">14</span>
+</pre>
+</div></li>
+
+<li><p>
+<i>6, 4, and 8 are added to produce 18.</i>  &lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">18</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
 </div>
 </div>
 </div>
+
+
+
+
 <div id="outline-container-orge7f8c0c" class="outline-2">
 <h2 id="orge7f8c0c">Intro lab questions</h2>
 <div class="outline-text-2" id="text-orge7f8c0c">

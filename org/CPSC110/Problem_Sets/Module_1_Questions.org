@@ -361,6 +361,142 @@ file:../../screenshots/M1S3Q3.png
        #+BEGIN_SRC racket
 (foo 2 4)
        #+END_SRC
+
+
++ *Question 5*
+  + After the previous step of the evaluation we are left with:
+    #+BEGIN_SRC racket
+(foo (+1 1) 4) ; into
+(foo 2 4)
+    #+END_SRC
+  + What is the next step of the evaluation and what does that leave us with?
+    1. Replace =a= and =b= with 2 and 4 everywhere.
+       #+BEGIN_SRC racket
+(define (foo 2 4)
+  (+ (* 3 2)
+     4
+     (* 4 2)))
+
+(foo 2 4)
+       #+END_SRC
+
+    2. /Replace src_racket{(foo 2 4)} with the body of =foo= in which we replace all occurrences of =a= with 2, and =b= with 4./  <-
+       #+BEGIN_SRC racket
+(+ (* 3 2)
+   4
+   (* 4 2))
+       #+END_SRC
+
+    3. Replace src_racket{(foo 2 4)} with the body of =foo=.
+       #+BEGIN_SRC racket
+(+ (* 3 a)
+   b
+   (* b a))
+       #+END_SRC
+
+
++ *Question 6*
+  + After the previous step of the evaluation we are left with:
+    #+BEGIN_SRC racket
+(foo (+ 1 1) 4) ;into
+(foo 2 4) ; into
+(+ (* 3 2)
+   4
+   (* 4 2))
+    #+END_SRC
+  + What is the next step of evaluation and what does that leave us with?
+    1. src_racket{(* 3 2)} is replaced with 6 and src_racket{(* 4 2)} is replaced with 8.
+       #+BEGIN_SRC racket
+(+ 6
+   4
+  8)
+       #+END_SRC
+    2. src_racket{(* 4 2)} is replaced with 8.
+       #+BEGIN_SRC racket
+(+ (* 3 2)
+   4
+   8)
+       #+END_SRC
+    3. /src_racket{(* 3 2)} is replaced with 6./  <-
+       #+BEGIN_SRC racket
+(+ 6
+   4
+   (* 4 2)))
+       #+END_SRC
+
+
++ *Question 7*
+  + After the previous step of evaluation we are left with:
+    #+BEGIN_SRC racket
+(foo (+ 1 1) 4) ;into
+(foo 2 4) ;into
+
+(+ (* 3 2)
+   4
+   (* 4 2)) ;into
+
+(+ 6
+   4
+   (* 4 2))
+    #+END_SRC
+  + What is the next step of evaluation and what does that leave us with?
+    1. 6 and 4 are added to produce 10.
+       #+BEGIN_SRC racket
+(+ 10
+   (* 4 2))
+       #+END_SRC
+
+    2. /src_racket{(* 4 2)} is replaced with 8./  <-
+       #+BEGIN_SRC racket
+(+ 6
+   4
+   8)
+       #+END_SRC
+
+    3. src_racket{(* 4 2)} is replaced with 8 and 4, 6, and 8, are aded together.
+       #+BEGIN_SRC racket
+18
+       #+END_SRC
+
+
++ *Question 8*
+  + After the previous step of the evaluation we are left with:
+    #+BEGIN_SRC racket
+(foo (+ 1 1) 4) ;into
+(foo 2 4) ;into
+
+(+ (* 3 2)
+   4
+   (* 4 2)) ;into
+
+(+ 6
+   4
+   (* 4 2)) ;into
+
+(+ 6
+   4
+   8)
+    #+END_SRC
+  + What is the next step of the evaluation and what does that leave us with?
+    1. 6 and 4 are added to produce 10.
+       #+BEGIN_SRC racket
+(+ 10
+   8)
+       #+END_SRC
+
+    2. 6, 4, and 8 are added to produce 14.
+       #+BEGIN_SRC racket
+14
+       #+END_SRC
+
+    3. /6, 4, and 8 are added to produce 18./  <-
+       #+BEGIN_SRC racket
+18
+       #+END_SRC
+
+
+
+
 * Intro lab questions
 
 
