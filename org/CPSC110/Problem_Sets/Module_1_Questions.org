@@ -1,6 +1,7 @@
 #+TITLE: Module 1 Questions
 #+SETUPFILE: ../../template-2.org
 Created on 2020-07-17/15:54
+[[file:~/johnrmao.github.io/org/CPSC110/Module-1.org][Module 1 notes]]
 * Module 1 Questions
 ** Expressions
 + *Question 1*
@@ -541,7 +542,71 @@ file:../../screenshots/M1S3Q3.png
     1. Remove the '(' before if.
     2. Add ')' after I2) at the end of the code above.
     3. Add ')' after (image-width I1)
-    4. Add ')' after (image-width I2)
+    4. Add ')' after (image-width I2)  <-
+        #+BEGIN_SRC racket
+;it should be
+(if (< (image-width I1)
+       (image-width I2))
+    I1
+    I2)
+        #+END_SRC
+
+
++ *Question 6*
+  + What is the value of the src_racket{if} expression below?
+    #+BEGIN_SRC racket
+(if (> (string-length "hello") 10)
+    "long"
+    "short")
+    #+END_SRC
+
+    : RESULTS:
+    : "short"
+
+    1. src_racket{true}
+    2. src_racket{false}
+    3. src_racket{"long"}
+    4. src_racket{"short"} <-
+
+
++ *Question 7*
+  + What is the value of the expression below?
+    #+BEGIN_SRC racket
+(or (< 2 1)
+    (> 3 2)
+    (= 4 4))
+    #+END_SRC
+    1. src_racket{true}  <-
+    2. src_racket{false}
+
+
++ *Question 8*
+  + Which comparisons can be performed when the expression below is evaluated?
+    #+BEGIN_SRC racket
+(or (< 2 1)
+    (> 3 2)
+    (= 4 4))
+    #+END_SRC
+    1. Just the <
+    2. Just the >
+    3. /The < and the >/   <-
+    4. All three, <, >, =
+        + an src_racket{or} expression will short-circuit and return src_racket{true} as soon as an expression returns true.
+
+
++ *Question 9*
+  + Given:
+    #+BEGIN_SRC racket
+(define B1 true)
+(define B2 false)
+    #+END_SRC
+  + What is the value of:
+    #+BEGIN_SRC racket
+(or (not B1) B2)
+    #+END_SRC
+    1. src_racket{true}
+    2. src_racket{false}  <-
+       + src_racket{(not B1)} is src_racket{false} and =B2= is also defined as src_racket{false}.
 * Intro lab questions
 
 

@@ -69,6 +69,7 @@
 </div>
 <p>
 Created on 2020-07-17/15:54
+<a href="CPSC110/Module-1.html">Module 1 notes</a>
 </p>
 <div id="outline-container-org167b66c" class="outline-2">
 <h2 id="org167b66c">Module 1 Questions</h2>
@@ -932,7 +933,120 @@ What about this one?
 <li>Remove the '(' before if.</li>
 <li>Add ')' after I2) at the end of the code above.</li>
 <li>Add ')' after (image-width I1)</li>
-<li>Add ')' after (image-width I2)</li>
+<li><p>
+Add ')' after (image-width I2)  &lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;</span><span style="color: #727072;">it should be</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #FC9867;">(</span>image-width I1<span style="color: #FC9867;">)</span>
+       <span style="color: #FC9867;">(</span>image-width I2<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+    I1
+    I2<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 6</b>
+<ul class="org-ul">
+<li><p>
+What is the value of the <code class="src src-racket"><span style="color: #FF6188;">if</span></code> expression below?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-length</span> <span style="color: #FFD866;">"hello"</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">10</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #FFD866;">"long"</span>
+    <span style="color: #FFD866;">"short"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+"short"
+</pre>
+
+
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">true</span></code></li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">false</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"long"</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"short"</span></code> &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 7</b>
+<ul class="org-ul">
+<li><p>
+What is the value of the expression below?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">or</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">true</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">false</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 8</b>
+<ul class="org-ul">
+<li><p>
+Which comparisons can be performed when the expression below is evaluated?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">or</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li>Just the &lt;</li>
+<li>Just the &gt;</li>
+<li><i>The &lt; and the &gt;</i>   &lt;-</li>
+<li>All three, &lt;, &gt;, =
+<ul class="org-ul">
+<li>an <code class="src src-racket"><span style="color: #FF6188;">or</span></code> expression will short-circuit and return <code class="src src-racket"><span style="color: #78DCE8;">true</span></code> as soon as an expression returns true.</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 9</b>
+<ul class="org-ul">
+<li><p>
+Given:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">B1</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">B2</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><p>
+What is the value of:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">or</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">not</span> B1<span style="color: #78DCE8;">)</span> B2<span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">true</span></code></li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">false</span></code>  &lt;-
+<ul class="org-ul">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">not</span> B1<span style="color: #AB9DF2;">)</span></code> is <code class="src src-racket"><span style="color: #78DCE8;">false</span></code> and <code>B2</code> is also defined as <code class="src src-racket"><span style="color: #78DCE8;">false</span></code>.</li>
+</ul></li>
 </ol></li>
 </ul></li>
 </ul>
