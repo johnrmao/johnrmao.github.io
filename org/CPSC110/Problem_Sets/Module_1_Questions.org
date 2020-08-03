@@ -727,9 +727,17 @@ image
 
 ** Problem 3
 + Create an expression that counts the number of pixels in the CAT image.
+  + /i don't have the cat image, but this should still work./
+  #+BEGIN_SRC racket
+(require 2htdp/image)
+(* (image-width M1P3.png) (image-height M1P3.png))
+  #+END_SRC
+
 
 ** Problem 4
 + Create an expression that computes whether CAT is "tall" (height is larger than its width), "wide" (width is larger than its height), or "square" (height is the same as its width).
+
+
 
 ** Problem 5
 + Create an expression that computes whether the first character in STR is "h". In this example, the expected result is true.
