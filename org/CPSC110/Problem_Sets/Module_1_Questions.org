@@ -616,22 +616,25 @@ file:../../screenshots/M1S3Q3.png
 ** Problem 1
 + Use string primitives to create an expression that concatenates =prefix= and =suffix= and adds "_" between them (so you get "hello_world" when you run the program).
   #+BEGIN_SRC racket
-(string-append "Hello" "_" "world")
+(define (concat a b)
+  (string-append a "_" b)
+  )
+
+(concat "hello" "world")
   #+END_SRC
 
-  : RESULTS:
-  : "Hello_world"
-
-
-  #+BEGIN_SRC racket
-
-  #+END_SRC
-
+  : +RESULTS:
+  : "hello_world"
 
 
 
 ** Problem 2
 + Use string primitives to create an expression that adds "_" at position i (the position that is i characters from the left of the string).  Again, in this particular example, the expected result is "hello_world".
+  #+BEGIN_SRC racket
+
+
+  #+END_SRC
+
 
 ** Problem 3
 + Create an expression that counts the number of pixels in the CAT image.
