@@ -607,11 +607,28 @@ file:../../screenshots/M1S3Q3.png
     1. src_racket{true}
     2. src_racket{false}  <-
        + src_racket{(not B1)} is src_racket{false} and =B2= is also defined as src_racket{false}.
+
+
+
 * Intro lab questions
 
 
 ** Problem 1
 + Use string primitives to create an expression that concatenates =prefix= and =suffix= and adds "_" between them (so you get "hello_world" when you run the program).
+  #+BEGIN_SRC racket
+(string-append "Hello" "_" "world")
+  #+END_SRC
+
+  : RESULTS:
+  : "Hello_world"
+
+
+  #+BEGIN_SRC racket
+
+  #+END_SRC
+
+
+
 
 ** Problem 2
 + Use string primitives to create an expression that adds "_" at position i (the position that is i characters from the left of the string).  Again, in this particular example, the expected result is "hello_world".

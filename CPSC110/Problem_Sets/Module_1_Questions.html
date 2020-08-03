@@ -1053,6 +1053,9 @@ What is the value of:
 </div>
 </div>
 </div>
+
+
+
 <div id="outline-container-orge7f8c0c" class="outline-2">
 <h2 id="orge7f8c0c">Intro lab questions</h2>
 <div class="outline-text-2" id="text-orge7f8c0c">
@@ -1061,10 +1064,28 @@ What is the value of:
 <h3 id="org10b3ee7">Problem 1</h3>
 <div class="outline-text-3" id="text-org10b3ee7">
 <ul class="org-ul">
-<li>Use string primitives to create an expression that concatenates <code>prefix</code> and <code>suffix</code> and adds "_" between them (so you get "hello_world" when you run the program).</li>
+<li><p>
+Use string primitives to create an expression that concatenates <code>prefix</code> and <code>suffix</code> and adds "_" between them (so you get "hello_world" when you run the program).
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"Hello"</span> <span style="color: #FFD866;">"_"</span> <span style="color: #FFD866;">"world"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+"Hello world"
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">presuf</span> <span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
 </ul>
 </div>
 </div>
+
 
 <div id="outline-container-orgc5e9e94" class="outline-3">
 <h3 id="orgc5e9e94">Problem 2</h3>
