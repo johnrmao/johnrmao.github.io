@@ -610,6 +610,87 @@ file:../../screenshots/M1S3Q3.png
 
 
 
+* Extra Practice
+** More Arithmetic Expressions
++ Write two expressions that multiply the numbers 3, 5 and 7.
++ The first should take advantage of the fact that * can accept more than 2 arguments.
++ The second should build up the result by first multiplying 3 times 5 and then multiply the result of that by 7.
+  #+BEGIN_SRC racket
+(* 3 5 7)
+(* (* 3 5) 7)
+  #+END_SRC
+
+  : RESULTS:
+  : 105
+
+
+** Tile
++ Use the DrRacket square, beside and above functions to create an image like this one:
+file:../../screenshots/M1P3.png
+#+BEGIN_SRC racket
+(require 2htdp/image)
+(define blue (square 20 "solid" "blue"))
+(define yellow (square 20 "solid" "yellow"))
+(define top (beside blue yellow))
+(define bot (beside yellow blue))
+(define image (above top bot))
+image
+#+END_SRC
+
+
+** Compare Images
++ Based on the two constants provided, write three expressions to determine whether:
+  1) IMAGE1 is taller than IMAGE2
+  2) IMAGE1 is narrower than IMAGE2
+  3) IMAGE1 has both the same width AND height as IMAGE2
+
+#+BEGIN_SRC racket
+(require 2htdp/image)
+
+(define IMAGE1 (rectangle 10 15 "solid" "red"))
+(define IMAGE2 (rectangle 15 10 "solid" "red"))
+
+(if (> (image-height IMAGE1) (image-width IMAGE2))
+    "IMAGE1 is taller"
+    "IMAGE2 is taller"
+    )
+
+(if (< (image-width IMAGE1) (image-width IMAGE2))
+    "IMAGE1 is narrower"
+    "IMAGE2 is narrower"
+    )
+
+(if (and (= (image-width IMAGE1) (image-width IMAGE2))
+     (= (image-height IMAGE1) (image-height IMAGE2))
+     )
+    "true"
+    "false")
+#+END_SRC
+
+: RESULTS:
+: "IMAGE2 is taller"
+: "IMAGE1 is narrower"
+: "false"
+
+** Function Writing
++ Write a function that consumes two numbers and produces the larger of the two.
+#+BEGIN_SRC racket
+(define compare
+  (lambda (a b)
+    (if (> a b)
+        a
+        b
+     )
+    ))
+
+
+(compare 5 2)
+#+END_SRC
+
+: RESULTS:
+: 5
+
+
 * Intro lab questions
 
 
@@ -623,7 +704,7 @@ file:../../screenshots/M1S3Q3.png
 (concat "hello" "world")
   #+END_SRC
 
-  : +RESULTS:
+  : RESULTS:
   : "hello_world"
 
 
@@ -631,9 +712,17 @@ file:../../screenshots/M1S3Q3.png
 ** Problem 2
 + Use string primitives to create an expression that adds "_" at position i (the position that is i characters from the left of the string).  Again, in this particular example, the expected result is "hello_world".
   #+BEGIN_SRC racket
-
-
+(define addunderscore
+  (lambda (phrase i)
+    (string-append (substring phrase 0 i) "_" (substring phrase i (string-length phrase))
+   )
+  )
+)
+(addunderscore "helloworld" 5)
   #+END_SRC
+
+  : RESULTS:
+  : "hello_world"
 
 
 ** Problem 3

@@ -55,6 +55,14 @@
 <li><a href="#org589ced3">Booleans and if expressions</a></li>
 </ul>
 </li>
+<li><a href="#org792d9c9">Extra Practice</a>
+<ul>
+<li><a href="#orgd335edd">More Arithmetic Expressions</a></li>
+<li><a href="#org7b4eea5">Tile</a></li>
+<li><a href="#orgb24caa6">Compare Images</a></li>
+<li><a href="#org5b65059">Function Writing</a></li>
+</ul>
+</li>
 <li><a href="#orge7f8c0c">Intro lab questions</a>
 <ul>
 <li><a href="#org10b3ee7">Problem 1</a></li>
@@ -1056,6 +1064,133 @@ What is the value of:
 
 
 
+<div id="outline-container-org792d9c9" class="outline-2">
+<h2 id="org792d9c9">Extra Practice</h2>
+<div class="outline-text-2" id="text-org792d9c9">
+</div>
+<div id="outline-container-orgd335edd" class="outline-3">
+<h3 id="orgd335edd">More Arithmetic Expressions</h3>
+<div class="outline-text-3" id="text-orgd335edd">
+<ul class="org-ul">
+<li>Write two expressions that multiply the numbers 3, 5 and 7.</li>
+<li>The first should take advantage of the fact that * can accept more than 2 arguments.</li>
+<li><p>
+The second should build up the result by first multiplying 3 times 5 and then multiply the result of that by 7.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">5</span> <span style="color: #AB9DF2; font-weight: bold;">7</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">7</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+105
+</pre></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org7b4eea5" class="outline-3">
+<h3 id="org7b4eea5">Tile</h3>
+<div class="outline-text-3" id="text-org7b4eea5">
+<ul class="org-ul">
+<li>Use the DrRacket square, beside and above functions to create an image like this one:</li>
+</ul>
+
+<div class="figure">
+<p><img src="../../screenshots/M1P3.png" alt="M1P3.png" />
+</p>
+</div>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">blue</span> <span style="color: #78DCE8;">(</span>square <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"blue"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">yellow</span> <span style="color: #78DCE8;">(</span>square <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"yellow"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">top</span> <span style="color: #78DCE8;">(</span>beside blue yellow<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">bot</span> <span style="color: #78DCE8;">(</span>beside yellow blue<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">image</span> <span style="color: #78DCE8;">(</span>above top bot<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+image
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb24caa6" class="outline-3">
+<h3 id="orgb24caa6">Compare Images</h3>
+<div class="outline-text-3" id="text-orgb24caa6">
+<ul class="org-ul">
+<li>Based on the two constants provided, write three expressions to determine whether:
+<ol class="org-ol">
+<li>IMAGE1 is taller than IMAGE2</li>
+<li>IMAGE1 is narrower than IMAGE2</li>
+<li>IMAGE1 has both the same width AND height as IMAGE2</li>
+</ol></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">IMAGE1</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #AB9DF2; font-weight: bold;">15</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">IMAGE2</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">15</span> <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #FC9867;">(</span>image-height IMAGE1<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-width IMAGE2<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #FFD866;">"IMAGE1 is taller"</span>
+    <span style="color: #FFD866;">"IMAGE2 is taller"</span>
+    <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #FC9867;">(</span>image-width IMAGE1<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-width IMAGE2<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #FFD866;">"IMAGE1 is narrower"</span>
+    <span style="color: #FFD866;">"IMAGE2 is narrower"</span>
+    <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">and</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2;">(</span>image-width IMAGE1<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>image-width IMAGE2<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
+     <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2;">(</span>image-height IMAGE1<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>image-height IMAGE2<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
+     <span style="color: #78DCE8;">)</span>
+    <span style="color: #FFD866;">"true"</span>
+    <span style="color: #FFD866;">"false"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+"IMAGE2 is taller"
+"IMAGE1 is narrower"
+"false"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5b65059" class="outline-3">
+<h3 id="org5b65059">Function Writing</h3>
+<div class="outline-text-3" id="text-org5b65059">
+<ul class="org-ul">
+<li>Write a function that consumes two numbers and produces the larger of the two.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">compare</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">lambda</span> <span style="color: #FC9867;">(</span>a b<span style="color: #FC9867;">)</span>
+    <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> a b<span style="color: #AB9DF2;">)</span>
+        a
+        b
+     <span style="color: #FC9867;">)</span>
+    <span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+
+<span style="color: #AB9DF2;">(</span>compare <span style="color: #AB9DF2; font-weight: bold;">5</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+5
+</pre>
+</div>
+</div>
+</div>
+
+
 <div id="outline-container-orge7f8c0c" class="outline-2">
 <h2 id="orge7f8c0c">Intro lab questions</h2>
 <div class="outline-text-2" id="text-orge7f8c0c">
@@ -1077,7 +1212,7 @@ Use string primitives to create an expression that concatenates <code>prefix</co
 </div>
 
 <pre class="example">
-+RESULTS:
+RESULTS:
 "hello_world"
 </pre></li>
 </ul>
@@ -1094,10 +1229,20 @@ Use string primitives to create an expression that concatenates <code>prefix</co
 Use string primitives to create an expression that adds "_" at position i (the position that is i characters from the left of the string).  Again, in this particular example, the expected result is "hello_world".
 </p>
 <div class="org-src-container">
-<pre class="src src-racket">
-
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">addunderscore</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">lambda</span> <span style="color: #FC9867;">(</span>phrase i<span style="color: #FC9867;">)</span>
+    <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">substring</span> phrase <span style="color: #AB9DF2; font-weight: bold;">0</span> i<span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"_"</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">substring</span> phrase i <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-length</span> phrase<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+   <span style="color: #FC9867;">)</span>
+  <span style="color: #78DCE8;">)</span>
+<span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>addunderscore <span style="color: #FFD866;">"helloworld"</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #AB9DF2;">)</span>
 </pre>
-</div></li>
+</div>
+
+<pre class="example">
+RESULTS:
+"hello_world"
+</pre></li>
 </ul>
 </div>
 </div>
