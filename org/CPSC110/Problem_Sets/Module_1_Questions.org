@@ -31,17 +31,17 @@ file:../../screenshots/M1S1Q1.png
 
 + *Question 3*
   + Which of the following are expressions:
-    1. src_racket{sqr}
+    1. src_racket{sqr} {{{results(=#<procedure:sqr>=)}}}
 
-    2. src_racket{(+ 2 3)}  <-
+    2. src_racket{(+ 2 3)} {{{results(=5=)}}}  <-
 
-    3. src_racket{+}
+    3. src_racket{+} {{{results(=#<procedure:+>=)}}}
 
-    4. src_racket{(sqrt 2)}i  <-
+    4. src_racket{(sqrt 2)} {{{results(=1.4142135623730951=)}}}i  <-
 
-    5. src_racket{#i1.4142135623730951}  <-
+    5. src_racket{#i1.4142135623730951} {{{results(=1.4142135623730951=)}}}  <-
 
-    6. src_racket{1}  <-
+    6. src_racket{1} {{{results(=1=)}}}  <-
 
     7. src_racket{)}
 
@@ -752,7 +752,6 @@ image
 (imagecheck (rectangle 20 20 "solid" "red"))
 (imagecheck (rectangle 20 30 "solid" "red"))
 (imagecheck (rectangle 30 20 "solid" "red"))
-
 #+END_SRC
 
 : RESULTS:
