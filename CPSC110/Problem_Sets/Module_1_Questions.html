@@ -1232,7 +1232,7 @@ Use string primitives to create an expression that adds "_" at position i (the p
 <pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">addunderscore</span>
   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">lambda</span> <span style="color: #FC9867;">(</span>phrase i<span style="color: #FC9867;">)</span>
     <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">substring</span> phrase <span style="color: #AB9DF2; font-weight: bold;">0</span> i<span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"_"</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">substring</span> phrase i <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-length</span> phrase<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
-   <span style="color: #FC9867;">)</span>
+   <span style="color: #FC9867;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">this append the substring of index 0-i to "_" to the substring of index i-(string-length phrase)</span>
   <span style="color: #78DCE8;">)</span>
 <span style="color: #AB9DF2;">)</span>
 <span style="color: #AB9DF2;">(</span>addunderscore <span style="color: #FFD866;">"helloworld"</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #AB9DF2;">)</span>
@@ -1274,10 +1274,34 @@ Create an expression that counts the number of pixels in the CAT image.
 <ul class="org-ul">
 <li>Create an expression that computes whether CAT is "tall" (height is larger than its width), "wide" (width is larger than its height), or "square" (height is the same as its width).</li>
 </ul>
-</div>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">imagecheck</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">lambda</span> <span style="color: #FC9867;">(</span>image1<span style="color: #FC9867;">)</span>
+    <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-height image1<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width image1<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+        <span style="color: #FFD866;">"tall"</span> <span style="color: #727072;">; </span><span style="color: #727072;">returns true if image is taller</span>
+        <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #FC9867;">(</span>image-height image1<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-width image1<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">if not, it will check if it's square or wide</span>
+            <span style="color: #FFD866;">"square"</span>
+            <span style="color: #FFD866;">"wide"</span><span style="color: #AB9DF2;">)</span>
+        <span style="color: #FC9867;">)</span>
+    <span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span>imagecheck <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>imagecheck <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">30</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>imagecheck <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">30</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+</pre>
 </div>
 
-
+<pre class="example">
+RESULTS:
+"square"
+"tall"
+"wide"
+</pre>
+</div>
+</div>
 
 <div id="outline-container-orgda50088" class="outline-3">
 <h3 id="orgda50088">Problem 5</h3>
@@ -1285,6 +1309,25 @@ Create an expression that counts the number of pixels in the CAT image.
 <ul class="org-ul">
 <li>Create an expression that computes whether the first character in STR is "h". In this example, the expected result is true.</li>
 </ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">checkifh</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">lambda</span> <span style="color: #FC9867;">(</span>phrase<span style="color: #FC9867;">)</span>
+    <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-ci=?</span> <span style="color: #78DCE8;">(</span>string-ith phrase <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"h"</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">checks if the first letter of phrase is equal to "h"</span>
+        <span style="color: #FFD866;">"true"</span>
+        <span style="color: #FFD866;">"false"</span><span style="color: #FC9867;">)</span>
+    <span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span>checkifh <span style="color: #FFD866;">"hello_world"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>checkifh <span style="color: #FFD866;">"bye_world"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+"true"
+"false"
+</pre>
 </div>
 </div>
 </div>

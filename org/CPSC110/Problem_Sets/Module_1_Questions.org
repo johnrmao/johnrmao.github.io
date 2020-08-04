@@ -715,7 +715,7 @@ image
 (define addunderscore
   (lambda (phrase i)
     (string-append (substring phrase 0 i) "_" (substring phrase i (string-length phrase))
-   )
+   ) ; this append the substring of index 0-i to "_" to the substring of index i-(string-length phrase)
   )
 )
 (addunderscore "helloworld" 5)
@@ -736,8 +736,45 @@ image
 
 ** Problem 4
 + Create an expression that computes whether CAT is "tall" (height is larger than its width), "wide" (width is larger than its height), or "square" (height is the same as its width).
+#+BEGIN_SRC racket
+(require 2htdp/image)
+(define imagecheck
+  (lambda (image1)
+    (if (> (image-height image1) (image-width image1))
+        "tall" ; returns true if image is taller
+        (if (= (image-height image1) (image-width image1)) ; if not, it will check if it's square or wide
+            "square"
+            "wide")
+        )
+    )
+  )
 
+(imagecheck (rectangle 20 20 "solid" "red"))
+(imagecheck (rectangle 20 30 "solid" "red"))
+(imagecheck (rectangle 30 20 "solid" "red"))
 
+#+END_SRC
+
+: RESULTS:
+: "square"
+: "tall"
+: "wide"
 
 ** Problem 5
 + Create an expression that computes whether the first character in STR is "h". In this example, the expected result is true.
+#+BEGIN_SRC racket
+(define checkifh
+  (lambda (phrase)
+    (if (string-ci=? (string-ith phrase 0) "h") ; checks if the first letter of phrase is equal to "h"
+        "true"
+        "false")
+    )
+  )
+
+(checkifh "hello_world")
+(checkifh "bye_world")
+#+END_SRC
+
+: RESULTS:
+: "true"
+: "false"
