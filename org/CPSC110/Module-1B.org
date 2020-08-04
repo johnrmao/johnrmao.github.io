@@ -1,0 +1,15 @@
+#+TITLE: Module 1B
+#+SETUPFILE: ../template-1.org
+Created on 2020-08-03/21:30
+
+
+[[file:Problem_Sets/Module_1B_Questions.org][Module 1B Questions]]
+
+* Learning Goals
++ Be able to use the How to Design Functions (HtDF) recipe to design functions that operate on primitive data.
++ Be able to read a complete function design and identify its different elements.
++ Be able to evaluate the different elements for clarity, simplicity and consistency with each other.
++ Be able to evaluate the entire design for how well it solves the given problem.
+
+
+* Full Speed HtDF Recipe

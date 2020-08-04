@@ -1,0 +1,8 @@
+#+TITLE: Module 1B Questions
+#+SETUPFILE: ../../template-2.org
+Created on 2020-08-03/21:38
+
+
+[[file:~/johnrmao.github.io/org/CPSC110/Module-1A.org][Module 1B Notes]]
+
+*

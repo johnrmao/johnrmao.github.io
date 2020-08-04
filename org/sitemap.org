@@ -4,9 +4,11 @@
 - [[file:tablepractice.org][Tablepractice]]
 - [[file:20200712.org][Test Post]]
 - CPSC110
-  - [[file:CPSC110/Module-1.org][Module 1]]
+  - [[file:CPSC110/Module-1A.org][Module 1A]]
+  - [[file:CPSC110/Module-1B.org][Module 1B]]
   - Problem_Sets
-    - [[file:CPSC110/Problem_Sets/Module_1_Questions.org][Module 1 Questions]]
+    - [[file:CPSC110/Problem_Sets/Module_1A_Questions.org][Module 1 Questions]]
+    - [[file:CPSC110/Problem_Sets/Module_1B_Questions.org][Module 1B Questions]]
 - MissingMIT
   - [[file:MissingMIT/lecture-1.org][Lecture 1]]
   - [[file:MissingMIT/lecture-2.org][Lecture 2]]

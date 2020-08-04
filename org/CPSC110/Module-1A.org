@@ -1,9 +1,9 @@
-#+TITLE: Module 1 A
+#+TITLE: Module 1A
 #+SETUPFILE: ../template-1.org
 Created on 2020-07-12/14:082
 
 
-[[file:Problem_Sets/Module_1_Questions.org][Module 1 Questions]]
+[[file:Problem_Sets/Module_1A_Questions.org][Module 1A Questions]]
 
 * Learning Goals
 + Understand systematic design process.
