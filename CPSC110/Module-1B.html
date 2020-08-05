@@ -45,7 +45,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc7703fa"></a></li>
+<li><a href="#orgfa8fa0c">Learning Goals</a></li>
+<li><a href="#orgb1002e2">Full Speed HtDF Recipe</a>
+<ul>
+<li><a href="#org442610d">Problem</a></li>
+</ul>
+</li>
+<li><a href="#org44e60d5">Slow Motion HtDF Recipe</a>
+<ul>
+<li><a href="#orgaac7666">Designing a function</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -58,8 +68,211 @@ Created on 2020-08-03/21:30
 <a href="Problem_Sets/Module_1B_Questions.html">Module 1B Questions</a>
 </p>
 
-<div id="outline-container-orgc7703fa" class="outline-2">
-<h2 id="orgc7703fa"></h2>
+<div id="outline-container-orgfa8fa0c" class="outline-2">
+<h2 id="orgfa8fa0c">Learning Goals</h2>
+<div class="outline-text-2" id="text-orgfa8fa0c">
+<ul class="org-ul">
+<li>Be able to use the How to Design Functions (HtDF) recipe to design functions that operate on primitive data.</li>
+<li>Be able to read a complete function design and identify its different elements.</li>
+<li>Be able to evaluate the different elements for clarity, simplicity and consistency with each other.</li>
+<li>Be able to evaluate the entire design for how well it solves the given problem.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgb1002e2" class="outline-2">
+<h2 id="orgb1002e2">Full Speed HtDF Recipe</h2>
+<div class="outline-text-2" id="text-orgb1002e2">
+<ul class="org-ul">
+<li>HtDF recipe systematizes the design of a function.
+<ul class="org-ul">
+<li>The design recipe dictates the steps taken throughout the design of a function.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>HtDF can make harder problems easy by breaking it down, but it also makes easy problems cumbersome.
+<ul class="org-ul">
+<li>It is important to use HtDF recipe regarding hard functions.</li>
+</ul></li>
+</ul>
+</div>
+
+
+<div id="outline-container-org442610d" class="outline-3">
+<h3 id="org442610d">Problem</h3>
+<div class="outline-text-3" id="text-org442610d">
+<ul class="org-ul">
+<li>Design a function that consumes a number and produces twice that number. Call your function double. Follow the HtDF recipe and show the stub and template.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>The design method goes as follows:
+<ol class="org-ol">
+<li>Signature, purpose and stub.</li>
+<li>Define examples, wrap each in <code>check-expect</code>.</li>
+<li>Template eand inventory.</li>
+<li>Code the funciton body.</li>
+<li>Test and debug until correct.
+<ul class="org-ul">
+<li>The detailed list can be found <a href="https://edge.edx.org/courses/course-v1:UBC+CPSC110+2017W1/77860a93562d40bda45e452ea064998b/#HtDF">here.</a></li>
+</ul></li>
+</ol></li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number  Signature</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce 2 times the given number  Purpose</span>
+
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">Examples/tests</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">8.4</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">this is the stub</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+Check failures:
+	Actual value 0 differs from 6, the expected value.
+in double-starter.rkt, line 9, column 0
+	Actual value 0 differs from 8.4, the expected value.
+in double-starter.rkt, line 10, column 0
+</pre>
+
+
+
+<ul class="org-ul">
+<li>Currently, this example will fail as expected, but the fact that they ran means that the examples are well formed.</li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>The next step is the template step.</li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number  Signature</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce 2 times the given number  Purpose</span>
+
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">Examples/tests</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (double n) 0)  ; this is the stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (double n)  ; this is the template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... n)</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">function body</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> n<span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+Both tests passed!
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org44e60d5" class="outline-2">
+<h2 id="org44e60d5">Slow Motion HtDF Recipe</h2>
+<div class="outline-text-2" id="text-org44e60d5">
+</div>
+<div id="outline-container-orgaac7666" class="outline-3">
+<h3 id="orgaac7666">Designing a function</h3>
+<div class="outline-text-3" id="text-orgaac7666">
+<ul class="org-ul">
+<li>Design a function that consumes a number and produces twice that number.</li>
+<li>Call your function double. Follow the HtDF recipe and leave behind commented out versions of the stub and template.</li>
+</ul>
+
+
+<ol class="org-ol">
+<li>To form a signature:
+<ul class="org-ul">
+<li>Type &#x2026; -&gt; Type</li>
+<li>Declares type of data function consumes and produces.
+<ul class="org-ul">
+<li><p>
+For now, the primitive types are:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Number</td>
+<td class="org-left">Integer</td>
+<td class="org-left">Natural</td>
+</tr>
+
+<tr>
+<td class="org-left">String</td>
+<td class="org-left">Image</td>
+<td class="org-left">Boolean</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul></li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Describes that the function consumes a Number and produces a Number</span>
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>To form a purpose:
+<ul class="org-ul">
+<li>A purpose is a <i>1 line</i> description of what the function produces in terms of what it consumes.</li>
+</ul></li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">produces 2 times the given number</span>
+</pre>
+</div>
+
+<ol class="org-ol">
+<li><p>
+To form the stub:
+</p>
+<ul class="org-ul">
+<li>The stub is a function definition that:
+<ol class="org-ol">
+<li>has correct function name</li>
+<li>has correct number of parameters</li>
+<li>produces dummy result of correct type</li>
+</ol></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">this is the stub</span>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">

@@ -5,4 +5,16 @@ Created on 2020-08-03/21:38
 
 [[file:~/johnrmao.github.io/org/CPSC110/Module-1A.org][Module 1B Notes]]
 
-*
+* Module 1B Questions
+** Full Speed HtDF Recipe
++ *Question 1*
+  + Does a design method (or recipe) help more with hard design problems or easier ones?
+    1. /Hard design problems/  <-
+    2. Easy design problems
+
+
++ *Question 2*
+  + Where can you find the steps of the HtDF design recipe?
+    1. In the DrRacket help desk
+    2. In the starter file
+    3. /By following the Design Recipes tab from the course web site/  <-

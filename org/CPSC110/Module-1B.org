@@ -13,3 +13,105 @@ Created on 2020-08-03/21:30
 
 
 * Full Speed HtDF Recipe
++ HtDF recipe systematizes the design of a function.
+  + The design recipe dictates the steps taken throughout the design of a function.
+
+
++ HtDF can make harder problems easy by breaking it down, but it also makes easy problems cumbersome.
+  + It is important to use HtDF recipe regarding hard functions.
+
+
+** Problem
++ Design a function that consumes a number and produces twice that number. Call your function double. Follow the HtDF recipe and show the stub and template.
+
+
++ The design method goes as follows:
+  1. Signature, purpose and stub.
+  2. Define examples, wrap each in =check-expect=.
+  3. Template eand inventory.
+  4. Code the funciton body.
+  5. Test and debug until correct.
+     + The detailed list can be found [[https://edge.edx.org/courses/course-v1:UBC+CPSC110+2017W1/77860a93562d40bda45e452ea064998b/#HtDF][here.]]
+
+
+#+BEGIN_SRC racket
+;; Number -> Number  Signature
+;; produce 2 times the given number  Purpose
+
+(check-expect (double 3) 6)  ; Examples/tests
+(check-expect (double 4.2) 8.4)
+
+(define (double n) 0)  ; this is the stub
+#+END_SRC
+
+: RESULTS:
+: Check failures:
+: 	Actual value 0 differs from 6, the expected value.
+: in double-starter.rkt, line 9, column 0
+: 	Actual value 0 differs from 8.4, the expected value.
+: in double-starter.rkt, line 10, column 0
+
+
++ Currently, this example will fail as expected, but the fact that they ran means that the examples are well formed.
+
+
+
++ The next step is the template step.
+
+
+#+BEGIN_SRC racket
+;; Number -> Number  Signature
+;; produce 2 times the given number  Purpose
+
+(check-expect (double 3) 6)  ; Examples/tests
+(check-expect (double 4.2) (* 2 4.2))
+
+;(define (double n) 0)  ; this is the stub
+
+;(define (double n)  ; this is the template
+;  (... n)
+;  )
+
+(define (double n)  ; function body
+  (* 2 n)
+  )
+#+END_SRC
+
+: RESULTS:
+: Both tests passed!
+
+
+* Slow Motion HtDF Recipe
+** Designing a function
++ Design a function that consumes a number and produces twice that number.
++ Call your function double. Follow the HtDF recipe and leave behind commented out versions of the stub and template.
+
+
++ To form a signature:
+   + Type ... -> Type
+   + Declares type of data function consumes and produces.
+     + For now, the primitive types are:
+       | Number | Integer | Natural |
+       | String | Image   | Boolean |
+
+#+BEGIN_SRC racket
+;; Number -> Number
+;; Describes that the function consumes a Number and produces a Number
+#+END_SRC
+
++ To form a purpose:
+   + A purpose is a /1 line/ description of what the function produces in terms of what it consumes.
+
+#+BEGIN_SRC racket
+;; produces 2 times the given number
+#+END_SRC
+
++ To form the stub:
+   + The stub is a function definition that:
+     1. has correct function name
+     2. has correct number of parameters
+     3. produces dummy result of correct type
+
+   #+BEGIN_SRC racket
+(define (double n) 0)  ; this is the stub
+   #+END_SRC
