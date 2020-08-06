@@ -11,7 +11,15 @@ Created on 2020-08-06/00:36
 
 * cond Expressions
 + =cond= expression simplify writing conditional expressions with more than 2 cases.
+#+BEGIN_SRC racket
+;; To form cond expression
+  (cond [<expression> <expression>]
+        ...) ; one or more questions answer pairs
 
+;; Each question must evaluate to a boolean
+;; Last question can be else.
+
+#+END_SRC
 
 + Given the following:
   #+BEGIN_SRC racket
@@ -40,7 +48,6 @@ Created on 2020-08-06/00:36
       (if (= (image-height img) (image-width img))
           "square"
           "wide")))
-
   #+END_SRC
 
 
@@ -49,7 +56,28 @@ Created on 2020-08-06/00:36
 
 
 + The function consumes an image and produces a string, one of "tall", "square", or "wide".
++ The issue with the function above is that there are 2 cases nested within the =if=.
 
+
++ =cond= is a /multi-armed conditional./
+  + It can have any number of cases all at the same level.
+
+  #+BEGIN_SRC racket
+(require 2htdp/image)
+
+#;
+(define (aspect-ratio img)
+  (if (> (image-height img) (image-width img))
+      "tall"
+      (if (= (image-height img) (image-width img))
+          "square"
+          "wide")))
+
+(define (aspect-ratio img) ; () and [] balance each other. Both are equavalent but by convention, we use[ ] around question/answer pairs in cond. This makes the cond easier to read.
+  (cond [(> (image-height img) (image-width img)) "tall"]
+        [(= (image-height img) (image-width img)) "square"]
+        [else "wide"]))
+  #+END_SRC
 * Data Definitions
 * Atomic Non-Distinct
 * HtDF With Non-Primitive Data

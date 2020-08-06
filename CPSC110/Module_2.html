@@ -84,7 +84,16 @@ Created on 2020-08-06/00:36
 <ul class="org-ul">
 <li><code>cond</code> expression simplify writing conditional expressions with more than 2 cases.</li>
 </ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">To form cond expression</span>
+  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span>&lt;expression&gt; &lt;expression&gt;<span style="color: #78DCE8;">]</span>
+        <span style="color: #FF6188;">...</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">one or more questions answer pairs</span>
 
+<span style="color: #727072;">;; </span><span style="color: #727072;">Each question must evaluate to a boolean</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Last question can be else.</span>
+
+</pre>
+</div>
 
 <ul class="org-ul">
 <li><p>
@@ -116,7 +125,6 @@ Given the following:
       <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #78DCE8;">(</span>image-height img<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width img<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
           <span style="color: #FFD866;">"square"</span>
           <span style="color: #FFD866;">"wide"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
-
 </pre>
 </div></li>
 </ul>
@@ -132,10 +140,38 @@ Given the following:
 
 <ul class="org-ul">
 <li>The function consumes an image and produces a string, one of "tall", "square", or "wide".</li>
+<li>The issue with the function above is that there are 2 cases nested within the <code>if</code>.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+<code>cond</code> is a <i>multi-armed conditional.</i>
+</p>
+<ul class="org-ul">
+<li>It can have any number of cases all at the same level.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">#;</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">aspect-ratio img</span><span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">if </span><span style="color: #FC9867;">(</span><span style="color: #727072;">&gt; </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">image-height img</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">image-width img</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
+<span style="color: #727072;">      "tall"</span>
+<span style="color: #727072;">      </span><span style="color: #FC9867;">(</span><span style="color: #727072;">if </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">= </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">image-height img</span><span style="color: #78DCE8;">)</span><span style="color: #727072;"> </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">image-width img</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">          "square"</span>
+<span style="color: #727072;">          "wide"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">aspect-ratio</span> img<span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">() and [] balance each other. Both are equavalent but by convention, we use[ ] around question/answer pairs in cond. This makes the cond easier to read.</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-height img<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width img<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"tall"</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #78DCE8;">(</span>image-height img<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width img<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"square"</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"wide"</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
 </ul>
 </div>
 </div>
-
 <div id="outline-container-orga2fb039" class="outline-2">
 <h2 id="orga2fb039">Data Definitions</h2>
 </div>
