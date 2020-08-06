@@ -3,8 +3,6 @@
 Created on 2020-08-03/21:38
 
 
-[[file:~/johnrmao.github.io/org/CPSC110/Module-1A.org][Module 1B Notes]]
-
 * Module 1B Questions
 ** Full Speed HtDF Recipe
 + *Question 1*
@@ -173,7 +171,7 @@ file:../../screenshots/M1BS3Q3.png
 
 
 ** How many tests?
-+ How many tests are needed for this [[file:~/johnrmao.github.io/org/CPSC110/Module-1B.org::*Poorly Formed Problems][problem?]]
++ How many tests are needed for for the Poorly Formed Questions problem?
   + Three are needed.
     1. True if height is greater than width.
     2. False if height is less than width.

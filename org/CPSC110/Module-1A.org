@@ -3,7 +3,7 @@
 Created on 2020-07-12/14:082
 
 
-
+[[file:Problem_Sets/Module_1A_Questions.org][Module 1A Questions]]
 * Learning Goals
 + Understand systematic design process.
 + Understand that programs are written both to run and to read.
@@ -16,13 +16,13 @@ Created on 2020-07-12/14:082
 
 * Expressions
 + Simple arithmatic
-  + src_racket{(+ 3 4)} => 7
-    + In this case, src_racket{(+ 3 4)} is the expression, and =7= is the value.
+  + src_racket{(+ 3 4)} {{{results(=7=)}}} => 7
+    + In this case, src_racket{(+ 3 4)} {{{results(=7=)}}} is the expression, and =7= is the value.
 
 
 + Racket works by parsing expressions to produce values.
-  + src_racket{(+ 3 (* 2 3))} => 9
-  + src_racket{(/ 12 (* 2 3))} => 2
+  + src_racket{(+ 3 (* 2 3))} {{{results(=9=)}}} => 9
+  + src_racket{(/ 12 (* 2 3))} {{{results(=2=)}}} => 2
 
 
 + To from an expression, start with src_racket{(<primitive> <expression>)} or simly a =<value>=.
