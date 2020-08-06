@@ -1,0 +1,63 @@
+#+TITLE: Module 2
+#+SETUPFILE: ../template-1.org
+Created on 2020-08-06/00:36
+
+* Learning Goals
++ Be able to use the How to Design Data Definitions (HtDD) recipe to design data  definitions for atomic data.
++ Be able to identify problem domain information that should be represented as simple atomic data, intervals, enumerations, itemizations and mixed data itemizations.
++ Be able to use the Data Driven Templates recipe to generate templates for functions operating on atomic data
++ Be able to use the How to Design Functions (HtDF) recipe to design functions operating on atomic data.
+
+
+* cond Expressions
++ =cond= expression simplify writing conditional expressions with more than 2 cases.
+
+
++ Given the following:
+  #+BEGIN_SRC racket
+(require 2htdp/image)
+
+;; cond-starter.rkt
+
+(define I1 (rectangle 10 20 "solid" "red"))
+(define I2 (rectangle 20 20 "solid" "red"))
+(define I3 (rectangle 20 10 "solid" "red"))
+
+;; Image -> String
+;; produce shape of image, one of "tall", "square" or "wide"
+(check-expect (aspect-ratio I1) "tall")
+(check-expect (aspect-ratio I2) "square")
+(check-expect (aspect-ratio I3) "wide")
+
+;(define (aspect-ratio img) "")  ;stub
+
+;(define (aspect-ratio img)      ;template
+;  (... img))
+
+(define (aspect-ratio img)
+  (if (> (image-height img) (image-width img))
+      "tall"
+      (if (= (image-height img) (image-width img))
+          "square"
+          "wide")))
+
+  #+END_SRC
+
+
++ This function defines three constants, I1, I2, I3.
+  + All three are rectangles
+
+
++ The function consumes an image and produces a string, one of "tall", "square", or "wide".
+
+* Data Definitions
+* Atomic Non-Distinct
+* HtDF With Non-Primitive Data
+* HtDF X Structure of Data Orthogonality
+* Interval
+* Enumeration
+* Itemization
+* HtDF with Interval
+* HtDF with Enumeration
+* HtDF with Itemization
+* Struture of Information Flows Through

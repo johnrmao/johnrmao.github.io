@@ -6,9 +6,11 @@
 - CPSC110
   - [[file:CPSC110/Module_1.1.org][Module 1A]]
   - [[file:CPSC110/Module_1.2.org][Module 1B]]
+  - [[file:CPSC110/Module_2.org][Module 2]]
   - Problem_Sets
     - [[file:CPSC110/Problem_Sets/Module_1.1_Questions.org][Module 1A Questions]]
     - [[file:CPSC110/Problem_Sets/Module_1.2_Questions.org][Module 1B Questions]]
+    - [[file:CPSC110/Problem_Sets/Module_2_Questions.org][Module_2_questions]]
 - MissingMIT
   - [[file:MissingMIT/lecture-1.org][Lecture 1]]
   - [[file:MissingMIT/lecture-2.org][Lecture 2]]

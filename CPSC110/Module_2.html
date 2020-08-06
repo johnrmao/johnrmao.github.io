@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 2</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Mao" />
+<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="../index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Module 2</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7926730">Learning Goals</a></li>
+<li><a href="#org135d16b">cond Expressions</a></li>
+<li><a href="#orga2fb039">Data Definitions</a></li>
+<li><a href="#orge524706">Atomic Non-Distinct</a></li>
+<li><a href="#org8f0d375">HtDF With Non-Primitive Data</a></li>
+<li><a href="#orge8beb25">HtDF X Structure of Data Orthogonality</a></li>
+<li><a href="#org7f3338a">Interval</a></li>
+<li><a href="#org00ef359">Enumeration</a></li>
+<li><a href="#orgc9f0ce7">Itemization</a></li>
+<li><a href="#orgf58af17">HtDF with Interval</a></li>
+<li><a href="#orgaa6da0c">HtDF with Enumeration</a></li>
+<li><a href="#org1b90da1">HtDF with Itemization</a></li>
+<li><a href="#org3d87537">Struture of Information Flows Through</a></li>
+</ul>
+</div>
+</div>
+<p>
+Created on 2020-08-06/00:36
+</p>
+
+<div id="outline-container-org7926730" class="outline-2">
+<h2 id="org7926730">Learning Goals</h2>
+<div class="outline-text-2" id="text-org7926730">
+<ul class="org-ul">
+<li>Be able to use the How to Design Data Definitions (HtDD) recipe to design data  definitions for atomic data.</li>
+<li>Be able to identify problem domain information that should be represented as simple atomic data, intervals, enumerations, itemizations and mixed data itemizations.</li>
+<li>Be able to use the Data Driven Templates recipe to generate templates for functions operating on atomic data</li>
+<li>Be able to use the How to Design Functions (HtDF) recipe to design functions operating on atomic data.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org135d16b" class="outline-2">
+<h2 id="org135d16b">cond Expressions</h2>
+<div class="outline-text-2" id="text-org135d16b">
+<ul class="org-ul">
+<li><code>cond</code> expression simplify writing conditional expressions with more than 2 cases.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+Given the following:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">cond-starter.rkt</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">I1</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">I2</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">I3</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Image -&gt; String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce shape of image, one of "tall", "square" or "wide"</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>aspect-ratio I1<span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"tall"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>aspect-ratio I2<span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"square"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>aspect-ratio I3<span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"wide"</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (aspect-ratio img) "")  ;stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (aspect-ratio img)      ;template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... img))</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">aspect-ratio</span> img<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2;">(</span>image-height img<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>image-width img<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
+      <span style="color: #FFD866;">"tall"</span>
+      <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #78DCE8;">(</span>image-height img<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width img<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+          <span style="color: #FFD866;">"square"</span>
+          <span style="color: #FFD866;">"wide"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+</pre>
+</div></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>This function defines three constants, I1, I2, I3.
+<ul class="org-ul">
+<li>All three are rectangles</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>The function consumes an image and produces a string, one of "tall", "square", or "wide".</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga2fb039" class="outline-2">
+<h2 id="orga2fb039">Data Definitions</h2>
+</div>
+<div id="outline-container-orge524706" class="outline-2">
+<h2 id="orge524706">Atomic Non-Distinct</h2>
+</div>
+<div id="outline-container-org8f0d375" class="outline-2">
+<h2 id="org8f0d375">HtDF With Non-Primitive Data</h2>
+</div>
+<div id="outline-container-orge8beb25" class="outline-2">
+<h2 id="orge8beb25">HtDF X Structure of Data Orthogonality</h2>
+</div>
+<div id="outline-container-org7f3338a" class="outline-2">
+<h2 id="org7f3338a">Interval</h2>
+</div>
+<div id="outline-container-org00ef359" class="outline-2">
+<h2 id="org00ef359">Enumeration</h2>
+</div>
+<div id="outline-container-orgc9f0ce7" class="outline-2">
+<h2 id="orgc9f0ce7">Itemization</h2>
+</div>
+<div id="outline-container-orgf58af17" class="outline-2">
+<h2 id="orgf58af17">HtDF with Interval</h2>
+</div>
+<div id="outline-container-orgaa6da0c" class="outline-2">
+<h2 id="orgaa6da0c">HtDF with Enumeration</h2>
+</div>
+<div id="outline-container-org1b90da1" class="outline-2">
+<h2 id="org1b90da1">HtDF with Itemization</h2>
+</div>
+<div id="outline-container-org3d87537" class="outline-2">
+<h2 id="org3d87537">Struture of Information Flows Through</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Mao</p>
+</div>
+</body>
+</html>

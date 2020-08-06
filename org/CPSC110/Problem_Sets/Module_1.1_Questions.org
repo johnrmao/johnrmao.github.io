@@ -750,6 +750,7 @@ image
         )
     )
   )
+;; it would be better to use cond here, but that will be covered later in the course.
 
 (imagecheck (rectangle 20 20 "solid" "red"))
 (imagecheck (rectangle 20 30 "solid" "red"))
