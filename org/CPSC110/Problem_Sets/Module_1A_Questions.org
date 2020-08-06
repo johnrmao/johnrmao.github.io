@@ -767,9 +767,7 @@ image
 #+BEGIN_SRC racket
 (define checkifh
   (lambda (phrase)
-    (if (string-ci=? (string-ith phrase 0) "h") ; checks if the first letter of phrase is equal to "h"
-        "true"
-        "false")
+    (string-ci=? (string-ith phrase 0) "h") ; checks if the first letter of phrase is equal to "h"
     )
   )
 
@@ -778,5 +776,5 @@ image
 #+END_SRC
 
 : RESULTS:
-: "true"
-: "false"
+: #true
+: #false

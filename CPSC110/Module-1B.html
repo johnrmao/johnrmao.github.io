@@ -66,8 +66,11 @@
 </ul>
 </li>
 <li><a href="#org85d28fe">Example - yell!</a></li>
+<li><a href="#orgb734c70">Example - area</a></li>
+<li><a href="#org59b8ade">Example - image-area</a></li>
 </ul>
 </li>
+<li><a href="#org16fb84a">Poorly Formed Problems</a></li>
 </ul>
 </div>
 </div>
@@ -435,6 +438,162 @@ For now, the primitive types are:
   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-append</span> s <span style="color: #FFD866;">"!"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 </pre>
 </div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb734c70" class="outline-3">
+<h3 id="orgb734c70">Example - area</h3>
+<div class="outline-text-3" id="text-orgb734c70">
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>DESIGN a function called area that consumes the length of one side of a square and produces the area of the square.</li>
+
+<li>Remember, when we say DESIGN, we mean follow the recipe.</li>
+
+<li>Leave behind commented out versions of the stub and template.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;;  </span><span style="color: #727072;">Number -&gt; Number</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">given length of one side of square, produce the area of the square</span>
+
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>area <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">ignore this mistake for now</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>area <span style="color: #AB9DF2; font-weight: bold;">3.2</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3.2</span> <span style="color: #AB9DF2; font-weight: bold;">3.2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (area s) 0)  ; stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (area s)     ; template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... s))</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">area</span> s<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> s s<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li><p>
+Currently, this will produce one failed test.
+</p>
+<pre class="example">
+RESULTS:
+1 of the 2 tests failed.
+Actual value 9 differs from 3, the expected value.
+</pre></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>This is not an issue with the function, but the actual test.
+<ul class="org-ul">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>area <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code> should be <code class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>area <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">9</span><span style="color: #AB9DF2;">)</span></code></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>It should now run correctly.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>If a test fails, it could be that:
+<ol class="org-ol">
+<li>the function definition is wrong.</li>
+<li>the test is wrong.</li>
+<li>they are both wrong.</li>
+</ol></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Check the test before fixing the function definition!</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org59b8ade" class="outline-3">
+<h3 id="org59b8ade">Example - image-area</h3>
+<div class="outline-text-3" id="text-org59b8ade">
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li><p>
+DESIGN a function called image-area that consumes an image and produces the area of that image. For the area it is sufficient to just multiple the image's width by its height.  Follow the HtDF recipe and leave behind commented out versions of the stub and template.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Image -&gt; Natural ; pixels are always counted in natural numbers. Always use the most specific type of indentifier.</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce image's width * height (area)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>image-area <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (image-area img) 0) ; stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (image-area img) ; template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... img))</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">image-area</span> img<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #FC9867;">(</span>image-width IMG<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-height IMG<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+The test passed!
+</pre></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org16fb84a" class="outline-2">
+<h2 id="org16fb84a">Poorly Formed Problems</h2>
+<div class="outline-text-2" id="text-org16fb84a">
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>DESIGN a function that consumes an image and determines whether the image is tall.</li>
+
+<li>Remember, when we say DESIGN, we mean follow the recipe.</li>
+
+<li>Leave behind commented out versions of the stub and template.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>This example will have a problem statement that isn't very specific.</li>
+<li>First, we need to make the problem more specific.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Image -&gt; Boolean ; as it is asking a yes/no question</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce true if the image is tall (height is greater than width)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>tall? <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>tall? <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>tall? <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (tall? img) false) ; stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (tall? img)         ; template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... img))</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (tall? img)</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(if (&gt; (image-height img) (image-width img))</span>
+<span style="color: #727072;">;      </span><span style="color: #727072;">true</span>
+<span style="color: #727072;">;      </span><span style="color: #727072;">false)</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">)</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">the below code is the same as the above, as it only returns true or false, it is unneccessary to include it.</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">tall?</span> img<span style="color: #78DCE8;">)</span>
+ <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #FC9867;">(</span>image-height img<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-width img<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+</pre>
 </div>
 </div>
 </div>

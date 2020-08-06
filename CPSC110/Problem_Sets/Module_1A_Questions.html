@@ -1316,9 +1316,7 @@ RESULTS:
 <div class="org-src-container">
 <pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">checkifh</span>
   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">lambda</span> <span style="color: #FC9867;">(</span>phrase<span style="color: #FC9867;">)</span>
-    <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-ci=?</span> <span style="color: #78DCE8;">(</span>string-ith phrase <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"h"</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">checks if the first letter of phrase is equal to "h"</span>
-        <span style="color: #FFD866;">"true"</span>
-        <span style="color: #FFD866;">"false"</span><span style="color: #FC9867;">)</span>
+    <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-ci=?</span> <span style="color: #AB9DF2;">(</span>string-ith phrase <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"h"</span><span style="color: #FC9867;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">checks if the first letter of phrase is equal to "h"</span>
     <span style="color: #78DCE8;">)</span>
   <span style="color: #AB9DF2;">)</span>
 
@@ -1329,8 +1327,8 @@ RESULTS:
 
 <pre class="example">
 RESULTS:
-"true"
-"false"
+#true
+#false
 </pre>
 </div>
 </div>

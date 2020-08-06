@@ -135,19 +135,53 @@ Created on 2020-08-03/21:38
   + A "pointing on a picture" problem (also called an "image mapped input" problem) presents an image, and asks you to click on an area in the image. To help ensure accuracy, make sure you click near the middle of what the question asks for.
 
   + In the following partially complete function design, one part of the design is inconsistent with the rest. Click on the most specific or smallest part that "doesn't belong".
+
 file:../../screenshots/M1BS3Q1.png
 
   + The signature shows the function as producing String. But this doesn't match the purpose, the check-expects or the stub, all of which have the function producing Number.
 
 + *Question 2*
   + In the following partially complete function design, one part of the design is inconsistent with the rest. Click on the most specific or smallest part that "doesn't belong".
+
 file:../../screenshots/M1BS3Q2.png
 
   + In the second check-expect, the operand in the call to empty-string? is 0. But 0 is a number, the signature says the function must consume String, and all the other parts of the design have the function consuming String.
 
 + *Question 3*
   + In the following partially complete function design, one part of the design is inconsistent with the rest. Click on the most specific or smallest part that "doesn't belong".
+    
 file:../../screenshots/M1BS3Q3.png
 
   + The false answer in the if expression produces true. But true is a boolean, which does not match the signature, purpose or any of the check-expects.
 
+
+
+** When Tests are Incorrect
++ *Question 1*
+  + Why do we run the examples/tests after writing the stub?
+    1. To check if they produce values of the correct type
+    2. /To check if they are well-formed/  <-
+    3. To see how many tests are failing
+    4. Why not
+
+
++ *Question 2*
+  + When a test fails, what possibilities should we consider?
+    1. /the test is incorrect/
+    2. /the function definition is incorrect/
+    3. /the test and the function definition are both incorrect/
+
+
+** How many tests?
++ How many tests are needed for this [[file:~/johnrmao.github.io/org/CPSC110/Module-1B.org::*Poorly Formed Problems][problem?]]
+  + Three are needed.
+    1. True if height is greater than width.
+    2. False if height is less than width.
+    3. False if height is equal to width.
+
+
+* Extra Practice
+
+
+
+* HtDF Lab Questions
