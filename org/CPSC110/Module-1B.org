@@ -188,3 +188,29 @@ Created on 2020-08-03/21:30
 (define (double n)
   (* 2 n))
 #+END_SRC
+
+
+** Example - yell!
++ PROBLEM:
+
++ DESIGN a function called yell that consumes strings like "hello" and adds "!" to produce strings like "hello!".
+
++ Remember, when we say DESIGN, we mean follow the recipe.
+
++ Leave behind commented out versions of the stub and template.
+
+#+BEGIN_SRC racket
+;; String -> String
+;; Produce the given string with "s" added to the end
+
+(check-expect (yell "hello") "hello!")
+(check-expect (yell "bye") "bye!")
+
+; (define (yell str) "") ;stub
+
+;(define (yell str) ;template
+;  (... str))
+
+(define (yell str)
+  (string-append s "!"))
+#+END_SRC

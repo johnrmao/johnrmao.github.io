@@ -65,6 +65,7 @@
 <li><a href="#org4d5d077">Final example</a></li>
 </ul>
 </li>
+<li><a href="#org85d28fe">Example - yell!</a></li>
 </ul>
 </li>
 </ul>
@@ -400,6 +401,39 @@ For now, the primitive types are:
   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> n<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 </pre>
 </div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org85d28fe" class="outline-3">
+<h3 id="org85d28fe">Example - yell!</h3>
+<div class="outline-text-3" id="text-org85d28fe">
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>DESIGN a function called yell that consumes strings like "hello" and adds "!" to produce strings like "hello!".</li>
+
+<li>Remember, when we say DESIGN, we mean follow the recipe.</li>
+
+<li>Leave behind commented out versions of the stub and template.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">String -&gt; String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Produce the given string with "s" added to the end</span>
+
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>yell <span style="color: #FFD866;">"hello"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"hello!"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>yell <span style="color: #FFD866;">"bye"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"bye!"</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (yell str) "") ;stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (yell str) ;template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... str))</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">yell</span> str<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-append</span> s <span style="color: #FFD866;">"!"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
 </div>
 </div>
 </div>

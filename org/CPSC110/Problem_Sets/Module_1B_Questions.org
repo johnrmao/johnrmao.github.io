@@ -18,3 +18,136 @@ Created on 2020-08-03/21:38
     1. In the DrRacket help desk
     2. In the starter file
     3. /By following the Design Recipes tab from the course web site/  <-
+
+
+** Reading a Function Definition
++ *Question 1*
+  + Consider the following short program.
+    #+BEGIN_SRC racket
+(define WIDTH 100)
+(define HEIGHT 100)
+
+(define (half-tw x)
+  (+ x (/ (- WIDTH x) 2)))
+    #+END_SRC
+
+  + What does the =half-tw= function do?
+    + The =half-tw= function will take half the WIDTH - X, then add X to that value.
+
+
+** A Simple Practice Example
+*** The First HtDF Problem
++ Problem: Design a function that pluralizes a given word. (Pluralize means to convert the word to its plural form.) For simplicity you may assume that just adding s is enough to pluralize a word.
+
+
++ *Signature*
+ + What is an appropriate signature for this function? Leave out the two semi-colons and the space, but otherwise be sure to get the capitalization and all other aspects of the signature correct.
+
+
++ *Purpose*
+  + Continuing with the given problem, we now have a signature.
+  + Which of the following statements is best?
+    1. src_racket{;; Pluralize s.}
+    2. src_racket{;; Produce plural string.}
+    3. src_racket{;; Add "s".}
+    4. src_racket{;; Produce the given string with "s" added to the end.} <-
+
+
++ *Stub*
+  + Continuing with the given problem, we now have a signature and a purpose.
+    #+BEGIN_SRC racket
+;; String -> String
+;; Produce the given string with "s" added to the end.
+    #+END_SRC
+    + Which of the following stubs is the best?
+      1. src_racket{(define (pluralize str) 0)}
+      2. src_racket{(define (string str) str)}
+      3. src_racket{(define (pluralize str) "")}  <-
+      4. src_racket{(define (longer str) 1)}
+
+
++ *Examples / check-expects*
+  + Continuing with the given problem, we now have a signature, purpose and stub.
+    #+BEGIN_SRC racket
+;; String -> String
+;; Produce the given string with "s" added to the end.
+
+(define (pluralize str) "")  ;stub
+    #+END_SRC
+    + Which of the following check-expects is appropriate?
+      1. src_racket{(check-expect (pluralize "cat") "s")}
+
+      2. src_racket{(check-expect (pluralize "cat") "cat")}
+
+      3. src_racket{(check-expect (pluralize "dog") "dogs")}  <-
+
+      4. src_racket{(check-expect (pluralize "grass") "grasss")}  <-
+
+
++ *Code the Body*
+  + Continuing with the given problem, we now have a signature, purpose, stub and several examples. Below we have also given you the template.
+    #+BEGIN_SRC racket
+;; String -> String
+;; add "s" to the end of the given string
+(check-expect (pluralize "cat") "cats")
+(check-expect (pluralize "dogs") "dogss")
+
+;(define (pluralize str) "")        ; stub
+;(define (pluralize str)            ; template
+;  (... str))
+
+(define (pluralize str)             ; template
+  (... str))
+    #+END_SRC
+    + We now need to code the body by replacing (... str) with the proper body. Which of the following expressions should be used as the body for pluralize?
+      1. src_racket{(string-append "s" str)}
+
+      2. src_racket{(string-append str "s")}  <-
+
+      3. src_racket{(string-append str s)}
+
+      4. src_racket{(string-append "cat" "s")}
+
+
+#+BEGIN_SRC racket
+;; Problem: Design a function that pluralizes a given word. (Pluralize means to convert the word to its plural form.) For simplicity you may assume that just adding s is enough to pluralize a word.
+
+;; String -> String
+;; Produce the given string with "s" added to the end
+
+;; (define (pluralize str) "")
+
+(check-expect (pluralize "dog") "dogs")
+(check-expect (pluralize "grass") "grasss")
+
+;(define (pluralize str)
+;  (... str))
+
+(check-expect (pluralize "hand") (string-append "hand" "s"))
+
+(define (pluralize str)
+  (string-append str "s"))
+#+END_SRC
+
+
+*** A Simple Practice Example
++ *Question 1*
+  + A "pointing on a picture" problem (also called an "image mapped input" problem) presents an image, and asks you to click on an area in the image. To help ensure accuracy, make sure you click near the middle of what the question asks for.
+
+  + In the following partially complete function design, one part of the design is inconsistent with the rest. Click on the most specific or smallest part that "doesn't belong".
+file:../../screenshots/M1BS3Q1.png
+
+  + The signature shows the function as producing String. But this doesn't match the purpose, the check-expects or the stub, all of which have the function producing Number.
+
++ *Question 2*
+  + In the following partially complete function design, one part of the design is inconsistent with the rest. Click on the most specific or smallest part that "doesn't belong".
+file:../../screenshots/M1BS3Q2.png
+
+  + In the second check-expect, the operand in the call to empty-string? is 0. But 0 is a number, the signature says the function must consume String, and all the other parts of the design have the function consuming String.
+
++ *Question 3*
+  + In the following partially complete function design, one part of the design is inconsistent with the rest. Click on the most specific or smallest part that "doesn't belong".
+file:../../screenshots/M1BS3Q3.png
+
+  + The false answer in the if expression produces true. But true is a boolean, which does not match the signature, purpose or any of the check-expects.
+
