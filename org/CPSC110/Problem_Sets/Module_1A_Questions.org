@@ -3,7 +3,6 @@
 Created on 2020-07-17/15:54
 
 
-[[file:~/johnrmao.github.io/org/CPSC110/Module-1A.org][Module 1A Notes]]
 
 * Module 1 Questions
 ** Expressions

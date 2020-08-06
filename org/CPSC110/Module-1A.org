@@ -3,7 +3,6 @@
 Created on 2020-07-12/14:082
 
 
-[[file:Problem_Sets/Module_1A_Questions.org][Module 1A Questions]]
 
 * Learning Goals
 + Understand systematic design process.
