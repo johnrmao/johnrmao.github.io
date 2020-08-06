@@ -179,7 +179,216 @@ file:../../screenshots/M1BS3Q3.png
 
 
 * Extra Practice
+** Less Than 5
++ Design a problem to check if the length of a string is less than 5.
 
+  #+BEGIN_SRC racket
+;; String -> Boolean
+;; produce true if given string length is less than 5
+
+; (define (lessthanfive? str) true) ; stub
+
+(check-expect (lessthanfive? "") true)
+(check-expect (lessthanfive? "fox") true)
+(check-expect (lessthanfive? "elephants") false)
+(check-expect (lessthanfive? "seals") false)
+
+;(define (lessthanfive? str) ; template
+;  (... str))
+
+(define (lessthanfive? str)
+  (< (string-length str) 5)
+  )
+  #+END_SRC
+
+: RESULTS:
+: All 4 tests passed!
+
+
+** Boxify
++ Design a function to put a box around a given image.
+  
+  #+BEGIN_SRC racket
+(require 2htdp/image)
+;; Image -> Image
+;; Create a 1px larger rectangle around a given image.
+
+; (define (boxify img) (rectangle 20 20 "solid" "black")) ; stub
+
+(check-expect (boxify (circle 5 "solid" "red")) (overlay (rectangle 11 11 "solid" "black")
+                                                (circle 5 "solid" "red")))
+(check-expect (boxify (square 10 "solid" "red")) (overlay (rectangle 11 11 "solid" "black")
+                                                 (square 10 "solid" "red")))
+
+;(define (boxify img)  ; template
+;  (... img))
+
+(define (boxify img)
+  (overlay (rectangle (+ (image-width img) 1) (+ (image-height img) 1) "solid" "black")
+           img))
+  #+END_SRC
+
+
+** Double Error
++ Fix the error(s) in a function that doubles a given number.
+
+#+BEGIN_SRC racket
+;; This is the broken file
+;; Number -> Number
+;; doubles n
+(check-expect (double 0) 0)
+(check-expect (double 4) 8)
+(check-expect (double 3.3) (* 2 3.3))
+(check-expect (double -1) -2)
+
+
+#;
+(define (double n) 0) ; stub
+
+(define (double n)
+  (* (2 n)))
+#+END_SRC
+
+------
+
+#+BEGIN_SRC racket
+;; This is the fixed file
+;; Number -> Number
+;; doubles n
+(check-expect (double 0) 0)
+(check-expect (double 4) 8)
+(check-expect (double 3.3) (* 2 3.3))
+(check-expect (double -1) -2)
+
+
+#;
+(define (double n) 0) ; stub
+
+(define (double n)
+  (* 2 n)) ; this line was evaluating (2 n) before which is invalid. Now it's evaluating (* 2 n)
+#+END_SRC
 
 
 * HtDF Lab Questions
+** Problem 1
++ Design a function called square? that consumes an image and determines whether the image's height is the same as the image's width.
+#+BEGIN_SRC racket
+(require 2htdp/image)
+
+;; Image -> Boolean
+;; return true if image-width = image-height
+
+;(define (square? img) true) ; stub
+
+(check-expect (square? (rectangle 2 3 "solid" "red")) false)
+(check-expect (square? (square 2 "solid" "red")) true)
+
+;(define (square? img)       ; template
+;  (... img))
+
+(define (square? img)
+  (= (image-height img) (image-width img)))
+#+END_SRC
+
+: RESULTS:
+: Both tests passed!
+
+** Problem 2
++ Design a function named underline that consumes an image and produces that image underlined by a black line of the same width. For example,
+  #+BEGIN_SRC racket
+(underline (circle 20 "solid" "green"))
+  #+END_SRC
+  should produce
+  #+BEGIN_SRC racket
+(above (circle 20 "solid" "green")
+       (rectangle 40 2 "solid" "black"))
+  #+END_SRC
+------
+#+BEGIN_SRC racket
+(require 2htdp/image)
+
+;; Image -> Image
+;; Add underline of same width under consumed image
+
+; (define (underline img) (rectangle 1 1 "solid" "black")) ; stub
+
+ (check-expect (underline (circle 20 "solid" "green")) (above (circle 20 "solid" "green")
+       (rectangle 40 2 "solid" "black")))
+
+;(define (underline img) ; template
+;   (... img))
+
+ (define (underline img)
+   (above img
+          (rectangle (image-width img) 2 "solid" "black")))
+
+#+END_SRC
+
+: RESULTS:
+: The test passed!
+
+
+** Problem 3
++ A (much too) simple scheme for pluralizing words in English is to add an s at the end unless the word already ends in s.
+
++ Design a function that consumes a string, and adds s to the end unless the string already ends in s.
+#+BEGIN_SRC racket
+;; String -> String
+;; Add "s" to given string unless given string already ends in "s"
+
+; (define (pluralize str) "") ; stub
+
+(check-expect (pluralize "cat") "cats")
+(check-expect (pluralize "grass") "grass")
+
+;(define (pluralize str)  ; template
+;  (... str))
+
+(define (pluralize str)
+  (if (string-ci=? (string-ith str (- (string-length str) 1)) "s")
+      str
+      (string-append str "s")
+      )
+  )
+#+END_SRC
+
+: RESULTS:
+: Both tests passed!
+
+
+** Problem 4
++ Design a function called nth-char-equal? that consumes two strings and a natural and produces true if the strings both have length greater than n and have the same character at position n.
+
++ Note: the signature for such a function is src_racket{;; String String Natural -> Boolean}
+
++ The template for such a function is:
+  #+BEGIN_SRC racket
+(define (nth-char-equal? s1 s2 n)
+     (... s1 s2 n))
+  #+END_SRC
+
+
+------
+
+#+BEGIN_SRC racket
+;; String String Natural -> Boolean
+;; Consume two strings, return true if strings have greater length than n, and have same character at position n
+
+; (define (nth-char-equal? s1 s2 n) true) ; stub
+(check-expect (nth-char-equal? "Apple" "Apples" 2) true)
+(check-expect (nth-char-equal? "Pizzaria" "Pie" 4) false)
+(check-expect (nth-char-equal? "Salmon" "Ladder" 5) false)
+
+;(define (nth-char-equal? s1 s2 n)  ; template
+;     (... s1 s2 n))
+
+(define (nth-char-equal? s1 s2 n)
+  (and (> (string-length s1) n)
+       (> (string-length s2) n)
+       (string-ci=? (string-ith s1 n) (string-ith s2 n))
+           )
+      )
+#+END_SRC
+
+: RESULTS:
+: All 3 tests passed!

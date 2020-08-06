@@ -682,7 +682,8 @@ image
         a
         b
      )
-    ))
+    )
+  )
 
 
 (compare 5 2)
