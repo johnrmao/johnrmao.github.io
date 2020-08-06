@@ -163,7 +163,8 @@ Given the following:
 <span style="color: #727072;">          "square"</span>
 <span style="color: #727072;">          "wide"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">aspect-ratio</span> img<span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">() and [] balance each other. Both are equavalent but by convention, we use[ ] around question/answer pairs in cond. This makes the cond easier to read.</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">aspect-ratio</span> img<span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">() and [] balance each other.</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Both are equavalent but by convention, we use[ ] around question/answer pairs in cond.</span>
   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-height img<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width img<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"tall"</span><span style="color: #FC9867;">]</span>
         <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #78DCE8;">(</span>image-height img<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width img<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"square"</span><span style="color: #FC9867;">]</span>
         <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"wide"</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
@@ -172,6 +173,8 @@ Given the following:
 </ul>
 </div>
 </div>
+
+
 <div id="outline-container-orga2fb039" class="outline-2">
 <h2 id="orga2fb039">Data Definitions</h2>
 </div>

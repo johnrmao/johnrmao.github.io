@@ -73,11 +73,14 @@ Created on 2020-08-06/00:36
           "square"
           "wide")))
 
-(define (aspect-ratio img) ; () and [] balance each other. Both are equavalent but by convention, we use[ ] around question/answer pairs in cond. This makes the cond easier to read.
+(define (aspect-ratio img) ; () and [] balance each other.
+;; Both are equavalent but by convention, we use[ ] around question/answer pairs in cond.
   (cond [(> (image-height img) (image-width img)) "tall"]
         [(= (image-height img) (image-width img)) "square"]
         [else "wide"]))
   #+END_SRC
+
+  
 * Data Definitions
 * Atomic Non-Distinct
 * HtDF With Non-Primitive Data
