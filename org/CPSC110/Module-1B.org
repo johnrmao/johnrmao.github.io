@@ -169,3 +169,22 @@ Created on 2020-08-03/21:30
 *** Test and Debugging
 + Run the current code and it should pass without issue.
 + It will be discussed later on how to debug when the code doesn't run correctly.
+
+
+*** Final example
+#+BEGIN_SRC racket
+;; by now, the code should look like this after each step
+
+;; Number -> Number
+;; produce 2 times the given number
+(check-expect (double 3) 6)
+(check-expect (double 4.2) (* 2 4.2))
+
+; (define (double n) 0) ; this is the stub
+
+; (define (double n)    ; this is the template
+;    (... n))
+
+(define (double n)
+  (* 2 n))
+#+END_SRC

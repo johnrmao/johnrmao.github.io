@@ -62,6 +62,7 @@
 <li><a href="#orgacf4780">Inventory - Templates &amp; Constants</a></li>
 <li><a href="#org5240990">Code Body</a></li>
 <li><a href="#org0375d75">Test and Debugging</a></li>
+<li><a href="#org4d5d077">Final example</a></li>
 </ul>
 </li>
 </ul>
@@ -375,6 +376,30 @@ For now, the primitive types are:
 <li>Run the current code and it should pass without issue.</li>
 <li>It will be discussed later on how to debug when the code doesn't run correctly.</li>
 </ul>
+</div>
+</div>
+
+
+<div id="outline-container-org4d5d077" class="outline-4">
+<h4 id="org4d5d077">Final example</h4>
+<div class="outline-text-4" id="text-org4d5d077">
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">by now, the code should look like this after each step</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce 2 times the given number</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (double n) 0) ; this is the stub</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (double n)    ; this is the template</span>
+<span style="color: #727072;">;    </span><span style="color: #727072;">(... n))</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> n<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
 </div>
 </div>
 </div>
