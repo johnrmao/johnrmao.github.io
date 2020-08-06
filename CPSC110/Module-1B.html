@@ -53,7 +53,17 @@
 </li>
 <li><a href="#org44e60d5">Slow Motion HtDF Recipe</a>
 <ul>
-<li><a href="#orgaac7666">Designing a function</a></li>
+<li><a href="#orgaac7666">Designing a function</a>
+<ul>
+<li><a href="#orgcc9daf7">Signature</a></li>
+<li><a href="#orgd6e9a2a">Purpose</a></li>
+<li><a href="#orge669604">The Stub</a></li>
+<li><a href="#org74381e1">Examples/Tests</a></li>
+<li><a href="#orgacf4780">Inventory - Templates &amp; Constants</a></li>
+<li><a href="#org5240990">Code Body</a></li>
+<li><a href="#org0375d75">Test and Debugging</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -196,10 +206,12 @@ Both tests passed!
 <li>Design a function that consumes a number and produces twice that number.</li>
 <li>Call your function double. Follow the HtDF recipe and leave behind commented out versions of the stub and template.</li>
 </ul>
+</div>
 
 
-<ol class="org-ol">
-<li>To form a signature:
+<div id="outline-container-orgcc9daf7" class="outline-4">
+<h4 id="orgcc9daf7">Signature</h4>
+<div class="outline-text-4" id="text-orgcc9daf7">
 <ul class="org-ul">
 <li>Type &#x2026; -&gt; Type</li>
 <li>Declares type of data function consumes and produces.
@@ -232,31 +244,35 @@ For now, the primitive types are:
 </tbody>
 </table></li>
 </ul></li>
-</ul></li>
-</ol>
+</ul>
 
 <div class="org-src-container">
 <pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number</span>
 <span style="color: #727072;">;; </span><span style="color: #727072;">Describes that the function consumes a Number and produces a Number</span>
 </pre>
 </div>
+</div>
+</div>
 
-<ol class="org-ol">
-<li>To form a purpose:
+
+<div id="outline-container-orgd6e9a2a" class="outline-4">
+<h4 id="orgd6e9a2a">Purpose</h4>
+<div class="outline-text-4" id="text-orgd6e9a2a">
 <ul class="org-ul">
 <li>A purpose is a <i>1 line</i> description of what the function produces in terms of what it consumes.</li>
-</ul></li>
-</ol>
+</ul>
 
 <div class="org-src-container">
 <pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">produces 2 times the given number</span>
 </pre>
 </div>
+</div>
+</div>
 
-<ol class="org-ol">
-<li><p>
-To form the stub:
-</p>
+
+<div id="outline-container-orge669604" class="outline-4">
+<h4 id="orge669604">The Stub</h4>
+<div class="outline-text-4" id="text-orge669604">
 <ul class="org-ul">
 <li>The stub is a function definition that:
 <ol class="org-ol">
@@ -269,8 +285,97 @@ To form the stub:
 <div class="org-src-container">
 <pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">this is the stub</span>
 </pre>
-</div></li>
-</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org74381e1" class="outline-4">
+<h4 id="org74381e1">Examples/Tests</h4>
+<div class="outline-text-4" id="text-org74381e1">
+<ul class="org-ul">
+<li>Examples help us understand what the function must do.</li>
+<li>Multiple examples illustrate behavior.</li>
+<li>Wrapping in check-expect means they will also serve as unit tests for the completed function.</li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">8.4</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>In this case, both check-expects will fail, but it's a good sign that the tests ran in the first place.
+<ul class="org-ul">
+<li>Currently, the stub will always produce <code>0</code> so it is expected for the test to fail.</li>
+<li>As programs get large, it is important to make sure that all the functions are well formed.</li>
+</ul></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>It is important to note that each step of the recipe is designed to help the steps after it.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgacf4780" class="outline-4">
+<h4 id="orgacf4780">Inventory - Templates &amp; Constants</h4>
+<div class="outline-text-4" id="text-orgacf4780">
+<ul class="org-ul">
+<li>The template is the outline of the final function.</li>
+<li>For now, the body of the template is <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">...</span> x<span style="color: #AB9DF2;">)</span></code> where x is the parameter to the function.</li>
+<li>A copy of the template will be made for the next step, and the original template will be commented out.
+<ul class="org-ul">
+<li>Later in the course, it is okay to delete it, but it will be kept in right now for learning purposes.</li>
+</ul></li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">this is the template</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> n<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5240990" class="outline-4">
+<h4 id="org5240990">Code Body</h4>
+<div class="outline-text-4" id="text-org5240990">
+<ul class="org-ul">
+<li>Use <i>everything written before</i> to know how to complete the function body.
+<ul class="org-ul">
+<li>It sometimes helps to use elaborate examples to show <i>how</i> the expected values could have been produced.</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">this is an elaboration on the example which makes the goal clearer</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">we now know how to finish the function, replace the ... with the body</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> n<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0375d75" class="outline-4">
+<h4 id="org0375d75">Test and Debugging</h4>
+<div class="outline-text-4" id="text-org0375d75">
+<ul class="org-ul">
+<li>Run the current code and it should pass without issue.</li>
+<li>It will be discussed later on how to debug when the code doesn't run correctly.</li>
+</ul>
+</div>
 </div>
 </div>
 </div>

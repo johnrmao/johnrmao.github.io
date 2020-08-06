@@ -87,26 +87,28 @@ Created on 2020-08-03/21:30
 + Call your function double. Follow the HtDF recipe and leave behind commented out versions of the stub and template.
 
 
-+ To form a signature:
+*** Signature
    + Type ... -> Type
    + Declares type of data function consumes and produces.
      + For now, the primitive types are:
        | Number | Integer | Natural |
        | String | Image   | Boolean |
 
-#+BEGIN_SRC racket
+   #+BEGIN_SRC racket
 ;; Number -> Number
 ;; Describes that the function consumes a Number and produces a Number
-#+END_SRC
+   #+END_SRC
 
-+ To form a purpose:
+
+*** Purpose
    + A purpose is a /1 line/ description of what the function produces in terms of what it consumes.
 
-#+BEGIN_SRC racket
+   #+BEGIN_SRC racket
 ;; produces 2 times the given number
-#+END_SRC
+   #+END_SRC
 
-+ To form the stub:
+
+*** The Stub
    + The stub is a function definition that:
      1. has correct function name
      2. has correct number of parameters
@@ -115,3 +117,55 @@ Created on 2020-08-03/21:30
    #+BEGIN_SRC racket
 (define (double n) 0)  ; this is the stub
    #+END_SRC
+
+
+*** Examples/Tests
+  + Examples help us understand what the function must do.
+  + Multiple examples illustrate behavior.
+  + Wrapping in check-expect means they will also serve as unit tests for the completed function.
+
+
+   #+BEGIN_SRC racket
+(check-expect (double 3) 6)
+(check-expect (double 4.2) 8.4)
+
+(define (double n) 0)
+  #+END_SRC
+
++ In this case, both check-expects will fail, but it's a good sign that the tests ran in the first place.
+  + Currently, the stub will always produce =0= so it is expected for the test to fail.
+  + As programs get large, it is important to make sure that all the functions are well formed.
+
+
+
++ It is important to note that each step of the recipe is designed to help the steps after it.
+
+
+*** Inventory - Templates & Constants
++ The template is the outline of the final function.
++ For now, the body of the template is src_racket{(... x)} where x is the parameter to the function.
++ A copy of the template will be made for the next step, and the original template will be commented out.
+  + Later in the course, it is okay to delete it, but it will be kept in right now for learning purposes.
+
+
+  #+BEGIN_SRC racket
+(define (double n) ; this is the template
+  (... n))
+  #+END_SRC
+
+
+*** Code Body
++ Use /everything written before/ to know how to complete the function body.
+  + It sometimes helps to use elaborate examples to show /how/ the expected values could have been produced.
+
+#+BEGIN_SRC racket
+(check-expect (double 3) (* 2 3)) ; this is an elaboration on the example which makes the goal clearer
+;; we now know how to finish the function, replace the ... with the body
+
+(define (double n)
+  (* 2 n)) ;
+#+END_SRC
+
+*** Test and Debugging
++ Run the current code and it should pass without issue.
++ It will be discussed later on how to debug when the code doesn't run correctly.
