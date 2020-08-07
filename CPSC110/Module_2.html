@@ -46,7 +46,11 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#org7926730">Learning Goals</a></li>
-<li><a href="#org135d16b">cond Expressions</a></li>
+<li><a href="#org135d16b">cond Expressions</a>
+<ul>
+<li><a href="#org4dba0df">Evaluating cond</a></li>
+</ul>
+</li>
 <li><a href="#orga2fb039">Data Definitions</a></li>
 <li><a href="#orge524706">Atomic Non-Distinct</a></li>
 <li><a href="#org8f0d375">HtDF With Non-Primitive Data</a></li>
@@ -171,6 +175,71 @@ Given the following:
 </pre>
 </div></li>
 </ul>
+</div>
+
+
+<div id="outline-container-org4dba0df" class="outline-3">
+<h3 id="org4dba0df">Evaluating cond</h3>
+<div class="outline-text-3" id="text-org4dba0df">
+<ul class="org-ul">
+<li><b>To evaluate a cond expression</b></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"bigger"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"equal"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span> <span style="color: #FFD866;">"bigger"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"equal"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"equal"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span> <span style="color: #FFD866;">"equal"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #FFD866;">"smaller"</span>
+<span style="color: #727072;">;</span><span style="color: #727072;">done evaluating</span>
+</pre>
+</div>
+<hr />
+<ol class="org-ol">
+<li>If there are no question/answer pairs, signal an error.</li>
+<li>If the first question is not a value, evaluate it and replace it with its value.
+<ul class="org-ul">
+<li><p>
+That is, replace the entire cond with a new cond in which the first question has been replaced by its value.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span> <span style="color: #FFD866;">"bigger"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"equal"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ul></li>
+
+<li>If the first question is true or else, replace the entire cond expression with the first answer.</li>
+<li>If the first question is false drop the first question/answer pair.
+<ul class="org-ul">
+<li>That is, replace the cond with a new cond that does not have the first question/answer pair.</li>
+</ul></li>
+<li>Since the first question is not, ture or false, signal an error.</li>
+</ol>
+
+
+
+<ul class="org-ul">
+<li>For function calls, <code>if</code> and <code>cond</code> all work by trying to reduce a program to a simpler program that does not have that construct.
+<ul class="org-ul">
+<li>Function call is replaced with body.</li>
+<li><code>if</code> is replaced with true or false question.</li>
+<li><code>cond</code> is replaced with one answer.</li>
+</ul></li>
+</ul>
+</div>
 </div>
 </div>
 

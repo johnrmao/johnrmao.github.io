@@ -1,6 +1,128 @@
-#+TITLE: Module_2_questions
+#+TITLE: Module 2 Questions
 #+SETUPFILE: ../../template-2.org
 Created on 2020-08-06/00:41
 
 * Module 2 Questions
+** cond Expressions
++ *Question 1*
+  file:../../screenshots/M2S1Q1.png
+  + Build a cond expression equivalent to the above nested if expressions
+    #+BEGIN_SRC racket
+(define (mag x)
+  (cond [(> x 0) "positive"]
+        [(= x 0) "zero"]
+        [else "negative"]))
+    #+END_SRC
+
+
++ *Question 2*
+  + We have seen that =cond= is used instead of =if= when we have multiple parallel cases. For example, as seen in Question 1:
+    #+BEGIN_SRC racket
+(define (mag1 x)
+  (if (< x 0)
+      "negative"
+      (if (= x 0)
+          "zero"
+          "positive")))
+
+    #+END_SRC
+
+  + The above can be re-written as:
+    #+BEGIN_SRC racket
+(define (mag2 x)
+  (cond [(< x 0) "negative"]
+        [(= x 0) "zero"]
+        [else    "positive"]))
+
+    #+END_SRC
+  + Now let's hand step the call to (mag2 0)
+    + What is the next step of the evaluation of:
+      #+BEGIN_SRC racket
+(cond [(< 0 0) "negative"]
+      [(= 0 0) "zero"]
+      [else "positive"])
+      #+END_SRC
+      1.
+        #+BEGIN_SRC racket
+ (cond [true    "negative"]
+       [(= 0 0) "zero"]
+       [else    "positive"])
+        #+END_SRC
+
+      2.
+        #+BEGIN_SRC racket
+ (cond [false   "negative"]
+       [(= 0 0) "zero"]
+       [else    "positive"])
+        #+END_SRC
+
+      3.
+        #+BEGIN_SRC racket
+(cond [(= 0 0) "zero"]
+      [else    "positive"])
+        #+END_SRC
+    + The answer is #2.
+
+
++ *Question 3*
+  + After the previous step of the evaluation we are left with:
+    file:../../screenshots/M2S1Q3.png
+    + What is the next step of the evaluation?
+      1.
+        #+BEGIN_SRC racket
+ (cond [(= 0 0) "zero"]
+       [else    "positive"])
+        #+END_SRC
+      2.
+        #+BEGIN_SRC racket
+ (cond [false "negative"]
+       [true  "zero"]
+       [else  "positive"])
+        #+END_SRC
+      3.
+        #+BEGIN_SRC racket
+"zero"
+        #+END_SRC
+    + The answer is #1.
+
+
++ *Question 4*
+  + After the previous step of the evaluation we are left with:
+   file:../../screenshots/M2S1Q4.png
+    + What is the next step of the evaluation.
+      1.
+        #+BEGIN_SRC racket
+ (cond [else "positive"])
+        #+END_SRC
+      2.
+        #+BEGIN_SRC racket
+ (cond [true "zero"]
+       [else "positive"])
+        #+END_SRC
+      3.
+        #+BEGIN_SRC racket
+"zero"
+        #+END_SRC
+    + The answer is #2.
+
+
++ *Question 5*
+  + After the previous step of the evaluation we are left with:
+    file:../../screenshots/M2S1Q5.png
+    + What is the next step of the evaluation?
+      1.
+        #+BEGIN_SRC racket
+ (cond [true "zero"])
+        #+END_SRC
+      2.
+        #+BEGIN_SRC racket
+ (cond [else "positive"])
+        #+END_SRC
+      3.
+        #+BEGIN_SRC racket
+"zero"
+        #+END_SRC
+    + The answer is #3.
+
+
 * Extra Practice

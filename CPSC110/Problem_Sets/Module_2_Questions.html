@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Module_2_questions</title>
+<title>Module 2 Questions</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="John Mao" />
 <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" />
@@ -40,12 +40,16 @@
  |
  <a accesskey="H" href="../../index.html"> HOME </a>
 </div><div id="content">
-<h1 class="title">Module_2_questions</h1>
+<h1 class="title">Module 2 Questions</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org994c171">Module 2 Questions</a></li>
+<li><a href="#org994c171">Module 2 Questions</a>
+<ul>
+<li><a href="#org2380e5a">cond Expressions</a></li>
+</ul>
+</li>
 <li><a href="#org8a8f360">Extra Practice</a></li>
 </ul>
 </div>
@@ -56,7 +60,183 @@ Created on 2020-08-06/00:41
 
 <div id="outline-container-org994c171" class="outline-2">
 <h2 id="org994c171">Module 2 Questions</h2>
+<div class="outline-text-2" id="text-org994c171">
 </div>
+<div id="outline-container-org2380e5a" class="outline-3">
+<h3 id="org2380e5a">cond Expressions</h3>
+<div class="outline-text-3" id="text-org2380e5a">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<img src="../../screenshots/M2S1Q1.png" alt="M2S1Q1.png" />
+<ul class="org-ul">
+<li><p>
+Build a cond expression equivalent to the above nested if expressions
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">mag</span> x<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"positive"</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"negative"</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li><p>
+We have seen that <code>cond</code> is used instead of <code>if</code> when we have multiple parallel cases. For example, as seen in Question 1:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">mag1</span> x<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span>
+      <span style="color: #FFD866;">"negative"</span>
+      <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
+          <span style="color: #FFD866;">"zero"</span>
+          <span style="color: #FFD866;">"positive"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+</pre>
+</div></li>
+
+<li><p>
+The above can be re-written as:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">mag2</span> x<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&lt;</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"negative"</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+</pre>
+</div></li>
+<li>Now let's hand step the call to (mag2 0)
+<ul class="org-ul">
+<li><p>
+What is the next step of the evaluation of:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span>    <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span>   <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+<li>The answer is #2.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>After the previous step of the evaluation we are left with:
+<img src="../../screenshots/M2S1Q3.png" alt="M2S1Q3.png" />
+<ul class="org-ul">
+<li>What is the next step of the evaluation?
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span> <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span>  <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>  <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #FFD866;">"zero"</span>
+</pre>
+</div></li>
+</ol></li>
+<li>The answer is #1.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li>After the previous step of the evaluation we are left with:
+<img src="../../screenshots/M2S1Q4.png" alt="M2S1Q4.png" />
+<ul class="org-ul">
+<li>What is the next step of the evaluation.
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #FFD866;">"zero"</span>
+</pre>
+</div></li>
+</ol></li>
+<li>The answer is #2.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li>After the previous step of the evaluation we are left with:
+<img src="../../screenshots/M2S1Q5.png" alt="M2S1Q5.png" />
+<ul class="org-ul">
+<li>What is the next step of the evaluation?
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #FFD866;">"zero"</span>
+</pre>
+</div></li>
+</ol></li>
+<li>The answer is #3.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
 <div id="outline-container-org8a8f360" class="outline-2">
 <h2 id="org8a8f360">Extra Practice</h2>
 </div>

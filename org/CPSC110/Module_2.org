@@ -80,7 +80,52 @@ Created on 2020-08-06/00:36
         [else "wide"]))
   #+END_SRC
 
-  
+
+** Evaluating cond
++ *To evaluate a cond expression*
+#+BEGIN_SRC racket
+(cond [(> 1 2) "bigger"]
+      [(= 1 2) "equal"]
+      [(< 1 2) "smaller"])
+
+(cond [false "bigger"]
+      [(= 1 2) "equal"]
+      [(< 1 2) "smaller"])
+
+(cond [(= 1 2) "equal"]
+      [(< 1 2) "smaller"])
+
+(cond [false "equal"]
+      [(< 1 2) "smaller"])
+
+(cond [true "smaller"])
+
+"smaller"
+;done evaluating
+#+END_SRC
+------
+1. If there are no question/answer pairs, signal an error.
+2. If the first question is not a value, evaluate it and replace it with its value.
+   * That is, replace the entire cond with a new cond in which the first question has been replaced by its value.
+     #+BEGIN_SRC racket
+(cond [false "bigger"]
+      [(= 1 2) "equal"]
+      [(< 1 2) "smaller"])
+#+END_SRC
+
+3. If the first question is true or else, replace the entire cond expression with the first answer.
+4. If the first question is false drop the first question/answer pair.
+   * That is, replace the cond with a new cond that does not have the first question/answer pair.
+5. Since the first question is not, ture or false, signal an error.
+
+
+
++ For function calls, =if= and =cond= all work by trying to reduce a program to a simpler program that does not have that construct.
+    + Function call is replaced with body.
+    + =if= is replaced with true or false question.
+    + =cond= is replaced with one answer.
+
+
 * Data Definitions
 * Atomic Non-Distinct
 * HtDF With Non-Primitive Data
