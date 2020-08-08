@@ -401,12 +401,116 @@ Within the program, we have data, the natural number <code>0</code>.
 
 
 <ul class="org-ul">
-<li>Here is a third version of the same program that uses a data definition.</li>
+<li><p>
+Here is a third version of the same program that uses a data definition.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Data definitions:</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">TLColor is one of:   ; type comment</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- 0</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- 1</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- 2</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. color of a traffic light - 0 is red, 1 yellow, 2 green  ; interpretation</span>
+<span style="color: #727072;">#;</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-tlcolor c</span><span style="color: #78DCE8;">)</span><span style="color: #727072;">  ; template skeleton</span>
+<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">cond </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">= c 0</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
+<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">= c 1</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
+<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">= c 2</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Functions:</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">TLColor -&gt; TLColor</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce next color of traffic light</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (next-color c) 0)  ; stub</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">Template from TLColor</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">next-color</span> c<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>Here, the file is divided into two parts.
+<ol class="org-ol">
+<li>The data definitions.
+<ul class="org-ul">
+<li>We have one data definition here.</li>
+
+<li>The data defintions starts with a <i>type comment</i>.
+<ul class="org-ul">
+<li><i>type commment</i> defines a new type name.
+<ul class="org-ul">
+<li>Here it's used to define <code>TLColor</code>.</li>
+</ul></li>
+<li>It also shows how to form that data.
+<ul class="org-ul">
+<li>Here, it's either 0, 1, or 2.</li>
+</ul></li>
+</ul></li>
+
+<li><i>Interpretation</i> explains how to interpret data of this type as information thereby establishing the information/data correspondence.
+<ul class="org-ul">
+<li>Here, it says that a <code>TLColor</code> is the color of a traffic light, and <code>0</code> means red, <code>1</code> means yellow, and <code>2</code> means green.</li>
+</ul></li>
+
+<li>The last part is a <i>template skeleton</i> for one-argument functions that consume data of this type.
+<ul class="org-ul">
+<li>This template is for operating on <code>TlColor</code>.</li>
+<li>This template is saying that if you're designing a function that operates on <code>TLColor</code>, then there's three cases.
+<ol class="org-ol">
+<li>The color is zero.</li>
+
+<li>The color is one.</li>
+
+<li>The color is two.</li>
+</ol></li>
+</ul></li>
+</ul></li>
+
+<li>The functions.
+<ul class="org-ul">
+<li>The signature says this function consumes a <code>TLColor</code> and produces a <code>TLColor</code>.
+<ul class="org-ul">
+<li>The question from earlier is answered, this function can't consume a four or a three because it can only consume a <code>TLColor</code>, which only includes 0, 1, and 2.</li>
+</ul></li>
+
+<li>Now this function is easy to understand. It takes a <code>TLColor</code> and produces another, meaning that if you input a colour of zero, which is red, it will produce a two, which means green.
+<ul class="org-ul">
+<li>After a red light, it's green.</li>
+</ul></li>
+
+<li>The next color is <code>1</code>. or yellow, and that produces a <code>0</code>, which means red.</li>
+
+<li>Next is the template, it comes from <code>TLColor</code> since the function consumes a <code>TLColor</code>.
+<ul class="org-ul">
+<li>From now on, most templates will be determined by the type of data it consumes.</li>
+</ul></li>
+</ul></li>
+</ol></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>A data definition describes:
+<ol class="org-ol">
+<li>How to from data of a new type</li>
+<li>How to represent information as data</li>
+<li>How to interpret data as information</li>
+<li>Template for operating on data</li>
+</ol></li>
 </ul>
 </div>
 </div>
 </div>
-
 <div id="outline-container-orge524706" class="outline-2">
 <h2 id="orge524706">Atomic Non-Distinct</h2>
 </div>

@@ -204,6 +204,89 @@ Created on 2020-08-06/00:36
 
 
 + Here is a third version of the same program that uses a data definition.
+  #+BEGIN_SRC racket
+;; Data definitions:
+
+;; TLColor is one of:   ; type comment
+;; - 0
+;; - 1
+;; - 2
+;; interp. color of a traffic light - 0 is red, 1 yellow, 2 green  ; interpretation
+#;
+(define (fn-for-tlcolor c)  ; template skeleton
+  (cond [(= c 0) (...)]
+        [(= c 1) (...)]
+        [(= c 2) (...)]))
+
+
+
+;; Functions:
+
+;; TLColor -> TLColor
+;; produce next color of traffic light
+(check-expect (next-color 0) 2)
+(check-expect (next-color 1) 0)
+(check-expect (next-color 2) 1)
+
+; (define (next-color c) 0)  ; stub
+
+; Template from TLColor
+
+(define (next-color c)
+  (cond [(= c 0) 2]
+        [(= c 1) 0]
+        [(= c 2) 1]))
+  #+END_SRC
++ Here, the file is divided into two parts.
+  1. The data definitions.
+     + We have one data definition here.
+
+     + The data defintions starts with a /type comment/.
+       + /type commment/ defines a new type name.
+         + Here it's used to define =TLColor=.
+       + It also shows how to form that data.
+         + Here, it's either 0, 1, or 2.
+
+     + /Interpretation/ explains how to interpret data of this type as information thereby establishing the information/data correspondence.
+       + Here, it says that a =TLColor= is the color of a traffic light, and =0= means red, =1= means yellow, and =2= means green.
+
+     + The last part is a /template skeleton/ for one-argument functions that consume data of this type.
+       + This template is for operating on =TlColor=.
+       + This template is saying that if you're designing a function that operates on =TLColor=, then there's three cases.
+         1. The color is zero.
+
+         2. The color is one.
+
+         3. The color is two.
+            
+  2. The functions.
+     + The signature says this function consumes a =TLColor= and produces a =TLColor=.
+       + The question from earlier is answered, this function can't consume a four or a three because it can only consume a =TLColor=, which only includes 0, 1, and 2.
+
+     + Now this function is easy to understand. It takes a =TLColor= and produces another, meaning that if you input a colour of zero, which is red, it will produce a two, which means green.
+       + After a red light, it's green.
+
+     + The next color is =1=. or yellow, and that produces a =0=, which means red.
+
+     + Next is the template, it comes from =TLColor= since the function consumes a =TLColor=.
+       + From now on, most templates will be determined by the type of data it consumes.
+
+
+
++ A data definition describes:
+  1. How to from data of a new type
+  2. How to represent information as data
+  3. How to interpret data as information
+  4. Template for operating on data
+
+
++ A data definition simplifies functions:
+  1. Restricts data consumed
+  2. Restricts data produced
+  3. Helps generate examples
+  4. Provides template
+
+
 
 * Atomic Non-Distinct
 * HtDF With Non-Primitive Data
