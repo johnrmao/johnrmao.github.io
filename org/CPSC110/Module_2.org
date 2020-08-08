@@ -127,6 +127,84 @@ Created on 2020-08-06/00:36
 
 
 * Data Definitions
++ Data definitions explain how information is represented as data.
+
+
++ Imagine this - You're working on a program written by somebody else that simulates traffic. You see this function:
+  #+BEGIN_SRC racket
+(define (next-color c)
+  (cond [(= c 0) 2]
+        [(= c 1) 0]
+        [(= c 2) 1]))
+  #+END_SRC
+  + You may be confused as to what this function does.
+    + The name =next-color= seems to produce the next colour but it's not very clear.
+
+
++ Now lets imagine the same function, but with the HtDF recipe.
+  #+BEGIN_SRC racket
+;; Part of a trafic simulation
+
+;; Natural -> Natural
+;; produce next color of traffic light
+(check-expect (next-color 0) 2)
+(check-expect (next-color 1) 0)
+(check-expect (next-color 2) 1)
+
+; (define (next-color c) 0) ; stub
+
+; (define (next-color c)    ; template
+;    (...c))
+
+(define (next-color c)
+  (cond [(= c 0) 2]
+        [(= c 1) 0]
+        [(= c 2) 1]))
+  #+END_SRC
+  + The signature says that it takes a natural.
+    + Is it possible to call the function with =3=?
+    + The examples don't show anything other than 0, 1, or 2.
+    + The examples themselves are vague as to their meaning.
+      + The examples may show that the function is most likely "correct", but what does it even mean when you input =0=, and get returned a =2=?
+
+
+** The problem domain
++ Using the *problem domain*, we can understand this problem.
+  + In any program, we have the *problem domain*.
+    + In this case, the problem domain pertains to traffic, the simluation of traffic, traffic lights, and cars, raods, and etc.
+
+
++ Within the problem domain, we have information.
++ Within this context, we may be able to tell that a certain colour will be red.
+
+
++ However, within the program, there are no red lights, green lights, or blue lights.
++ Within the program, we have data, the natural number =0=.
+
+  | Problem Domain | Program |
+  |----------------+---------|
+  | Information    | Data    |
+  | A light is red | 0       |
+
+
++ Here, we represent information in the problem domain using data in the program.
+  + The natural number =0= represents that some light may be red.
+
+
++ The inverse of that relationship is that we can interpret the natural number =0=.
+  + If we're told that the natural number =0= represents information about a light, we can interpret it as meaning that the light is red.
+
+
++ Now, if you know, or have been told that =0= represents the colour red, it can be guessed that a =1= will represent yellow, and that =2= will represent green.
+
+
++ Instead of being given the information, you can use something called a *data definition.*
+  + Data definitions describe how we are representing information as data.
+
+
+
++ Here is a third version of the same program that uses a data definition.
+
 * Atomic Non-Distinct
 * HtDF With Non-Primitive Data
 * HtDF X Structure of Data Orthogonality

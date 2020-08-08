@@ -51,7 +51,11 @@
 <li><a href="#org4dba0df">Evaluating cond</a></li>
 </ul>
 </li>
-<li><a href="#orga2fb039">Data Definitions</a></li>
+<li><a href="#orga2fb039">Data Definitions</a>
+<ul>
+<li><a href="#org87a4ec2">The problem domain</a></li>
+</ul>
+</li>
 <li><a href="#orge524706">Atomic Non-Distinct</a></li>
 <li><a href="#org8f0d375">HtDF With Non-Primitive Data</a></li>
 <li><a href="#orge8beb25">HtDF X Structure of Data Orthogonality</a></li>
@@ -246,7 +250,163 @@ That is, replace the entire cond with a new cond in which the first question has
 
 <div id="outline-container-orga2fb039" class="outline-2">
 <h2 id="orga2fb039">Data Definitions</h2>
+<div class="outline-text-2" id="text-orga2fb039">
+<ul class="org-ul">
+<li>Data definitions explain how information is represented as data.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+Imagine this - You're working on a program written by somebody else that simulates traffic. You see this function:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">next-color</span> c<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
 </div>
+<ul class="org-ul">
+<li>You may be confused as to what this function does.
+<ul class="org-ul">
+<li>The name <code>next-color</code> seems to produce the next colour but it's not very clear.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+Now lets imagine the same function, but with the HtDF recipe.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Part of a trafic simulation</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Natural -&gt; Natural</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce next color of traffic light</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (next-color c) 0) ; stub</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (next-color c)    ; template</span>
+<span style="color: #727072;">;    </span><span style="color: #727072;">(...c))</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">next-color</span> c<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>The signature says that it takes a natural.
+<ul class="org-ul">
+<li>Is it possible to call the function with <code>3</code>?</li>
+<li>The examples don't show anything other than 0, 1, or 2.</li>
+<li>The examples themselves are vague as to their meaning.
+<ul class="org-ul">
+<li>The examples may show that the function is most likely "correct", but what does it even mean when you input <code>0</code>, and get returned a <code>2</code>?</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+
+<div id="outline-container-org87a4ec2" class="outline-3">
+<h3 id="org87a4ec2">The problem domain</h3>
+<div class="outline-text-3" id="text-org87a4ec2">
+<ul class="org-ul">
+<li>Using the <b>problem domain</b>, we can understand this problem.
+<ul class="org-ul">
+<li>In any program, we have the <b>problem domain</b>.
+<ul class="org-ul">
+<li>In this case, the problem domain pertains to traffic, the simluation of traffic, traffic lights, and cars, raods, and etc.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Within the problem domain, we have information.</li>
+<li>Within this context, we may be able to tell that a certain colour will be red.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>However, within the program, there are no red lights, green lights, or blue lights.</li>
+<li><p>
+Within the program, we have data, the natural number <code>0</code>.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Problem Domain</th>
+<th scope="col" class="org-left">Program</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Information</td>
+<td class="org-left">Data</td>
+</tr>
+
+<tr>
+<td class="org-left">A light is red</td>
+<td class="org-left">0</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Here, we represent information in the problem domain using data in the program.
+<ul class="org-ul">
+<li>The natural number <code>0</code> represents that some light may be red.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>The inverse of that relationship is that we can interpret the natural number <code>0</code>.
+<ul class="org-ul">
+<li>If we're told that the natural number <code>0</code> represents information about a light, we can interpret it as meaning that the light is red.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Now, if you know, or have been told that <code>0</code> represents the colour red, it can be guessed that a <code>1</code> will represent yellow, and that <code>2</code> will represent green.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Instead of being given the information, you can use something called a <b>data definition.</b>
+<ul class="org-ul">
+<li>Data definitions describe how we are representing information as data.</li>
+</ul></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>Here is a third version of the same program that uses a data definition.</li>
+</ul>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orge524706" class="outline-2">
 <h2 id="orge524706">Atomic Non-Distinct</h2>
 </div>
