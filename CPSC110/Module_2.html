@@ -508,11 +508,150 @@ Here is a third version of the same program that uses a data definition.
 <li>Template for operating on data</li>
 </ol></li>
 </ul>
+
+
+<ul class="org-ul">
+<li>A data definition simplifies functions:
+<ol class="org-ol">
+<li>Restricts data consumed</li>
+<li>Restricts data produced</li>
+<li>Helps generate examples</li>
+<li>Provides template</li>
+</ol></li>
+</ul>
 </div>
 </div>
 </div>
+
+
 <div id="outline-container-orge524706" class="outline-2">
 <h2 id="orge524706">Atomic Non-Distinct</h2>
+<div class="outline-text-2" id="text-orge524706">
+<ul class="org-ul">
+<li>First example of using HtDD recipe and Data Driven Templates recipes.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Imagine that you are designing a program that, among other things, has information about the names of cities in its problem domain.
+<ul class="org-ul">
+<li>Design a data definition to represent the name of a city.</li>
+</ul></li>
+
+<li>When we design a data definition, we need to decide the form of the data that we're going to represent.
+<ul class="org-ul">
+<li><i>Examples</i>
+<ul class="org-ul">
+<li>Vancouver</li>
+<li>Boston</li>
+</ul></li>
+</ul></li>
+<li>City names such as Vancouver and Boston are atomic.
+<ul class="org-ul">
+<li>You cannot take it apart into pieces that are still meaningful to the problem domain</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>A data definition consists of four or five parts.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>A possible <b>structure definition</b> (not until week 3)</li>
+<li><p>
+A <b>type comment</b> that defines a new type name and describes how to form data of that type.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CityName is String</span>
+</pre>
+</div></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Information</th>
+<th scope="col" class="org-left">DATA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Vancouver</td>
+<td class="org-left">"Vancouver"</td>
+</tr>
+
+<tr>
+<td class="org-left">Boston</td>
+<td class="org-left">"Boston"</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li><p>
+An <b>interpretation</b> that describes the correspondence between information and data.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a city</span>
+</pre>
+</div></li>
+<li><p>
+One ore more <b>examples</b> of the data.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Boston"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN2</span> <span style="color: #FFD866;">"Vancouver"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>A <b>template</b> for a 1 argument function operating on this type of data.
+<ul class="org-ul">
+<li><p>
+For a given <code>TypeName</code> the data driven template is:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-type-name</span> x<span style="color: #78DCE8;">)</span>
+  &lt;body&gt;<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><p>
+Therefore, the template for this example will be
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span>  <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-city-name</span> CN<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> CN<span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: String</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+
+
+<hr />
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CityName is String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a city</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Boston"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN2</span> <span style="color: #FFD866;">"Vancouver"</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span>  <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-city-name</span> CN<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> CN<span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: String</span>
+</pre>
+</div>
+</div>
 </div>
 <div id="outline-container-org8f0d375" class="outline-2">
 <h2 id="org8f0d375">HtDF With Non-Primitive Data</h2>

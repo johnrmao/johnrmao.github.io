@@ -287,8 +287,73 @@ Created on 2020-08-06/00:36
   4. Provides template
 
 
-
 * Atomic Non-Distinct
++ First example of using HtDD recipe and Data Driven Templates recipes.
+
+
++ Imagine that you are designing a program that, among other things, has information about the names of cities in its problem domain.
+  + Design a data definition to represent the name of a city.
+
++ When we design a data definition, we need to decide the form of the data that we're going to represent.
+  + /Examples/
+    + Vancouver
+    + Boston
++ City names such as Vancouver and Boston are atomic.
+  + You cannot take it apart into pieces that are still meaningful to the problem domain
+
+
++ A data definition consists of four or five parts.
+
+
++ A possible *structure definition* (not until week 3)
++ A *type comment* that defines a new type name and describes how to form data of that type.
+   #+BEGIN_SRC racket
+;; CityName is String
+#+END_SRC
+| Information | DATA        |
+|-------------+-------------|
+| Vancouver   | "Vancouver" |
+| Boston      | "Boston"    |
++ An *interpretation* that describes the correspondence between information and data.
+  #+BEGIN_SRC racket
+;; interp. the name of a city
+  #+END_SRC
++ One ore more *examples* of the data.
+  #+BEGIN_SRC racket
+(define CN1 "Boston")
+(define CN2 "Vancouver")
+  #+END_SRC
++ A *template* for a 1 argument function operating on this type of data.
+  + For a given =TypeName= the data driven template is:
+    #+BEGIN_SRC racket
+(define (fn-for-type-name x)
+  <body>)
+    #+END_SRC
+  + Therefore, the template for this example will be
+    #+BEGIN_SRC racket
+(define  (fn-for-city-name CN)
+  (... CN)
+  )
+
+;; Template rules used:
+;; - atomic non-distinct: String
+    #+END_SRC
+
+
+------
+#+BEGIN_SRC racket
+;; CityName is String
+;; interp. the name of a city
+(define CN1 "Boston")
+(define CN2 "Vancouver")
+
+(define  (fn-for-city-name CN)
+  (... CN)
+  )
+
+;; Template rules used:
+;; - atomic non-distinct: String
+
 * HtDF With Non-Primitive Data
 * HtDF X Structure of Data Orthogonality
 * Interval
