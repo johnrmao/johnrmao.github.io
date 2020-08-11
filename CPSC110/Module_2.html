@@ -603,7 +603,7 @@ An <b>interpretation</b> that describes the correspondence between information a
 </pre>
 </div></li>
 <li><p>
-One ore more <b>examples</b> of the data.
+One or more <b>examples</b> of the data.
 </p>
 <div class="org-src-container">
 <pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Boston"</span><span style="color: #AB9DF2;">)</span>
@@ -636,28 +636,140 @@ Therefore, the template for this example will be
 </ul>
 
 
+<ul class="org-ul">
+<li>By this point, running the program will return no errors.
+<ul class="org-ul">
+<li>This means that the data definition was well formed.</li>
+</ul></li>
+</ul>
+
 <hr />
+<p>
+#+BEGIN_SRC racket
+;; CityName is String
+;; interp. the name of a city
+(define CN1 "Boston")
+(define CN2 "Vancouver")
+</p>
+
+<p>
+(define  (fn-for-city-name CN)
+  (&#x2026; CN)
+  )
+</p>
+
+<p>
+;; Template rules used:
+;; - atomic non-distinct: String
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org8f0d375" class="outline-2">
+<h2 id="org8f0d375">HtDF With Non-Primitive Data</h2>
+<div class="outline-text-2" id="text-org8f0d375">
+<ul class="org-ul">
+<li>A function which consumes <b>non-primitive data</b> is one that consumes data defined by your own data definition.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>In this example, the function will consume the type CityName</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>Using the CityName data definition below design a function that produces true if the given city is the best in the world.</li>
+<li><p>
+(You are free to decide for yourself which is the best city in the world.)
+</p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CityName is String</span>
+<pre class="src src-racket">
+<span style="color: #727072;">;; </span><span style="color: #727072;">Data definitions:</span>
+
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">CityName is String</span>
 <span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a city</span>
 <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Boston"</span><span style="color: #AB9DF2;">)</span>
 <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN2</span> <span style="color: #FFD866;">"Vancouver"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">#;</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-city-name cn</span><span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">... cn</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span>  <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-city-name</span> CN<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> CN<span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:              For the first part of the course</span>
+<span style="color: #727072;">;;   </span><span style="color: #727072;">atomic non-distinct: String     we want you to list the template</span>
+<span style="color: #727072;">;;                                   </span><span style="color: #727072;">rules used after each template.</span>
+<span style="color: #727072;">;;</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Functions:</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">CityName -&gt; Boolean</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce true if the given city is Hogsmeade</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (best? cn) false)   ; stub</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>best? <span style="color: #FFD866;">"Boston"</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>best? <span style="color: #FFD866;">"Hogsmeade"</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">took template from CityName</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">best?</span> cn<span style="color: #78DCE8;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">template</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string=?</span> cn <span style="color: #FFD866;">"Hogsmeade"</span><span style="color: #FC9867;">)</span>
+      <span style="color: #78DCE8;">true</span>
+      <span style="color: #78DCE8;">false</span>
+      <span style="color: #78DCE8;">)</span>
   <span style="color: #AB9DF2;">)</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: String</span>
 </pre>
 </div>
+<ul class="org-ul">
+<li>Now both tests will pass.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>At a certain point in this template, <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">...</span> cn<span style="color: #AB9DF2;">)</span></code> was replaced with true.
+<ul class="org-ul">
+<li>A template tells you what's available for you to work with, but not all of it has to be used.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+The above function can actually be further simplified into:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">best?</span> cn<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string=?</span> cn <span style="color: #FFD866;">"Hogsmeade"</span><span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Writing (if ... true false) is the same as just writing (...)</span>
+</pre>
+</div></li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org8f0d375" class="outline-2">
-<h2 id="org8f0d375">HtDF With Non-Primitive Data</h2>
-</div>
+
+
 <div id="outline-container-orge8beb25" class="outline-2">
 <h2 id="orge8beb25">HtDF X Structure of Data Orthogonality</h2>
+<div class="outline-text-2" id="text-orge8beb25">
+<ul class="org-ul">
+<li>The HtDF and HtDD recipes are largely orthogonal.
+<ul class="org-ul">
+<li>HtDF works nearly the same way for all forms of data.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Once we learn a new form of data, we already mostly know how to design functions that operate on it.</li>
+</ul>
+</div>
 </div>
 <div id="outline-container-org7f3338a" class="outline-2">
 <h2 id="org7f3338a">Interval</h2>

@@ -49,6 +49,7 @@
 <ul>
 <li><a href="#org2380e5a">cond Expressions</a></li>
 <li><a href="#org607657e">Atomic Non-Distinct</a></li>
+<li><a href="#org64710b5">HtDF With Non-Primitive Data</a></li>
 </ul>
 </li>
 <li><a href="#org8a8f360">Extra Practice</a></li>
@@ -241,10 +242,208 @@ What is the next step of the evaluation of:
 <h3 id="org607657e">Atomic Non-Distinct</h3>
 <div class="outline-text-3" id="text-org607657e">
 <ul class="org-ul">
-<li><b>Question 1</b></li>
-<li><b>Question 2</b></li>
-<li><b>Question 3</b></li>
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>Complete the following data definition that represents the name of a course by choosing the best answer for each step in the HtDD recipe.
+<code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span></code>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. a string</span></code></li>
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. a name</span></code></li>
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span></code>   &lt;-
+
+<ul class="org-ul">
+<li>The interpretation should describe the correspondence between the information and data.</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li><p>
+<b>Question 2</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Apple"</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Systematic Program Design"</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"This is a string"</span></code></li>
+</ol></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+<b>Question 3</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Systematic Program Design"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> cn<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
+  <span style="color: #FFD866;">"cn"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Answer is #1.</li>
+</ul></li>
+</ol></li>
+</ul>
+
+
+<ul class="org-ul">
 <li><b>Question 4</b></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Systematic Program Design"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> cn<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: course name</span></code></li>
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: String</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: name</span></code></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org64710b5" class="outline-3">
+<h3 id="org64710b5">HtDF With Non-Primitive Data</h3>
+<div class="outline-text-3" id="text-org64710b5">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>You are told that the extension you are working on can only accomodate icons that are at most 30 pixels high, so we would like to design a function that checks if an image has a height of more than 30 pixels.</li>
+
+<li><p>
+Here is the partial design of too-tall?:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">  <span style="color: #727072;">;; </span><span style="color: #727072;">Icon -&gt; Boolean</span>
+  <span style="color: #727072;">;; </span><span style="color: #727072;">produce true if the given icon is more than 30 pixels high</span>
+  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>   <span style="color: #727072;">;</span><span style="color: #727072;">stub</span>
+
+</pre>
+</div>
+<ul class="org-ul">
+<li>What is the minimum number of tests required to design this function?
+<ol class="org-ol">
+<li>0</li>
+
+<li>1</li>
+
+<li>2   &lt;-</li>
+
+<li>3</li>
+</ol></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+<b>Question 2</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Icon -&gt; Boolean</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce true if the given icon is more than 30 pixels high</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>too-tall? STEP-ICON<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>too-tall? RUNNING-STICKMAN-ICON<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>   <span style="color: #727072;">;</span><span style="color: #727072;">stub</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Choose the simplest correct function definition for <code>too-tall?</code>.
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2;">(</span>image-height i<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #FC9867;">)</span>
+       <span style="color: #78DCE8;">true</span>
+       <span style="color: #78DCE8;">false</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><div class="org-src-container">
+<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-height i<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #AB9DF2;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #FC9867;">]</span>
+         <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span> <span style="color: #78DCE8;">false</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><div class="org-src-container">
+<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #FC9867;">(</span>image-height i<span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> i <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>The answer is #3. Only the first three examples will run without error. There are only two cases so <code>cond</code> is unneccessary. The <code>if</code> statement can be simplified to (&#x2026;) from (if &#x2026; true false).</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>Why are we getting the following error?
+<img src="../../screenshots/M2S4Q3.png" alt="M2S4Q3.png" />
+<ol class="org-ol">
+<li>The function should use a different name than the stub.</li>
+<li><i>The stub should be commented out.</i>   &lt;-</li>
+<li>The check-expects should be commented out.</li>
+<li>The symbol ? cannot be used in the function name.</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li>In the screenshot above, which other part of the function design has an error in it?
+<ol class="org-ol">
+<li><i>signature</i>   &lt;-</li>
+<li>purpose</li>
+<li>examples/tests</li>
+<li>function body
+<ul class="org-ul">
+<li>It should be <code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Icon -&gt; Boolean</span></code></li>
+</ul></li>
+</ol></li>
+</ul></li>
 </ul>
 </div>
 </div>

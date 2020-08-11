@@ -318,7 +318,7 @@ Created on 2020-08-06/00:36
   #+BEGIN_SRC racket
 ;; interp. the name of a city
   #+END_SRC
-+ One ore more *examples* of the data.
++ One or more *examples* of the data.
   #+BEGIN_SRC racket
 (define CN1 "Boston")
 (define CN2 "Vancouver")
@@ -357,8 +357,78 @@ Created on 2020-08-06/00:36
 ;; Template rules used:
 ;; - atomic non-distinct: String
 
+
+
 * HtDF With Non-Primitive Data
++ A function which consumes *non-primitive data* is one that consumes data defined by your own data definition.
+
+
++ In this example, the function will consume the type CityName
+
+
++ PROBLEM:
+
++ Using the CityName data definition below design a function that produces true if the given city is the best in the world.
++ (You are free to decide for yourself which is the best city in the world.)
+  #+BEGIN_SRC racket
+
+;; Data definitions:
+
+
+;; CityName is String
+;; interp. the name of a city
+(define CN1 "Boston")
+(define CN2 "Vancouver")
+#;
+(define (fn-for-city-name cn)
+  (... cn))
+
+;; Template rules used:              For the first part of the course
+;;   atomic non-distinct: String     we want you to list the template
+;;                                   rules used after each template.
+;;
+
+;; Functions:
+
+;; CityName -> Boolean
+;; produce true if the given city is Hogsmeade
+
+; (define (best? cn) false)   ; stub
+(check-expect (best? "Boston") false)
+(check-expect (best? "Hogsmeade") true)
+
+; took template from CityName
+
+(define (best? cn)  ; template
+  (if (string=? cn "Hogsmeade")
+      true
+      false
+      )
+  )
+
+  #+END_SRC
+  + Now both tests will pass.
+
+
++ At a certain point in this template, src_racket{(... cn)} was replaced with true.
+  + A template tells you what's available for you to work with, but not all of it has to be used.
+
+
++ The above function can actually be further simplified into:
+  #+BEGIN_SRC racket
+(define (best? cn)
+  (string=? cn "Hogsmeade")
+  )
+;; Writing (if ... true false) is the same as just writing (...)
+  #+END_SRC
+
+
 * HtDF X Structure of Data Orthogonality
++ The HtDF and HtDD recipes are largely orthogonal.
+  + HtDF works nearly the same way for all forms of data.
+
+
++ Once we learn a new form of data, we already mostly know how to design functions that operate on it.
 * Interval
 * Enumeration
 * Itemization

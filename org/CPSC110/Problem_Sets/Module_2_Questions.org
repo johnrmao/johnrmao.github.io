@@ -127,9 +127,140 @@ Created on 2020-08-06/00:41
 
 ** Atomic Non-Distinct
 + *Question 1*
+  + Complete the following data definition that represents the name of a course by choosing the best answer for each step in the HtDD recipe.
+    src_racket{;; CourseName is String}
+    1. src_racket{;; interp. a string}
+    2. src_racket{;; interp. a name}
+    3. src_racket{;; interp. the name of a course}   <-
+
+       + The interpretation should describe the correspondence between the information and data.
+
+
+
 + *Question 2*
+  #+BEGIN_SRC racket
+;; CourseName is String
+;; interp. the name of a course
+  #+END_SRC
+  1. src_racket{(define CN1 "Apple")}
+  2. src_racket{(define CN1 "Systematic Program Design")}  <-
+  3. src_racket{(define CN1 "This is a string"}
+
+
 + *Question 3*
+  #+BEGIN_SRC racket
+;; CourseName is String
+;; interp. the name of a course
+    (define CN1 "Systematic Program Design")
+  #+END_SRC
+  1.
+      #+BEGIN_SRC racket
+ (define (fn-for-course-name cn)
+   (... cn))
+      #+END_SRC
+  2.
+      #+BEGIN_SRC racket
+ (define (fn-for-course-name cn)
+   (...))
+      #+END_SRC
+  3.
+     #+BEGIN_SRC racket
+(define (fn-for-course-name cn)
+  "cn")
+     #+END_SRC
+     + Answer is #1.
+
+
 + *Question 4*
+#+BEGIN_SRC racket
+;; CourseName is String
+;; interp. the name of a course
+(define CN1 "Systematic Program Design")
+(define (fn-for-course-name cn)
+  (... cn))
+#+END_SRC
+ 1. src_racket{;; - atomic non-distinct: course name}
+ 2. src_racket{;; - atomic non-distinct: String}  <-
+ 3. src_racket{;; - atomic non-distinct: name}
+
+
+** HtDF With Non-Primitive Data
++ *Question 1*
+  + You are told that the extension you are working on can only accomodate icons that are at most 30 pixels high, so we would like to design a function that checks if an image has a height of more than 30 pixels.
+
+  + Here is the partial design of too-tall?:
+    #+BEGIN_SRC racket
+  ;; Icon -> Boolean
+  ;; produce true if the given icon is more than 30 pixels high
+  (define (too-tall? i) false)   ;stub
+
+    #+END_SRC
+    + What is the minimum number of tests required to design this function?
+      1. 0
+
+      2. 1
+
+      3. 2   <-
+
+      4. 3
+
+
++  *Question 2*
+  #+BEGIN_SRC racket
+;; Icon -> Boolean
+;; produce true if the given icon is more than 30 pixels high
+(check-expect (too-tall? STEP-ICON) false)
+(check-expect (too-tall? RUNNING-STICKMAN-ICON) true)
+
+(define (too-tall? i) false)   ;stub
+#+END_SRC
+  + Choose the simplest correct function definition for =too-tall?=.
+    1.
+        #+BEGIN_SRC racket
+  (define (too-tall? i)
+   (if (> (image-height i) 30)
+       true
+       false))
+        #+END_SRC
+
+    2.
+        #+BEGIN_SRC racket
+  (define (too-tall? i)
+   (cond [(> (image-height i) 30) true]
+         [else false]))
+        #+END_SRC
+
+    3.
+        #+BEGIN_SRC racket
+  (define (too-tall? i)
+   (> (image-height i) 30))
+        #+END_SRC
+
+    4.
+       #+BEGIN_SRC racket
+(define (too-tall? i)
+  (> i 30))
+       #+END_SRC
+
+       + The answer is #3. Only the first three examples will run without error. There are only two cases so =cond= is unneccessary. The =if= statement can be simplified to (...) from (if ... true false).
+
+
++ *Question 3*
+  + Why are we getting the following error?
+    file:../../screenshots/M2S4Q3.png
+    1. The function should use a different name than the stub.
+    2. /The stub should be commented out./   <-
+    3. The check-expects should be commented out.
+    4. The symbol ? cannot be used in the function name.
+
+
++ *Question 4*
+  + In the screenshot above, which other part of the function design has an error in it?
+    1. /signature/   <-
+    2. purpose
+    3. examples/tests
+    4. function body
+       + It should be src_racket{;; Icon -> Boolean}
 
 
 * Extra Practice
