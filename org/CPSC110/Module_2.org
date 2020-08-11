@@ -340,6 +340,9 @@ Created on 2020-08-06/00:36
     #+END_SRC
 
 
++ By this point, running the program will return no errors.
+  + This means that the data definition was well formed.
+
 ------
 #+BEGIN_SRC racket
 ;; CityName is String
