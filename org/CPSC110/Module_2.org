@@ -426,7 +426,9 @@ Created on 2020-08-06/00:36
 ;; - atomic distinct value: "B"
 ;; - atomic distinct value: "C"
   #+END_SRC
-** Itemization
+
+
+** TODO Itemization
 
 
 * How to design functions
@@ -494,7 +496,7 @@ Created on 2020-08-06/00:36
   #+END_SRC
 
 
-** HtDF with Interval
-** HtDF with Enumeration
-** HtDF with Itemization
-* Struture of Information Flows Through
+** TODO HtDF with Interval
+** TODO HtDF with Enumeration
+** TODO HtDF with Itemization
+* TODO Struture of Information Flows Through
