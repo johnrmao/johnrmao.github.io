@@ -54,16 +54,20 @@
 <li><a href="#orga2fb039">Data Definitions</a>
 <ul>
 <li><a href="#org87a4ec2">The problem domain</a></li>
-</ul>
-</li>
 <li><a href="#orge524706">Atomic Non-Distinct</a></li>
-<li><a href="#org8f0d375">HtDF With Non-Primitive Data</a></li>
 <li><a href="#org7f3338a">Interval</a></li>
 <li><a href="#org00ef359">Enumeration</a></li>
 <li><a href="#orgc9f0ce7">Itemization</a></li>
+</ul>
+</li>
+<li><a href="#orgab73b0b">How to design functions</a>
+<ul>
+<li><a href="#org8f0d375">HtDF With Non-Primitive Data</a></li>
 <li><a href="#orgf58af17">HtDF with Interval</a></li>
 <li><a href="#orgaa6da0c">HtDF with Enumeration</a></li>
 <li><a href="#org1b90da1">HtDF with Itemization</a></li>
+</ul>
+</li>
 <li><a href="#org3d87537">Struture of Information Flows Through</a></li>
 </ul>
 </div>
@@ -497,6 +501,8 @@ Here is a third version of the same program that uses a data definition.
 </ul>
 
 
+<hr />
+
 
 <ul class="org-ul">
 <li>A data definition describes:
@@ -520,12 +526,11 @@ Here is a third version of the same program that uses a data definition.
 </ul>
 </div>
 </div>
-</div>
 
 
-<div id="outline-container-orge524706" class="outline-2">
-<h2 id="orge524706">Atomic Non-Distinct</h2>
-<div class="outline-text-2" id="text-orge524706">
+<div id="outline-container-orge524706" class="outline-3">
+<h3 id="orge524706">Atomic Non-Distinct</h3>
+<div class="outline-text-3" id="text-orge524706">
 <ul class="org-ul">
 <li>First example of using HtDD recipe and Data Driven Templates recipes.</li>
 </ul>
@@ -601,6 +606,10 @@ An <b>interpretation</b> that describes the correspondence between information a
 <pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a city</span>
 </pre>
 </div></li>
+</ul>
+
+
+<ul class="org-ul">
 <li><p>
 One or more <b>examples</b> of the data.
 </p>
@@ -609,6 +618,10 @@ One or more <b>examples</b> of the data.
 <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN2</span> <span style="color: #FFD866;">"Vancouver"</span><span style="color: #AB9DF2;">)</span>
 </pre>
 </div></li>
+</ul>
+
+
+<ul class="org-ul">
 <li>A <b>template</b> for a 1 argument function operating on this type of data.
 <ul class="org-ul">
 <li><p>
@@ -619,6 +632,11 @@ For a given <code>TypeName</code> the data driven template is:
   &lt;body&gt;<span style="color: #AB9DF2;">)</span>
 </pre>
 </div></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
 <li><p>
 Therefore, the template for this example will be
 </p>
@@ -631,7 +649,6 @@ Therefore, the template for this example will be
 <span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: String</span>
 </pre>
 </div></li>
-</ul></li>
 </ul>
 
 
@@ -643,32 +660,120 @@ Therefore, the template for this example will be
 </ul>
 
 <hr />
-<p>
-#+BEGIN_SRC racket
-;; CityName is String
-;; interp. the name of a city
-(define CN1 "Boston")
-(define CN2 "Vancouver")
-</p>
 
-<p>
-(define  (fn-for-city-name CN)
-  (&#x2026; CN)
-  )
-</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CityName is String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a city</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Boston"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN2</span> <span style="color: #FFD866;">"Vancouver"</span><span style="color: #AB9DF2;">)</span>
 
-<p>
-;; Template rules used:
-;; - atomic non-distinct: String
-</p>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span>  <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-city-name</span> CN<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> CN<span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: String</span>
+</pre>
+</div>
 </div>
 </div>
 
 
+<div id="outline-container-org7f3338a" class="outline-3">
+<h3 id="org7f3338a">Interval</h3>
+<div class="outline-text-3" id="text-org7f3338a">
+<ul class="org-ul">
+<li>Interval <b>data definitions</b> are used for information that is numbers within a certain range.</li>
+</ul>
 
-<div id="outline-container-org8f0d375" class="outline-2">
-<h2 id="org8f0d375">HtDF With Non-Primitive Data</h2>
-<div class="outline-text-2" id="text-org8f0d375">
+
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>Imagine that you are designing a program to manage ticket sales for a theatre. (Also imagine that the theatre is perfectly rectangular in shape!)</li>
+
+<li><p>
+Design a data definition to represent a seat number in a row, where each row has 32 seats. (Just the seat number, not the row number.)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">SeatNum is Natural[1, 32] ; [ ] are inclusive, (  ) are exclusive</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. seat numbers in a row, 1 and 32 are aisle seats</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">;</span><span style="color: #727072;">aisle</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN2</span> <span style="color: #AB9DF2; font-weight: bold;">12</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">middle</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN2</span> <span style="color: #AB9DF2; font-weight: bold;">32</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">aisle</span>
+<span style="color: #727072;">#;</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-seat-num sn</span><span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">... sn</span><span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">  </span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: Natural[1, 32]</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org00ef359" class="outline-3">
+<h3 id="org00ef359">Enumeration</h3>
+<div class="outline-text-3" id="text-org00ef359">
+<ul class="org-ul">
+<li>Enumeration data definitions are used when information consists of two or more distinct values.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>As part of designing a system to keep track of student grades, you are asked to design a data definition to represent the letter grade in a course, which is one of A, B or C.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+In this problem, there are three distinct values <code>A, B or C</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">LetterGrade is one of:</span>
+<span style="color: #727072;">;;  </span><span style="color: #727072;">- "A"</span>
+<span style="color: #727072;">;;  </span><span style="color: #727072;">- "B"</span>
+<span style="color: #727072;">;;  </span><span style="color: #727072;">- "C"</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the letter grade in a course</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">&lt;examples are redundant for enumerations&gt;</span>
+<span style="color: #727072;">#;</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-letter-grade lg</span><span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">cond </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "A"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
+<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "B"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
+<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "C"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
+<span style="color: #727072;">        </span><span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">  </span><span style="color: #AB9DF2;">)</span>
+
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- one of: 3 cases</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "A"</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "B"</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "C"</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc9f0ce7" class="outline-3">
+<h3 id="orgc9f0ce7">Itemization</h3>
+</div>
+</div>
+
+
+<div id="outline-container-orgab73b0b" class="outline-2">
+<h2 id="orgab73b0b">How to design functions</h2>
+<div class="outline-text-2" id="text-orgab73b0b">
+</div>
+<div id="outline-container-org8f0d375" class="outline-3">
+<h3 id="org8f0d375">HtDF With Non-Primitive Data</h3>
+<div class="outline-text-3" id="text-org8f0d375">
 <ul class="org-ul">
 <li>A function which consumes <b>non-primitive data</b> is one that consumes data defined by your own data definition.</li>
 </ul>
@@ -754,99 +859,15 @@ The above function can actually be further simplified into:
 </div>
 
 
-<div id="outline-container-org7f3338a" class="outline-2">
-<h2 id="org7f3338a">Interval</h2>
-<div class="outline-text-2" id="text-org7f3338a">
-<ul class="org-ul">
-<li>Interval <b>data definitions</b> are used for information that is numbers within a certain range.</li>
-</ul>
-
-
-<ul class="org-ul">
-<li>PROBLEM:</li>
-
-<li>Imagine that you are designing a program to manage ticket sales for a theatre. (Also imagine that the theatre is perfectly rectangular in shape!)</li>
-
-<li><p>
-Design a data definition to represent a seat number in a row, where each row has 32 seats. (Just the seat number, not the row number.)
-</p>
-
-<div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">SeatNum is Natural[1, 32] ; [ ] are inclusive, (  ) are exclusive</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">interp. seat numbers in a row, 1 and 32 are aisle seats</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">;</span><span style="color: #727072;">aisle</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN2</span> <span style="color: #AB9DF2; font-weight: bold;">12</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">middle</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN2</span> <span style="color: #AB9DF2; font-weight: bold;">32</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">aisle</span>
-<span style="color: #727072;">#;</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-seat-num sn</span><span style="color: #78DCE8;">)</span>
-<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">... sn</span><span style="color: #78DCE8;">)</span>
-<span style="color: #727072;">  </span><span style="color: #AB9DF2;">)</span>
-
-<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: Natural[1, 32]</span>
-</pre>
-</div></li>
-</ul>
+<div id="outline-container-orgf58af17" class="outline-3">
+<h3 id="orgf58af17">HtDF with Interval</h3>
 </div>
+<div id="outline-container-orgaa6da0c" class="outline-3">
+<h3 id="orgaa6da0c">HtDF with Enumeration</h3>
 </div>
-
-
-<div id="outline-container-org00ef359" class="outline-2">
-<h2 id="org00ef359">Enumeration</h2>
-<div class="outline-text-2" id="text-org00ef359">
-<ul class="org-ul">
-<li>Enumeration data definitions are used when information consists of two or more distinct values.</li>
-</ul>
-
-
-<ul class="org-ul">
-<li>PROBLEM:</li>
-
-<li>As part of designing a system to keep track of student grades, you are asked to design a data definition to represent the letter grade in a course, which is one of A, B or C.</li>
-</ul>
-
-
-<ul class="org-ul">
-<li><p>
-In this problem, there are three distinct values <code>A, B or C</code>.
-</p>
-<div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">LetterGrade is one of:</span>
-<span style="color: #727072;">;;  </span><span style="color: #727072;">- "A"</span>
-<span style="color: #727072;">;;  </span><span style="color: #727072;">- "B"</span>
-<span style="color: #727072;">;;  </span><span style="color: #727072;">- "C"</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the letter grade in a course</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">&lt;examples are redundant for enumerations&gt;</span>
-<span style="color: #727072;">#;</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-letter-grade lg</span><span style="color: #78DCE8;">)</span>
-<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">cond </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "A"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
-<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "B"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
-<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "C"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
-<span style="color: #727072;">        </span><span style="color: #78DCE8;">)</span>
-<span style="color: #727072;">  </span><span style="color: #AB9DF2;">)</span>
-
-
-<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- one of: 3 cases</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "A"</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "B"</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "C"</span>
-</pre>
-</div></li>
-</ul>
+<div id="outline-container-org1b90da1" class="outline-3">
+<h3 id="org1b90da1">HtDF with Itemization</h3>
 </div>
-</div>
-<div id="outline-container-orgc9f0ce7" class="outline-2">
-<h2 id="orgc9f0ce7">Itemization</h2>
-</div>
-<div id="outline-container-orgf58af17" class="outline-2">
-<h2 id="orgf58af17">HtDF with Interval</h2>
-</div>
-<div id="outline-container-orgaa6da0c" class="outline-2">
-<h2 id="orgaa6da0c">HtDF with Enumeration</h2>
-</div>
-<div id="outline-container-org1b90da1" class="outline-2">
-<h2 id="org1b90da1">HtDF with Itemization</h2>
 </div>
 <div id="outline-container-org3d87537" class="outline-2">
 <h2 id="org3d87537">Struture of Information Flows Through</h2>
