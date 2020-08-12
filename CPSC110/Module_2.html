@@ -804,9 +804,38 @@ Design a data definition to represent a seat number in a row, where each row has
 
 <li>As part of designing a system to keep track of student grades, you are asked to design a data definition to represent the letter grade in a course, which is one of A, B or C.</li>
 </ul>
-</div>
-</div>
 
+
+<ul class="org-ul">
+<li><p>
+In this problem, there are three distinct values <code>A, B or C</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">LetterGrade is one of:</span>
+<span style="color: #727072;">;;  </span><span style="color: #727072;">- "A"</span>
+<span style="color: #727072;">;;  </span><span style="color: #727072;">- "B"</span>
+<span style="color: #727072;">;;  </span><span style="color: #727072;">- "C"</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the letter grade in a course</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">&lt;examples are redundant for enumerations&gt;</span>
+<span style="color: #727072;">#;</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-letter-grade lg</span><span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">cond </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "A"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
+<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "B"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
+<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "C"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
+<span style="color: #727072;">        </span><span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">  </span><span style="color: #AB9DF2;">)</span>
+
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- one of: 3 cases</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "A"</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "B"</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "C"</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
 <div id="outline-container-orgc9f0ce7" class="outline-2">
 <h2 id="orgc9f0ce7">Itemization</h2>
 </div>

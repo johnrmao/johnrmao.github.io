@@ -279,4 +279,30 @@ Created on 2020-08-06/00:41
         + =Number(10, 20]= excludes the 10.
 
 
+** Enumeration
++ *Question 1*
+  + You are asked to design a data definition to represent the seasons of the year: winter, spring, summer, and fall.
+  + How many subclasses would you have for this data definition?
+    1. 0
+    2. 2
+    3. /4/  <-
+    4. 6
+       #+BEGIN_SRC racket
+;; Season is one of:
+;;  - "winter"
+;;  - "spring"
+;;  - "summer"
+;;  - "fall"
+       #+END_SRC
+
+
++ *Question 2*
+  + How many examples should you have for this data definition?
+    1. /0/  <-
+    2. 2
+    3. 4
+    4. 6
+       + Examples are redudent in enumeration data definitions, so they are not needed.
+
+
 * Extra Practice
