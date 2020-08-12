@@ -58,7 +58,6 @@
 </li>
 <li><a href="#orge524706">Atomic Non-Distinct</a></li>
 <li><a href="#org8f0d375">HtDF With Non-Primitive Data</a></li>
-<li><a href="#orge8beb25">HtDF X Structure of Data Orthogonality</a></li>
 <li><a href="#org7f3338a">Interval</a></li>
 <li><a href="#org00ef359">Enumeration</a></li>
 <li><a href="#orgc9f0ce7">Itemization</a></li>
@@ -755,28 +754,59 @@ The above function can actually be further simplified into:
 </div>
 
 
-<div id="outline-container-orge8beb25" class="outline-2">
-<h2 id="orge8beb25">HtDF X Structure of Data Orthogonality</h2>
-<div class="outline-text-2" id="text-orge8beb25">
-<ul class="org-ul">
-<li>The HtDF and HtDD recipes are largely orthogonal.
-<ul class="org-ul">
-<li>HtDF works nearly the same way for all forms of data.</li>
-</ul></li>
-</ul>
-
-
-<ul class="org-ul">
-<li>Once we learn a new form of data, we already mostly know how to design functions that operate on it.</li>
-</ul>
-</div>
-</div>
 <div id="outline-container-org7f3338a" class="outline-2">
 <h2 id="org7f3338a">Interval</h2>
+<div class="outline-text-2" id="text-org7f3338a">
+<ul class="org-ul">
+<li>Interval <b>data definitions</b> are used for information that is numbers within a certain range.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>Imagine that you are designing a program to manage ticket sales for a theatre. (Also imagine that the theatre is perfectly rectangular in shape!)</li>
+
+<li><p>
+Design a data definition to represent a seat number in a row, where each row has 32 seats. (Just the seat number, not the row number.)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">SeatNum is Natural[1, 32] ; [ ] are inclusive, (  ) are exclusive</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. seat numbers in a row, 1 and 32 are aisle seats</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">;</span><span style="color: #727072;">aisle</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN2</span> <span style="color: #AB9DF2; font-weight: bold;">12</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">middle</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN2</span> <span style="color: #AB9DF2; font-weight: bold;">32</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">aisle</span>
+<span style="color: #727072;">#;</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-seat-num sn</span><span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">... sn</span><span style="color: #78DCE8;">)</span>
+<span style="color: #727072;">  </span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: Natural[1, 32]</span>
+</pre>
+</div></li>
+</ul>
 </div>
+</div>
+
+
 <div id="outline-container-org00ef359" class="outline-2">
 <h2 id="org00ef359">Enumeration</h2>
+<div class="outline-text-2" id="text-org00ef359">
+<ul class="org-ul">
+<li>Enumeration data definitions are used when information consists of two or more distinct values.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>As part of designing a system to keep track of student grades, you are asked to design a data definition to represent the letter grade in a course, which is one of A, B or C.</li>
+</ul>
 </div>
+</div>
+
 <div id="outline-container-orgc9f0ce7" class="outline-2">
 <h2 id="orgc9f0ce7">Itemization</h2>
 </div>

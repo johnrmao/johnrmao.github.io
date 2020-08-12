@@ -423,14 +423,40 @@ Created on 2020-08-06/00:36
   #+END_SRC
 
 
-* HtDF X Structure of Data Orthogonality
-+ The HtDF and HtDD recipes are largely orthogonal.
-  + HtDF works nearly the same way for all forms of data.
-
-
-+ Once we learn a new form of data, we already mostly know how to design functions that operate on it.
 * Interval
++ Interval *data definitions* are used for information that is numbers within a certain range.
+
+
++ PROBLEM:
+
++ Imagine that you are designing a program to manage ticket sales for a theatre. (Also imagine that the theatre is perfectly rectangular in shape!)
+
++ Design a data definition to represent a seat number in a row, where each row has 32 seats. (Just the seat number, not the row number.)
+
+  #+BEGIN_SRC racket
+;; SeatNum is Natural[1, 32] ; [ ] are inclusive, (  ) are exclusive
+;; interp. seat numbers in a row, 1 and 32 are aisle seats
+(define SN1 1)  ;aisle
+(define SN2 12) ;middle
+(define SN2 32) ;aisle
+#;
+(define (fn-for-seat-num sn)
+  (... sn)
+  )
+
+;; Template rules used:
+;; - atomic non-distinct: Natural[1, 32]
+  #+END_SRC
+
+
 * Enumeration
++ Enumeration data definitions are used when information consists of two or more distinct values.
+
+
++ PROBLEM:
+
++ As part of designing a system to keep track of student grades, you are asked to design a data definition to represent the letter grade in a course, which is one of A, B or C.
+
 * Itemization
 * HtDF with Interval
 * HtDF with Enumeration
