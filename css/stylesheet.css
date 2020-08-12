@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-    background-color: #192639;
-    color: #fcd6b7;
+    background-color: #252422;
+    color: #ccc5b9;
     font-family: 'Vollkorn', serif;
     font-size: 100%;
     max-width: 800px;
@@ -18,7 +18,7 @@ img {
 }
 
 .TODO {
-    color: #f27874;
+    color: #bd1613;
 }
 
 .PROJ {
@@ -26,7 +26,7 @@ img {
 }
 
 .STRT {
-    color: #d6ffc1;
+    color: #98c1d9;
 }
 
 .WAIT {
@@ -38,7 +38,7 @@ img {
 }
 
 .DONE {
-    color: #8cb74f;
+    color: #a3f7b5;
 }
 
 .KILL {
@@ -46,7 +46,7 @@ img {
 }
 
 .___ {
-    color: #d6ffc1;
+    color: #a3f7b5;
 }
 
 ._X_ {
@@ -71,11 +71,11 @@ a:active {
 
 .title {
     font-size: 210%;
-    color: #e85437;
+    color: #f6f4d2;
     text-align: center;
     text-transform: uppercase;
 }
 
 h2, h3, h4, h5 {
-    color: #ee6269;
+    color: #f25c54;
 }
