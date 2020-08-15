@@ -3,8 +3,6 @@
 Created on 2020-08-03/21:30
 
 
-[[file:Problem_Sets/Module_1.2_Questions.org][Module 1B Questions]]
-
 * Learning Goals
 + Be able to use the How to Design Functions (HtDF) recipe to design functions that operate on primitive data.
 + Be able to read a complete function design and identify its different elements.

@@ -1,0 +1,1339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 1A Questions</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Mao" />
+<link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../../index.html"> UP </a>
+ |
+ <a accesskey="H" href="../../index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Module 1A Questions</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7946a63">Module 1 Questions</a>
+<ul>
+<li><a href="#org837a032">Expressions</a></li>
+<li><a href="#org0e71735">Evaluation</a></li>
+<li><a href="#orga3b81f1">Strings and Images</a></li>
+<li><a href="#org8520850">Constant Definitions</a></li>
+<li><a href="#org2ec67e2">Function Definitions</a></li>
+<li><a href="#org5a0c52c">Booleans and if expressions</a></li>
+</ul>
+</li>
+<li><a href="#org67c25e0">Extra Practice</a>
+<ul>
+<li><a href="#orgca0b290">More Arithmetic Expressions</a></li>
+<li><a href="#org7bf66a0">Tile</a></li>
+<li><a href="#org3d0013a">Compare Images</a></li>
+<li><a href="#orgdc7899c">Function Writing</a></li>
+</ul>
+</li>
+<li><a href="#org0911e37">Intro lab questions</a>
+<ul>
+<li><a href="#orge4726b2">Problem 1</a></li>
+<li><a href="#orgcaa7cec">Problem 2</a></li>
+<li><a href="#orgb548866">Problem 3</a></li>
+<li><a href="#org63516ba">Problem 4</a></li>
+<li><a href="#orga18837d">Problem 5</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Created on 2020-07-17/15:54
+</p>
+
+
+<div id="outline-container-org7946a63" class="outline-2">
+<h2 id="org7946a63">Module 1 Questions</h2>
+<div class="outline-text-2" id="text-org7946a63">
+</div>
+<div id="outline-container-org837a032" class="outline-3">
+<h3 id="org837a032">Expressions</h3>
+<div class="outline-text-3" id="text-org837a032">
+<ul class="org-ul">
+<li><b>Question 1</b></li>
+</ul>
+
+<div class="figure">
+<p><img src="../../screenshots/M1S1Q1.png" alt="M1S1Q1.png" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">sqr</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">sqr</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+5
+</pre>
+
+
+<ul class="org-ul">
+<li><i>this is pretty much the most difficult math seen in this course</i></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li>If you see #i2.718281828459045 appear in the interaction pane, it means:
+<ol class="org-ol">
+<li>It's an imaginary number.</li>
+<li>Someone just sent a strange tweet.</li>
+<li><i>It's a number very close to 2.718281828459045.</i>  &lt;-</li>
+<li>I thought you said there wouldn't be much math!</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>Which of the following are expressions:
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">sqr</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #78DCE8;">+</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code>i  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #2e8b57;">#i1.4142135623730951</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">1</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #CC6666; font-weight: bold;">)</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><i>At this point in the course an expression is either a value, or of the form <code class="src src-racket"><span style="color: #AB9DF2;">(</span>&lt;primitive&gt; &lt;expression&gt; <span style="color: #FF6188;">...</span><span style="color: #AB9DF2;">)</span></code>. We will shortly add to our vocabulary of expressions.</i></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li>Which of the folloing are values:
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">sqr</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #78DCE8;">+</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #2e8b57;">#i1.4142135623730951</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">1</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #CC6666; font-weight: bold;">)</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li>What would be the result of evaluating the following expression:</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code>
+<ol class="org-ol">
+<li>18</li>
+
+<li>6</li>
+
+<li>2</li>
+
+<li>3  &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 6</b>
+<ul class="org-ul">
+<li><p>
+Recall that the average of a set of numbers is the sum of the numbers divided by how many numbers there are.
+</p>
+
+<p>
+Which of these expressions produces the average of the numbers 4, 6.2 and -12? Check ALL that are correct.
+</p>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6.2</span> <span style="color: #2e8b57;">-12</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #2e8b57;">-8</span> <span style="color: #AB9DF2; font-weight: bold;">6.2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">6.2</span> <span style="color: #2e8b57;">-12</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #2e8b57;">-0.6</span></code>  &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 7</b>
+<ul class="org-ul">
+<li>Why are we using Beginning Student Language in this course? Select all answers that apply.
+<ol class="org-ol">
+<li><i>It is simple to learn, allowing you to focus your attention on the design methods correct</i></li>
+<li>It is commonly used in industry, so you can get a job programming in BSL</li>
+<li><i>It forms the core of many other languages, which will help you transfer what you learn to other languages correct</i></li>
+<li><i>There are so many popular programming languages that no single language will be useful for many projects correct</i></li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org0e71735" class="outline-3">
+<h3 id="org0e71735">Evaluation</h3>
+<div class="outline-text-3" id="text-org0e71735">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>Consider the following expression:</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code></li>
+<li>Select all calls to primitives.
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+
+<li><code class="src src-racket">,<span style="color: #78DCE8;">*</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">3</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #78DCE8;">-</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">4</span></code></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">2</span></code></li>
+</ol></li>
+
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span> </code> and <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> are primitive calls because they are expressions that start with open parenthesis and the name of a primitive operation.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li>Consider the following expression:</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code></li>
+<li>Select all the operators.
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">3</span></code></li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">-</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">4</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">2</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>Consider the following expression:</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code></li>
+<li>Select all operands.
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">3</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">-</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">4</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">2</span></code>  &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li>What is the next step in the following evaluation?
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">7</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">7</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code>
+<ul class="org-ul">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li>What is the next step in the following evaluation?
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">7</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">7</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code>
+<ul class="org-ul">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span></code></li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 6</b>
+<ul class="org-ul">
+<li>What is the next step in the following evaluation?
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">7</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">7</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span></code>
+<ul class="org-ul">
+<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">2</span></code></li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orga3b81f1" class="outline-3">
+<h3 id="orga3b81f1">Strings and Images</h3>
+<div class="outline-text-3" id="text-orga3b81f1">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>What is the value of the expression below?</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">substring</span> <span style="color: #FFD866;">"hello"</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #FFD866;">"hello"</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"hel"</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"ell"</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"el"</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"he"</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li>Will the following produce any errors?</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"1"</span> <span style="color: #FFD866;">"2"</span><span style="color: #AB9DF2;">)</span></code>
+<ol class="org-ol">
+<li>Yes</li>
+<li><i>No</i>  &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li><p>
+Which primitive is required in the following expression to produce the stop sign image below?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>______ <span style="color: #78DCE8;">(</span>text <span style="color: #FFD866;">"STOP"</span> <span style="color: #AB9DF2; font-weight: bold;">48</span> <span style="color: #FFD866;">"white"</span><span style="color: #78DCE8;">)</span>
+        <span style="color: #78DCE8;">(</span>regular-polygon <span style="color: #AB9DF2; font-weight: bold;">60</span> <span style="color: #AB9DF2; font-weight: bold;">8</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+
+<div class="figure">
+<p><img src="../../screenshots/M1S3Q3.png" alt="M1S3Q3.png" />
+</p>
+</div>
+<ol class="org-ol">
+<li>above</li>
+<li>beside</li>
+<li><i>overlay</i>  &lt;-</li>
+<li>append</li>
+</ol>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li><p>
+Which image will the following expression produce?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>beside <span style="color: #78DCE8;">(</span>square <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"outline"</span> <span style="color: #FFD866;">"blue"</span><span style="color: #78DCE8;">)</span>
+        <span style="color: #78DCE8;">(</span>above <span style="color: #FC9867;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">15</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span>
+               <span style="color: #FC9867;">(</span>triangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><img src="../../screenshots/M1S3Q4A1.png" alt="M1S3Q4A1.png" /></li>
+<li><img src="../../screenshots/M1S3Q4A2.png" alt="M1S3Q4A2.png" /></li>
+<li><img src="../../screenshots/M1S3Q4A3.png" alt="M1S3Q4A3.png" /></li>
+<li><img src="../../screenshots/M1S3Q4A4.png" alt="M1S3Q4A4.png" /></li>
+</ol></li>
+</ul></li>
+
+<li>The above will produce image 2.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li>Assume that the image below shows an entire program file. Why does running the program produce the following error?
+<img src="../../screenshots/M1S3Q5.png" alt="M1S3Q5.png" />
+<ol class="org-ol">
+<li>We didn't define a function named <code class="src src-racket">above</code> in the program.</li>
+<li><i>We didn't include <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span></code> at the beginning of the program.</i>  &lt;-</li>
+<li><code class="src src-racket">above</code> does not accept a square as an argument.</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 6</b>
+<ul class="org-ul">
+<li>We have revised the program now, why are we still getting an error?
+<img src="../../screenshots/M1S3Q5.png" alt="M1S3Q5.png" />
+<ol class="org-ol">
+<li>We still need to define a function named above.</li>
+<li>We need to find the collection "2htpd."</li>
+<li><i>We misspelled the name of the required module, so we need to replace "2htpd" with "2htdp."</i> &lt;&#x2013;</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org8520850" class="outline-3">
+<h3 id="org8520850">Constant Definitions</h3>
+<div class="outline-text-3" id="text-org8520850">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>Consider the following program:</li>
+<li>What result is produced when the program is run?</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">; </span><span style="color: #727072;">FOO = 6</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">; </span><span style="color: #727072;">BAR = 12</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">; </span><span style="color: #727072;">(* FOO BAR) = (* 6 12) = 72</span>
+</pre>
+</div>
+<pre class="example">
+RESULTS:
+72
+</pre>
+
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li><p>
+Given the following program:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the result of the <b>first</b> evaluation step?
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket">    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+    <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> BAR<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket">    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+    <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">6</span> BAR<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket">    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+    <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket">   <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">FOO</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>
+   <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">BAR</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> FOO <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+   <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> FOO BAR<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+<li>Answer is <b>#4</b>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2ec67e2" class="outline-3">
+<h3 id="org2ec67e2">Function Definitions</h3>
+<div class="outline-text-3" id="text-org2ec67e2">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>Why should you use function definitions?
+<ol class="org-ol">
+<li>To be lazy</li>
+<li>To make the code easier to read</li>
+<li>To avoid duplicated code</li>
+<li><i>All of the above</i>   &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li>Suppose we want a function that will give the length of the hypotenuse of any right angle triangle. Which of the following would achieve that? Remember that the expression we used when the side lengths were 3 and 4 was: <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">sqr</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">sqr</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code>
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket">   <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">pythag</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span>
+     <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>sqr4<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket">   <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">sqr</span> a<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">sqr</span> b<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket">   <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">c</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> a<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> b<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">pythag</span> a b<span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> a<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> b<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+
+<li>Answer is <b>$4</b>.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>What should we do to fix the following error:
+<img src="../../screenshots/M1S4Q3.png" alt="M1S4Q3.png" />
+<ol class="org-ol">
+<li>Replace <code>i</code> in the program</li>
+<li>Include <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span></code> at the beginning of the program</li>
+<li><i>Replace <code>i</code> with <code>img</code>, which is the name of the parameter for this function</i>  &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li><p>
+Given the function:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">foo</span> a b<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> a<span style="color: #FC9867;">)</span>
+     b
+    <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> b a<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the first step of <code class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code>, and what is the result of that step?
+<ol class="org-ol">
+<li><p>
+Replace <code>a</code> and <code>b</code> with <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span></code> and 4 everywhere.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">foo</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
+     <span style="color: #AB9DF2; font-weight: bold;">4</span>
+     <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+
+<span style="color: #78DCE8;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+Replace <code class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> with the body of <code>foo</code> in which we replace all occurrences of <code>a</code> with <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span></code>, and <code>b</code> with 4.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+<i>Evaluate <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span></code> and replace it in the function call of <code>foo</code>.</i>  &lt;&#x2013;
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li><p>
+After the previous step of the evaluation we are left with:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #78DCE8;">(</span><span style="color: #2e8b57;">+1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">into</span>
+<span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the next step of the evaluation and what does that leave us with?
+<ol class="org-ol">
+<li><p>
+Replace <code>a</code> and <code>b</code> with 2 and 4 everywhere.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">foo</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span>
+     <span style="color: #AB9DF2; font-weight: bold;">4</span>
+     <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+<i>Replace <code class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> with the body of <code>foo</code> in which we replace all occurrences of <code>a</code> with 2, and <code>b</code> with 4.</i>  &lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+Replace <code class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> with the body of <code>foo</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> a<span style="color: #78DCE8;">)</span>
+   b
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> b a<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 6</b>
+<ul class="org-ul">
+<li><p>
+After the previous step of the evaluation we are left with:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+<span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">into</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the next step of evaluation and what does that leave us with?
+<ol class="org-ol">
+<li><p>
+<code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 6 and <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 8.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+  <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><p>
+<code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 8.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><p>
+<i><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 6.</i>  &lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span><span style="color: #CC6666; font-weight: bold;">)</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 7</b>
+<ul class="org-ul">
+<li><p>
+After the previous step of evaluation we are left with:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+<span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the next step of evaluation and what does that leave us with?
+<ol class="org-ol">
+<li><p>
+6 and 4 are added to produce 10.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">10</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+<i><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 8.</i>  &lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+<code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> is replaced with 8 and 4, 6, and 8, are aded together.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">18</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 8</b>
+<ul class="org-ul">
+<li><p>
+After the previous step of the evaluation we are left with:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>foo <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+<span style="color: #AB9DF2;">(</span>foo <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">into</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">6</span>
+   <span style="color: #AB9DF2; font-weight: bold;">4</span>
+   <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li>What is the next step of the evaluation and what does that leave us with?
+<ol class="org-ol">
+<li><p>
+6 and 4 are added to produce 10.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">10</span>
+   <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+6, 4, and 8 are added to produce 14.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">14</span>
+</pre>
+</div></li>
+
+<li><p>
+<i>6, 4, and 8 are added to produce 18.</i>  &lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">18</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org5a0c52c" class="outline-3">
+<h3 id="org5a0c52c">Booleans and if expressions</h3>
+<div class="outline-text-3" id="text-org5a0c52c">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li><p>
+What is the value of the expression below?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">true</span></code>   &lt;-</li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">false</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"true"</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"false"</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li><p>
+What about this one?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">5</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">true</span></code></li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">false</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"true"</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"false"</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>Which of the following are predicates? Select all that apply.
+<ol class="org-ol">
+<li>+</li>
+<li>=  &lt;-</li>
+<li>string=?  &lt;-</li>
+<li>string-append</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li>Which of the followin expressions produces <code class="src src-racket"><span style="color: #78DCE8;">true</span></code> only when the width of an <code class="src src-racket">img1</code> is greater than 50 pixels?
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-width IMG1 <span style="color: #AB9DF2; font-weight: bold;">50</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-width IMG1<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">50</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;=</span> <span style="color: #78DCE8;">(</span>image-width IMG1<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">50</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">50</span> <span style="color: #78DCE8;">(</span>image-width IMG1<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li>How can we fix the following error:
+<img src="../../screenshots/M1S6Q5.png" alt="M1S6Q5.png" />
+<ol class="org-ol">
+<li>Remove the '(' before if.</li>
+<li>Add ')' after I2) at the end of the code above.</li>
+<li>Add ')' after (image-width I1)</li>
+<li><p>
+Add ')' after (image-width I2)  &lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;</span><span style="color: #727072;">it should be</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #FC9867;">(</span>image-width I1<span style="color: #FC9867;">)</span>
+       <span style="color: #FC9867;">(</span>image-width I2<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+    I1
+    I2<span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 6</b>
+<ul class="org-ul">
+<li><p>
+What is the value of the <code class="src src-racket"><span style="color: #FF6188;">if</span></code> expression below?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-length</span> <span style="color: #FFD866;">"hello"</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">10</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #FFD866;">"long"</span>
+    <span style="color: #FFD866;">"short"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+"short"
+</pre>
+
+
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">true</span></code></li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">false</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"long"</span></code></li>
+<li><code class="src src-racket"><span style="color: #FFD866;">"short"</span></code> &lt;-</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 7</b>
+<ul class="org-ul">
+<li><p>
+What is the value of the expression below?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">or</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">true</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">false</span></code></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 8</b>
+<ul class="org-ul">
+<li><p>
+Which comparisons can be performed when the expression below is evaluated?
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">or</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">4</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li>Just the &lt;</li>
+<li>Just the &gt;</li>
+<li><i>The &lt; and the &gt;</i>   &lt;-</li>
+<li>All three, &lt;, &gt;, =
+<ul class="org-ul">
+<li>an <code class="src src-racket"><span style="color: #FF6188;">or</span></code> expression will short-circuit and return <code class="src src-racket"><span style="color: #78DCE8;">true</span></code> as soon as an expression returns true.</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 9</b>
+<ul class="org-ul">
+<li><p>
+Given:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">B1</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">B2</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><p>
+What is the value of:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">or</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">not</span> B1<span style="color: #78DCE8;">)</span> B2<span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #78DCE8;">true</span></code></li>
+<li><code class="src src-racket"><span style="color: #78DCE8;">false</span></code>  &lt;-
+<ul class="org-ul">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">not</span> B1<span style="color: #AB9DF2;">)</span></code> is <code class="src src-racket"><span style="color: #78DCE8;">false</span></code> and <code>B2</code> is also defined as <code class="src src-racket"><span style="color: #78DCE8;">false</span></code>.</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org67c25e0" class="outline-2">
+<h2 id="org67c25e0">Extra Practice</h2>
+<div class="outline-text-2" id="text-org67c25e0">
+</div>
+<div id="outline-container-orgca0b290" class="outline-3">
+<h3 id="orgca0b290">More Arithmetic Expressions</h3>
+<div class="outline-text-3" id="text-orgca0b290">
+<ul class="org-ul">
+<li>Write two expressions that multiply the numbers 3, 5 and 7.</li>
+<li>The first should take advantage of the fact that * can accept more than 2 arguments.</li>
+<li><p>
+The second should build up the result by first multiplying 3 times 5 and then multiply the result of that by 7.
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">5</span> <span style="color: #AB9DF2; font-weight: bold;">7</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">7</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+105
+</pre></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org7bf66a0" class="outline-3">
+<h3 id="org7bf66a0">Tile</h3>
+<div class="outline-text-3" id="text-org7bf66a0">
+<ul class="org-ul">
+<li>Use the DrRacket square, beside and above functions to create an image like this one:</li>
+</ul>
+
+<div class="figure">
+<p><img src="../../screenshots/M1P3.png" alt="M1P3.png" />
+</p>
+</div>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">blue</span> <span style="color: #78DCE8;">(</span>square <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"blue"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">yellow</span> <span style="color: #78DCE8;">(</span>square <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"yellow"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">top</span> <span style="color: #78DCE8;">(</span>beside blue yellow<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">bot</span> <span style="color: #78DCE8;">(</span>beside yellow blue<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">image</span> <span style="color: #78DCE8;">(</span>above top bot<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+image
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3d0013a" class="outline-3">
+<h3 id="org3d0013a">Compare Images</h3>
+<div class="outline-text-3" id="text-org3d0013a">
+<ul class="org-ul">
+<li>Based on the two constants provided, write three expressions to determine whether:
+<ol class="org-ol">
+<li>IMAGE1 is taller than IMAGE2</li>
+<li>IMAGE1 is narrower than IMAGE2</li>
+<li>IMAGE1 has both the same width AND height as IMAGE2</li>
+</ol></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">IMAGE1</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #AB9DF2; font-weight: bold;">15</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">IMAGE2</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">15</span> <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #FC9867;">(</span>image-height IMAGE1<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-width IMAGE2<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #FFD866;">"IMAGE1 is taller"</span>
+    <span style="color: #FFD866;">"IMAGE2 is taller"</span>
+    <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #FC9867;">(</span>image-width IMAGE1<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-width IMAGE2<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+    <span style="color: #FFD866;">"IMAGE1 is narrower"</span>
+    <span style="color: #FFD866;">"IMAGE2 is narrower"</span>
+    <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">and</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2;">(</span>image-width IMAGE1<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>image-width IMAGE2<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
+     <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2;">(</span>image-height IMAGE1<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>image-height IMAGE2<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
+     <span style="color: #78DCE8;">)</span>
+    <span style="color: #FFD866;">"true"</span>
+    <span style="color: #FFD866;">"false"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+"IMAGE2 is taller"
+"IMAGE1 is narrower"
+"false"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgdc7899c" class="outline-3">
+<h3 id="orgdc7899c">Function Writing</h3>
+<div class="outline-text-3" id="text-orgdc7899c">
+<ul class="org-ul">
+<li>Write a function that consumes two numbers and produces the larger of the two.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">compare</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">lambda</span> <span style="color: #FC9867;">(</span>a b<span style="color: #FC9867;">)</span>
+    <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> a b<span style="color: #AB9DF2;">)</span>
+        a
+        b
+     <span style="color: #FC9867;">)</span>
+    <span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+
+
+<span style="color: #AB9DF2;">(</span>compare <span style="color: #AB9DF2; font-weight: bold;">5</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+5
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org0911e37" class="outline-2">
+<h2 id="org0911e37">Intro lab questions</h2>
+<div class="outline-text-2" id="text-org0911e37">
+</div>
+<div id="outline-container-orge4726b2" class="outline-3">
+<h3 id="orge4726b2">Problem 1</h3>
+<div class="outline-text-3" id="text-orge4726b2">
+<ul class="org-ul">
+<li><p>
+Use string primitives to create an expression that concatenates <code>prefix</code> and <code>suffix</code> and adds "_" between them (so you get "hello_world" when you run the program).
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">concat</span> a b<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-append</span> a <span style="color: #FFD866;">"_"</span> b<span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span>concat <span style="color: #FFD866;">"hello"</span> <span style="color: #FFD866;">"world"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+"hello_world"
+</pre></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgcaa7cec" class="outline-3">
+<h3 id="orgcaa7cec">Problem 2</h3>
+<div class="outline-text-3" id="text-orgcaa7cec">
+<ul class="org-ul">
+<li><p>
+Use string primitives to create an expression that adds "_" at position i (the position that is i characters from the left of the string).  Again, in this particular example, the expected result is "hello_world".
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">addunderscore</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">lambda</span> <span style="color: #FC9867;">(</span>phrase i<span style="color: #FC9867;">)</span>
+    <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">substring</span> phrase <span style="color: #AB9DF2; font-weight: bold;">0</span> i<span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"_"</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">substring</span> phrase i <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-length</span> phrase<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+   <span style="color: #FC9867;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">this append the substring of index 0-i to "_" to the substring of index i-(string-length phrase)</span>
+  <span style="color: #78DCE8;">)</span>
+<span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>addunderscore <span style="color: #FFD866;">"helloworld"</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+"hello_world"
+</pre></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgb548866" class="outline-3">
+<h3 id="orgb548866">Problem 3</h3>
+<div class="outline-text-3" id="text-orgb548866">
+<ul class="org-ul">
+<li><p>
+Create an expression that counts the number of pixels in the CAT image.
+</p>
+<ul class="org-ul">
+<li><i>i don't have the cat image, but this should still work.</i></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #78DCE8;">(</span>image-width M1P3.png<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-height M1P3.png<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org63516ba" class="outline-3">
+<h3 id="org63516ba">Problem 4</h3>
+<div class="outline-text-3" id="text-org63516ba">
+<ul class="org-ul">
+<li>Create an expression that computes whether CAT is "tall" (height is larger than its width), "wide" (width is larger than its height), or "square" (height is the same as its width).</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">imagecheck</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">lambda</span> <span style="color: #FC9867;">(</span>image1<span style="color: #FC9867;">)</span>
+    <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-height image1<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width image1<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+        <span style="color: #FFD866;">"tall"</span> <span style="color: #727072;">; </span><span style="color: #727072;">returns true if image is taller</span>
+        <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #FC9867;">(</span>image-height image1<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-width image1<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">if not, it will check if it's square or wide</span>
+            <span style="color: #FFD866;">"square"</span>
+            <span style="color: #FFD866;">"wide"</span><span style="color: #AB9DF2;">)</span>
+        <span style="color: #FC9867;">)</span>
+    <span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">it would be better to use cond here, but that will be covered later in the course.</span>
+
+<span style="color: #AB9DF2;">(</span>imagecheck <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>imagecheck <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">30</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>imagecheck <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">30</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+"square"
+"tall"
+"wide"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga18837d" class="outline-3">
+<h3 id="orga18837d">Problem 5</h3>
+<div class="outline-text-3" id="text-orga18837d">
+<ul class="org-ul">
+<li>Create an expression that computes whether the first character in STR is "h". In this example, the expected result is true.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">checkifh</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">lambda</span> <span style="color: #FC9867;">(</span>phrase<span style="color: #FC9867;">)</span>
+    <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-ci=?</span> <span style="color: #AB9DF2;">(</span>string-ith phrase <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"h"</span><span style="color: #FC9867;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">checks if the first letter of phrase is equal to "h"</span>
+    <span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span>checkifh <span style="color: #FFD866;">"hello_world"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>checkifh <span style="color: #FFD866;">"bye_world"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+#true
+#false
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Mao</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 1B</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Mao" />
+<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="../index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Module 1B</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf0b650f">Learning Goals</a></li>
+<li><a href="#orgc5659dd">Full Speed HtDF Recipe</a>
+<ul>
+<li><a href="#org1efa672">Problem</a></li>
+</ul>
+</li>
+<li><a href="#orge02b1e3">Slow Motion HtDF Recipe</a>
+<ul>
+<li><a href="#org959a1b3">Designing a function</a>
+<ul>
+<li><a href="#org07153a0">Signature</a></li>
+<li><a href="#orgc865c3a">Purpose</a></li>
+<li><a href="#org96f46c9">The Stub</a></li>
+<li><a href="#org3031641">Examples/Tests</a></li>
+<li><a href="#org3294572">Inventory - Templates &amp; Constants</a></li>
+<li><a href="#org9378218">Code Body</a></li>
+<li><a href="#org5cd6fef">Test and Debugging</a></li>
+<li><a href="#orgf675103">Final example</a></li>
+</ul>
+</li>
+<li><a href="#org86317e6">Example - yell!</a></li>
+<li><a href="#orge12fcb4">Example - area</a></li>
+<li><a href="#org321481c">Example - image-area</a></li>
+</ul>
+</li>
+<li><a href="#orgc1c17a0">Poorly Formed Problems</a></li>
+</ul>
+</div>
+</div>
+<p>
+Created on 2020-08-03/21:30
+</p>
+
+
+<div id="outline-container-orgf0b650f" class="outline-2">
+<h2 id="orgf0b650f">Learning Goals</h2>
+<div class="outline-text-2" id="text-orgf0b650f">
+<ul class="org-ul">
+<li>Be able to use the How to Design Functions (HtDF) recipe to design functions that operate on primitive data.</li>
+<li>Be able to read a complete function design and identify its different elements.</li>
+<li>Be able to evaluate the different elements for clarity, simplicity and consistency with each other.</li>
+<li>Be able to evaluate the entire design for how well it solves the given problem.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgc5659dd" class="outline-2">
+<h2 id="orgc5659dd">Full Speed HtDF Recipe</h2>
+<div class="outline-text-2" id="text-orgc5659dd">
+<ul class="org-ul">
+<li>HtDF recipe systematizes the design of a function.
+<ul class="org-ul">
+<li>The design recipe dictates the steps taken throughout the design of a function.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>HtDF can make harder problems easy by breaking it down, but it also makes easy problems cumbersome.
+<ul class="org-ul">
+<li>It is important to use HtDF recipe regarding hard functions.</li>
+</ul></li>
+</ul>
+</div>
+
+
+<div id="outline-container-org1efa672" class="outline-3">
+<h3 id="org1efa672">Problem</h3>
+<div class="outline-text-3" id="text-org1efa672">
+<ul class="org-ul">
+<li>Design a function that consumes a number and produces twice that number. Call your function double. Follow the HtDF recipe and show the stub and template.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>The design method goes as follows:
+<ol class="org-ol">
+<li>Signature, purpose and stub.</li>
+<li>Define examples, wrap each in <code>check-expect</code>.</li>
+<li>Template eand inventory.</li>
+<li>Code the funciton body.</li>
+<li>Test and debug until correct.
+<ul class="org-ul">
+<li>The detailed list can be found <a href="https://edge.edx.org/courses/course-v1:UBC+CPSC110+2017W1/77860a93562d40bda45e452ea064998b/#HtDF">here.</a></li>
+</ul></li>
+</ol></li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number  Signature</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce 2 times the given number  Purpose</span>
+
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">Examples/tests</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">8.4</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">this is the stub</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+Check failures:
+	Actual value 0 differs from 6, the expected value.
+in double-starter.rkt, line 9, column 0
+	Actual value 0 differs from 8.4, the expected value.
+in double-starter.rkt, line 10, column 0
+</pre>
+
+
+
+<ul class="org-ul">
+<li>Currently, this example will fail as expected, but the fact that they ran means that the examples are well formed.</li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>The next step is the template step.</li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number  Signature</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce 2 times the given number  Purpose</span>
+
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">Examples/tests</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (double n) 0)  ; this is the stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (double n)  ; this is the template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... n)</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">function body</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> n<span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+Both tests passed!
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge02b1e3" class="outline-2">
+<h2 id="orge02b1e3">Slow Motion HtDF Recipe</h2>
+<div class="outline-text-2" id="text-orge02b1e3">
+</div>
+<div id="outline-container-org959a1b3" class="outline-3">
+<h3 id="org959a1b3">Designing a function</h3>
+<div class="outline-text-3" id="text-org959a1b3">
+<ul class="org-ul">
+<li>Design a function that consumes a number and produces twice that number.</li>
+<li>Call your function double. Follow the HtDF recipe and leave behind commented out versions of the stub and template.</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org07153a0" class="outline-4">
+<h4 id="org07153a0">Signature</h4>
+<div class="outline-text-4" id="text-org07153a0">
+<ul class="org-ul">
+<li>Type &#x2026; -&gt; Type</li>
+<li>Declares type of data function consumes and produces.
+<ul class="org-ul">
+<li><p>
+For now, the primitive types are:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Number</td>
+<td class="org-left">Integer</td>
+<td class="org-left">Natural</td>
+</tr>
+
+<tr>
+<td class="org-left">String</td>
+<td class="org-left">Image</td>
+<td class="org-left">Boolean</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Describes that the function consumes a Number and produces a Number</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgc865c3a" class="outline-4">
+<h4 id="orgc865c3a">Purpose</h4>
+<div class="outline-text-4" id="text-orgc865c3a">
+<ul class="org-ul">
+<li>A purpose is a <i>1 line</i> description of what the function produces in terms of what it consumes.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">produces 2 times the given number</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org96f46c9" class="outline-4">
+<h4 id="org96f46c9">The Stub</h4>
+<div class="outline-text-4" id="text-org96f46c9">
+<ul class="org-ul">
+<li>The stub is a function definition that:
+<ol class="org-ol">
+<li>has correct function name</li>
+<li>has correct number of parameters</li>
+<li>produces dummy result of correct type</li>
+</ol></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">this is the stub</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3031641" class="outline-4">
+<h4 id="org3031641">Examples/Tests</h4>
+<div class="outline-text-4" id="text-org3031641">
+<ul class="org-ul">
+<li>Examples help us understand what the function must do.</li>
+<li>Multiple examples illustrate behavior.</li>
+<li>Wrapping in check-expect means they will also serve as unit tests for the completed function.</li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">8.4</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>In this case, both check-expects will fail, but it's a good sign that the tests ran in the first place.
+<ul class="org-ul">
+<li>Currently, the stub will always produce <code>0</code> so it is expected for the test to fail.</li>
+<li>As programs get large, it is important to make sure that all the functions are well formed.</li>
+</ul></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>It is important to note that each step of the recipe is designed to help the steps after it.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org3294572" class="outline-4">
+<h4 id="org3294572">Inventory - Templates &amp; Constants</h4>
+<div class="outline-text-4" id="text-org3294572">
+<ul class="org-ul">
+<li>The template is the outline of the final function.</li>
+<li>For now, the body of the template is <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">...</span> x<span style="color: #AB9DF2;">)</span></code> where x is the parameter to the function.</li>
+<li>A copy of the template will be made for the next step, and the original template will be commented out.
+<ul class="org-ul">
+<li>Later in the course, it is okay to delete it, but it will be kept in right now for learning purposes.</li>
+</ul></li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">this is the template</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> n<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9378218" class="outline-4">
+<h4 id="org9378218">Code Body</h4>
+<div class="outline-text-4" id="text-org9378218">
+<ul class="org-ul">
+<li>Use <i>everything written before</i> to know how to complete the function body.
+<ul class="org-ul">
+<li>It sometimes helps to use elaborate examples to show <i>how</i> the expected values could have been produced.</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">this is an elaboration on the example which makes the goal clearer</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">we now know how to finish the function, replace the ... with the body</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> n<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5cd6fef" class="outline-4">
+<h4 id="org5cd6fef">Test and Debugging</h4>
+<div class="outline-text-4" id="text-org5cd6fef">
+<ul class="org-ul">
+<li>Run the current code and it should pass without issue.</li>
+<li>It will be discussed later on how to debug when the code doesn't run correctly.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgf675103" class="outline-4">
+<h4 id="orgf675103">Final example</h4>
+<div class="outline-text-4" id="text-orgf675103">
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">by now, the code should look like this after each step</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce 2 times the given number</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">6</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4.2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (double n) 0) ; this is the stub</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (double n)    ; this is the template</span>
+<span style="color: #727072;">;    </span><span style="color: #727072;">(... n))</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> n<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org86317e6" class="outline-3">
+<h3 id="org86317e6">Example - yell!</h3>
+<div class="outline-text-3" id="text-org86317e6">
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>DESIGN a function called yell that consumes strings like "hello" and adds "!" to produce strings like "hello!".</li>
+
+<li>Remember, when we say DESIGN, we mean follow the recipe.</li>
+
+<li>Leave behind commented out versions of the stub and template.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">String -&gt; String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Produce the given string with "s" added to the end</span>
+
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>yell <span style="color: #FFD866;">"hello"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"hello!"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>yell <span style="color: #FFD866;">"bye"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"bye!"</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (yell str) "") ;stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (yell str) ;template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... str))</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">yell</span> str<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-append</span> s <span style="color: #FFD866;">"!"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge12fcb4" class="outline-3">
+<h3 id="orge12fcb4">Example - area</h3>
+<div class="outline-text-3" id="text-orge12fcb4">
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>DESIGN a function called area that consumes the length of one side of a square and produces the area of the square.</li>
+
+<li>Remember, when we say DESIGN, we mean follow the recipe.</li>
+
+<li>Leave behind commented out versions of the stub and template.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;;  </span><span style="color: #727072;">Number -&gt; Number</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">given length of one side of square, produce the area of the square</span>
+
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>area <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">ignore this mistake for now</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>area <span style="color: #AB9DF2; font-weight: bold;">3.2</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3.2</span> <span style="color: #AB9DF2; font-weight: bold;">3.2</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (area s) 0)  ; stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (area s)     ; template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... s))</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">area</span> s<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> s s<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li><p>
+Currently, this will produce one failed test.
+</p>
+<pre class="example">
+RESULTS:
+1 of the 2 tests failed.
+Actual value 9 differs from 3, the expected value.
+</pre></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>This is not an issue with the function, but the actual test.
+<ul class="org-ul">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>area <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code> should be <code class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>area <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">9</span><span style="color: #AB9DF2;">)</span></code></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>It should now run correctly.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>If a test fails, it could be that:
+<ol class="org-ol">
+<li>the function definition is wrong.</li>
+<li>the test is wrong.</li>
+<li>they are both wrong.</li>
+</ol></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Check the test before fixing the function definition!</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org321481c" class="outline-3">
+<h3 id="org321481c">Example - image-area</h3>
+<div class="outline-text-3" id="text-org321481c">
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li><p>
+DESIGN a function called image-area that consumes an image and produces the area of that image. For the area it is sufficient to just multiple the image's width by its height.  Follow the HtDF recipe and leave behind commented out versions of the stub and template.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Image -&gt; Natural ; pixels are always counted in natural numbers. Always use the most specific type of indentifier.</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce image's width * height (area)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>image-area <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (image-area img) 0) ; stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (image-area img) ; template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... img))</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">image-area</span> img<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #FC9867;">(</span>image-width IMG<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-height IMG<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+RESULTS:
+The test passed!
+</pre></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgc1c17a0" class="outline-2">
+<h2 id="orgc1c17a0">Poorly Formed Problems</h2>
+<div class="outline-text-2" id="text-orgc1c17a0">
+<ul class="org-ul">
+<li>PROBLEM:</li>
+
+<li>DESIGN a function that consumes an image and determines whether the image is tall.</li>
+
+<li>Remember, when we say DESIGN, we mean follow the recipe.</li>
+
+<li>Leave behind commented out versions of the stub and template.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>This example will have a problem statement that isn't very specific.</li>
+<li>First, we need to make the problem more specific.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">Image -&gt; Boolean ; as it is asking a yes/no question</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce true if the image is tall (height is greater than width)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>tall? <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>tall? <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>tall? <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+
+
+<span style="color: #727072;">; </span><span style="color: #727072;">(define (tall? img) false) ; stub</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (tall? img)         ; template</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(... img))</span>
+
+<span style="color: #727072;">;</span><span style="color: #727072;">(define (tall? img)</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">(if (&gt; (image-height img) (image-width img))</span>
+<span style="color: #727072;">;      </span><span style="color: #727072;">true</span>
+<span style="color: #727072;">;      </span><span style="color: #727072;">false)</span>
+<span style="color: #727072;">;  </span><span style="color: #727072;">)</span>
+
+<span style="color: #727072;">;; </span><span style="color: #727072;">the below code is the same as the above, as it only returns true or false, it is unneccessary to include it.</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">tall?</span> img<span style="color: #78DCE8;">)</span>
+ <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #FC9867;">(</span>image-height img<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-width img<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
+  <span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Mao</p>
+</div>
+</body>
+</html>

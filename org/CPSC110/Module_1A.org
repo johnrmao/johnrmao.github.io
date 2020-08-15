@@ -3,7 +3,6 @@
 Created on 2020-07-12/14:082
 
 
-[[file:Problem_Sets/Module_1.1_Questions.org][Module 1A Questions]]
 * Learning Goals
 + Understand systematic design process.
 + Understand that programs are written both to run and to read.
