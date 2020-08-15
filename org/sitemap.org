@@ -2,15 +2,14 @@
 
 - [[file:index.org][Mao's Note Emporium]]
 - [[file:tablepractice.org][Tablepractice]]
-- [[file:20200712.org][Test Post]]
 - CPSC110
-  - [[file:CPSC110/Module_1A.org][Module 1A]]
-  - [[file:CPSC110/Module_1B.org][Module 1B]]
-  - [[file:CPSC110/Module_2.org][Module 2]]
-  - Problem_Sets
-    - [[file:CPSC110/Problem_Sets/Module_1A_Questions.org][Module 1 Questions]]
-    - [[file:CPSC110/Problem_Sets/Module_1B_Questions.org][Module 1B Questions]]
-    - [[file:CPSC110/Problem_Sets/Module_2_Questions.org][Module_2_questions]]
+  - [[file:CPSC110/Module-1A.org][Module 1A]]
+  - [[file:CPSC110/Module-1B.org][Module 1B]]
+  - [[file:CPSC110/Module-2.org][Module 2]]
+  - Problem-Sets
+    - [[file:CPSC110/Problem-Sets/Module-1A-Questions.org][Module 1A Questions]]
+    - [[file:CPSC110/Problem-Sets/Module-1B-Questions.org][Module 1B Questions]]
+    - [[file:CPSC110/Problem-Sets/Module-2-Questions.org][Module 2 Questions]]
 - MissingMIT
   - [[file:MissingMIT/lecture-1.org][Lecture 1]]
   - [[file:MissingMIT/lecture-2.org][Lecture 2]]

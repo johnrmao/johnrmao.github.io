@@ -71,17 +71,21 @@ h2, h3, h4, h5 {
 
 a:link {
     color: #FFE1A8;
+    text-decoration: none;
 }
 
 a:visited {
     color: #FFE1A8;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #FFE1A8;
+    color: #dbc18f;
+    text-decoration: none;
 }
 
 a:active {
     color: #FFE1A8;
+    text-decoration: none;
 }
 

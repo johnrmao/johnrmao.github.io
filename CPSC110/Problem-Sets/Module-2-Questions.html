@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 2 Questions</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Mao" />
+<link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../../index.html"> UP </a>
+ |
+ <a accesskey="H" href="../../index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Module 2 Questions</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org481f50b">Module 2 Questions</a>
+<ul>
+<li><a href="#orgd03d47a">cond Expressions</a></li>
+<li><a href="#org38783a5">Atomic Non-Distinct</a></li>
+<li><a href="#org15f91c0">HtDF With Non-Primitive Data</a></li>
+<li><a href="#orgcb0821e">Interval</a></li>
+<li><a href="#orgc1321cf">Enumeration</a></li>
+</ul>
+</li>
+<li><a href="#org6bfafcc">Extra Practice</a></li>
+</ul>
+</div>
+</div>
+<p>
+Created on 2020-08-06/00:41
+</p>
+
+<div id="outline-container-org481f50b" class="outline-2">
+<h2 id="org481f50b">Module 2 Questions</h2>
+<div class="outline-text-2" id="text-org481f50b">
+</div>
+<div id="outline-container-orgd03d47a" class="outline-3">
+<h3 id="orgd03d47a">cond Expressions</h3>
+<div class="outline-text-3" id="text-orgd03d47a">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<img src="../../screenshots/M2S1Q1.png" alt="M2S1Q1.png" />
+<ul class="org-ul">
+<li><p>
+Build a cond expression equivalent to the above nested if expressions
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">mag</span> x<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"positive"</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"negative"</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li><p>
+We have seen that <code>cond</code> is used instead of <code>if</code> when we have multiple parallel cases. For example, as seen in Question 1:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">mag1</span> x<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span>
+      <span style="color: #FFD866;">"negative"</span>
+      <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
+          <span style="color: #FFD866;">"zero"</span>
+          <span style="color: #FFD866;">"positive"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+</pre>
+</div></li>
+
+<li><p>
+The above can be re-written as:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">mag2</span> x<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&lt;</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"negative"</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #FC9867;">]</span>
+        <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+</pre>
+</div></li>
+<li>Now let's hand step the call to (mag2 0)
+<ul class="org-ul">
+<li><p>
+What is the next step of the evaluation of:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span>    <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span>   <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+      <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+<li>The answer is #2.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>After the previous step of the evaluation we are left with:
+<img src="../../screenshots/M2S1Q3.png" alt="M2S1Q3.png" />
+<ul class="org-ul">
+<li>What is the next step of the evaluation?
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span> <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span>  <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>  <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #FFD866;">"zero"</span>
+</pre>
+</div></li>
+</ol></li>
+<li>The answer is #1.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li>After the previous step of the evaluation we are left with:
+<img src="../../screenshots/M2S1Q4.png" alt="M2S1Q4.png" />
+<ul class="org-ul">
+<li>What is the next step of the evaluation.
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
+       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #FFD866;">"zero"</span>
+</pre>
+</div></li>
+</ol></li>
+<li>The answer is #2.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 5</b>
+<ul class="org-ul">
+<li>After the previous step of the evaluation we are left with:
+<img src="../../screenshots/M2S1Q5.png" alt="M2S1Q5.png" />
+<ul class="org-ul">
+<li>What is the next step of the evaluation?
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #FFD866;">"zero"</span>
+</pre>
+</div></li>
+</ol></li>
+<li>The answer is #3.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org38783a5" class="outline-3">
+<h3 id="org38783a5">Atomic Non-Distinct</h3>
+<div class="outline-text-3" id="text-org38783a5">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>Complete the following data definition that represents the name of a course by choosing the best answer for each step in the HtDD recipe.
+<code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span></code>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. a string</span></code></li>
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. a name</span></code></li>
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span></code>   &lt;-
+
+<ul class="org-ul">
+<li>The interpretation should describe the correspondence between the information and data.</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li><p>
+<b>Question 2</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Apple"</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Systematic Program Design"</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"This is a string"</span></code></li>
+</ol></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+<b>Question 3</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span>
+    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Systematic Program Design"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> cn<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
+  <span style="color: #FFD866;">"cn"</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Answer is #1.</li>
+</ul></li>
+</ol></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Systematic Program Design"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> cn<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+<ol class="org-ol">
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: course name</span></code></li>
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: String</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: name</span></code></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org15f91c0" class="outline-3">
+<h3 id="org15f91c0">HtDF With Non-Primitive Data</h3>
+<div class="outline-text-3" id="text-org15f91c0">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>You are told that the extension you are working on can only accomodate icons that are at most 30 pixels high, so we would like to design a function that checks if an image has a height of more than 30 pixels.</li>
+
+<li><p>
+Here is the partial design of too-tall?:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket">  <span style="color: #727072;">;; </span><span style="color: #727072;">Icon -&gt; Boolean</span>
+  <span style="color: #727072;">;; </span><span style="color: #727072;">produce true if the given icon is more than 30 pixels high</span>
+  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>   <span style="color: #727072;">;</span><span style="color: #727072;">stub</span>
+
+</pre>
+</div>
+<ul class="org-ul">
+<li>What is the minimum number of tests required to design this function?
+<ol class="org-ol">
+<li>0</li>
+
+<li>1</li>
+
+<li>2   &lt;-</li>
+
+<li>3</li>
+</ol></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+<b>Question 2</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Icon -&gt; Boolean</span>
+<span style="color: #727072;">;; </span><span style="color: #727072;">produce true if the given icon is more than 30 pixels high</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>too-tall? STEP-ICON<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>too-tall? RUNNING-STICKMAN-ICON<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>   <span style="color: #727072;">;</span><span style="color: #727072;">stub</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Choose the simplest correct function definition for <code>too-tall?</code>.
+<ol class="org-ol">
+<li><div class="org-src-container">
+<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2;">(</span>image-height i<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #FC9867;">)</span>
+       <span style="color: #78DCE8;">true</span>
+       <span style="color: #78DCE8;">false</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><div class="org-src-container">
+<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-height i<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #AB9DF2;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #FC9867;">]</span>
+         <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span> <span style="color: #78DCE8;">false</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><div class="org-src-container">
+<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
+   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #FC9867;">(</span>image-height i<span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div></li>
+
+<li><div class="org-src-container">
+<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
+  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> i <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>The answer is #3. Only the first three examples will run without error. There are only two cases so <code>cond</code> is unneccessary. The <code>if</code> statement can be simplified to (&#x2026;) from (if &#x2026; true false).</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 3</b>
+<ul class="org-ul">
+<li>Why are we getting the following error?
+<img src="../../screenshots/M2S4Q3.png" alt="M2S4Q3.png" />
+<ol class="org-ol">
+<li>The function should use a different name than the stub.</li>
+<li><i>The stub should be commented out.</i>   &lt;-</li>
+<li>The check-expects should be commented out.</li>
+<li>The symbol ? cannot be used in the function name.</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 4</b>
+<ul class="org-ul">
+<li>In the screenshot above, which other part of the function design has an error in it?
+<ol class="org-ol">
+<li><i>signature</i>   &lt;-</li>
+<li>purpose</li>
+<li>examples/tests</li>
+<li>function body
+<ul class="org-ul">
+<li>It should be <code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Icon -&gt; Boolean</span></code></li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgcb0821e" class="outline-3">
+<h3 id="orgcb0821e">Interval</h3>
+<div class="outline-text-3" id="text-orgcb0821e">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li><code>Integer[2, 6]</code> includes how many numbers?
+<ol class="org-ol">
+<li>3</li>
+<li>4</li>
+<li><i>5</i>  &lt;-</li>
+<li>6</li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li>Do <code>Natural[1, 10]</code> and <code>Number(10, 20]</code> have any numbers in common?
+<ol class="org-ol">
+<li>yes</li>
+<li><i>no</i>
+<ul class="org-ul">
+<li><code>Number(10, 20]</code> excludes the 10.</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgc1321cf" class="outline-3">
+<h3 id="orgc1321cf">Enumeration</h3>
+<div class="outline-text-3" id="text-orgc1321cf">
+<ul class="org-ul">
+<li><b>Question 1</b>
+<ul class="org-ul">
+<li>You are asked to design a data definition to represent the seasons of the year: winter, spring, summer, and fall.</li>
+<li>How many subclasses would you have for this data definition?
+<ol class="org-ol">
+<li>0</li>
+<li>2</li>
+<li><i>4</i>  &lt;-</li>
+<li><p>
+6
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Season is one of:</span>
+<span style="color: #727072;">;;  </span><span style="color: #727072;">- "winter"</span>
+<span style="color: #727072;">;;  </span><span style="color: #727072;">- "spring"</span>
+<span style="color: #727072;">;;  </span><span style="color: #727072;">- "summer"</span>
+<span style="color: #727072;">;;  </span><span style="color: #727072;">- "fall"</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><b>Question 2</b>
+<ul class="org-ul">
+<li>How many examples should you have for this data definition?
+<ol class="org-ol">
+<li><i>0</i>  &lt;-</li>
+<li>2</li>
+<li>4</li>
+<li>6
+<ul class="org-ul">
+<li>Examples are redudent in enumeration data definitions, so they are not needed.</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org6bfafcc" class="outline-2">
+<h2 id="org6bfafcc">Extra Practice</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Mao</p>
+</div>
+</body>
+</html>
