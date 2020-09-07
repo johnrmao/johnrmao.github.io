@@ -1,0 +1,72 @@
+#+TITLE: Room Problem
+#+SETUPFILE: template-0.org
+Created on 2020-09-06/00:13
+
+
+* The Problem
++ Write a program that models how multiplayer matchmaking works and how long it takes for each player to find a game.
+
+
+** Players
++ There /n/ number of players.
+
+
++ The search time (absolute time at which a player decides to look for a room) of each player may be different.
+  + Depending on the geographical distribution of the players, certain times will have more players searching than others.
+  + For now, assume uniform distribution of geographical location.
+
+
++ Players may choose to leave an open room before the room closes.
+  + The chance a player leaves is determined by /n/.
+  + If a player does not leave, they are considered ready.
+
+
++ Each player has a different skill level (/n/).
+  + Assume normal distribtion of skill levels.
+
+
+
+** Groups of Players
++ The /n/ number of player will be split into groups of /m/ players.
+
+
++ Players may already be in a semi-completed group of /n/ people.
+  + Semi-completed groups will remain groups, and will only fill rooms with the number of correct openings.
+
+
++ A open group will have /n/ - /m/ vacancies.
+
+
++ A group is either open, or closed.
+  + If a player leaves before the room closes, all other players are removed from the group.
+    + If players are in a premade group, they will remain together.
+
+
++ A group is complete when /n/ number of players are ready.
+  + Should there be extra people, they will be put on a waitlist to join a group with an opening.
+
+
+** Games
++ There are /n/ number of games which fit /m/ number of groups.
+
+
++ Each game will fit /n/ number of groups.
+  + Open game will fit /n/ - /m/ number of groups.
+
+
++ A game is either open or closed.
+
+
+** Maps
++ There are /n/ number of maps for a game to take place in.
+
+
++ Maps are chosen at random.
+
+
+** Matchmaking
++ Each player as a different skill level (/n/) in which they are grouped by.
+  + Playeres can be matched with other groups of skill level /n/ +- /m/.
+
+
++ A queue is cleared by precedence.
