@@ -1,6 +1,7 @@
 #+TITLE: 
 
 - [[file:index.org][Mao's Note Emporium]]
+- [[file:room.org][Room Problem]]
 - [[file:tablepractice.org][Tablepractice]]
 - CPSC110
   - [[file:CPSC110/Module-1A.org][Module 1A]]

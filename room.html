@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Room Problem</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Mao" />
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Room Problem</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgef95f9b">The Problem</a>
+<ul>
+<li><a href="#orgbec69e7">Players</a></li>
+<li><a href="#org6dc31ef">Groups of Players</a></li>
+<li><a href="#org3c51e1d">Games</a></li>
+<li><a href="#org0625d40">Maps</a></li>
+<li><a href="#org3844421">Matchmaking</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Created on 2020-09-06/00:13
+</p>
+
+
+<div id="outline-container-orgef95f9b" class="outline-2">
+<h2 id="orgef95f9b">The Problem</h2>
+<div class="outline-text-2" id="text-orgef95f9b">
+<ul class="org-ul">
+<li>Write a program that models how multiplayer matchmaking works and how long it takes for each player to find a game.</li>
+</ul>
+</div>
+
+
+<div id="outline-container-orgbec69e7" class="outline-3">
+<h3 id="orgbec69e7">Players</h3>
+<div class="outline-text-3" id="text-orgbec69e7">
+<ul class="org-ul">
+<li>There <i>n</i> number of players.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>The search time (absolute time at which a player decides to look for a room) of each player may be different.
+<ul class="org-ul">
+<li>Depending on the geographical distribution of the players, certain times will have more players searching than others.</li>
+<li>For now, assume uniform distribution of geographical location.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Players may choose to leave an open room before the room closes.
+<ul class="org-ul">
+<li>The chance a player leaves is determined by <i>n</i>.</li>
+<li>If a player does not leave, they are considered ready.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Each player has a different skill level (<i>n</i>).
+<ul class="org-ul">
+<li>Assume normal distribtion of skill levels.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org6dc31ef" class="outline-3">
+<h3 id="org6dc31ef">Groups of Players</h3>
+<div class="outline-text-3" id="text-org6dc31ef">
+<ul class="org-ul">
+<li>The <i>n</i> number of player will be split into groups of <i>m</i> players.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Players may already be in a semi-completed group of <i>n</i> people.
+<ul class="org-ul">
+<li>Semi-completed groups will remain groups, and will only fill rooms with the number of correct openings.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>A open group will have <i>n</i> - <i>m</i> vacancies.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>A group is either open, or closed.
+<ul class="org-ul">
+<li>If a player leaves before the room closes, all other players are removed from the group.
+<ul class="org-ul">
+<li>If players are in a premade group, they will remain together.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>A group is complete when <i>n</i> number of players are ready.
+<ul class="org-ul">
+<li>Should there be extra people, they will be put on a waitlist to join a group with an opening.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org3c51e1d" class="outline-3">
+<h3 id="org3c51e1d">Games</h3>
+<div class="outline-text-3" id="text-org3c51e1d">
+<ul class="org-ul">
+<li>There are <i>n</i> number of games which fit <i>m</i> number of groups.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Each game will fit <i>n</i> number of groups.
+<ul class="org-ul">
+<li>Open game will fit <i>n</i> - <i>m</i> number of groups.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>A game is either open or closed.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org0625d40" class="outline-3">
+<h3 id="org0625d40">Maps</h3>
+<div class="outline-text-3" id="text-org0625d40">
+<ul class="org-ul">
+<li>There are <i>n</i> number of maps for a game to take place in.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Maps are chosen at random.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org3844421" class="outline-3">
+<h3 id="org3844421">Matchmaking</h3>
+<div class="outline-text-3" id="text-org3844421">
+<ul class="org-ul">
+<li>Each player as a different skill level (<i>n</i>) in which they are grouped by.
+<ul class="org-ul">
+<li>Playeres can be matched with other groups of skill level <i>n</i> +- <i>m</i>.</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>A queue is cleared by precedence.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Mao</p>
+</div>
+</body>
+</html>
