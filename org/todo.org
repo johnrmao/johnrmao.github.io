@@ -40,7 +40,7 @@ SCHEDULED: <2020-09-12 Sat 08:00>
 DEADLINE: <2020-09-09 Wed>
 
 * JAPN100
-** TODO Finish hiragana P24-28
+** TODO [#B] Finish hiragana P24-28
 SCHEDULED: <2020-09-11 Fri 07:00>
 
 ** TODO [#A] Hiragana Quiz 1
