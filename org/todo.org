@@ -3,11 +3,14 @@
 Created on 2020-09-10/18:01
 
 * CHEM120
-** TODO [#B] Read through chapter 2
+** DONE [#B] Read through chapter 2 first half
 SCHEDULED: <2020-09-10 Thu 22:00-24:00>
 
 ** DONE Engagnement survey 1
 DEADLINE: <2020-09-09 Wed 20:00>
+
+** TODO [#C] Finish chapter 2
+DEADLINE: <2020-09-13 Sun>
 
 * BIOL121
 ** TODO [#B] Genetics quiz 1: MITOSIS AND THE CELL CYCLE
@@ -16,7 +19,7 @@ DEADLINE: <2020-09-27 Sun>
 ** TODO [#B] Genetics quiz 2: CHROMOSOMES, MITOSIS, AND MEIOSIS
 DEADLINE: <2020-09-27 Sun>
 
-** TODO [#A] Lecture 1 post-survey
+** DONE [#A] Lecture 1 post-survey
 SCHEDULED: <2020-09-10 Thu 21:00>
 
 ** TODO [#C] Read CH12.1 - CH12.2 - CHROMOSOMES & MITOSIS
@@ -28,6 +31,10 @@ SCHEDULED: <2020-09-16 Wed>
 * MATH184
 ** DONE Read lecture notes P1-9
 SCHEDULED: <2020-09-09 Wed 20:00>
+
+** TODO Send math notes for J
+SCHEDULED: <2020-09-11 Fri 01:30>
+
 
 ** TODO [#B] Finish reading week 1 lecture notes
 SCHEDULED: <2020-09-11 Fri 21:00>
