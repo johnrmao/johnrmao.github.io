@@ -1,0 +1,17 @@
+#+TITLE: Todo
+#+SETUPFILE: template-0.org
+Created on 2020-09-10/18:01
+
+* CHEM120
+** TODO Read through chapter 2
+SCHEDULED: <2020-09-10 Thu 22:00>
+
+** DONE Engagnement survey 1
+SCHEDULED: <2020-09-10 Thu 18:00>
+
+**
+* BIOL121
+* MATH184
+* ENGL110
+* JAPN100
+**
