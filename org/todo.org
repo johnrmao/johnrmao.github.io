@@ -29,12 +29,8 @@ SCHEDULED: <2020-09-14 Mon>
 SCHEDULED: <2020-09-16 Wed>
 
 * MATH184
-** DONE Read lecture notes P1-9
-SCHEDULED: <2020-09-09 Wed 20:00>
-
 ** TODO Send math notes for J
 SCHEDULED: <2020-09-11 Fri 01:30>
-
 
 ** TODO [#B] Finish reading week 1 lecture notes
 SCHEDULED: <2020-09-11 Fri 21:00>
@@ -46,6 +42,8 @@ SCHEDULED: <2020-09-12 Sat 08:00>
 ** DONE WEEK 1 Wednesday prompt
 DEADLINE: <2020-09-09 Wed>
 
+** TODO Read Persepolis chapter 1
+SCHEDULED: <2020-09-12 Sat>
 * JAPN100
 ** TODO [#B] Finish hiragana P24-28
 SCHEDULED: <2020-09-11 Fri 07:00>
