@@ -7,4 +7,4 @@ Created on 2020-12-16/14:27
 + Difficulty: 1/5 Christmas Trees
     There is a photo of Santa's Desk on that billboard with his personal gift list. What gift is Santa planning on getting Josh Wright for the holidays? Talk to Jingle Ringford at the bottom of the mountain for advice.
 ** billboard.png
-file:../screenshots/billboard.png
+file:../../screenshots/billboard.png
