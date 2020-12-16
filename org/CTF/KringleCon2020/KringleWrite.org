@@ -1,5 +1,5 @@
 #+TITLE: Kringlecon Writeup
-#+SETUPFILE: ../template-2.org
+#+SETUPFILE: ../../template-2.org
 Created on 2020-12-16/14:27
 
 * Objective 1
