@@ -45,22 +45,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge8821a9">Scripting</a>
+<li><a href="#orgee2dff0">Scripting</a>
 <ul>
-<li><a href="#orga20763a">Defining variables</a></li>
-<li><a href="#org63ce3af">Functions</a></li>
-<li><a href="#org2db4187">Error Codes and Outputs</a></li>
-<li><a href="#org24206fe">Substitutions</a></li>
-<li><a href="#orgcdd2cee">Globbing</a></li>
-<li><a href="#org1efedde">SHEBANG!</a></li>
+<li><a href="#org9548eaa">Defining variables</a></li>
+<li><a href="#org5e3ec7c">Functions</a></li>
+<li><a href="#orgeb7a840">Error Codes and Outputs</a></li>
+<li><a href="#orgdcdb5f9">Substitutions</a></li>
+<li><a href="#orgf86155d">Globbing</a></li>
+<li><a href="#org883c4b9">SHEBANG!</a></li>
 </ul>
 </li>
-<li><a href="#org59b5b49">Tools</a></li>
-<li><a href="#orgd99a6d9">Search</a>
+<li><a href="#orgdd9247e">Tools</a></li>
+<li><a href="#orgde5feb0">Search</a>
 <ul>
-<li><a href="#org7339ff2">Finding files</a></li>
-<li><a href="#org76b14c4">Finding code</a></li>
-<li><a href="#org5ffc208">Finding shell commands</a></li>
+<li><a href="#org23083c1">Finding files</a></li>
+<li><a href="#org278ae78">Finding code</a></li>
+<li><a href="#orgd2be0ca">Finding shell commands</a></li>
 </ul>
 </li>
 </ul>
@@ -70,20 +70,20 @@
 Created on 2020-07-13/02:21
 </p>
 
-<div id="outline-container-orge8821a9" class="outline-2">
-<h2 id="orge8821a9">Scripting</h2>
-<div class="outline-text-2" id="text-orge8821a9">
+<div id="outline-container-orgee2dff0" class="outline-2">
+<h2 id="orgee2dff0">Scripting</h2>
+<div class="outline-text-2" id="text-orgee2dff0">
 </div>
-<div id="outline-container-orga20763a" class="outline-3">
-<h3 id="orga20763a">Defining variables</h3>
-<div class="outline-text-3" id="text-orga20763a">
+<div id="outline-container-org9548eaa" class="outline-3">
+<h3 id="org9548eaa">Defining variables</h3>
+<div class="outline-text-3" id="text-org9548eaa">
 <ul class="org-ul">
 <li><p>
 To define a variable, you can use <code>foo=bar</code>.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #FCFCFA;">foo</span>=bar
-<span style="color: #78DCE8;">echo</span> $<span style="color: #FCFCFA;">foo</span>
+<pre class="src src-shell"><span style="color: #83a598;">foo</span>=bar
+<span style="color: #d3869b;">echo</span> $<span style="color: #83a598;">foo</span>
 </pre>
 </div>
 
@@ -105,9 +105,9 @@ bar
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-shell">    <span style="color: #FCFCFA;">foo</span>=bar
-    <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">foo</span><span style="color: #FFD866;">"</span>
-    <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">'$foo'</span>
+<pre class="src src-shell">    <span style="color: #83a598;">foo</span>=bar
+    <span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"</span><span style="color: #d3869b;">$</span><span style="color: #83a598;">foo</span><span style="color: #b8bb26;">"</span>
+    <span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">'$foo'</span>
 </pre>
 </div>
 
@@ -134,9 +134,9 @@ RESULTS:
 </ul>
 </div>
 </div>
-<div id="outline-container-org63ce3af" class="outline-3">
-<h3 id="org63ce3af">Functions</h3>
-<div class="outline-text-3" id="text-org63ce3af">
+<div id="outline-container-org5e3ec7c" class="outline-3">
+<h3 id="org5e3ec7c">Functions</h3>
+<div class="outline-text-3" id="text-org5e3ec7c">
 <ul class="org-ul">
 <li>Bash supports control flow techniques such as <code>if</code>, <code>case</code>, and <code>for</code>.</li>
 <li><p>
@@ -144,10 +144,10 @@ Bash also has functions which take arguments and operate them.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #A9DC76;">mcd</span> <span style="color: #AB9DF2;">()</span> <span style="color: #AB9DF2;">{</span>
-    <span style="color: #78DCE8;">mkdir</span> -p <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">1</span><span style="color: #FFD866;">"</span>
-<span style="color: #78DCE8;">cd</span> <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">1</span><span style="color: #FFD866;">"</span>
-<span style="color: #AB9DF2;">}</span>
+<pre class="src src-shell"><span style="color: #fabd2f;">mcd</span> <span style="color: #458588;">()</span> <span style="color: #458588;">{</span>
+    <span style="color: #d3869b;">mkdir</span> -p <span style="color: #b8bb26;">"</span><span style="color: #d3869b;">$</span><span style="color: #83a598;">1</span><span style="color: #b8bb26;">"</span>
+<span style="color: #d3869b;">cd</span> <span style="color: #b8bb26;">"</span><span style="color: #d3869b;">$</span><span style="color: #83a598;">1</span><span style="color: #b8bb26;">"</span>
+<span style="color: #458588;">}</span>
 </pre>
 </div></li>
 
@@ -218,9 +218,9 @@ In bash, there are a number of relevant variables.
 </div>
 </div>
 
-<div id="outline-container-org2db4187" class="outline-3">
-<h3 id="org2db4187">Error Codes and Outputs</h3>
-<div class="outline-text-3" id="text-org2db4187">
+<div id="outline-container-orgeb7a840" class="outline-3">
+<h3 id="orgeb7a840">Error Codes and Outputs</h3>
+<div class="outline-text-3" id="text-orgeb7a840">
 <ul class="org-ul">
 <li>A return code of <code>0</code> means that the previous function ran <b>without</b> any issues.</li>
 <li>Return code of <code>1</code> means there <b>was</b> an issue.</li>
@@ -245,8 +245,8 @@ In bash, there are a number of relevant variables.
 The second command will not run if the first command did not return an error code.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">    <span style="color: #78DCE8;">false</span> || <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"Oops fail"</span>
-    <span style="color: #78DCE8;">true</span> || <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"This prints nothing"</span>
+<pre class="src src-shell">    <span style="color: #fe8019;">false</span> || <span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"Oops fail"</span>
+    <span style="color: #fe8019;">true</span> || <span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"This prints nothing"</span>
 </pre>
 </div>
 <pre class="example">
@@ -262,7 +262,7 @@ Similarly <code>&amp;&amp;</code> symbolizes <code>and</code>. If the first comm
 <li>If the first command returns an error code, the second will not run.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #78DCE8;">true</span> &amp;&amp; <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"Prints"</span>
+<pre class="src src-shell"><span style="color: #fe8019;">true</span> &amp;&amp; <span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"Prints"</span>
 </pre>
 </div>
 
@@ -273,7 +273,7 @@ Prints
 
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #78DCE8;">false</span> &amp;&amp; <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"Doesn't print"</span>
+<pre class="src src-shell"><span style="color: #fe8019;">false</span> &amp;&amp; <span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"Doesn't print"</span>
 </pre>
 </div>
 
@@ -288,9 +288,9 @@ RESULTS:
 The output of a command can be stored within a variable using:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #FCFCFA;">foo</span>=$<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">pwd</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"We are in </span><span style="color: #FF6188; font-weight: bold;">$(</span><span style="color: #FF6188; font-weight: bold;">pwd</span><span style="color: #FF6188; font-weight: bold;">)</span><span style="color: #FFD866;">"</span>
-<span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"We are in </span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">foo</span><span style="color: #FFD866;">"</span>
+<pre class="src src-shell"><span style="color: #83a598;">foo</span>=$<span style="color: #458588;">(</span><span style="color: #d3869b;">pwd</span><span style="color: #458588;">)</span>
+<span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"We are in </span><span style="color: #d3869b;">$(</span><span style="color: #d3869b;">pwd</span><span style="color: #d3869b;">)</span><span style="color: #b8bb26;">"</span>
+<span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"We are in </span><span style="color: #d3869b;">$</span><span style="color: #83a598;">foo</span><span style="color: #b8bb26;">"</span>
 </pre>
 </div>
 
@@ -330,9 +330,9 @@ RESULTS:
 </div>
 </div>
 
-<div id="outline-container-org24206fe" class="outline-3">
-<h3 id="org24206fe">Substitutions</h3>
-<div class="outline-text-3" id="text-org24206fe">
+<div id="outline-container-orgdcdb5f9" class="outline-3">
+<h3 id="orgdcdb5f9">Substitutions</h3>
+<div class="outline-text-3" id="text-orgdcdb5f9">
 <ul class="org-ul">
 <li>To feed the output of a command as a variable, use <i>command subsitution.</i>
 
@@ -350,18 +350,18 @@ RESULTS:
 An example of what's mentioned above would be:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"Starting program at </span><span style="color: #FF6188; font-weight: bold;">$(</span><span style="color: #FF6188; font-weight: bold;">date</span><span style="color: #FF6188; font-weight: bold;">)</span><span style="color: #FFD866;">"</span> <span style="color: #727072;"># </span><span style="color: #727072;">The current </span><span style="color: #727072;">date</span><span style="color: #727072;"> will replace $(</span><span style="color: #727072;">date</span><span style="color: #727072;">) in this scenario</span>
-<span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"Running program </span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">0</span><span style="color: #FFD866;"> with </span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">#</span><span style="color: #FFD866;"> arguments with pid $$"</span>
+<pre class="src src-shell"><span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"Starting program at </span><span style="color: #d3869b;">$(</span><span style="color: #d3869b;">date</span><span style="color: #d3869b;">)</span><span style="color: #b8bb26;">"</span> <span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">The current </span><span style="color: #7c6f64;">date</span><span style="color: #7c6f64;"> will replace $(</span><span style="color: #7c6f64;">date</span><span style="color: #7c6f64;">) in this scenario</span>
+<span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"Running program </span><span style="color: #d3869b;">$</span><span style="color: #83a598;">0</span><span style="color: #b8bb26;"> with </span><span style="color: #d3869b;">$</span><span style="color: #83a598;">#</span><span style="color: #b8bb26;"> arguments with pid $$"</span>
 
-<span style="color: #FF6188;">for</span> file<span style="color: #FF6188;"> in</span> <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">@</span><span style="color: #FFD866;">"</span>; <span style="color: #FF6188;">do</span> <span style="color: #727072;"># </span><span style="color: #727072;">-ne is comparing to see if $@ does not equal 0</span>
-    <span style="color: #78DCE8;">grep</span> foobar <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">file</span><span style="color: #FFD866;">"</span> &gt; /dev/null <span style="color: #AB9DF2; font-weight: bold;">2</span>&gt; /dev/null
-    <span style="color: #727072;"># </span><span style="color: #727072;">if nothing is found, </span><span style="color: #727072;">grep</span><span style="color: #727072;"> returns exit status 1</span>
-    <span style="color: #727072;"># </span><span style="color: #727072;">redirected STDOUT and STDERR to null register as they are irrelevant</span>
-    <span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">[</span><span style="color: #78DCE8;">[</span> $<span style="color: #FCFCFA;">?</span> -ne <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">]</span>; <span style="color: #FF6188;">then</span> <span style="color: #727072;"># </span><span style="color: #727072;">$? is referring to the return code of </span><span style="color: #727072;">grep</span><span style="color: #727072;"> here</span>
-        <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"File </span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">file</span><span style="color: #FFD866;"> does not have any foobar, adding one"</span>
-        <span style="color: #78DCE8;">echo</span> <span style="color: #FFD866;">"# foobar"</span> &gt;&gt; <span style="color: #FFD866;">"</span><span style="color: #AB9DF2;">$</span><span style="color: #FCFCFA;">file</span><span style="color: #FFD866;">"</span>
-    <span style="color: #FF6188;">fi</span>
-<span style="color: #FF6188;">done</span>
+<span style="color: #fb4933;">for</span> file<span style="color: #fb4933;"> in</span> <span style="color: #b8bb26;">"</span><span style="color: #d3869b;">$</span><span style="color: #83a598;">@</span><span style="color: #b8bb26;">"</span>; <span style="color: #fb4933;">do</span> <span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">-ne is comparing to see if $@ does not equal 0</span>
+    <span style="color: #d3869b;">grep</span> foobar <span style="color: #b8bb26;">"</span><span style="color: #d3869b;">$</span><span style="color: #83a598;">file</span><span style="color: #b8bb26;">"</span> &gt; /dev/null <span style="color: #d3869b;">2</span>&gt; /dev/null
+    <span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">if nothing is found, </span><span style="color: #7c6f64;">grep</span><span style="color: #7c6f64;"> returns exit status 1</span>
+    <span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">redirected STDOUT and STDERR to null register as they are irrelevant</span>
+    <span style="color: #fb4933;">if</span> <span style="color: #458588;">[</span><span style="color: #b16286;">[</span> $<span style="color: #83a598;">?</span> -ne <span style="color: #d3869b;">0</span> <span style="color: #b16286;">]</span><span style="color: #458588;">]</span>; <span style="color: #fb4933;">then</span> <span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">$? is referring to the return code of </span><span style="color: #7c6f64;">grep</span><span style="color: #7c6f64;"> here</span>
+        <span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"File </span><span style="color: #d3869b;">$</span><span style="color: #83a598;">file</span><span style="color: #b8bb26;"> does not have any foobar, adding one"</span>
+        <span style="color: #d3869b;">echo</span> <span style="color: #b8bb26;">"# foobar"</span> &gt;&gt; <span style="color: #b8bb26;">"</span><span style="color: #d3869b;">$</span><span style="color: #83a598;">file</span><span style="color: #b8bb26;">"</span>
+    <span style="color: #fb4933;">fi</span>
+<span style="color: #fb4933;">done</span>
 </pre>
 </div></li>
 <li>Here, using <code>-ne</code> we can test whether <code>$?</code> was not equal to 0.</li>
@@ -375,9 +375,9 @@ An example of what's mentioned above would be:
 </div>
 </div>
 
-<div id="outline-container-orgcdd2cee" class="outline-3">
-<h3 id="orgcdd2cee">Globbing</h3>
-<div class="outline-text-3" id="text-orgcdd2cee">
+<div id="outline-container-orgf86155d" class="outline-3">
+<h3 id="orgf86155d">Globbing</h3>
+<div class="outline-text-3" id="text-orgf86155d">
 <ul class="org-ul">
 <li>Globbing refers to techniques which makes expanding expressions or filenames easier.</li>
 </ul>
@@ -398,8 +398,8 @@ Curly braces <code>{}</code> can also be used to expand common substrings in a s
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">convert image.png image.jpg
-<span style="color: #727072;"># </span><span style="color: #727072;">equivalent to</span>
-convert image.<span style="color: #AB9DF2;">{</span>png,jpg<span style="color: #AB9DF2;">}</span>
+<span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">equivalent to</span>
+convert image.<span style="color: #458588;">{</span>png,jpg<span style="color: #458588;">}</span>
 </pre>
 </div></li>
 
@@ -407,7 +407,7 @@ convert image.<span style="color: #AB9DF2;">{</span>png,jpg<span style="color: #
 Similarly, it can also be used for this:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #78DCE8;">mv</span> *.<span style="color: #AB9DF2;">{</span>.sh,.py<span style="color: #AB9DF2;">}</span> new_folder
+<pre class="src src-shell"><span style="color: #d3869b;">mv</span> *.<span style="color: #458588;">{</span>.sh,.py<span style="color: #458588;">}</span> new_folder
 </pre>
 </div></li>
 <li>All .sh and .py files will be moved to a new folder.</li>
@@ -415,18 +415,18 @@ Similarly, it can also be used for this:
 </div>
 </div>
 
-<div id="outline-container-org1efedde" class="outline-3">
-<h3 id="org1efedde">SHEBANG!</h3>
-<div class="outline-text-3" id="text-org1efedde">
+<div id="outline-container-org883c4b9" class="outline-3">
+<h3 id="org883c4b9">SHEBANG!</h3>
+<div class="outline-text-3" id="text-org883c4b9">
 <ul class="org-ul">
 <li><p>
 It is important to include a <b>shebang</b> line at the top of scripts to tell the kernel which interpreter to use.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #727072;">#</span><span style="color: #727072;">!/usr/local/bin/python</span>
-<span style="color: #FF6188;">import</span> sys
-<span style="color: #FF6188;">for</span> arg <span style="color: #FF6188;">in</span> <span style="color: #78DCE8;">reversed</span>(sys.argv[<span style="color: #AB9DF2; font-weight: bold;">1</span>:]):
-    <span style="color: #FF6188;">print</span>(arg)
+<pre class="src src-python"><span style="color: #7c6f64;">#</span><span style="color: #7c6f64;">!/usr/local/bin/python</span>
+<span style="color: #fb4933;">import</span> sys
+<span style="color: #fb4933;">for</span> arg <span style="color: #fb4933;">in</span> <span style="color: #fe8019;">reversed</span>(sys.argv[<span style="color: #d3869b;">1</span>:]):
+    <span style="color: #fb4933;">print</span>(arg)
 </pre>
 </div></li>
 <li>Here, the shebang line tells the kernel to use a python interpreter.</li>
@@ -444,9 +444,9 @@ It is important to include a <b>shebang</b> line at the top of scripts to tell t
 </div>
 
 
-<div id="outline-container-org59b5b49" class="outline-2">
-<h2 id="org59b5b49">Tools</h2>
-<div class="outline-text-2" id="text-org59b5b49">
+<div id="outline-container-orgdd9247e" class="outline-2">
+<h2 id="orgdd9247e">Tools</h2>
+<div class="outline-text-2" id="text-orgdd9247e">
 <ul class="org-ul">
 <li>Check the man pages.</li>
 </ul>
@@ -465,26 +465,26 @@ It is important to include a <b>shebang</b> line at the top of scripts to tell t
 </p>
 </div>
 </div>
-<div id="outline-container-orgd99a6d9" class="outline-2">
-<h2 id="orgd99a6d9">Search</h2>
-<div class="outline-text-2" id="text-orgd99a6d9">
+<div id="outline-container-orgde5feb0" class="outline-2">
+<h2 id="orgde5feb0">Search</h2>
+<div class="outline-text-2" id="text-orgde5feb0">
 </div>
-<div id="outline-container-org7339ff2" class="outline-3">
-<h3 id="org7339ff2">Finding files</h3>
-<div class="outline-text-3" id="text-org7339ff2">
+<div id="outline-container-org23083c1" class="outline-3">
+<h3 id="org23083c1">Finding files</h3>
+<div class="outline-text-3" id="text-org23083c1">
 <ul class="org-ul">
 <li><p>
 The <code>find</code> command can be used to recursively find files.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #727072;"># </span><span style="color: #727072;">Find all directories named src</span>
-<span style="color: #78DCE8;">find</span> . -name src -type d
-<span style="color: #727072;"># </span><span style="color: #727072;">Find all python files that have a folder named test in their path</span>
-<span style="color: #78DCE8;">find</span> . -path <span style="color: #FFD866;">'*/test/*.py'</span> -type f
-<span style="color: #727072;"># </span><span style="color: #727072;">Find all files modified in the last day</span>
-<span style="color: #78DCE8;">find</span> . -mtime -1
-<span style="color: #727072;"># </span><span style="color: #727072;">Find all zip files with size in range 500k to 10M</span>
-<span style="color: #78DCE8;">find</span> . -size +500k -size -10M -name <span style="color: #FFD866;">'*.tar.gz'</span>
+<pre class="src src-shell"><span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">Find all directories named src</span>
+<span style="color: #d3869b;">find</span> . -name src -type d
+<span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">Find all python files that have a folder named test in their path</span>
+<span style="color: #d3869b;">find</span> . -path <span style="color: #b8bb26;">'*/test/*.py'</span> -type f
+<span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">Find all files modified in the last day</span>
+<span style="color: #d3869b;">find</span> . -mtime -1
+<span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">Find all zip files with size in range 500k to 10M</span>
+<span style="color: #d3869b;">find</span> . -size +500k -size -10M -name <span style="color: #b8bb26;">'*.tar.gz'</span>
 </pre>
 </div></li>
 </ul>
@@ -495,10 +495,10 @@ The <code>find</code> command can be used to recursively find files.
 Actions can also be performed over files which match the search quary.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #727072;"># </span><span style="color: #727072;">Delete all files with .tmp extension</span>
-<span style="color: #78DCE8;">find</span> . -name <span style="color: #FFD866;">'*.tmp'</span> -exec <span style="color: #78DCE8;">rm</span> <span style="color: #AB9DF2;">{}</span> <span style="color: #FFD866;">\;</span>
-<span style="color: #727072;"># </span><span style="color: #727072;">Find all PNG files and covert them to jpg</span>
-<span style="color: #78DCE8;">find</span> . -name <span style="color: #FFD866;">'*.png'</span> convert <span style="color: #AB9DF2;">{}</span> <span style="color: #AB9DF2;">{}</span>.jpg <span style="color: #FFD866;">\;</span>
+<pre class="src src-shell"><span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">Delete all files with .tmp extension</span>
+<span style="color: #d3869b;">find</span> . -name <span style="color: #b8bb26;">'*.tmp'</span> -exec <span style="color: #d3869b;">rm</span> <span style="color: #458588;">{}</span> <span style="color: #b8bb26;">\;</span>
+<span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">Find all PNG files and covert them to jpg</span>
+<span style="color: #d3869b;">find</span> . -name <span style="color: #b8bb26;">'*.png'</span> convert <span style="color: #458588;">{}</span> <span style="color: #458588;">{}</span>.jpg <span style="color: #b8bb26;">\;</span>
 </pre>
 </div></li>
 </ul>
@@ -511,9 +511,9 @@ Actions can also be performed over files which match the search quary.
 </div>
 
 
-<div id="outline-container-org76b14c4" class="outline-3">
-<h3 id="org76b14c4">Finding code</h3>
-<div class="outline-text-3" id="text-org76b14c4">
+<div id="outline-container-org278ae78" class="outline-3">
+<h3 id="org278ae78">Finding code</h3>
+<div class="outline-text-3" id="text-org278ae78">
 <ul class="org-ul">
 <li><code>grep</code> can be used to find patterns from input text.
 <ul class="org-ul">
@@ -556,12 +556,12 @@ Some useful flags:
 </div>
 
 
-<div id="outline-container-org5ffc208" class="outline-3">
-<h3 id="org5ffc208">Finding shell commands</h3>
-<div class="outline-text-3" id="text-org5ffc208">
+<div id="outline-container-orgd2be0ca" class="outline-3">
+<h3 id="orgd2be0ca">Finding shell commands</h3>
+<div class="outline-text-3" id="text-orgd2be0ca">
 <ul class="org-ul">
-<li>Using the <code class="src src-sh"><span style="color: #78DCE8;">history</span></code> command, you can access your shell history.</li>
-<li>Using <code class="src src-sh"><span style="color: #78DCE8;">history</span> | <span style="color: #78DCE8;">grep</span> <span style="color: #FFD866;">"command"</span></code>, you will be able to search for specific substrings.</li>
+<li>Using the <code class="src src-sh"><span style="color: #fe8019;">history</span></code> command, you can access your shell history.</li>
+<li>Using <code class="src src-sh"><span style="color: #fe8019;">history</span> | <span style="color: #d3869b;">grep</span> <span style="color: #b8bb26;">"command"</span></code>, you will be able to search for specific substrings.</li>
 </ul>
 
 

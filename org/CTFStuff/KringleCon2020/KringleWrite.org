@@ -1,0 +1,14 @@
+#+TITLE: Kringlecon Writeup
+#+SETUPFILE: ../../template-2.org
+Created on 2020-12-16/14:27
+
+* Objective 1
+** Uncover Santa's Gift List
++ Difficulty: 1/5 Christmas Trees
+    + There is a photo of Santa's Desk on that billboard with his personal gift list. What gift is Santa planning on getting Josh Wright for the holidays? Talk to Jingle Ringford at the bottom of the mountain for advice.
++ billboard.png
+file:../../screenshots/billboard.png
++ Simply unswirl the Personal Gift List in Photoshop or any other tool.
+
++ Unswirled:
+file:../../screenshots/unswirled.png

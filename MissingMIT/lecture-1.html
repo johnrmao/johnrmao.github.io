@@ -45,11 +45,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge752c10">The Shell</a>
+<li><a href="#orgb7eff7e">The Shell</a>
 <ul>
-<li><a href="#orgdd003b1">Usage</a></li>
-<li><a href="#orgf940ad6">Connecting Programs</a></li>
-<li><a href="#org73144f9">Users</a></li>
+<li><a href="#org185d63d">Usage</a></li>
+<li><a href="#org9d3b3a3">Connecting Programs</a></li>
+<li><a href="#org7436dcb">Users</a></li>
 </ul>
 </li>
 </ul>
@@ -59,13 +59,13 @@
 Created on 2020-07-11/20:00
 </p>
 
-<div id="outline-container-orge752c10" class="outline-2">
-<h2 id="orge752c10">The Shell</h2>
-<div class="outline-text-2" id="text-orge752c10">
+<div id="outline-container-orgb7eff7e" class="outline-2">
+<h2 id="orgb7eff7e">The Shell</h2>
+<div class="outline-text-2" id="text-orgb7eff7e">
 </div>
-<div id="outline-container-orgdd003b1" class="outline-3">
-<h3 id="orgdd003b1">Usage</h3>
-<div class="outline-text-3" id="text-orgdd003b1">
+<div id="outline-container-org185d63d" class="outline-3">
+<h3 id="org185d63d">Usage</h3>
+<div class="outline-text-3" id="text-org185d63d">
 <ul class="org-ul">
 <li><p>
 The command <code>date</code> will print the current date.
@@ -78,7 +78,7 @@ Mon 13 Jul 2020 01:16:10 PDT
 Shell commands can also be executed with <i>arguments.</i>
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #78DCE8;">echo</span> hello
+<pre class="src src-shell"><span style="color: #d3869b;">echo</span> hello
 </pre>
 </div>
 
@@ -104,7 +104,7 @@ You could also use <code>\</code> to escape relevant characters.</li>
 <code>which</code> can be used to find the location of which program is being executed.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #78DCE8;">which</span> python
+<pre class="src src-shell"><span style="color: #fe8019;">which</span> python
 </pre>
 </div>
 
@@ -116,9 +116,9 @@ RESULTS:
 </div>
 </div>
 
-<div id="outline-container-orgf940ad6" class="outline-3">
-<h3 id="orgf940ad6">Connecting Programs</h3>
-<div class="outline-text-3" id="text-orgf940ad6">
+<div id="outline-container-org9d3b3a3" class="outline-3">
+<h3 id="org9d3b3a3">Connecting Programs</h3>
+<div class="outline-text-3" id="text-org9d3b3a3">
 <ul class="org-ul">
 <li><p>
 Programs contain <b>two</b> streams, an input and an output. Programs will read from the input stream and print into the output stream.
@@ -134,8 +134,8 @@ This way, it is possible to change the the input or output away from the termina
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #78DCE8;">echo</span> hello &gt; hello.txt
-<span style="color: #78DCE8;">cat</span> &lt; hello.txt &gt; hello2.txt
+<pre class="src src-shell"><span style="color: #d3869b;">echo</span> hello &gt; hello.txt
+<span style="color: #d3869b;">cat</span> &lt; hello.txt &gt; hello2.txt
 </pre>
 </div>
 
@@ -147,7 +147,7 @@ This print the argument of <code>echo</code>, which is <code>hello</code>, into 
 Furthermore, the use of <code>|</code> will allow you to "chain" commands together so that the output of one is the input of another.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #78DCE8;">cat</span> coolfile.txt | <span style="color: #78DCE8;">grep</span> <span style="color: #FFD866;">'cool text'</span>
+<pre class="src src-shell"><span style="color: #d3869b;">cat</span> coolfile.txt | <span style="color: #d3869b;">grep</span> <span style="color: #b8bb26;">'cool text'</span>
 </pre>
 </div>
 
@@ -159,9 +159,9 @@ This will print the contents of <code>coolfile.txt</code> and then <code>grep</c
 </div>
 </div>
 
-<div id="outline-container-org73144f9" class="outline-3">
-<h3 id="org73144f9">Users</h3>
-<div class="outline-text-3" id="text-org73144f9">
+<div id="outline-container-org7436dcb" class="outline-3">
+<h3 id="org7436dcb">Users</h3>
+<div class="outline-text-3" id="text-org7436dcb">
 <ul class="org-ul">
 <li>The <b>root</b> user has <i>almost</i> all access restrictions, including being able to read, write, update, and delete any file within a system.
 <ul class="org-ul">
@@ -172,7 +172,7 @@ This will print the contents of <code>coolfile.txt</code> and then <code>grep</c
 An example would be chaing the brightness of your laptop through writing directly to the <code>sysfs</code>.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #78DCE8;">sudo</span> <span style="color: #78DCE8;">echo</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> &gt; brightness
+<pre class="src src-shell"><span style="color: #d3869b;">sudo</span> <span style="color: #d3869b;">echo</span> <span style="color: #d3869b;">3</span> &gt; brightness
 </pre>
 </div>
 
@@ -188,7 +188,7 @@ The <code>sudo</code> in this case is acting upon the echo, and does not apply i
 In this case, you must first <code>echo 3</code>, then write that output into <code>brightness</code>.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #78DCE8;">echo</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> | <span style="color: #78DCE8;">sudo</span> tee brightness
+<pre class="src src-shell"><span style="color: #d3869b;">echo</span> <span style="color: #d3869b;">3</span> | <span style="color: #d3869b;">sudo</span> tee brightness
 </pre>
 </div>
 

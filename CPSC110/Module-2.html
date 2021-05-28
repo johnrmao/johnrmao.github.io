@@ -45,30 +45,30 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb955e50">Learning Goals</a></li>
-<li><a href="#orgc952bc8">cond Expressions</a>
+<li><a href="#org0ef2c62">Learning Goals</a></li>
+<li><a href="#org3fcdb4b">cond Expressions</a>
 <ul>
-<li><a href="#org5592c8f">Evaluating cond</a></li>
+<li><a href="#org0b18a60">Evaluating cond</a></li>
 </ul>
 </li>
-<li><a href="#orgac1fc2d">Data Definitions</a>
+<li><a href="#org11f39ee">Data Definitions</a>
 <ul>
-<li><a href="#org66c4455">The problem domain</a></li>
-<li><a href="#org58a7da9">Atomic Non-Distinct</a></li>
-<li><a href="#org6fbff3d">Interval</a></li>
-<li><a href="#org06f7620">Enumeration</a></li>
-<li><a href="#orgfd418c8"><span class="todo TODO">TODO</span> Itemization</a></li>
+<li><a href="#org458b785">The problem domain</a></li>
+<li><a href="#org9cda142">Atomic Non-Distinct</a></li>
+<li><a href="#org065702b">Interval</a></li>
+<li><a href="#org7a25bf7">Enumeration</a></li>
+<li><a href="#org2458770"><span class="todo TODO">TODO</span> Itemization</a></li>
 </ul>
 </li>
-<li><a href="#org5442178">How to design functions</a>
+<li><a href="#orgaf8d3d9">How to design functions</a>
 <ul>
-<li><a href="#org75272f7">HtDF With Non-Primitive Data</a></li>
-<li><a href="#org418d679"><span class="todo TODO">TODO</span> HtDF with Interval</a></li>
-<li><a href="#org15b32e6"><span class="todo TODO">TODO</span> HtDF with Enumeration</a></li>
-<li><a href="#org28c246c"><span class="todo TODO">TODO</span> HtDF with Itemization</a></li>
+<li><a href="#org52acd29">HtDF With Non-Primitive Data</a></li>
+<li><a href="#org6cb0dde"><span class="todo TODO">TODO</span> HtDF with Interval</a></li>
+<li><a href="#orgfe7a24a"><span class="todo TODO">TODO</span> HtDF with Enumeration</a></li>
+<li><a href="#org44d76d2"><span class="todo TODO">TODO</span> HtDF with Itemization</a></li>
 </ul>
 </li>
-<li><a href="#orgff25936"><span class="todo TODO">TODO</span> Struture of Information Flows Through</a></li>
+<li><a href="#orge06ed9c"><span class="todo TODO">TODO</span> Struture of Information Flows Through</a></li>
 </ul>
 </div>
 </div>
@@ -76,9 +76,9 @@
 Created on 2020-08-06/00:36
 </p>
 
-<div id="outline-container-orgb955e50" class="outline-2">
-<h2 id="orgb955e50">Learning Goals</h2>
-<div class="outline-text-2" id="text-orgb955e50">
+<div id="outline-container-org0ef2c62" class="outline-2">
+<h2 id="org0ef2c62">Learning Goals</h2>
+<div class="outline-text-2" id="text-org0ef2c62">
 <ul class="org-ul">
 <li>Be able to use the How to Design Data Definitions (HtDD) recipe to design data  definitions for atomic data.</li>
 <li>Be able to identify problem domain information that should be represented as simple atomic data, intervals, enumerations, itemizations and mixed data itemizations.</li>
@@ -89,19 +89,19 @@ Created on 2020-08-06/00:36
 </div>
 
 
-<div id="outline-container-orgc952bc8" class="outline-2">
-<h2 id="orgc952bc8">cond Expressions</h2>
-<div class="outline-text-2" id="text-orgc952bc8">
+<div id="outline-container-org3fcdb4b" class="outline-2">
+<h2 id="org3fcdb4b">cond Expressions</h2>
+<div class="outline-text-2" id="text-org3fcdb4b">
 <ul class="org-ul">
 <li><code>cond</code> expression simplify writing conditional expressions with more than 2 cases.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">To form cond expression</span>
-  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span>&lt;expression&gt; &lt;expression&gt;<span style="color: #78DCE8;">]</span>
-        <span style="color: #FF6188;">...</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">one or more questions answer pairs</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">To form cond expression</span>
+  <span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span>&lt;expression&gt; &lt;expression&gt;<span style="color: #b16286;">]</span>
+        <span style="color: #fb4933;">...</span><span style="color: #458588;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">one or more questions answer pairs</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Each question must evaluate to a boolean</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Last question can be else.</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Each question must evaluate to a boolean</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Last question can be else.</span>
 
 </pre>
 </div>
@@ -111,31 +111,31 @@ Created on 2020-08-06/00:36
 Given the following:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">require</span> 2htdp/image<span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">cond-starter.rkt</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">cond-starter.rkt</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">I1</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">I2</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">I3</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">I1</span> <span style="color: #b16286;">(</span>rectangle <span style="color: #d3869b;">10</span> <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">I2</span> <span style="color: #b16286;">(</span>rectangle <span style="color: #d3869b;">20</span> <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">I3</span> <span style="color: #b16286;">(</span>rectangle <span style="color: #d3869b;">20</span> <span style="color: #d3869b;">10</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Image -&gt; String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">produce shape of image, one of "tall", "square" or "wide"</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>aspect-ratio I1<span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"tall"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>aspect-ratio I2<span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"square"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>aspect-ratio I3<span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"wide"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Image -&gt; String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">produce shape of image, one of "tall", "square" or "wide"</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>aspect-ratio I1<span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"tall"</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>aspect-ratio I2<span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"square"</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>aspect-ratio I3<span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"wide"</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (aspect-ratio img) "")  ;stub</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (aspect-ratio img) "")  ;stub</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (aspect-ratio img)      ;template</span>
-<span style="color: #727072;">;  </span><span style="color: #727072;">(... img))</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (aspect-ratio img)      ;template</span>
+<span style="color: #7c6f64;">;  </span><span style="color: #7c6f64;">(... img))</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">aspect-ratio</span> img<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2;">(</span>image-height img<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>image-width img<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
-      <span style="color: #FFD866;">"tall"</span>
-      <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #78DCE8;">(</span>image-height img<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width img<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
-          <span style="color: #FFD866;">"square"</span>
-          <span style="color: #FFD866;">"wide"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">aspect-ratio</span> img<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">if</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&gt;</span> <span style="color: #458588;">(</span>image-height img<span style="color: #458588;">)</span> <span style="color: #458588;">(</span>image-width img<span style="color: #458588;">)</span><span style="color: #8ec07c;">)</span>
+      <span style="color: #b8bb26;">"tall"</span>
+      <span style="color: #8ec07c;">(</span><span style="color: #fb4933;">if</span> <span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> <span style="color: #b16286;">(</span>image-height img<span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>image-width img<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
+          <span style="color: #b8bb26;">"square"</span>
+          <span style="color: #b8bb26;">"wide"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul>
@@ -164,52 +164,52 @@ Given the following:
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">require</span> 2htdp/image<span style="color: #458588;">)</span>
 
-<span style="color: #727072;">#;</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">aspect-ratio img</span><span style="color: #78DCE8;">)</span>
-<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">if </span><span style="color: #FC9867;">(</span><span style="color: #727072;">&gt; </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">image-height img</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">image-width img</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
-<span style="color: #727072;">      "tall"</span>
-<span style="color: #727072;">      </span><span style="color: #FC9867;">(</span><span style="color: #727072;">if </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">= </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">image-height img</span><span style="color: #78DCE8;">)</span><span style="color: #727072;"> </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">image-width img</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #727072;">          "square"</span>
-<span style="color: #727072;">          "wide"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #7c6f64;">#;</span>
+<span style="color: #458588;">(</span><span style="color: #7c6f64;">define </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">aspect-ratio img</span><span style="color: #b16286;">)</span>
+<span style="color: #7c6f64;">  </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">if </span><span style="color: #8ec07c;">(</span><span style="color: #7c6f64;">&gt; </span><span style="color: #458588;">(</span><span style="color: #7c6f64;">image-height img</span><span style="color: #458588;">)</span><span style="color: #7c6f64;"> </span><span style="color: #458588;">(</span><span style="color: #7c6f64;">image-width img</span><span style="color: #458588;">)</span><span style="color: #8ec07c;">)</span>
+<span style="color: #7c6f64;">      "tall"</span>
+<span style="color: #7c6f64;">      </span><span style="color: #8ec07c;">(</span><span style="color: #7c6f64;">if </span><span style="color: #458588;">(</span><span style="color: #7c6f64;">= </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">image-height img</span><span style="color: #b16286;">)</span><span style="color: #7c6f64;"> </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">image-width img</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
+<span style="color: #7c6f64;">          "square"</span>
+<span style="color: #7c6f64;">          "wide"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">aspect-ratio</span> img<span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">() and [] balance each other.</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Both are equavalent but by convention, we use[ ] around question/answer pairs in cond.</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-height img<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width img<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"tall"</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #78DCE8;">(</span>image-height img<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>image-width img<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"square"</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"wide"</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">aspect-ratio</span> img<span style="color: #b16286;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">() and [] balance each other.</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Both are equavalent but by convention, we use[ ] around question/answer pairs in cond.</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">&gt;</span> <span style="color: #b16286;">(</span>image-height img<span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>image-width img<span style="color: #b16286;">)</span><span style="color: #458588;">)</span> <span style="color: #b8bb26;">"tall"</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> <span style="color: #b16286;">(</span>image-height img<span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>image-width img<span style="color: #b16286;">)</span><span style="color: #458588;">)</span> <span style="color: #b8bb26;">"square"</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #fb4933;">else</span> <span style="color: #b8bb26;">"wide"</span><span style="color: #8ec07c;">]</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul>
 </div>
 
 
-<div id="outline-container-org5592c8f" class="outline-3">
-<h3 id="org5592c8f">Evaluating cond</h3>
-<div class="outline-text-3" id="text-org5592c8f">
+<div id="outline-container-org0b18a60" class="outline-3">
+<h3 id="org0b18a60">Evaluating cond</h3>
+<div class="outline-text-3" id="text-org0b18a60">
 <ul class="org-ul">
 <li><b>To evaluate a cond expression</b></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"bigger"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"equal"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&gt;</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"bigger"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">=</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"equal"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"smaller"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span> <span style="color: #FFD866;">"bigger"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"equal"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fe8019;">false</span> <span style="color: #b8bb26;">"bigger"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">=</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"equal"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"smaller"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"equal"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">=</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"equal"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"smaller"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span> <span style="color: #FFD866;">"equal"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fe8019;">false</span> <span style="color: #b8bb26;">"equal"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"smaller"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fe8019;">true</span> <span style="color: #b8bb26;">"smaller"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 
-<span style="color: #FFD866;">"smaller"</span>
-<span style="color: #727072;">;</span><span style="color: #727072;">done evaluating</span>
+<span style="color: #b8bb26;">"smaller"</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">done evaluating</span>
 </pre>
 </div>
 <hr />
@@ -221,9 +221,9 @@ Given the following:
 That is, replace the entire cond with a new cond in which the first question has been replaced by its value.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span> <span style="color: #FFD866;">"bigger"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"equal"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"smaller"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fe8019;">false</span> <span style="color: #b8bb26;">"bigger"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">=</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"equal"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"smaller"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul></li>
@@ -251,9 +251,9 @@ That is, replace the entire cond with a new cond in which the first question has
 </div>
 
 
-<div id="outline-container-orgac1fc2d" class="outline-2">
-<h2 id="orgac1fc2d">Data Definitions</h2>
-<div class="outline-text-2" id="text-orgac1fc2d">
+<div id="outline-container-org11f39ee" class="outline-2">
+<h2 id="org11f39ee">Data Definitions</h2>
+<div class="outline-text-2" id="text-org11f39ee">
 <ul class="org-ul">
 <li>Data definitions explain how information is represented as data.</li>
 </ul>
@@ -264,10 +264,10 @@ That is, replace the entire cond with a new cond in which the first question has
 Imagine this - You're working on a program written by somebody else that simulates traffic. You see this function:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">next-color</span> c<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">next-color</span> c<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> c <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> c <span style="color: #d3869b;">1</span><span style="color: #458588;">)</span> <span style="color: #d3869b;">0</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> c <span style="color: #d3869b;">2</span><span style="color: #458588;">)</span> <span style="color: #d3869b;">1</span><span style="color: #8ec07c;">]</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -284,23 +284,23 @@ Imagine this - You're working on a program written by somebody else that simulat
 Now lets imagine the same function, but with the HtDF recipe.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Part of a trafic simulation</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Part of a trafic simulation</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Natural -&gt; Natural</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">produce next color of traffic light</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Natural -&gt; Natural</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">produce next color of traffic light</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>next-color <span style="color: #d3869b;">0</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">2</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>next-color <span style="color: #d3869b;">1</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>next-color <span style="color: #d3869b;">2</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">1</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">(define (next-color c) 0) ; stub</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">(define (next-color c) 0) ; stub</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">(define (next-color c)    ; template</span>
-<span style="color: #727072;">;    </span><span style="color: #727072;">(...c))</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">(define (next-color c)    ; template</span>
+<span style="color: #7c6f64;">;    </span><span style="color: #7c6f64;">(...c))</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">next-color</span> c<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">next-color</span> c<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> c <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> c <span style="color: #d3869b;">1</span><span style="color: #458588;">)</span> <span style="color: #d3869b;">0</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> c <span style="color: #d3869b;">2</span><span style="color: #458588;">)</span> <span style="color: #d3869b;">1</span><span style="color: #8ec07c;">]</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -318,9 +318,9 @@ Now lets imagine the same function, but with the HtDF recipe.
 </div>
 
 
-<div id="outline-container-org66c4455" class="outline-3">
-<h3 id="org66c4455">The problem domain</h3>
-<div class="outline-text-3" id="text-org66c4455">
+<div id="outline-container-org458b785" class="outline-3">
+<h3 id="org458b785">The problem domain</h3>
+<div class="outline-text-3" id="text-org458b785">
 <ul class="org-ul">
 <li>Using the <b>problem domain</b>, we can understand this problem.
 <ul class="org-ul">
@@ -408,37 +408,37 @@ Within the program, we have data, the natural number <code>0</code>.
 Here is a third version of the same program that uses a data definition.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Data definitions:</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Data definitions:</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">TLColor is one of:   ; type comment</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- 0</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- 1</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- 2</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">interp. color of a traffic light - 0 is red, 1 yellow, 2 green  ; interpretation</span>
-<span style="color: #727072;">#;</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-tlcolor c</span><span style="color: #78DCE8;">)</span><span style="color: #727072;">  ; template skeleton</span>
-<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">cond </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">= c 0</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
-<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">= c 1</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
-<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">= c 2</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">TLColor is one of:   ; type comment</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- 0</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- 1</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- 2</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. color of a traffic light - 0 is red, 1 yellow, 2 green  ; interpretation</span>
+<span style="color: #7c6f64;">#;</span>
+<span style="color: #458588;">(</span><span style="color: #7c6f64;">define </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">fn-for-tlcolor c</span><span style="color: #b16286;">)</span><span style="color: #7c6f64;">  ; template skeleton</span>
+<span style="color: #7c6f64;">  </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">cond </span><span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #7c6f64;">= c 0</span><span style="color: #458588;">)</span><span style="color: #7c6f64;"> </span><span style="color: #458588;">(</span><span style="color: #7c6f64;">...</span><span style="color: #458588;">)</span><span style="color: #8ec07c;">]</span>
+<span style="color: #7c6f64;">        </span><span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #7c6f64;">= c 1</span><span style="color: #458588;">)</span><span style="color: #7c6f64;"> </span><span style="color: #458588;">(</span><span style="color: #7c6f64;">...</span><span style="color: #458588;">)</span><span style="color: #8ec07c;">]</span>
+<span style="color: #7c6f64;">        </span><span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #7c6f64;">= c 2</span><span style="color: #458588;">)</span><span style="color: #7c6f64;"> </span><span style="color: #458588;">(</span><span style="color: #7c6f64;">...</span><span style="color: #458588;">)</span><span style="color: #8ec07c;">]</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
 
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Functions:</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Functions:</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">TLColor -&gt; TLColor</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">produce next color of traffic light</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>next-color <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">TLColor -&gt; TLColor</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">produce next color of traffic light</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>next-color <span style="color: #d3869b;">0</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">2</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>next-color <span style="color: #d3869b;">1</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>next-color <span style="color: #d3869b;">2</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">1</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">(define (next-color c) 0)  ; stub</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">(define (next-color c) 0)  ; stub</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">Template from TLColor</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">Template from TLColor</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">next-color</span> c<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> c <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">next-color</span> c<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> c <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> c <span style="color: #d3869b;">1</span><span style="color: #458588;">)</span> <span style="color: #d3869b;">0</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> c <span style="color: #d3869b;">2</span><span style="color: #458588;">)</span> <span style="color: #d3869b;">1</span><span style="color: #8ec07c;">]</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 <li>Here, the file is divided into two parts.
@@ -528,9 +528,9 @@ Here is a third version of the same program that uses a data definition.
 </div>
 
 
-<div id="outline-container-org58a7da9" class="outline-3">
-<h3 id="org58a7da9">Atomic Non-Distinct</h3>
-<div class="outline-text-3" id="text-org58a7da9">
+<div id="outline-container-org9cda142" class="outline-3">
+<h3 id="org9cda142">Atomic Non-Distinct</h3>
+<div class="outline-text-3" id="text-org9cda142">
 <ul class="org-ul">
 <li>First example of using HtDD recipe and Data Driven Templates recipes.</li>
 </ul>
@@ -568,7 +568,7 @@ Here is a third version of the same program that uses a data definition.
 A <b>type comment</b> that defines a new type name and describes how to form data of that type.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CityName is String</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">CityName is String</span>
 </pre>
 </div></li>
 </ul>
@@ -603,7 +603,7 @@ A <b>type comment</b> that defines a new type name and describes how to form dat
 An <b>interpretation</b> that describes the correspondence between information and data.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a city</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. the name of a city</span>
 </pre>
 </div></li>
 </ul>
@@ -614,8 +614,8 @@ An <b>interpretation</b> that describes the correspondence between information a
 One or more <b>examples</b> of the data.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Boston"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN2</span> <span style="color: #FFD866;">"Vancouver"</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN1</span> <span style="color: #b8bb26;">"Boston"</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN2</span> <span style="color: #b8bb26;">"Vancouver"</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul>
@@ -628,8 +628,8 @@ One or more <b>examples</b> of the data.
 For a given <code>TypeName</code> the data driven template is:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-type-name</span> x<span style="color: #78DCE8;">)</span>
-  &lt;body&gt;<span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">fn-for-type-name</span> x<span style="color: #b16286;">)</span>
+  &lt;body&gt;<span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul></li>
@@ -641,12 +641,12 @@ For a given <code>TypeName</code> the data driven template is:
 Therefore, the template for this example will be
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span>  <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-city-name</span> CN<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> CN<span style="color: #78DCE8;">)</span>
-  <span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span>  <span style="color: #b16286;">(</span><span style="color: #fabd2f;">fn-for-city-name</span> CN<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">...</span> CN<span style="color: #b16286;">)</span>
+  <span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Template rules used:</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- atomic non-distinct: String</span>
 </pre>
 </div></li>
 </ul>
@@ -662,26 +662,26 @@ Therefore, the template for this example will be
 <hr />
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CityName is String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a city</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Boston"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN2</span> <span style="color: #FFD866;">"Vancouver"</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">CityName is String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. the name of a city</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN1</span> <span style="color: #b8bb26;">"Boston"</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN2</span> <span style="color: #b8bb26;">"Vancouver"</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span>  <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-city-name</span> CN<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> CN<span style="color: #78DCE8;">)</span>
-  <span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span>  <span style="color: #b16286;">(</span><span style="color: #fabd2f;">fn-for-city-name</span> CN<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">...</span> CN<span style="color: #b16286;">)</span>
+  <span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Template rules used:</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- atomic non-distinct: String</span>
 </pre>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-org6fbff3d" class="outline-3">
-<h3 id="org6fbff3d">Interval</h3>
-<div class="outline-text-3" id="text-org6fbff3d">
+<div id="outline-container-org065702b" class="outline-3">
+<h3 id="org065702b">Interval</h3>
+<div class="outline-text-3" id="text-org065702b">
 <ul class="org-ul">
 <li>Interval <b>data definitions</b> are used for information that is numbers within a certain range.</li>
 </ul>
@@ -697,18 +697,18 @@ Design a data definition to represent a seat number in a row, where each row has
 </p>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">SeatNum is Natural[1, 32] ; [ ] are inclusive, (  ) are exclusive</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">interp. seat numbers in a row, 1 and 32 are aisle seats</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN1</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">;</span><span style="color: #727072;">aisle</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN2</span> <span style="color: #AB9DF2; font-weight: bold;">12</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">middle</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">SN2</span> <span style="color: #AB9DF2; font-weight: bold;">32</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">;</span><span style="color: #727072;">aisle</span>
-<span style="color: #727072;">#;</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-seat-num sn</span><span style="color: #78DCE8;">)</span>
-<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">... sn</span><span style="color: #78DCE8;">)</span>
-<span style="color: #727072;">  </span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">SeatNum is Natural[1, 32] ; [ ] are inclusive, (  ) are exclusive</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. seat numbers in a row, 1 and 32 are aisle seats</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">SN1</span> <span style="color: #d3869b;">1</span><span style="color: #458588;">)</span>  <span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">aisle</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">SN2</span> <span style="color: #d3869b;">12</span><span style="color: #458588;">)</span> <span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">middle</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">SN2</span> <span style="color: #d3869b;">32</span><span style="color: #458588;">)</span> <span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">aisle</span>
+<span style="color: #7c6f64;">#;</span>
+<span style="color: #458588;">(</span><span style="color: #7c6f64;">define </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">fn-for-seat-num sn</span><span style="color: #b16286;">)</span>
+<span style="color: #7c6f64;">  </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">... sn</span><span style="color: #b16286;">)</span>
+<span style="color: #7c6f64;">  </span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: Natural[1, 32]</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Template rules used:</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- atomic non-distinct: Natural[1, 32]</span>
 </pre>
 </div></li>
 </ul>
@@ -716,9 +716,9 @@ Design a data definition to represent a seat number in a row, where each row has
 </div>
 
 
-<div id="outline-container-org06f7620" class="outline-3">
-<h3 id="org06f7620">Enumeration</h3>
-<div class="outline-text-3" id="text-org06f7620">
+<div id="outline-container-org7a25bf7" class="outline-3">
+<h3 id="org7a25bf7">Enumeration</h3>
+<div class="outline-text-3" id="text-org7a25bf7">
 <ul class="org-ul">
 <li>Enumeration data definitions are used when information consists of two or more distinct values.</li>
 </ul>
@@ -736,26 +736,26 @@ Design a data definition to represent a seat number in a row, where each row has
 In this problem, there are three distinct values <code>A, B or C</code>.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">LetterGrade is one of:</span>
-<span style="color: #727072;">;;  </span><span style="color: #727072;">- "A"</span>
-<span style="color: #727072;">;;  </span><span style="color: #727072;">- "B"</span>
-<span style="color: #727072;">;;  </span><span style="color: #727072;">- "C"</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the letter grade in a course</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">&lt;examples are redundant for enumerations&gt;</span>
-<span style="color: #727072;">#;</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-letter-grade lg</span><span style="color: #78DCE8;">)</span>
-<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">cond </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "A"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
-<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "B"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
-<span style="color: #727072;">        </span><span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">string=? lg "C"</span><span style="color: #AB9DF2;">)</span><span style="color: #727072;"> </span><span style="color: #AB9DF2;">(</span><span style="color: #727072;">...</span><span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">]</span>
-<span style="color: #727072;">        </span><span style="color: #78DCE8;">)</span>
-<span style="color: #727072;">  </span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">LetterGrade is one of:</span>
+<span style="color: #7c6f64;">;;  </span><span style="color: #7c6f64;">- "A"</span>
+<span style="color: #7c6f64;">;;  </span><span style="color: #7c6f64;">- "B"</span>
+<span style="color: #7c6f64;">;;  </span><span style="color: #7c6f64;">- "C"</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. the letter grade in a course</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">&lt;examples are redundant for enumerations&gt;</span>
+<span style="color: #7c6f64;">#;</span>
+<span style="color: #458588;">(</span><span style="color: #7c6f64;">define </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">fn-for-letter-grade lg</span><span style="color: #b16286;">)</span>
+<span style="color: #7c6f64;">  </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">cond </span><span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #7c6f64;">string=? lg "A"</span><span style="color: #458588;">)</span><span style="color: #7c6f64;"> </span><span style="color: #458588;">(</span><span style="color: #7c6f64;">...</span><span style="color: #458588;">)</span><span style="color: #8ec07c;">]</span>
+<span style="color: #7c6f64;">        </span><span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #7c6f64;">string=? lg "B"</span><span style="color: #458588;">)</span><span style="color: #7c6f64;"> </span><span style="color: #458588;">(</span><span style="color: #7c6f64;">...</span><span style="color: #458588;">)</span><span style="color: #8ec07c;">]</span>
+<span style="color: #7c6f64;">        </span><span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #7c6f64;">string=? lg "C"</span><span style="color: #458588;">)</span><span style="color: #7c6f64;"> </span><span style="color: #458588;">(</span><span style="color: #7c6f64;">...</span><span style="color: #458588;">)</span><span style="color: #8ec07c;">]</span>
+<span style="color: #7c6f64;">        </span><span style="color: #b16286;">)</span>
+<span style="color: #7c6f64;">  </span><span style="color: #458588;">)</span>
 
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- one of: 3 cases</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "A"</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "B"</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">- atomic distinct value: "C"</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Template rules used:</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- one of: 3 cases</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- atomic distinct value: "A"</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- atomic distinct value: "B"</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- atomic distinct value: "C"</span>
 </pre>
 </div></li>
 </ul>
@@ -763,19 +763,19 @@ In this problem, there are three distinct values <code>A, B or C</code>.
 </div>
 
 
-<div id="outline-container-orgfd418c8" class="outline-3">
-<h3 id="orgfd418c8"><span class="todo TODO">TODO</span> Itemization</h3>
+<div id="outline-container-org2458770" class="outline-3">
+<h3 id="org2458770"><span class="todo TODO">TODO</span> Itemization</h3>
 </div>
 </div>
 
 
-<div id="outline-container-org5442178" class="outline-2">
-<h2 id="org5442178">How to design functions</h2>
-<div class="outline-text-2" id="text-org5442178">
+<div id="outline-container-orgaf8d3d9" class="outline-2">
+<h2 id="orgaf8d3d9">How to design functions</h2>
+<div class="outline-text-2" id="text-orgaf8d3d9">
 </div>
-<div id="outline-container-org75272f7" class="outline-3">
-<h3 id="org75272f7">HtDF With Non-Primitive Data</h3>
-<div class="outline-text-3" id="text-org75272f7">
+<div id="outline-container-org52acd29" class="outline-3">
+<h3 id="org52acd29">HtDF With Non-Primitive Data</h3>
+<div class="outline-text-3" id="text-org52acd29">
 <ul class="org-ul">
 <li>A function which consumes <b>non-primitive data</b> is one that consumes data defined by your own data definition.</li>
 </ul>
@@ -795,39 +795,39 @@ In this problem, there are three distinct values <code>A, B or C</code>.
 </p>
 <div class="org-src-container">
 <pre class="src src-racket">
-<span style="color: #727072;">;; </span><span style="color: #727072;">Data definitions:</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Data definitions:</span>
 
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">CityName is String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a city</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Boston"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN2</span> <span style="color: #FFD866;">"Vancouver"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #727072;">#;</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">fn-for-city-name cn</span><span style="color: #78DCE8;">)</span>
-<span style="color: #727072;">  </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">... cn</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">CityName is String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. the name of a city</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN1</span> <span style="color: #b8bb26;">"Boston"</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN2</span> <span style="color: #b8bb26;">"Vancouver"</span><span style="color: #458588;">)</span>
+<span style="color: #7c6f64;">#;</span>
+<span style="color: #458588;">(</span><span style="color: #7c6f64;">define </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">fn-for-city-name cn</span><span style="color: #b16286;">)</span>
+<span style="color: #7c6f64;">  </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">... cn</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Template rules used:              For the first part of the course</span>
-<span style="color: #727072;">;;   </span><span style="color: #727072;">atomic non-distinct: String     we want you to list the template</span>
-<span style="color: #727072;">;;                                   </span><span style="color: #727072;">rules used after each template.</span>
-<span style="color: #727072;">;;</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Template rules used:              For the first part of the course</span>
+<span style="color: #7c6f64;">;;   </span><span style="color: #7c6f64;">atomic non-distinct: String     we want you to list the template</span>
+<span style="color: #7c6f64;">;;                                   </span><span style="color: #7c6f64;">rules used after each template.</span>
+<span style="color: #7c6f64;">;;</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Functions:</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Functions:</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">CityName -&gt; Boolean</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">produce true if the given city is Hogsmeade</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">CityName -&gt; Boolean</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">produce true if the given city is Hogsmeade</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">(define (best? cn) false)   ; stub</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>best? <span style="color: #FFD866;">"Boston"</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>best? <span style="color: #FFD866;">"Hogsmeade"</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">(define (best? cn) false)   ; stub</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>best? <span style="color: #b8bb26;">"Boston"</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">false</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>best? <span style="color: #b8bb26;">"Hogsmeade"</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">true</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">took template from CityName</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">took template from CityName</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">best?</span> cn<span style="color: #78DCE8;">)</span>  <span style="color: #727072;">; </span><span style="color: #727072;">template</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string=?</span> cn <span style="color: #FFD866;">"Hogsmeade"</span><span style="color: #FC9867;">)</span>
-      <span style="color: #78DCE8;">true</span>
-      <span style="color: #78DCE8;">false</span>
-      <span style="color: #78DCE8;">)</span>
-  <span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">best?</span> cn<span style="color: #b16286;">)</span>  <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">template</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">if</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">string=?</span> cn <span style="color: #b8bb26;">"Hogsmeade"</span><span style="color: #8ec07c;">)</span>
+      <span style="color: #fe8019;">true</span>
+      <span style="color: #fe8019;">false</span>
+      <span style="color: #b16286;">)</span>
+  <span style="color: #458588;">)</span>
 
 </pre>
 </div>
@@ -838,7 +838,7 @@ In this problem, there are three distinct values <code>A, B or C</code>.
 
 
 <ul class="org-ul">
-<li>At a certain point in this template, <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">...</span> cn<span style="color: #AB9DF2;">)</span></code> was replaced with true.
+<li>At a certain point in this template, <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">...</span> cn<span style="color: #458588;">)</span></code> was replaced with true.
 <ul class="org-ul">
 <li>A template tells you what's available for you to work with, but not all of it has to be used.</li>
 </ul></li>
@@ -850,10 +850,10 @@ In this problem, there are three distinct values <code>A, B or C</code>.
 The above function can actually be further simplified into:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">best?</span> cn<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string=?</span> cn <span style="color: #FFD866;">"Hogsmeade"</span><span style="color: #78DCE8;">)</span>
-  <span style="color: #AB9DF2;">)</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Writing (if ... true false) is the same as just writing (...)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">best?</span> cn<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fe8019;">string=?</span> cn <span style="color: #b8bb26;">"Hogsmeade"</span><span style="color: #b16286;">)</span>
+  <span style="color: #458588;">)</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Writing (if ... true false) is the same as just writing (...)</span>
 </pre>
 </div></li>
 </ul>
@@ -861,18 +861,18 @@ The above function can actually be further simplified into:
 </div>
 
 
-<div id="outline-container-org418d679" class="outline-3">
-<h3 id="org418d679"><span class="todo TODO">TODO</span> HtDF with Interval</h3>
+<div id="outline-container-org6cb0dde" class="outline-3">
+<h3 id="org6cb0dde"><span class="todo TODO">TODO</span> HtDF with Interval</h3>
 </div>
-<div id="outline-container-org15b32e6" class="outline-3">
-<h3 id="org15b32e6"><span class="todo TODO">TODO</span> HtDF with Enumeration</h3>
+<div id="outline-container-orgfe7a24a" class="outline-3">
+<h3 id="orgfe7a24a"><span class="todo TODO">TODO</span> HtDF with Enumeration</h3>
 </div>
-<div id="outline-container-org28c246c" class="outline-3">
-<h3 id="org28c246c"><span class="todo TODO">TODO</span> HtDF with Itemization</h3>
+<div id="outline-container-org44d76d2" class="outline-3">
+<h3 id="org44d76d2"><span class="todo TODO">TODO</span> HtDF with Itemization</h3>
 </div>
 </div>
-<div id="outline-container-orgff25936" class="outline-2">
-<h2 id="orgff25936"><span class="todo TODO">TODO</span> Struture of Information Flows Through</h2>
+<div id="outline-container-orge06ed9c" class="outline-2">
+<h2 id="orge06ed9c"><span class="todo TODO">TODO</span> Struture of Information Flows Through</h2>
 </div>
 </div>
 <div id="postamble" class="status">

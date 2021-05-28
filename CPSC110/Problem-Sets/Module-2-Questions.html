@@ -45,16 +45,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org481f50b">Module 2 Questions</a>
+<li><a href="#org044ab34">Module 2 Questions</a>
 <ul>
-<li><a href="#orgd03d47a">cond Expressions</a></li>
-<li><a href="#org38783a5">Atomic Non-Distinct</a></li>
-<li><a href="#org15f91c0">HtDF With Non-Primitive Data</a></li>
-<li><a href="#orgcb0821e">Interval</a></li>
-<li><a href="#orgc1321cf">Enumeration</a></li>
+<li><a href="#org726140b">cond Expressions</a></li>
+<li><a href="#org014cabf">Atomic Non-Distinct</a></li>
+<li><a href="#org04ad11f">HtDF With Non-Primitive Data</a></li>
+<li><a href="#org0c0ea43">Interval</a></li>
+<li><a href="#org505236d">Enumeration</a></li>
 </ul>
 </li>
-<li><a href="#org6bfafcc">Extra Practice</a></li>
+<li><a href="#org2e8e82b">Extra Practice</a></li>
 </ul>
 </div>
 </div>
@@ -62,13 +62,13 @@
 Created on 2020-08-06/00:41
 </p>
 
-<div id="outline-container-org481f50b" class="outline-2">
-<h2 id="org481f50b">Module 2 Questions</h2>
-<div class="outline-text-2" id="text-org481f50b">
+<div id="outline-container-org044ab34" class="outline-2">
+<h2 id="org044ab34">Module 2 Questions</h2>
+<div class="outline-text-2" id="text-org044ab34">
 </div>
-<div id="outline-container-orgd03d47a" class="outline-3">
-<h3 id="orgd03d47a">cond Expressions</h3>
-<div class="outline-text-3" id="text-orgd03d47a">
+<div id="outline-container-org726140b" class="outline-3">
+<h3 id="org726140b">cond Expressions</h3>
+<div class="outline-text-3" id="text-org726140b">
 <ul class="org-ul">
 <li><b>Question 1</b>
 <img src="../../screenshots/M2S1Q1.png" alt="M2S1Q1.png" />
@@ -77,10 +77,10 @@ Created on 2020-08-06/00:41
 Build a cond expression equivalent to the above nested if expressions
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">mag</span> x<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"positive"</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"negative"</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">mag</span> x<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">&gt;</span> x <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span> <span style="color: #b8bb26;">"positive"</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> x <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span> <span style="color: #b8bb26;">"zero"</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #fb4933;">else</span> <span style="color: #b8bb26;">"negative"</span><span style="color: #8ec07c;">]</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul></li>
@@ -94,12 +94,12 @@ Build a cond expression equivalent to the above nested if expressions
 We have seen that <code>cond</code> is used instead of <code>if</code> when we have multiple parallel cases. For example, as seen in Question 1:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">mag1</span> x<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span>
-      <span style="color: #FFD866;">"negative"</span>
-      <span style="color: #FC9867;">(</span><span style="color: #FF6188;">if</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
-          <span style="color: #FFD866;">"zero"</span>
-          <span style="color: #FFD866;">"positive"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">mag1</span> x<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">if</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&lt;</span> x <span style="color: #d3869b;">0</span><span style="color: #8ec07c;">)</span>
+      <span style="color: #b8bb26;">"negative"</span>
+      <span style="color: #8ec07c;">(</span><span style="color: #fb4933;">if</span> <span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> x <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span>
+          <span style="color: #b8bb26;">"zero"</span>
+          <span style="color: #b8bb26;">"positive"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
 </pre>
 </div></li>
@@ -108,10 +108,10 @@ We have seen that <code>cond</code> is used instead of <code>if</code> when we h
 The above can be re-written as:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">mag2</span> x<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&lt;</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"negative"</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">=</span> x <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #FC9867;">]</span>
-        <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">mag2</span> x<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">&lt;</span> x <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span> <span style="color: #b8bb26;">"negative"</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">=</span> x <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span> <span style="color: #b8bb26;">"zero"</span><span style="color: #8ec07c;">]</span>
+        <span style="color: #8ec07c;">[</span><span style="color: #fb4933;">else</span>    <span style="color: #b8bb26;">"positive"</span><span style="color: #8ec07c;">]</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
 </pre>
 </div></li>
@@ -121,29 +121,29 @@ The above can be re-written as:
 What is the next step of the evaluation of:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #d3869b;">0</span> <span style="color: #d3869b;">0</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"negative"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">=</span> <span style="color: #d3869b;">0</span> <span style="color: #d3869b;">0</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"zero"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #fb4933;">else</span> <span style="color: #b8bb26;">"positive"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ol class="org-ol">
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span>    <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
-       <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
-       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"> <span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fe8019;">true</span>    <span style="color: #b8bb26;">"negative"</span><span style="color: #b16286;">]</span>
+       <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">=</span> <span style="color: #d3869b;">0</span> <span style="color: #d3869b;">0</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"zero"</span><span style="color: #b16286;">]</span>
+       <span style="color: #b16286;">[</span><span style="color: #fb4933;">else</span>    <span style="color: #b8bb26;">"positive"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span>   <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
-       <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
-       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"> <span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fe8019;">false</span>   <span style="color: #b8bb26;">"negative"</span><span style="color: #b16286;">]</span>
+       <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">=</span> <span style="color: #d3869b;">0</span> <span style="color: #d3869b;">0</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"zero"</span><span style="color: #b16286;">]</span>
+       <span style="color: #b16286;">[</span><span style="color: #fb4933;">else</span>    <span style="color: #b8bb26;">"positive"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 
 <li><div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
-      <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">=</span> <span style="color: #d3869b;">0</span> <span style="color: #d3869b;">0</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"zero"</span><span style="color: #b16286;">]</span>
+      <span style="color: #b16286;">[</span><span style="color: #fb4933;">else</span>    <span style="color: #b8bb26;">"positive"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ol></li>
@@ -162,18 +162,18 @@ What is the next step of the evaluation of:
 <li>What is the next step of the evaluation?
 <ol class="org-ol">
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FC9867;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #AB9DF2; font-weight: bold;">0</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #FC9867;">)</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
-       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>    <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"> <span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #8ec07c;">(</span><span style="color: #fe8019;">=</span> <span style="color: #d3869b;">0</span> <span style="color: #d3869b;">0</span><span style="color: #8ec07c;">)</span> <span style="color: #b8bb26;">"zero"</span><span style="color: #b16286;">]</span>
+       <span style="color: #b16286;">[</span><span style="color: #fb4933;">else</span>    <span style="color: #b8bb26;">"positive"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">false</span> <span style="color: #FFD866;">"negative"</span><span style="color: #78DCE8;">]</span>
-       <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span>  <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
-       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span>  <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"> <span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fe8019;">false</span> <span style="color: #b8bb26;">"negative"</span><span style="color: #b16286;">]</span>
+       <span style="color: #b16286;">[</span><span style="color: #fe8019;">true</span>  <span style="color: #b8bb26;">"zero"</span><span style="color: #b16286;">]</span>
+       <span style="color: #b16286;">[</span><span style="color: #fb4933;">else</span>  <span style="color: #b8bb26;">"positive"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"><span style="color: #FFD866;">"zero"</span>
+<pre class="src src-racket"><span style="color: #b8bb26;">"zero"</span>
 </pre>
 </div></li>
 </ol></li>
@@ -192,16 +192,16 @@ What is the next step of the evaluation of:
 <li>What is the next step of the evaluation.
 <ol class="org-ol">
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"> <span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fb4933;">else</span> <span style="color: #b8bb26;">"positive"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span>
-       <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"> <span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fe8019;">true</span> <span style="color: #b8bb26;">"zero"</span><span style="color: #b16286;">]</span>
+       <span style="color: #b16286;">[</span><span style="color: #fb4933;">else</span> <span style="color: #b8bb26;">"positive"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"><span style="color: #FFD866;">"zero"</span>
+<pre class="src src-racket"><span style="color: #b8bb26;">"zero"</span>
 </pre>
 </div></li>
 </ol></li>
@@ -220,15 +220,15 @@ What is the next step of the evaluation of:
 <li>What is the next step of the evaluation?
 <ol class="org-ol">
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #78DCE8;">true</span> <span style="color: #FFD866;">"zero"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"> <span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fe8019;">true</span> <span style="color: #b8bb26;">"zero"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #78DCE8;">[</span><span style="color: #FF6188;">else</span> <span style="color: #FFD866;">"positive"</span><span style="color: #78DCE8;">]</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"> <span style="color: #458588;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #b16286;">[</span><span style="color: #fb4933;">else</span> <span style="color: #b8bb26;">"positive"</span><span style="color: #b16286;">]</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"><span style="color: #FFD866;">"zero"</span>
+<pre class="src src-racket"><span style="color: #b8bb26;">"zero"</span>
 </pre>
 </div></li>
 </ol></li>
@@ -240,18 +240,18 @@ What is the next step of the evaluation of:
 </div>
 
 
-<div id="outline-container-org38783a5" class="outline-3">
-<h3 id="org38783a5">Atomic Non-Distinct</h3>
-<div class="outline-text-3" id="text-org38783a5">
+<div id="outline-container-org014cabf" class="outline-3">
+<h3 id="org014cabf">Atomic Non-Distinct</h3>
+<div class="outline-text-3" id="text-org014cabf">
 <ul class="org-ul">
 <li><b>Question 1</b>
 <ul class="org-ul">
 <li>Complete the following data definition that represents the name of a course by choosing the best answer for each step in the HtDD recipe.
-<code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span></code>
+<code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">CourseName is String</span></code>
 <ol class="org-ol">
-<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. a string</span></code></li>
-<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. a name</span></code></li>
-<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span></code>   &lt;-
+<li><code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. a string</span></code></li>
+<li><code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. a name</span></code></li>
+<li><code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. the name of a course</span></code>   &lt;-
 
 <ul class="org-ul">
 <li>The interpretation should describe the correspondence between the information and data.</li>
@@ -267,14 +267,14 @@ What is the next step of the evaluation of:
 <b>Question 2</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">CourseName is String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. the name of a course</span>
 </pre>
 </div>
 <ol class="org-ol">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Apple"</span><span style="color: #AB9DF2;">)</span></code></li>
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Systematic Program Design"</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"This is a string"</span></code></li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN1</span> <span style="color: #b8bb26;">"Apple"</span><span style="color: #458588;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN1</span> <span style="color: #b8bb26;">"Systematic Program Design"</span><span style="color: #458588;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN1</span> <span style="color: #b8bb26;">"This is a string"</span></code></li>
 </ol></li>
 </ul>
 
@@ -284,25 +284,25 @@ What is the next step of the evaluation of:
 <b>Question 3</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span>
-    <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Systematic Program Design"</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">CourseName is String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. the name of a course</span>
+    <span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN1</span> <span style="color: #b8bb26;">"Systematic Program Design"</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ol class="org-ol">
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
-   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> cn<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"> <span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">fn-for-course-name</span> cn<span style="color: #b16286;">)</span>
+   <span style="color: #b16286;">(</span><span style="color: #fb4933;">...</span> cn<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"> <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
-   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"> <span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">fn-for-course-name</span> cn<span style="color: #b16286;">)</span>
+   <span style="color: #b16286;">(</span><span style="color: #fb4933;">...</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 <li><div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
-  <span style="color: #FFD866;">"cn"</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">fn-for-course-name</span> cn<span style="color: #b16286;">)</span>
+  <span style="color: #b8bb26;">"cn"</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -316,25 +316,25 @@ What is the next step of the evaluation of:
 <li><b>Question 4</b></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">CourseName is String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">interp. the name of a course</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CN1</span> <span style="color: #FFD866;">"Systematic Program Design"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">fn-for-course-name</span> cn<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> cn<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">CourseName is String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">interp. the name of a course</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CN1</span> <span style="color: #b8bb26;">"Systematic Program Design"</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">fn-for-course-name</span> cn<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">...</span> cn<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ol class="org-ol">
-<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: course name</span></code></li>
-<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: String</span></code>  &lt;-</li>
-<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">- atomic non-distinct: name</span></code></li>
+<li><code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- atomic non-distinct: course name</span></code></li>
+<li><code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- atomic non-distinct: String</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">- atomic non-distinct: name</span></code></li>
 </ol>
 </div>
 </div>
 
 
-<div id="outline-container-org15f91c0" class="outline-3">
-<h3 id="org15f91c0">HtDF With Non-Primitive Data</h3>
-<div class="outline-text-3" id="text-org15f91c0">
+<div id="outline-container-org04ad11f" class="outline-3">
+<h3 id="org04ad11f">HtDF With Non-Primitive Data</h3>
+<div class="outline-text-3" id="text-org04ad11f">
 <ul class="org-ul">
 <li><b>Question 1</b>
 <ul class="org-ul">
@@ -344,9 +344,9 @@ What is the next step of the evaluation of:
 Here is the partial design of too-tall?:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket">  <span style="color: #727072;">;; </span><span style="color: #727072;">Icon -&gt; Boolean</span>
-  <span style="color: #727072;">;; </span><span style="color: #727072;">produce true if the given icon is more than 30 pixels high</span>
-  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>   <span style="color: #727072;">;</span><span style="color: #727072;">stub</span>
+<pre class="src src-racket">  <span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Icon -&gt; Boolean</span>
+  <span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">produce true if the given icon is more than 30 pixels high</span>
+  <span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">too-tall?</span> i<span style="color: #b16286;">)</span> <span style="color: #fe8019;">false</span><span style="color: #458588;">)</span>   <span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">stub</span>
 
 </pre>
 </div>
@@ -371,41 +371,41 @@ Here is the partial design of too-tall?:
 <b>Question 2</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Icon -&gt; Boolean</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">produce true if the given icon is more than 30 pixels high</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>too-tall? STEP-ICON<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>too-tall? RUNNING-STICKMAN-ICON<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Icon -&gt; Boolean</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">produce true if the given icon is more than 30 pixels high</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>too-tall? STEP-ICON<span style="color: #b16286;">)</span> <span style="color: #fe8019;">false</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>too-tall? RUNNING-STICKMAN-ICON<span style="color: #b16286;">)</span> <span style="color: #fe8019;">true</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>   <span style="color: #727072;">;</span><span style="color: #727072;">stub</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">too-tall?</span> i<span style="color: #b16286;">)</span> <span style="color: #fe8019;">false</span><span style="color: #458588;">)</span>   <span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">stub</span>
 </pre>
 </div>
 <ul class="org-ul">
 <li>Choose the simplest correct function definition for <code>too-tall?</code>.
 <ol class="org-ol">
 <li><div class="org-src-container">
-<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
-   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2;">(</span>image-height i<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #FC9867;">)</span>
-       <span style="color: #78DCE8;">true</span>
-       <span style="color: #78DCE8;">false</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket">  <span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">too-tall?</span> i<span style="color: #b16286;">)</span>
+   <span style="color: #b16286;">(</span><span style="color: #fb4933;">if</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&gt;</span> <span style="color: #458588;">(</span>image-height i<span style="color: #458588;">)</span> <span style="color: #d3869b;">30</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #fe8019;">true</span>
+       <span style="color: #fe8019;">false</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 
 <li><div class="org-src-container">
-<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
-   <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">cond</span> <span style="color: #FC9867;">[</span><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #78DCE8;">(</span>image-height i<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #AB9DF2;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #FC9867;">]</span>
-         <span style="color: #FC9867;">[</span><span style="color: #FF6188;">else</span> <span style="color: #78DCE8;">false</span><span style="color: #FC9867;">]</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket">  <span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">too-tall?</span> i<span style="color: #b16286;">)</span>
+   <span style="color: #b16286;">(</span><span style="color: #fb4933;">cond</span> <span style="color: #8ec07c;">[</span><span style="color: #458588;">(</span><span style="color: #fe8019;">&gt;</span> <span style="color: #b16286;">(</span>image-height i<span style="color: #b16286;">)</span> <span style="color: #d3869b;">30</span><span style="color: #458588;">)</span> <span style="color: #fe8019;">true</span><span style="color: #8ec07c;">]</span>
+         <span style="color: #8ec07c;">[</span><span style="color: #fb4933;">else</span> <span style="color: #fe8019;">false</span><span style="color: #8ec07c;">]</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 
 <li><div class="org-src-container">
-<pre class="src src-racket">  <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
-   <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #FC9867;">(</span>image-height i<span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket">  <span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">too-tall?</span> i<span style="color: #b16286;">)</span>
+   <span style="color: #b16286;">(</span><span style="color: #fe8019;">&gt;</span> <span style="color: #8ec07c;">(</span>image-height i<span style="color: #8ec07c;">)</span> <span style="color: #d3869b;">30</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 
 <li><div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">too-tall?</span> i<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&gt;</span> i <span style="color: #AB9DF2; font-weight: bold;">30</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">too-tall?</span> i<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fe8019;">&gt;</span> i <span style="color: #d3869b;">30</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -442,7 +442,7 @@ Here is the partial design of too-tall?:
 <li>examples/tests</li>
 <li>function body
 <ul class="org-ul">
-<li>It should be <code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Icon -&gt; Boolean</span></code></li>
+<li>It should be <code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Icon -&gt; Boolean</span></code></li>
 </ul></li>
 </ol></li>
 </ul></li>
@@ -451,9 +451,9 @@ Here is the partial design of too-tall?:
 </div>
 
 
-<div id="outline-container-orgcb0821e" class="outline-3">
-<h3 id="orgcb0821e">Interval</h3>
-<div class="outline-text-3" id="text-orgcb0821e">
+<div id="outline-container-org0c0ea43" class="outline-3">
+<h3 id="org0c0ea43">Interval</h3>
+<div class="outline-text-3" id="text-org0c0ea43">
 <ul class="org-ul">
 <li><b>Question 1</b>
 <ul class="org-ul">
@@ -485,9 +485,9 @@ Here is the partial design of too-tall?:
 </div>
 
 
-<div id="outline-container-orgc1321cf" class="outline-3">
-<h3 id="orgc1321cf">Enumeration</h3>
-<div class="outline-text-3" id="text-orgc1321cf">
+<div id="outline-container-org505236d" class="outline-3">
+<h3 id="org505236d">Enumeration</h3>
+<div class="outline-text-3" id="text-org505236d">
 <ul class="org-ul">
 <li><b>Question 1</b>
 <ul class="org-ul">
@@ -501,11 +501,11 @@ Here is the partial design of too-tall?:
 6
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Season is one of:</span>
-<span style="color: #727072;">;;  </span><span style="color: #727072;">- "winter"</span>
-<span style="color: #727072;">;;  </span><span style="color: #727072;">- "spring"</span>
-<span style="color: #727072;">;;  </span><span style="color: #727072;">- "summer"</span>
-<span style="color: #727072;">;;  </span><span style="color: #727072;">- "fall"</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Season is one of:</span>
+<span style="color: #7c6f64;">;;  </span><span style="color: #7c6f64;">- "winter"</span>
+<span style="color: #7c6f64;">;;  </span><span style="color: #7c6f64;">- "spring"</span>
+<span style="color: #7c6f64;">;;  </span><span style="color: #7c6f64;">- "summer"</span>
+<span style="color: #7c6f64;">;;  </span><span style="color: #7c6f64;">- "fall"</span>
 </pre>
 </div></li>
 </ol></li>
@@ -533,8 +533,8 @@ Here is the partial design of too-tall?:
 </div>
 
 
-<div id="outline-container-org6bfafcc" class="outline-2">
-<h2 id="org6bfafcc">Extra Practice</h2>
+<div id="outline-container-org2e8e82b" class="outline-2">
+<h2 id="org2e8e82b">Extra Practice</h2>
 </div>
 </div>
 <div id="postamble" class="status">

@@ -45,33 +45,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb85a449">Module 1B Questions</a>
+<li><a href="#org5fd4a21">Module 1B Questions</a>
 <ul>
-<li><a href="#orgc0f1413">Full Speed HtDF Recipe</a></li>
-<li><a href="#orgd60db79">Reading a Function Definition</a></li>
-<li><a href="#orgce8300b">A Simple Practice Example</a>
+<li><a href="#orga3ec77d">Full Speed HtDF Recipe</a></li>
+<li><a href="#orgc2b8509">Reading a Function Definition</a></li>
+<li><a href="#org89d8888">A Simple Practice Example</a>
 <ul>
-<li><a href="#org592a6a8">The First HtDF Problem</a></li>
-<li><a href="#orgac5e2c3">A Simple Practice Example</a></li>
+<li><a href="#org7b1ccd6">The First HtDF Problem</a></li>
+<li><a href="#org5f3db30">A Simple Practice Example</a></li>
 </ul>
 </li>
-<li><a href="#orga3feaa9">When Tests are Incorrect</a></li>
-<li><a href="#org56b7359">How many tests?</a></li>
+<li><a href="#orgc2c0448">When Tests are Incorrect</a></li>
+<li><a href="#org3b02bce">How many tests?</a></li>
 </ul>
 </li>
-<li><a href="#org0297bd6">Extra Practice</a>
+<li><a href="#orgedadf25">Extra Practice</a>
 <ul>
-<li><a href="#orga5eac7f">Less Than 5</a></li>
-<li><a href="#org4122e6d">Boxify</a></li>
-<li><a href="#org581e117">Double Error</a></li>
+<li><a href="#org6c192d5">Less Than 5</a></li>
+<li><a href="#org6a86649">Boxify</a></li>
+<li><a href="#org7216e84">Double Error</a></li>
 </ul>
 </li>
-<li><a href="#org5f779b1">HtDF Lab Questions</a>
+<li><a href="#orge5cacf3">HtDF Lab Questions</a>
 <ul>
-<li><a href="#org889b9fb">Problem 1</a></li>
-<li><a href="#org7ef359f">Problem 2</a></li>
-<li><a href="#orge985399">Problem 3</a></li>
-<li><a href="#org4862a19">Problem 4</a></li>
+<li><a href="#org789ba85">Problem 1</a></li>
+<li><a href="#org458a669">Problem 2</a></li>
+<li><a href="#org8f2dc64">Problem 3</a></li>
+<li><a href="#org4087ec9">Problem 4</a></li>
 </ul>
 </li>
 </ul>
@@ -82,13 +82,13 @@ Created on 2020-08-03/21:38
 </p>
 
 
-<div id="outline-container-orgb85a449" class="outline-2">
-<h2 id="orgb85a449">Module 1B Questions</h2>
-<div class="outline-text-2" id="text-orgb85a449">
+<div id="outline-container-org5fd4a21" class="outline-2">
+<h2 id="org5fd4a21">Module 1B Questions</h2>
+<div class="outline-text-2" id="text-org5fd4a21">
 </div>
-<div id="outline-container-orgc0f1413" class="outline-3">
-<h3 id="orgc0f1413">Full Speed HtDF Recipe</h3>
-<div class="outline-text-3" id="text-orgc0f1413">
+<div id="outline-container-orga3ec77d" class="outline-3">
+<h3 id="orga3ec77d">Full Speed HtDF Recipe</h3>
+<div class="outline-text-3" id="text-orga3ec77d">
 <ul class="org-ul">
 <li><b>Question 1</b>
 <ul class="org-ul">
@@ -116,9 +116,9 @@ Created on 2020-08-03/21:38
 </div>
 
 
-<div id="outline-container-orgd60db79" class="outline-3">
-<h3 id="orgd60db79">Reading a Function Definition</h3>
-<div class="outline-text-3" id="text-orgd60db79">
+<div id="outline-container-orgc2b8509" class="outline-3">
+<h3 id="orgc2b8509">Reading a Function Definition</h3>
+<div class="outline-text-3" id="text-orgc2b8509">
 <ul class="org-ul">
 <li><b>Question 1</b>
 <ul class="org-ul">
@@ -126,11 +126,11 @@ Created on 2020-08-03/21:38
 Consider the following short program.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">WIDTH</span> <span style="color: #AB9DF2; font-weight: bold;">100</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">HEIGHT</span> <span style="color: #AB9DF2; font-weight: bold;">100</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">WIDTH</span> <span style="color: #d3869b;">100</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">HEIGHT</span> <span style="color: #d3869b;">100</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">half-tw</span> x<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">+</span> x <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">-</span> WIDTH x<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">half-tw</span> x<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fe8019;">+</span> x <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">/</span> <span style="color: #458588;">(</span><span style="color: #fe8019;">-</span> WIDTH x<span style="color: #458588;">)</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 
@@ -144,13 +144,13 @@ Consider the following short program.
 </div>
 
 
-<div id="outline-container-orgce8300b" class="outline-3">
-<h3 id="orgce8300b">A Simple Practice Example</h3>
-<div class="outline-text-3" id="text-orgce8300b">
+<div id="outline-container-org89d8888" class="outline-3">
+<h3 id="org89d8888">A Simple Practice Example</h3>
+<div class="outline-text-3" id="text-org89d8888">
 </div>
-<div id="outline-container-org592a6a8" class="outline-4">
-<h4 id="org592a6a8">The First HtDF Problem</h4>
-<div class="outline-text-4" id="text-org592a6a8">
+<div id="outline-container-org7b1ccd6" class="outline-4">
+<h4 id="org7b1ccd6">The First HtDF Problem</h4>
+<div class="outline-text-4" id="text-org7b1ccd6">
 <ul class="org-ul">
 <li>Problem: Design a function that pluralizes a given word. (Pluralize means to convert the word to its plural form.) For simplicity you may assume that just adding s is enough to pluralize a word.</li>
 </ul>
@@ -170,10 +170,10 @@ Consider the following short program.
 <li>Continuing with the given problem, we now have a signature.</li>
 <li>Which of the following statements is best?
 <ol class="org-ol">
-<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Pluralize s.</span></code></li>
-<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Produce plural string.</span></code></li>
-<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Add "s".</span></code></li>
-<li><code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Produce the given string with "s" added to the end.</span></code> &lt;-</li>
+<li><code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Pluralize s.</span></code></li>
+<li><code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Produce plural string.</span></code></li>
+<li><code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Add "s".</span></code></li>
+<li><code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Produce the given string with "s" added to the end.</span></code> &lt;-</li>
 </ol></li>
 </ul></li>
 </ul>
@@ -186,17 +186,17 @@ Consider the following short program.
 Continuing with the given problem, we now have a signature and a purpose.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">String -&gt; String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Produce the given string with "s" added to the end.</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">String -&gt; String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Produce the given string with "s" added to the end.</span>
 </pre>
 </div>
 <ul class="org-ul">
 <li>Which of the following stubs is the best?
 <ol class="org-ol">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">pluralize</span> str<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span></code></li>
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">string</span> str<span style="color: #78DCE8;">)</span> str<span style="color: #AB9DF2;">)</span></code></li>
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">pluralize</span> str<span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">""</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">longer</span> str<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">pluralize</span> str<span style="color: #b16286;">)</span> <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">string</span> str<span style="color: #b16286;">)</span> str<span style="color: #458588;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">pluralize</span> str<span style="color: #b16286;">)</span> <span style="color: #b8bb26;">""</span><span style="color: #458588;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">longer</span> str<span style="color: #b16286;">)</span> <span style="color: #d3869b;">1</span><span style="color: #458588;">)</span></code></li>
 </ol></li>
 </ul></li>
 </ul></li>
@@ -210,22 +210,22 @@ Continuing with the given problem, we now have a signature and a purpose.
 Continuing with the given problem, we now have a signature, purpose and stub.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">String -&gt; String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Produce the given string with "s" added to the end.</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">String -&gt; String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Produce the given string with "s" added to the end.</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">pluralize</span> str<span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">""</span><span style="color: #AB9DF2;">)</span>  <span style="color: #727072;">;</span><span style="color: #727072;">stub</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">pluralize</span> str<span style="color: #b16286;">)</span> <span style="color: #b8bb26;">""</span><span style="color: #458588;">)</span>  <span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">stub</span>
 </pre>
 </div>
 <ul class="org-ul">
 <li>Which of the following check-expects is appropriate?
 <ol class="org-ol">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"cat"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"s"</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"cat"</span><span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"s"</span><span style="color: #458588;">)</span></code></li>
 
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"cat"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"cat"</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"cat"</span><span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"cat"</span><span style="color: #458588;">)</span></code></li>
 
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"dog"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"dogs"</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"dog"</span><span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"dogs"</span><span style="color: #458588;">)</span></code>  &lt;-</li>
 
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"grass"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"grasss"</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"grass"</span><span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"grasss"</span><span style="color: #458588;">)</span></code>  &lt;-</li>
 </ol></li>
 </ul></li>
 </ul></li>
@@ -239,29 +239,29 @@ Continuing with the given problem, we now have a signature, purpose and stub.
 Continuing with the given problem, we now have a signature, purpose, stub and several examples. Below we have also given you the template.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">String -&gt; String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">add "s" to the end of the given string</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"cat"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"cats"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"dogs"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"dogss"</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">String -&gt; String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">add "s" to the end of the given string</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"cat"</span><span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"cats"</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"dogs"</span><span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"dogss"</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (pluralize str) "")        ; stub</span>
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (pluralize str)            ; template</span>
-<span style="color: #727072;">;  </span><span style="color: #727072;">(... str))</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (pluralize str) "")        ; stub</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (pluralize str)            ; template</span>
+<span style="color: #7c6f64;">;  </span><span style="color: #7c6f64;">(... str))</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">pluralize</span> str<span style="color: #78DCE8;">)</span>             <span style="color: #727072;">; </span><span style="color: #727072;">template</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> str<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">pluralize</span> str<span style="color: #b16286;">)</span>             <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">template</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">...</span> str<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
 <li>We now need to code the body by replacing (&#x2026; str) with the proper body. Which of the following expressions should be used as the body for pluralize?
 <ol class="org-ol">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"s"</span> str<span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">string-append</span> <span style="color: #b8bb26;">"s"</span> str<span style="color: #458588;">)</span></code></li>
 
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span> str <span style="color: #FFD866;">"s"</span><span style="color: #AB9DF2;">)</span></code>  &lt;-</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">string-append</span> str <span style="color: #b8bb26;">"s"</span><span style="color: #458588;">)</span></code>  &lt;-</li>
 
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span> str s<span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">string-append</span> str s<span style="color: #458588;">)</span></code></li>
 
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"cat"</span> <span style="color: #FFD866;">"s"</span><span style="color: #AB9DF2;">)</span></code></li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">string-append</span> <span style="color: #b8bb26;">"cat"</span> <span style="color: #b8bb26;">"s"</span><span style="color: #458588;">)</span></code></li>
 </ol></li>
 </ul></li>
 </ul></li>
@@ -269,32 +269,32 @@ Continuing with the given problem, we now have a signature, purpose, stub and se
 
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">Problem: Design a function that pluralizes a given word. (Pluralize means to convert the word to its plural form.) For simplicity you may assume that just adding s is enough to pluralize a word.</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Problem: Design a function that pluralizes a given word. (Pluralize means to convert the word to its plural form.) For simplicity you may assume that just adding s is enough to pluralize a word.</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">String -&gt; String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Produce the given string with "s" added to the end</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">String -&gt; String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Produce the given string with "s" added to the end</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">(define (pluralize str) "")</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">(define (pluralize str) "")</span>
 
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"dog"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"dogs"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"grass"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"grasss"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"dog"</span><span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"dogs"</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"grass"</span><span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"grasss"</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (pluralize str)</span>
-<span style="color: #727072;">;  </span><span style="color: #727072;">(... str))</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (pluralize str)</span>
+<span style="color: #7c6f64;">;  </span><span style="color: #7c6f64;">(... str))</span>
 
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"hand"</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"hand"</span> <span style="color: #FFD866;">"s"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"hand"</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">string-append</span> <span style="color: #b8bb26;">"hand"</span> <span style="color: #b8bb26;">"s"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">pluralize</span> str<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-append</span> str <span style="color: #FFD866;">"s"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">pluralize</span> str<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fe8019;">string-append</span> str <span style="color: #b8bb26;">"s"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-orgac5e2c3" class="outline-4">
-<h4 id="orgac5e2c3">A Simple Practice Example</h4>
-<div class="outline-text-4" id="text-orgac5e2c3">
+<div id="outline-container-org5f3db30" class="outline-4">
+<h4 id="org5f3db30">A Simple Practice Example</h4>
+<div class="outline-text-4" id="text-org5f3db30">
 <ul class="org-ul">
 <li><b>Question 1</b>
 <ul class="org-ul">
@@ -351,9 +351,9 @@ Continuing with the given problem, we now have a signature, purpose, stub and se
 
 
 
-<div id="outline-container-orga3feaa9" class="outline-3">
-<h3 id="orga3feaa9">When Tests are Incorrect</h3>
-<div class="outline-text-3" id="text-orga3feaa9">
+<div id="outline-container-orgc2c0448" class="outline-3">
+<h3 id="orgc2c0448">When Tests are Incorrect</h3>
+<div class="outline-text-3" id="text-orgc2c0448">
 <ul class="org-ul">
 <li><b>Question 1</b>
 <ul class="org-ul">
@@ -383,9 +383,9 @@ Continuing with the given problem, we now have a signature, purpose, stub and se
 </div>
 
 
-<div id="outline-container-org56b7359" class="outline-3">
-<h3 id="org56b7359">How many tests?</h3>
-<div class="outline-text-3" id="text-org56b7359">
+<div id="outline-container-org3b02bce" class="outline-3">
+<h3 id="org3b02bce">How many tests?</h3>
+<div class="outline-text-3" id="text-org3b02bce">
 <ul class="org-ul">
 <li>How many tests are needed for for the Poorly Formed Questions problem?
 <ul class="org-ul">
@@ -402,35 +402,35 @@ Continuing with the given problem, we now have a signature, purpose, stub and se
 </div>
 
 
-<div id="outline-container-org0297bd6" class="outline-2">
-<h2 id="org0297bd6">Extra Practice</h2>
-<div class="outline-text-2" id="text-org0297bd6">
+<div id="outline-container-orgedadf25" class="outline-2">
+<h2 id="orgedadf25">Extra Practice</h2>
+<div class="outline-text-2" id="text-orgedadf25">
 </div>
-<div id="outline-container-orga5eac7f" class="outline-3">
-<h3 id="orga5eac7f">Less Than 5</h3>
-<div class="outline-text-3" id="text-orga5eac7f">
+<div id="outline-container-org6c192d5" class="outline-3">
+<h3 id="org6c192d5">Less Than 5</h3>
+<div class="outline-text-3" id="text-org6c192d5">
 <ul class="org-ul">
 <li><p>
 Design a problem to check if the length of a string is less than 5.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">String -&gt; Boolean</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">produce true if given string length is less than 5</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">String -&gt; Boolean</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">produce true if given string length is less than 5</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">(define (lessthanfive? str) true) ; stub</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">(define (lessthanfive? str) true) ; stub</span>
 
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>lessthanfive? <span style="color: #FFD866;">""</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>lessthanfive? <span style="color: #FFD866;">"fox"</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>lessthanfive? <span style="color: #FFD866;">"elephants"</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>lessthanfive? <span style="color: #FFD866;">"seals"</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>lessthanfive? <span style="color: #b8bb26;">""</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">true</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>lessthanfive? <span style="color: #b8bb26;">"fox"</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">true</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>lessthanfive? <span style="color: #b8bb26;">"elephants"</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">false</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>lessthanfive? <span style="color: #b8bb26;">"seals"</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">false</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (lessthanfive? str) ; template</span>
-<span style="color: #727072;">;  </span><span style="color: #727072;">(... str))</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (lessthanfive? str) ; template</span>
+<span style="color: #7c6f64;">;  </span><span style="color: #7c6f64;">(... str))</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">lessthanfive?</span> str<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-length</span> str<span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #78DCE8;">)</span>
-  <span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">lessthanfive?</span> str<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">string-length</span> str<span style="color: #8ec07c;">)</span> <span style="color: #d3869b;">5</span><span style="color: #b16286;">)</span>
+  <span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul>
@@ -443,32 +443,32 @@ All 4 tests passed!
 </div>
 
 
-<div id="outline-container-org4122e6d" class="outline-3">
-<h3 id="org4122e6d">Boxify</h3>
-<div class="outline-text-3" id="text-org4122e6d">
+<div id="outline-container-org6a86649" class="outline-3">
+<h3 id="org6a86649">Boxify</h3>
+<div class="outline-text-3" id="text-org6a86649">
 <ul class="org-ul">
 <li><p>
 Design a function to put a box around a given image.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Image -&gt; Image</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Create a 1px larger rectangle around a given image.</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">require</span> 2htdp/image<span style="color: #458588;">)</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Image -&gt; Image</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Create a 1px larger rectangle around a given image.</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">(define (boxify img) (rectangle 20 20 "solid" "black")) ; stub</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">(define (boxify img) (rectangle 20 20 "solid" "black")) ; stub</span>
 
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>boxify <span style="color: #FC9867;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">5</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>overlay <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">11</span> <span style="color: #AB9DF2; font-weight: bold;">11</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"black"</span><span style="color: #FC9867;">)</span>
-                                                <span style="color: #FC9867;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">5</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>boxify <span style="color: #FC9867;">(</span>square <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>overlay <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">11</span> <span style="color: #AB9DF2; font-weight: bold;">11</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"black"</span><span style="color: #FC9867;">)</span>
-                                                 <span style="color: #FC9867;">(</span>square <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>boxify <span style="color: #8ec07c;">(</span>circle <span style="color: #d3869b;">5</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>overlay <span style="color: #8ec07c;">(</span>rectangle <span style="color: #d3869b;">11</span> <span style="color: #d3869b;">11</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"black"</span><span style="color: #8ec07c;">)</span>
+                                                <span style="color: #8ec07c;">(</span>circle <span style="color: #d3869b;">5</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>boxify <span style="color: #8ec07c;">(</span>square <span style="color: #d3869b;">10</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>overlay <span style="color: #8ec07c;">(</span>rectangle <span style="color: #d3869b;">11</span> <span style="color: #d3869b;">11</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"black"</span><span style="color: #8ec07c;">)</span>
+                                                 <span style="color: #8ec07c;">(</span>square <span style="color: #d3869b;">10</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (boxify img)  ; template</span>
-<span style="color: #727072;">;  </span><span style="color: #727072;">(... img))</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (boxify img)  ; template</span>
+<span style="color: #7c6f64;">;  </span><span style="color: #7c6f64;">(... img))</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">boxify</span> img<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span>overlay <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span>image-width img<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span>image-height img<span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"black"</span><span style="color: #FC9867;">)</span>
-           img<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">boxify</span> img<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>overlay <span style="color: #8ec07c;">(</span>rectangle <span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #b16286;">(</span>image-width img<span style="color: #b16286;">)</span> <span style="color: #d3869b;">1</span><span style="color: #458588;">)</span> <span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #b16286;">(</span>image-height img<span style="color: #b16286;">)</span> <span style="color: #d3869b;">1</span><span style="color: #458588;">)</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"black"</span><span style="color: #8ec07c;">)</span>
+           img<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul>
@@ -476,48 +476,48 @@ Design a function to put a box around a given image.
 </div>
 
 
-<div id="outline-container-org581e117" class="outline-3">
-<h3 id="org581e117">Double Error</h3>
-<div class="outline-text-3" id="text-org581e117">
+<div id="outline-container-org7216e84" class="outline-3">
+<h3 id="org7216e84">Double Error</h3>
+<div class="outline-text-3" id="text-org7216e84">
 <ul class="org-ul">
 <li>Fix the error(s) in a function that doubles a given number.</li>
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">This is the broken file</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">doubles n</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3.3</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3.3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #2e8b57;">-1</span><span style="color: #78DCE8;">)</span> <span style="color: #2e8b57;">-2</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">This is the broken file</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Number -&gt; Number</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">doubles n</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>double <span style="color: #d3869b;">0</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>double <span style="color: #d3869b;">4</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">8</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>double <span style="color: #d3869b;">3.3</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">*</span> <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">3.3</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>double <span style="color: #2e8b57;">-1</span><span style="color: #b16286;">)</span> <span style="color: #2e8b57;">-2</span><span style="color: #458588;">)</span>
 
 
-<span style="color: #727072;">#;</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">double n</span><span style="color: #78DCE8;">)</span><span style="color: #727072;"> 0</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">stub</span>
+<span style="color: #7c6f64;">#;</span>
+<span style="color: #458588;">(</span><span style="color: #7c6f64;">define </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">double n</span><span style="color: #b16286;">)</span><span style="color: #7c6f64;"> 0</span><span style="color: #458588;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">stub</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #FC9867;">(</span><span style="color: #AB9DF2; font-weight: bold;">2</span> n<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">double</span> n<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fe8019;">*</span> <span style="color: #8ec07c;">(</span><span style="color: #d3869b;">2</span> n<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
 <hr />
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">This is the fixed file</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Number -&gt; Number</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">doubles n</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">8</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #AB9DF2; font-weight: bold;">3.3</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3.3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>double <span style="color: #2e8b57;">-1</span><span style="color: #78DCE8;">)</span> <span style="color: #2e8b57;">-2</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">This is the fixed file</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Number -&gt; Number</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">doubles n</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>double <span style="color: #d3869b;">0</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>double <span style="color: #d3869b;">4</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">8</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>double <span style="color: #d3869b;">3.3</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">*</span> <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">3.3</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>double <span style="color: #2e8b57;">-1</span><span style="color: #b16286;">)</span> <span style="color: #2e8b57;">-2</span><span style="color: #458588;">)</span>
 
 
-<span style="color: #727072;">#;</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #727072;">define </span><span style="color: #78DCE8;">(</span><span style="color: #727072;">double n</span><span style="color: #78DCE8;">)</span><span style="color: #727072;"> 0</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">stub</span>
+<span style="color: #7c6f64;">#;</span>
+<span style="color: #458588;">(</span><span style="color: #7c6f64;">define </span><span style="color: #b16286;">(</span><span style="color: #7c6f64;">double n</span><span style="color: #b16286;">)</span><span style="color: #7c6f64;"> 0</span><span style="color: #458588;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">stub</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">double</span> n<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> n<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">this line was evaluating (2 n) before which is invalid. Now it's evaluating (* 2 n)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">double</span> n<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fe8019;">*</span> <span style="color: #d3869b;">2</span> n<span style="color: #b16286;">)</span><span style="color: #458588;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">this line was evaluating (2 n) before which is invalid. Now it's evaluating (* 2 n)</span>
 </pre>
 </div>
 </div>
@@ -525,32 +525,32 @@ Design a function to put a box around a given image.
 </div>
 
 
-<div id="outline-container-org5f779b1" class="outline-2">
-<h2 id="org5f779b1">HtDF Lab Questions</h2>
-<div class="outline-text-2" id="text-org5f779b1">
+<div id="outline-container-orge5cacf3" class="outline-2">
+<h2 id="orge5cacf3">HtDF Lab Questions</h2>
+<div class="outline-text-2" id="text-orge5cacf3">
 </div>
-<div id="outline-container-org889b9fb" class="outline-3">
-<h3 id="org889b9fb">Problem 1</h3>
-<div class="outline-text-3" id="text-org889b9fb">
+<div id="outline-container-org789ba85" class="outline-3">
+<h3 id="org789ba85">Problem 1</h3>
+<div class="outline-text-3" id="text-org789ba85">
 <ul class="org-ul">
 <li>Design a function called square? that consumes an image and determines whether the image's height is the same as the image's width.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">require</span> 2htdp/image<span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Image -&gt; Boolean</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">return true if image-width = image-height</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Image -&gt; Boolean</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">return true if image-width = image-height</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (square? img) true) ; stub</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (square? img) true) ; stub</span>
 
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>square? <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>square? <span style="color: #FC9867;">(</span>square <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>square? <span style="color: #8ec07c;">(</span>rectangle <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">3</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">false</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>square? <span style="color: #8ec07c;">(</span>square <span style="color: #d3869b;">2</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">true</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (square? img)       ; template</span>
-<span style="color: #727072;">;  </span><span style="color: #727072;">(... img))</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (square? img)       ; template</span>
+<span style="color: #7c6f64;">;  </span><span style="color: #7c6f64;">(... img))</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">square?</span> img<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">=</span> <span style="color: #FC9867;">(</span>image-height img<span style="color: #FC9867;">)</span> <span style="color: #FC9867;">(</span>image-width img<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">square?</span> img<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fe8019;">=</span> <span style="color: #8ec07c;">(</span>image-height img<span style="color: #8ec07c;">)</span> <span style="color: #8ec07c;">(</span>image-width img<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -561,44 +561,44 @@ Both tests passed!
 </div>
 </div>
 
-<div id="outline-container-org7ef359f" class="outline-3">
-<h3 id="org7ef359f">Problem 2</h3>
-<div class="outline-text-3" id="text-org7ef359f">
+<div id="outline-container-org458a669" class="outline-3">
+<h3 id="org458a669">Problem 2</h3>
+<div class="outline-text-3" id="text-org458a669">
 <ul class="org-ul">
 <li><p>
 Design a function named underline that consumes an image and produces that image underlined by a black line of the same width. For example,
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>underline <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span>underline <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"green"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <p>
 should produce
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>above <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #78DCE8;">)</span>
-       <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"black"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span>above <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"green"</span><span style="color: #b16286;">)</span>
+       <span style="color: #b16286;">(</span>rectangle <span style="color: #d3869b;">40</span> <span style="color: #d3869b;">2</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"black"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul>
 <hr />
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">require</span> 2htdp/image<span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">Image -&gt; Image</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Add underline of same width under consumed image</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Image -&gt; Image</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Add underline of same width under consumed image</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">(define (underline img) (rectangle 1 1 "solid" "black")) ; stub</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">(define (underline img) (rectangle 1 1 "solid" "black")) ; stub</span>
 
- <span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>underline <span style="color: #FC9867;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span>above <span style="color: #FC9867;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #FC9867;">)</span>
-       <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"black"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+ <span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>underline <span style="color: #8ec07c;">(</span>circle <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"green"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>above <span style="color: #8ec07c;">(</span>circle <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"green"</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>rectangle <span style="color: #d3869b;">40</span> <span style="color: #d3869b;">2</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"black"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (underline img) ; template</span>
-<span style="color: #727072;">;   </span><span style="color: #727072;">(... img))</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (underline img) ; template</span>
+<span style="color: #7c6f64;">;   </span><span style="color: #7c6f64;">(... img))</span>
 
- <span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">underline</span> img<span style="color: #78DCE8;">)</span>
-   <span style="color: #78DCE8;">(</span>above img
-          <span style="color: #FC9867;">(</span>rectangle <span style="color: #AB9DF2;">(</span>image-width img<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"black"</span><span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+ <span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">underline</span> img<span style="color: #b16286;">)</span>
+   <span style="color: #b16286;">(</span>above img
+          <span style="color: #8ec07c;">(</span>rectangle <span style="color: #458588;">(</span>image-width img<span style="color: #458588;">)</span> <span style="color: #d3869b;">2</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"black"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
 </pre>
 </div>
@@ -611,32 +611,32 @@ The test passed!
 </div>
 
 
-<div id="outline-container-orge985399" class="outline-3">
-<h3 id="orge985399">Problem 3</h3>
-<div class="outline-text-3" id="text-orge985399">
+<div id="outline-container-org8f2dc64" class="outline-3">
+<h3 id="org8f2dc64">Problem 3</h3>
+<div class="outline-text-3" id="text-org8f2dc64">
 <ul class="org-ul">
 <li>A (much too) simple scheme for pluralizing words in English is to add an s at the end unless the word already ends in s.</li>
 
 <li>Design a function that consumes a string, and adds s to the end unless the string already ends in s.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">String -&gt; String</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Add "s" to given string unless given string already ends in "s"</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">String -&gt; String</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Add "s" to given string unless given string already ends in "s"</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">(define (pluralize str) "") ; stub</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">(define (pluralize str) "") ; stub</span>
 
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"cat"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"cats"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>pluralize <span style="color: #FFD866;">"grass"</span><span style="color: #78DCE8;">)</span> <span style="color: #FFD866;">"grass"</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"cat"</span><span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"cats"</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>pluralize <span style="color: #b8bb26;">"grass"</span><span style="color: #b16286;">)</span> <span style="color: #b8bb26;">"grass"</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (pluralize str)  ; template</span>
-<span style="color: #727072;">;  </span><span style="color: #727072;">(... str))</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (pluralize str)  ; template</span>
+<span style="color: #7c6f64;">;  </span><span style="color: #7c6f64;">(... str))</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">pluralize</span> str<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-ci=?</span> <span style="color: #AB9DF2;">(</span>string-ith str <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-length</span> str<span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span> <span style="color: #FFD866;">"s"</span><span style="color: #FC9867;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">pluralize</span> str<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">if</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">string-ci=?</span> <span style="color: #458588;">(</span>string-ith str <span style="color: #b16286;">(</span><span style="color: #fe8019;">-</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">string-length</span> str<span style="color: #8ec07c;">)</span> <span style="color: #d3869b;">1</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span> <span style="color: #b8bb26;">"s"</span><span style="color: #8ec07c;">)</span>
       str
-      <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-append</span> str <span style="color: #FFD866;">"s"</span><span style="color: #FC9867;">)</span>
-      <span style="color: #78DCE8;">)</span>
-  <span style="color: #AB9DF2;">)</span>
+      <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">string-append</span> str <span style="color: #b8bb26;">"s"</span><span style="color: #8ec07c;">)</span>
+      <span style="color: #b16286;">)</span>
+  <span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -648,20 +648,20 @@ Both tests passed!
 </div>
 
 
-<div id="outline-container-org4862a19" class="outline-3">
-<h3 id="org4862a19">Problem 4</h3>
-<div class="outline-text-3" id="text-org4862a19">
+<div id="outline-container-org4087ec9" class="outline-3">
+<h3 id="org4087ec9">Problem 4</h3>
+<div class="outline-text-3" id="text-org4087ec9">
 <ul class="org-ul">
 <li>Design a function called nth-char-equal? that consumes two strings and a natural and produces true if the strings both have length greater than n and have the same character at position n.</li>
 
-<li>Note: the signature for such a function is <code class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">String String Natural -&gt; Boolean</span></code></li>
+<li>Note: the signature for such a function is <code class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">String String Natural -&gt; Boolean</span></code></li>
 
 <li><p>
 The template for such a function is:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">nth-char-equal?</span> s1 s2 n<span style="color: #78DCE8;">)</span>
-     <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">...</span> s1 s2 n<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">nth-char-equal?</span> s1 s2 n<span style="color: #b16286;">)</span>
+     <span style="color: #b16286;">(</span><span style="color: #fb4933;">...</span> s1 s2 n<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul>
@@ -670,23 +670,23 @@ The template for such a function is:
 <hr />
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #727072;">;; </span><span style="color: #727072;">String String Natural -&gt; Boolean</span>
-<span style="color: #727072;">;; </span><span style="color: #727072;">Consume two strings, return true if strings have greater length than n, and have same character at position n</span>
+<pre class="src src-racket"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">String String Natural -&gt; Boolean</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">Consume two strings, return true if strings have greater length than n, and have same character at position n</span>
 
-<span style="color: #727072;">; </span><span style="color: #727072;">(define (nth-char-equal? s1 s2 n) true) ; stub</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>nth-char-equal? <span style="color: #FFD866;">"Apple"</span> <span style="color: #FFD866;">"Apples"</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">true</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>nth-char-equal? <span style="color: #FFD866;">"Pizzaria"</span> <span style="color: #FFD866;">"Pie"</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span>check-expect <span style="color: #78DCE8;">(</span>nth-char-equal? <span style="color: #FFD866;">"Salmon"</span> <span style="color: #FFD866;">"Ladder"</span> <span style="color: #AB9DF2; font-weight: bold;">5</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">false</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">(define (nth-char-equal? s1 s2 n) true) ; stub</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>nth-char-equal? <span style="color: #b8bb26;">"Apple"</span> <span style="color: #b8bb26;">"Apples"</span> <span style="color: #d3869b;">2</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">true</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>nth-char-equal? <span style="color: #b8bb26;">"Pizzaria"</span> <span style="color: #b8bb26;">"Pie"</span> <span style="color: #d3869b;">4</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">false</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span>check-expect <span style="color: #b16286;">(</span>nth-char-equal? <span style="color: #b8bb26;">"Salmon"</span> <span style="color: #b8bb26;">"Ladder"</span> <span style="color: #d3869b;">5</span><span style="color: #b16286;">)</span> <span style="color: #fe8019;">false</span><span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;</span><span style="color: #727072;">(define (nth-char-equal? s1 s2 n)  ; template</span>
-<span style="color: #727072;">;     </span><span style="color: #727072;">(... s1 s2 n))</span>
+<span style="color: #7c6f64;">;</span><span style="color: #7c6f64;">(define (nth-char-equal? s1 s2 n)  ; template</span>
+<span style="color: #7c6f64;">;     </span><span style="color: #7c6f64;">(... s1 s2 n))</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">nth-char-equal?</span> s1 s2 n<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">and</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-length</span> s1<span style="color: #AB9DF2;">)</span> n<span style="color: #FC9867;">)</span>
-       <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-length</span> s2<span style="color: #AB9DF2;">)</span> n<span style="color: #FC9867;">)</span>
-       <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">string-ci=?</span> <span style="color: #AB9DF2;">(</span>string-ith s1 n<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>string-ith s2 n<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
-           <span style="color: #78DCE8;">)</span>
-      <span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">nth-char-equal?</span> s1 s2 n<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">and</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&gt;</span> <span style="color: #458588;">(</span><span style="color: #fe8019;">string-length</span> s1<span style="color: #458588;">)</span> n<span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&gt;</span> <span style="color: #458588;">(</span><span style="color: #fe8019;">string-length</span> s2<span style="color: #458588;">)</span> n<span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">string-ci=?</span> <span style="color: #458588;">(</span>string-ith s1 n<span style="color: #458588;">)</span> <span style="color: #458588;">(</span>string-ith s2 n<span style="color: #458588;">)</span><span style="color: #8ec07c;">)</span>
+           <span style="color: #b16286;">)</span>
+      <span style="color: #458588;">)</span>
 </pre>
 </div>
 

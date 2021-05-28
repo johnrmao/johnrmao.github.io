@@ -45,46 +45,46 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgda4af6a">Learning Goals</a></li>
-<li><a href="#org51b96a7">Expressions</a>
+<li><a href="#orgdedd0a3">Learning Goals</a></li>
+<li><a href="#org0ac985e">Expressions</a>
 <ul>
-<li><a href="#org2149251">Evaluating simple expressions</a></li>
-<li><a href="#orge39f6ff">Terminology</a></li>
+<li><a href="#org19be5f0">Evaluating simple expressions</a></li>
+<li><a href="#org9f8802e">Terminology</a></li>
 </ul>
 </li>
-<li><a href="#org9afb2e6">Strings and images</a>
+<li><a href="#org7f876e8">Strings and images</a>
 <ul>
-<li><a href="#orgc7b0e9b">String primitives</a></li>
-<li><a href="#org30b578b">Image primitives</a></li>
+<li><a href="#orgc30e430">String primitives</a></li>
+<li><a href="#orgd487bea">Image primitives</a></li>
 </ul>
 </li>
-<li><a href="#org2a04f1a">Constant definitions</a>
+<li><a href="#org27019bd">Constant definitions</a>
 <ul>
-<li><a href="#org4f8c5c7">Evaluating constant definitions</a></li>
+<li><a href="#orga8a2505">Evaluating constant definitions</a></li>
 </ul>
 </li>
-<li><a href="#orged404fd">Function definitions</a>
+<li><a href="#orgbab6a20">Function definitions</a>
 <ul>
-<li><a href="#orgcc0c15c">Evaluating functions</a></li>
+<li><a href="#org629e813">Evaluating functions</a></li>
 </ul>
 </li>
-<li><a href="#orgd7bb131">Booleans and if expressions</a>
+<li><a href="#org7d49143">Booleans and if expressions</a>
 <ul>
-<li><a href="#org93370b4">Booleans</a></li>
-<li><a href="#org82e34fa">If expressions</a>
+<li><a href="#org156a87f">Booleans</a></li>
+<li><a href="#org758b592">If expressions</a>
 <ul>
-<li><a href="#orgc09f4a0">Evaluating if expressions</a></li>
+<li><a href="#orga490863">Evaluating if expressions</a></li>
 </ul>
 </li>
-<li><a href="#orgd049170">And</a>
+<li><a href="#org3f7be73">And</a>
 <ul>
-<li><a href="#org11fbd8b">Evaluating and expressions</a></li>
+<li><a href="#org81e30f5">Evaluating and expressions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd086fbb">Using the stepper</a></li>
-<li><a href="#org94d6ddc">Discovering primitives</a></li>
+<li><a href="#orgb2eb4ab">Using the stepper</a></li>
+<li><a href="#orga57cd1b">Discovering primitives</a></li>
 </ul>
 </div>
 </div>
@@ -93,9 +93,9 @@ Created on 2020-07-12/14:082
 </p>
 
 
-<div id="outline-container-orgda4af6a" class="outline-2">
-<h2 id="orgda4af6a">Learning Goals</h2>
-<div class="outline-text-2" id="text-orgda4af6a">
+<div id="outline-container-orgdedd0a3" class="outline-2">
+<h2 id="orgdedd0a3">Learning Goals</h2>
+<div class="outline-text-2" id="text-orgdedd0a3">
 <ul class="org-ul">
 <li>Understand systematic design process.</li>
 <li>Understand that programs are written both to run and to read.</li>
@@ -111,15 +111,15 @@ Created on 2020-07-12/14:082
 </div>
 
 
-<div id="outline-container-org51b96a7" class="outline-2">
-<h2 id="org51b96a7">Expressions</h2>
-<div class="outline-text-2" id="text-org51b96a7">
+<div id="outline-container-org0ac985e" class="outline-2">
+<h2 id="org0ac985e">Expressions</h2>
+<div class="outline-text-2" id="text-org0ac985e">
 <ul class="org-ul">
 <li>Simple arithmatic
 <ul class="org-ul">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> =&gt; 7
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">3</span> <span style="color: #d3869b;">4</span><span style="color: #458588;">)</span></code> =&gt; 7
 <ul class="org-ul">
-<li>In this case, <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> is the expression, and <code>7</code> is the value.</li>
+<li>In this case, <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">3</span> <span style="color: #d3869b;">4</span><span style="color: #458588;">)</span></code> is the expression, and <code>7</code> is the value.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -128,35 +128,35 @@ Created on 2020-07-12/14:082
 <ul class="org-ul">
 <li>Racket works by parsing expressions to produce values.
 <ul class="org-ul">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code> =&gt; 9</li>
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">/</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code> =&gt; 2</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">3</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">*</span> <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">3</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span></code> =&gt; 9</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">/</span> <span style="color: #d3869b;">12</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">*</span> <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">3</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span></code> =&gt; 2</li>
 </ul></li>
 </ul>
 
 
 <ul class="org-ul">
-<li>To from an expression, start with <code class="src src-racket"><span style="color: #AB9DF2;">(</span>&lt;primitive&gt; &lt;expression&gt;<span style="color: #AB9DF2;">)</span></code> or simly a <code>&lt;value&gt;</code>.
+<li>To from an expression, start with <code class="src src-racket"><span style="color: #458588;">(</span>&lt;primitive&gt; &lt;expression&gt;<span style="color: #458588;">)</span></code> or simly a <code>&lt;value&gt;</code>.
 <ul class="org-ul">
 <li><code>;</code> can be used to comment out lines.</li>
 </ul></li>
 
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqr</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code> =&gt; 9</li>
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">sqrt</span> <span style="color: #AB9DF2; font-weight: bold;">16</span><span style="color: #AB9DF2;">)</span></code> =&gt; 4</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">sqr</span> <span style="color: #d3869b;">3</span><span style="color: #458588;">)</span></code> =&gt; 9</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">sqrt</span> <span style="color: #d3869b;">16</span><span style="color: #458588;">)</span></code> =&gt; 4</li>
 </ul>
 </div>
 
 
 
-<div id="outline-container-org2149251" class="outline-3">
-<h3 id="org2149251">Evaluating simple expressions</h3>
-<div class="outline-text-3" id="text-org2149251">
+<div id="outline-container-org19be5f0" class="outline-3">
+<h3 id="org19be5f0">Evaluating simple expressions</h3>
+<div class="outline-text-3" id="text-org19be5f0">
 <ul class="org-ul">
 <li>How are the expressions evaluated by racket?</li>
 </ul>
 
 
 <ul class="org-ul">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code> =&gt; 14</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">2</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">*</span> <span style="color: #d3869b;">3</span> <span style="color: #d3869b;">4</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">-</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #d3869b;">3</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span></code> =&gt; 14</li>
 
 <li>This expression starts with an open bracket, then a primitive operation, thus, it's called a <b>primitive call</b>, or a <b>call to a primitive</b>.
 <ul class="org-ul">
@@ -171,32 +171,32 @@ Created on 2020-07-12/14:082
 
 <hr />
 <ul class="org-ul">
-<li><b>To evaluate a primitive call</b>          <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #78DCE8;">)</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code>
+<li><b>To evaluate a primitive call</b>          <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">2</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">*</span> <span style="color: #d3869b;">3</span> <span style="color: #d3869b;">4</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">-</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #d3869b;">3</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span></code>
 <ol class="org-ol">
 <li>First, the operands are reduced to values.
 <ul class="org-ul">
 <li>The first operand, <code>2</code> is already reduced to a value.</li>
-<li>The second operand is still an expression. This primitive call: <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> needs to be reduced to <code>12</code>.</li>
+<li>The second operand is still an expression. This primitive call: <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">*</span> <span style="color: #d3869b;">3</span> <span style="color: #d3869b;">4</span><span style="color: #458588;">)</span></code> needs to be reduced to <code>12</code>.</li>
 
-<li>The expression now looks like this: <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">12</span>    <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #FC9867;">)</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+<li>The expression now looks like this: <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">12</span>    <span style="color: #b16286;">(</span><span style="color: #fe8019;">-</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #8ec07c;">)</span> <span style="color: #d3869b;">3</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span></code></li>
 
 <li>The third operand, or expression still needs to be reduced.
 <ul class="org-ul">
 <li>Within this operand, the first operand is not a value, and needs to be reduced.
 <ul class="org-ul">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #AB9DF2;">)</span></code> will become 3.</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">2</span><span style="color: #458588;">)</span></code> will become 3.</li>
 </ul></li>
 
-<li>Now, the evaluation looks like this: <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code>.</li>
+<li>Now, the evaluation looks like this: <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">12</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">-</span> <span style="color: #d3869b;">3</span> <span style="color: #d3869b;">3</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span></code>.</li>
 
-<li>The <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">-</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">3</span><span style="color: #AB9DF2;">)</span></code> will reduce to <code>0</code>.</li>
+<li>The <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">-</span> <span style="color: #d3869b;">3</span> <span style="color: #d3869b;">3</span><span style="color: #458588;">)</span></code> will reduce to <code>0</code>.</li>
 </ul></li>
 
-<li>Now, the expression looks like this: <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span></code></li>
+<li>Now, the expression looks like this: <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">12</span> <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span></code></li>
 </ul></li>
 
 <li>Then, the primitive is applied to all values.
-<code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">12</span> <span style="color: #AB9DF2; font-weight: bold;">0</span><span style="color: #AB9DF2;">)</span></code> =&gt; 14</li>
+<code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">12</span> <span style="color: #d3869b;">0</span><span style="color: #458588;">)</span></code> =&gt; 14</li>
 </ol></li>
 </ul>
 
@@ -207,9 +207,9 @@ Created on 2020-07-12/14:082
 <hr />
 </div>
 </div>
-<div id="outline-container-orge39f6ff" class="outline-3">
-<h3 id="orge39f6ff">Terminology</h3>
-<div class="outline-text-3" id="text-orge39f6ff">
+<div id="outline-container-org9f8802e" class="outline-3">
+<h3 id="org9f8802e">Terminology</h3>
+<div class="outline-text-3" id="text-org9f8802e">
 <ul class="org-ul">
 <li>Expression
 <ul class="org-ul">
@@ -248,9 +248,9 @@ Created on 2020-07-12/14:082
 </div>
 </div>
 
-<div id="outline-container-org9afb2e6" class="outline-2">
-<h2 id="org9afb2e6">Strings and images</h2>
-<div class="outline-text-2" id="text-org9afb2e6">
+<div id="outline-container-org7f876e8" class="outline-2">
+<h2 id="org7f876e8">Strings and images</h2>
+<div class="outline-text-2" id="text-org7f876e8">
 <ul class="org-ul">
 <li>Strings represent words and names.</li>
 <li>Images help to build up pictures.</li>
@@ -263,30 +263,30 @@ Created on 2020-07-12/14:082
 </div>
 
 
-<div id="outline-container-orgc7b0e9b" class="outline-3">
-<h3 id="orgc7b0e9b">String primitives</h3>
-<div class="outline-text-3" id="text-orgc7b0e9b">
+<div id="outline-container-orgc30e430" class="outline-3">
+<h3 id="orgc30e430">String primitives</h3>
+<div class="outline-text-3" id="text-orgc30e430">
 <ul class="org-ul">
-<li>Strings look like this: <code class="src src-racket"><span style="color: #FFD866;">"apple"</span></code></li>
+<li>Strings look like this: <code class="src src-racket"><span style="color: #b8bb26;">"apple"</span></code></li>
 <li>Running:</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #FFD866;">"apple"</span>
-<span style="color: #FFD866;">"Ada"</span>
+<pre class="src src-racket"><span style="color: #b8bb26;">"apple"</span>
+<span style="color: #b8bb26;">"Ada"</span>
 </pre>
 </div>
 <p>
 =&gt;
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #FFD866;">"apple"</span>
-<span style="color: #FFD866;">"Ada"</span>
+<pre class="src src-racket"><span style="color: #b8bb26;">"apple"</span>
+<span style="color: #b8bb26;">"Ada"</span>
 </pre>
 </div>
 <ul class="org-ul">
 <li>You can put strings together by using <code>string-append</code>.
 <ul class="org-ul">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"Ada"</span> <span style="color: #FFD866;">" "</span> <span style="color: #FFD866;">"Lovelace"</span><span style="color: #AB9DF2;">)</span></code> =&gt; "Ada Lovelace"</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">string-append</span> <span style="color: #b8bb26;">"Ada"</span> <span style="color: #b8bb26;">" "</span> <span style="color: #b8bb26;">"Lovelace"</span><span style="color: #458588;">)</span></code> =&gt; "Ada Lovelace"</li>
 </ul></li>
 </ul>
 
@@ -294,15 +294,15 @@ Created on 2020-07-12/14:082
 <ul class="org-ul">
 <li>It is important to differentiate strings and values.
 <ul class="org-ul">
-<li><code class="src src-racket"><span style="color: #FFD866;">"123"</span></code> is a string.</li>
-<li><code class="src src-racket"><span style="color: #AB9DF2; font-weight: bold;">123</span></code> is a number.</li>
+<li><code class="src src-racket"><span style="color: #b8bb26;">"123"</span></code> is a string.</li>
+<li><code class="src src-racket"><span style="color: #d3869b;">123</span></code> is a number.</li>
 </ul></li>
 <li><p>
 It is possible to add a number to the value, but you cannot add 1 to a string.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #FFD866;">"123"</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #AB9DF2; font-weight: bold;">1</span> <span style="color: #AB9DF2; font-weight: bold;">123</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">1</span> <span style="color: #b8bb26;">"123"</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #d3869b;">1</span> <span style="color: #d3869b;">123</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul>
@@ -312,18 +312,18 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 
 
 <ul class="org-ul">
-<li>Another string primitive is <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-length</span><span style="color: #AB9DF2;">)</span></code>
+<li>Another string primitive is <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">string-length</span><span style="color: #458588;">)</span></code>
 <ul class="org-ul">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-length</span><span style="color: #AB9DF2;">)</span></code> will return the number of characters your given string is.</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">string-length</span><span style="color: #458588;">)</span></code> will return the number of characters your given string is.</li>
 </ul></li>
 </ul>
 
 
 
 <ul class="org-ul">
-<li>Using the <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">substring</span><span style="color: #AB9DF2;">)</span></code> primitive, you can remove characters using indexes.
+<li>Using the <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">substring</span><span style="color: #458588;">)</span></code> primitive, you can remove characters using indexes.
 <ul class="org-ul">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">substring</span> <span style="color: #FFD866;">"Caribou"</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> will remove all characters from indexes 2 to 4.
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">substring</span> <span style="color: #b8bb26;">"Caribou"</span> <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">4</span><span style="color: #458588;">)</span></code> will remove all characters from indexes 2 to 4.
 <ul class="org-ul">
 <li><code>&gt; ="ri"</code></li>
 </ul></li>
@@ -334,7 +334,7 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 <ul class="org-ul">
 <li><code>substring</code> works off of 0-based indexing. The index starts at 0, and will stop just before the final stated index.
 <ul class="org-ul">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">substring</span> <span style="color: #FFD866;">"012345678"</span> <span style="color: #AB9DF2; font-weight: bold;">2</span> <span style="color: #AB9DF2; font-weight: bold;">4</span><span style="color: #AB9DF2;">)</span></code> =&gt; "23"</li>
+<li><code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">substring</span> <span style="color: #b8bb26;">"012345678"</span> <span style="color: #d3869b;">2</span> <span style="color: #d3869b;">4</span><span style="color: #458588;">)</span></code> =&gt; "23"</li>
 </ul></li>
 </ul>
 </div>
@@ -342,27 +342,27 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 
 
 
-<div id="outline-container-org30b578b" class="outline-3">
-<h3 id="org30b578b">Image primitives</h3>
-<div class="outline-text-3" id="text-org30b578b">
+<div id="outline-container-orgd487bea" class="outline-3">
+<h3 id="orgd487bea">Image primitives</h3>
+<div class="outline-text-3" id="text-orgd487bea">
 <ul class="org-ul">
 <li>For this specific lecture, you must tell DrRacket to use the image functions from the 2nd edition of the How to Design Programs book.
 <ul class="org-ul">
-<li>To do this, include <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span></code> at the start of the racket file.</li>
+<li>To do this, include <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">require</span> 2htdp/image<span style="color: #458588;">)</span></code> at the start of the racket file.</li>
 </ul></li>
 </ul>
 
 
 <ul class="org-ul">
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #AB9DF2;">)</span></code>
+<li><code class="src src-racket"><span style="color: #458588;">(</span>circle <span style="color: #d3869b;">10</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #458588;">)</span></code>
 <ul class="org-ul">
 <li>This will produce a red, solid circle with a radius of 10 pixels.</li>
 </ul></li>
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">30</span> <span style="color: #AB9DF2; font-weight: bold;">60</span> <span style="color: #FFD866;">"outline"</span> <span style="color: #FFD866;">"blue"</span><span style="color: #AB9DF2;">)</span></code>
+<li><code class="src src-racket"><span style="color: #458588;">(</span>rectangle <span style="color: #d3869b;">30</span> <span style="color: #d3869b;">60</span> <span style="color: #b8bb26;">"outline"</span> <span style="color: #b8bb26;">"blue"</span><span style="color: #458588;">)</span></code>
 <ul class="org-ul">
 <li>This will create a 30x60 pixel blue rectangle outline.</li>
 </ul></li>
-<li><code class="src src-racket"><span style="color: #AB9DF2;">(</span>text <span style="color: #FFD866;">"hello"</span> <span style="color: #AB9DF2; font-weight: bold;">24</span> <span style="color: #FFD866;">"orange"</span><span style="color: #AB9DF2;">)</span></code>
+<li><code class="src src-racket"><span style="color: #458588;">(</span>text <span style="color: #b8bb26;">"hello"</span> <span style="color: #d3869b;">24</span> <span style="color: #b8bb26;">"orange"</span><span style="color: #458588;">)</span></code>
 <ul class="org-ul">
 <li>This will create an image showing "hello", with font-size 24, orange.</li>
 </ul></li>
@@ -370,9 +370,9 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>above <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span>
-       <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"yellow"</span><span style="color: #78DCE8;">)</span>
-       <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">30</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span>above <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">10</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #b16286;">)</span>
+       <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"yellow"</span><span style="color: #b16286;">)</span>
+       <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">30</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"green"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -381,9 +381,9 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>beside <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span>
-        <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"yellow"</span><span style="color: #78DCE8;">)</span>
-        <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">30</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span>beside <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">10</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #b16286;">)</span>
+        <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"yellow"</span><span style="color: #b16286;">)</span>
+        <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">30</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"green"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -391,9 +391,9 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>overlay <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span>
-         <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"yellow"</span><span style="color: #78DCE8;">)</span>
-         <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">30</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span>overlay <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">10</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #b16286;">)</span>
+         <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"yellow"</span><span style="color: #b16286;">)</span>
+         <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">30</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"green"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -404,20 +404,20 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 </div>
 
 
-<div id="outline-container-org2a04f1a" class="outline-2">
-<h2 id="org2a04f1a">Constant definitions</h2>
-<div class="outline-text-2" id="text-org2a04f1a">
+<div id="outline-container-org27019bd" class="outline-2">
+<h2 id="org27019bd">Constant definitions</h2>
+<div class="outline-text-2" id="text-org27019bd">
 <ul class="org-ul">
 <li>Constant definitions greatly improve readability and changeability.</li>
 
-<li>Constants are named values defined using <code class="src src-racket"><span style="color: #FF6188;">define</span></code> and never changes.</li>
+<li>Constants are named values defined using <code class="src src-racket"><span style="color: #fb4933;">define</span></code> and never changes.</li>
 
 <li>Constant definitions give name to a value used in another part of the program.</li>
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">WIDTH</span> <span style="color: #AB9DF2; font-weight: bold;">400</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">HEIGHT</span> <span style="color: #AB9DF2; font-weight: bold;">600</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">WIDTH</span> <span style="color: #d3869b;">400</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">HEIGHT</span> <span style="color: #d3869b;">600</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -428,27 +428,27 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> WIDTH HEIGHT<span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">*</span> WIDTH HEIGHT<span style="color: #458588;">)</span>
 </pre>
 </div>
 
 <ul class="org-ul">
 <li>We can evaluate this and DrRacket will replace the name of a defined constant with its value.
 <ul class="org-ul">
-<li>The expression above is equivalent to <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">400</span> <span style="color: #AB9DF2; font-weight: bold;">600</span><span style="color: #AB9DF2;">)</span></code>=&gt; 240000</li>
+<li>The expression above is equivalent to <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">*</span> <span style="color: #d3869b;">400</span> <span style="color: #d3869b;">600</span><span style="color: #458588;">)</span></code>=&gt; 240000</li>
 </ul></li>
 </ul>
 
 
 <ul class="org-ul">
-<li>To form a constant definition, <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">&lt;name&gt;</span> &lt;expression&gt;<span style="color: #AB9DF2;">)</span></code>.</li>
+<li>To form a constant definition, <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">&lt;name&gt;</span> &lt;expression&gt;<span style="color: #458588;">)</span></code>.</li>
 </ul>
 
 <hr />
 </div>
-<div id="outline-container-org4f8c5c7" class="outline-3">
-<h3 id="org4f8c5c7">Evaluating constant definitions</h3>
-<div class="outline-text-3" id="text-org4f8c5c7">
+<div id="outline-container-orga8a2505" class="outline-3">
+<h3 id="orga8a2505">Evaluating constant definitions</h3>
+<div class="outline-text-3" id="text-orga8a2505">
 <ol class="org-ol">
 <li>When racket encounters the constant definition, it will evaluate the expression and uses the resulting value as the value of the constant with the given name.</li>
 <li>When encountering a defined constant name, it will evaluate that value as the value that the <code>define</code> associated it with.</li>
@@ -460,7 +460,7 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 <li>You can also define images.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">CAT</span> /image/cat.png/<span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">CAT</span> /image/cat.png/<span style="color: #458588;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -468,7 +468,7 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 <ul class="org-ul">
 <li>Thus, you can use expressions to manipulate the image.
 <ul class="org-ul">
-<li>For example, <code class="src src-racket"><span style="color: #AB9DF2;">(</span>rotate <span style="color: #2e8b57;">-10</span> CAT<span style="color: #AB9DF2;">)</span></code>. This expression will rotate the cat by -10 degrees.</li>
+<li>For example, <code class="src src-racket"><span style="color: #458588;">(</span>rotate <span style="color: #2e8b57;">-10</span> CAT<span style="color: #458588;">)</span></code>. This expression will rotate the cat by -10 degrees.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -477,7 +477,7 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 <ul class="org-ul">
 <li>You can also add expressions after the constant name.
 <ul class="org-ul">
-<li>For example, <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">RCAT</span> <span style="color: #78DCE8;">(</span>rotate <span style="color: #2e8b57;">-19</span> CAT<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code></li>
+<li>For example, <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">RCAT</span> <span style="color: #b16286;">(</span>rotate <span style="color: #2e8b57;">-19</span> CAT<span style="color: #b16286;">)</span><span style="color: #458588;">)</span></code></li>
 </ul></li>
 </ul>
 
@@ -490,9 +490,9 @@ It is possible to add a number to the value, but you cannot add 1 to a string.
 </div>
 
 
-<div id="outline-container-orged404fd" class="outline-2">
-<h2 id="orged404fd">Function definitions</h2>
-<div class="outline-text-2" id="text-orged404fd">
+<div id="outline-container-orgbab6a20" class="outline-2">
+<h2 id="orgbab6a20">Function definitions</h2>
+<div class="outline-text-2" id="text-orgbab6a20">
 <ul class="org-ul">
 <li>Functions contain a name and one or more parameters. A function will also have a body, which is an expression that is evaluated to produce the resulting value of the function.</li>
 <li><p>
@@ -500,9 +500,9 @@ Functions will allow a program to produce a different value each time they run.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>above <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span>
-       <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"yellow"</span><span style="color: #78DCE8;">)</span>
-       <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"green"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span>above <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">40</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #b16286;">)</span>
+       <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">40</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"yellow"</span><span style="color: #b16286;">)</span>
+       <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">40</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"green"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -516,8 +516,8 @@ Functions will allow a program to produce a different value each time they run.
 <li>Within a function, the parameter is the varying value.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">bulb</span> c<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> c<span style="color: #78DCE8;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">bulb</span> c<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">40</span> <span style="color: #b8bb26;">"solid"</span> c<span style="color: #b16286;">)</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -529,27 +529,27 @@ Functions will allow a program to produce a different value each time they run.
 <li>The beginning example function can therefore be rewritten as:</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>above <span style="color: #78DCE8;">(</span>bulb <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span>
-       <span style="color: #78DCE8;">(</span>bulb <span style="color: #FFD866;">"yellow"</span><span style="color: #78DCE8;">)</span>
-       <span style="color: #78DCE8;">(</span>bulb <span style="color: #FFD866;">"green"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span>above <span style="color: #b16286;">(</span>bulb <span style="color: #b8bb26;">"red"</span><span style="color: #b16286;">)</span>
+       <span style="color: #b16286;">(</span>bulb <span style="color: #b8bb26;">"yellow"</span><span style="color: #b16286;">)</span>
+       <span style="color: #b16286;">(</span>bulb <span style="color: #b8bb26;">"green"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
 
 
-<div id="outline-container-orgcc0c15c" class="outline-3">
-<h3 id="orgcc0c15c">Evaluating functions</h3>
-<div class="outline-text-3" id="text-orgcc0c15c">
+<div id="outline-container-org629e813" class="outline-3">
+<h3 id="org629e813">Evaluating functions</h3>
+<div class="outline-text-3" id="text-org629e813">
 <ul class="org-ul">
 <li><p>
 To form a function definition:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">&lt;name&gt;</span> &lt;name of parameter&gt;<span style="color: #78DCE8;">)</span>
-  &lt;expression&gt;<span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">&lt;name&gt;</span> &lt;name of parameter&gt;<span style="color: #b16286;">)</span>
+  &lt;expression&gt;<span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">bulb</span> c<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> c<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">bulb</span> c<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>circle <span style="color: #d3869b;">40</span> <span style="color: #b8bb26;">"solid"</span> c<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul>
@@ -561,25 +561,25 @@ To form a function definition:
 To form a function call expression:
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>&lt;name of defined function&gt; &lt;expression&gt;<span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span>&lt;name of defined function&gt; &lt;expression&gt;<span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span>bulb <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"re"</span> <span style="color: #FFD866;">"d"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span>bulb <span style="color: #b16286;">(</span><span style="color: #fe8019;">string-append</span> <span style="color: #b8bb26;">"re"</span> <span style="color: #b8bb26;">"d"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div></li>
 </ul>
 <hr />
 <ul class="org-ul">
-<li><b>To evaluate a function call</b> <code class="src src-racket"><span style="color: #AB9DF2;">(</span>bulb <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">string-append</span> <span style="color: #FFD866;">"re"</span> <span style="color: #FFD866;">"d"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span></code>
+<li><b>To evaluate a function call</b> <code class="src src-racket"><span style="color: #458588;">(</span>bulb <span style="color: #b16286;">(</span><span style="color: #fe8019;">string-append</span> <span style="color: #b8bb26;">"re"</span> <span style="color: #b8bb26;">"d"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span></code>
 <ol class="org-ol">
 <li>First, reduce operands to values, also known as <b>arguments.</b>
 <ul class="org-ul">
-<li>The first operand <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span><span style="color: #AB9DF2;">)</span></code> is a primitive call, and will follow <a href="#org2149251">primitive call rules.</a></li>
-<li>Since <code>"re"</code> and <code>"d"</code> are already values, the primitive <code class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string-append</span><span style="color: #AB9DF2;">)</span></code> will be applied.</li>
-<li>The expression now looks like this: <code class="src src-racket"><span style="color: #AB9DF2;">(</span>bulb <span style="color: #FFD866;">"r .ed"</span><span style="color: #AB9DF2;">)</span></code></li>
+<li>The first operand <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">string-append</span><span style="color: #458588;">)</span></code> is a primitive call, and will follow <a href="#org19be5f0">primitive call rules.</a></li>
+<li>Since <code>"re"</code> and <code>"d"</code> are already values, the primitive <code class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">string-append</span><span style="color: #458588;">)</span></code> will be applied.</li>
+<li>The expression now looks like this: <code class="src src-racket"><span style="color: #458588;">(</span>bulb <span style="color: #b8bb26;">"r .ed"</span><span style="color: #458588;">)</span></code></li>
 </ul></li>
 <li>Now all operands are values, the function call will be replaced by the body of the function, and all parameters will be replaced by the argument.
 <ul class="org-ul">
-<li>The expression now looks like this <code class="src src-racket"><span style="color: #AB9DF2;">(</span>circle <span style="color: #AB9DF2; font-weight: bold;">40</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #AB9DF2;">)</span></code></li>
+<li>The expression now looks like this <code class="src src-racket"><span style="color: #458588;">(</span>circle <span style="color: #d3869b;">40</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #458588;">)</span></code></li>
 <li>After the function call is replaced, the final experssion is a simple primitive call which is evaluated using primitive call rules.</li>
 </ul></li>
 </ol></li>
@@ -590,20 +590,20 @@ To form a function call expression:
 </div>
 </div>
 
-<div id="outline-container-orgd7bb131" class="outline-2">
-<h2 id="orgd7bb131">Booleans and if expressions</h2>
-<div class="outline-text-2" id="text-orgd7bb131">
+<div id="outline-container-org7d49143" class="outline-2">
+<h2 id="org7d49143">Booleans and if expressions</h2>
+<div class="outline-text-2" id="text-org7d49143">
 </div>
-<div id="outline-container-org93370b4" class="outline-3">
-<h3 id="org93370b4">Booleans</h3>
-<div class="outline-text-3" id="text-org93370b4">
+<div id="outline-container-org156a87f" class="outline-3">
+<h3 id="org156a87f">Booleans</h3>
+<div class="outline-text-3" id="text-org156a87f">
 <ul class="org-ul">
 <li>A boolean represents the answer to true or false questions.</li>
 <li>There are two booleans in BSL.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #78DCE8;">true</span>
-<span style="color: #78DCE8;">false</span>
+<pre class="src src-racket"><span style="color: #fe8019;">true</span>
+<span style="color: #fe8019;">false</span>
 </pre>
 </div>
 <ul class="org-ul">
@@ -612,11 +612,11 @@ To form a function call expression:
 
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">WIDTH</span> <span style="color: #AB9DF2; font-weight: bold;">100</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">HEIGHT</span> <span style="color: #AB9DF2; font-weight: bold;">100</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">WIDTH</span> <span style="color: #d3869b;">100</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">HEIGHT</span> <span style="color: #d3869b;">100</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;</span> WIDTH HEIGHT<span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&gt;=</span> WIDTH HEIGHT<span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fe8019;">&gt;</span> WIDTH HEIGHT<span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fe8019;">&gt;=</span> WIDTH HEIGHT<span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -634,7 +634,7 @@ RESULTS:
 <b>Predicates</b> are primitives of functions which produce a boolean value.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">string=?</span> <span style="color: #FFD866;">"foo"</span> <span style="color: #FFD866;">"bar"</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fe8019;">string=?</span> <span style="color: #b8bb26;">"foo"</span> <span style="color: #b8bb26;">"bar"</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -651,12 +651,12 @@ RESULTS:
 Predicates can also be used to compare two images.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">I1</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"red"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #FCFCFA;">I2</span> <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"blue"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">require</span> 2htdp/image<span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">I1</span> <span style="color: #b16286;">(</span>rectangle <span style="color: #d3869b;">10</span> <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"red"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #83a598;">I2</span> <span style="color: #b16286;">(</span>rectangle <span style="color: #d3869b;">20</span> <span style="color: #d3869b;">10</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"blue"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #78DCE8;">(</span>image-width I1<span style="color: #78DCE8;">)</span>
-   <span style="color: #78DCE8;">(</span>image-wdith I2<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #b16286;">(</span>image-width I1<span style="color: #b16286;">)</span>
+   <span style="color: #b16286;">(</span>image-wdith I2<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -668,16 +668,16 @@ RESULTS:
 </div>
 </div>
 
-<div id="outline-container-org82e34fa" class="outline-3">
-<h3 id="org82e34fa">If expressions</h3>
-<div class="outline-text-3" id="text-org82e34fa">
+<div id="outline-container-org758b592" class="outline-3">
+<h3 id="org758b592">If expressions</h3>
+<div class="outline-text-3" id="text-org758b592">
 <ul class="org-ul">
 <li>Allows the program to produce different results depending on result produced by a predicate.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> &lt;expression&gt; <span style="color: #727072;">; </span><span style="color: #727072;">question (must proudce boolean)</span>
-    &lt;expression&gt; <span style="color: #727072;">; </span><span style="color: #727072;">true answer</span>
-    &lt;expression&gt;<span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">false answer.</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">if</span> &lt;expression&gt; <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">question (must proudce boolean)</span>
+    &lt;expression&gt; <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">true answer</span>
+    &lt;expression&gt;<span style="color: #458588;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">false answer.</span>
 </pre>
 </div>
 
@@ -686,10 +686,10 @@ RESULTS:
 Using the example from before, lets write an expression which determines the shape of <code>I1</code>.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #FC9867;">(</span>image-width I1<span style="color: #FC9867;">)</span>
-       <span style="color: #FC9867;">(</span>image-height I1<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span>
-    <span style="color: #FFD866;">"tall"</span> <span style="color: #727072;">; </span><span style="color: #727072;">true answer</span>
-    <span style="color: #FFD866;">"wide"</span><span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">false answer</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">if</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #8ec07c;">(</span>image-width I1<span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>image-height I1<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+    <span style="color: #b8bb26;">"tall"</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">true answer</span>
+    <span style="color: #b8bb26;">"wide"</span><span style="color: #458588;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">false answer</span>
 </pre>
 </div>
 
@@ -700,9 +700,9 @@ RESULT:
 </ul>
 </div>
 
-<div id="outline-container-orgc09f4a0" class="outline-4">
-<h4 id="orgc09f4a0">Evaluating if expressions</h4>
-<div class="outline-text-4" id="text-orgc09f4a0">
+<div id="outline-container-orga490863" class="outline-4">
+<h4 id="orga490863">Evaluating if expressions</h4>
+<div class="outline-text-4" id="text-orga490863">
 <hr />
 <ul class="org-ul">
 <li><b>To evaluate an if expression:</b>
@@ -716,21 +716,21 @@ RESULT:
 
 
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #FC9867;">(</span>image-width I2<span style="color: #FC9867;">)</span>   <span style="color: #727072;">; </span><span style="color: #727072;">here, the question expression is a call to the primitive less than.</span>
-       <span style="color: #FC9867;">(</span>image-height I2<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">the operands must be reduced to values.</span>
-    <span style="color: #78DCE8;">(</span>image-width I2<span style="color: #78DCE8;">)</span>
-    <span style="color: #78DCE8;">(</span>image-height I2<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">if</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #8ec07c;">(</span>image-width I2<span style="color: #8ec07c;">)</span>   <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">here, the question expression is a call to the primitive less than.</span>
+       <span style="color: #8ec07c;">(</span>image-height I2<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">the operands must be reduced to values.</span>
+    <span style="color: #b16286;">(</span>image-width I2<span style="color: #b16286;">)</span>
+    <span style="color: #b16286;">(</span>image-height I2<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
 
 <ul class="org-ul">
-<li>First, the <code class="src src-racket"><span style="color: #AB9DF2;">(</span>image-width I2<span style="color: #AB9DF2;">)</span></code> will be replaced by the image value, then the numerical value.</li>
+<li>First, the <code class="src src-racket"><span style="color: #458588;">(</span>image-width I2<span style="color: #458588;">)</span></code> will be replaced by the image value, then the numerical value.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">&lt;</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #AB9DF2; font-weight: bold;">10</span><span style="color: #78DCE8;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">now that both operands are values, the primitive can be called and produce false.</span>
-    <span style="color: #78DCE8;">(</span>image-width I2<span style="color: #78DCE8;">)</span>
-    <span style="color: #78DCE8;">(</span>image-height I2<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">if</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">&lt;</span> <span style="color: #d3869b;">20</span> <span style="color: #d3869b;">10</span><span style="color: #b16286;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">now that both operands are values, the primitive can be called and produce false.</span>
+    <span style="color: #b16286;">(</span>image-width I2<span style="color: #b16286;">)</span>
+    <span style="color: #b16286;">(</span>image-height I2<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -739,9 +739,9 @@ RESULT:
 <li>Now that the question expression has been evaluated, we move on to the remaining rules.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">if</span> <span style="color: #78DCE8;">false</span>
-    <span style="color: #78DCE8;">(</span>image-width I2<span style="color: #78DCE8;">)</span>
-    <span style="color: #78DCE8;">(</span>image-height I2<span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">if</span> <span style="color: #fe8019;">false</span>
+    <span style="color: #b16286;">(</span>image-width I2<span style="color: #b16286;">)</span>
+    <span style="color: #b16286;">(</span>image-height I2<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -751,7 +751,7 @@ RESULT:
 Since the question produced false, the if expression will be replaced with the false answer.
 </p>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span>image-height I2<span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">operand is not a value, must be evaluated.</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span>image-height I2<span style="color: #458588;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">operand is not a value, must be evaluated.</span>
 </pre>
 </div></li>
 <li>It will first return the image value, then the numerical value. Now that all the operands a values, we can call <code>image height</code>.</li>
@@ -765,23 +765,23 @@ RESULTS:
 </div>
 </div>
 </div>
-<div id="outline-container-orgd049170" class="outline-3">
-<h3 id="orgd049170">And</h3>
-<div class="outline-text-3" id="text-orgd049170">
+<div id="outline-container-org3f7be73" class="outline-3">
+<h3 id="org3f7be73">And</h3>
+<div class="outline-text-3" id="text-org3f7be73">
 <ul class="org-ul">
-<li>The primitive <code class="src src-racket"><span style="color: #FF6188;">and</span></code> is similar to <code class="src src-racket"><span style="color: #FF6188;">if</span></code>.</li>
+<li>The primitive <code class="src src-racket"><span style="color: #fb4933;">and</span></code> is similar to <code class="src src-racket"><span style="color: #fb4933;">if</span></code>.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">and</span> &lt;expression&gt; &lt;expression&gt;<span style="color: #AB9DF2;">)</span> <span style="color: #727072;">; </span><span style="color: #727072;">here, all expressions must produce booleans.</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">and</span> &lt;expression&gt; &lt;expression&gt;<span style="color: #458588;">)</span> <span style="color: #7c6f64;">; </span><span style="color: #7c6f64;">here, all expressions must produce booleans.</span>
 </pre>
 </div>
 <ul class="org-ul">
 <li>This primitive <b>short circuits</b> and will stop evaluating the moment it returns false.</li>
 </ul>
 </div>
-<div id="outline-container-org11fbd8b" class="outline-4">
-<h4 id="org11fbd8b">Evaluating and expressions</h4>
-<div class="outline-text-4" id="text-org11fbd8b">
+<div id="outline-container-org81e30f5" class="outline-4">
+<h4 id="org81e30f5">Evaluating and expressions</h4>
+<div class="outline-text-4" id="text-org81e30f5">
 <hr />
 <ul class="org-ul">
 <li><b>To evaluate an and expression</b>
@@ -799,28 +799,28 @@ RESULTS:
 </div>
 </div>
 
-<div id="outline-container-orgd086fbb" class="outline-2">
-<h2 id="orgd086fbb">Using the stepper</h2>
-<div class="outline-text-2" id="text-orgd086fbb">
+<div id="outline-container-orgb2eb4ab" class="outline-2">
+<h2 id="orgb2eb4ab">Using the stepper</h2>
+<div class="outline-text-2" id="text-orgb2eb4ab">
 <ul class="org-ul">
 <li>The stepper is used to understand, step by step, the evaluation of complex expressions.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-racket"><span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">require</span> 2htdp/image<span style="color: #AB9DF2;">)</span>
+<pre class="src src-racket"><span style="color: #458588;">(</span><span style="color: #fb4933;">require</span> 2htdp/image<span style="color: #458588;">)</span>
 
-<span style="color: #727072;">;; </span><span style="color: #727072;">stepper-starter.rkt</span>
+<span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">stepper-starter.rkt</span>
 
-<span style="color: #AB9DF2;">(</span><span style="color: #78DCE8;">+</span> <span style="color: #78DCE8;">(</span><span style="color: #78DCE8;">*</span> <span style="color: #AB9DF2; font-weight: bold;">3</span> <span style="color: #AB9DF2; font-weight: bold;">2</span><span style="color: #78DCE8;">)</span> <span style="color: #AB9DF2; font-weight: bold;">1</span><span style="color: #AB9DF2;">)</span>
-
-
-
-<span style="color: #AB9DF2;">(</span><span style="color: #FF6188;">define</span> <span style="color: #78DCE8;">(</span><span style="color: #A9DC76;">max-dim</span> img<span style="color: #78DCE8;">)</span>
-  <span style="color: #78DCE8;">(</span><span style="color: #FF6188;">if</span> <span style="color: #FC9867;">(</span><span style="color: #78DCE8;">&gt;</span> <span style="color: #AB9DF2;">(</span>image-width img<span style="color: #AB9DF2;">)</span> <span style="color: #AB9DF2;">(</span>image-height img<span style="color: #AB9DF2;">)</span><span style="color: #FC9867;">)</span>
-      <span style="color: #FC9867;">(</span>image-width img<span style="color: #FC9867;">)</span>
-      <span style="color: #FC9867;">(</span>image-height img<span style="color: #FC9867;">)</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+<span style="color: #458588;">(</span><span style="color: #fe8019;">+</span> <span style="color: #b16286;">(</span><span style="color: #fe8019;">*</span> <span style="color: #d3869b;">3</span> <span style="color: #d3869b;">2</span><span style="color: #b16286;">)</span> <span style="color: #d3869b;">1</span><span style="color: #458588;">)</span>
 
 
-<span style="color: #AB9DF2;">(</span>max-dim <span style="color: #78DCE8;">(</span>rectangle <span style="color: #AB9DF2; font-weight: bold;">10</span> <span style="color: #AB9DF2; font-weight: bold;">20</span> <span style="color: #FFD866;">"solid"</span> <span style="color: #FFD866;">"blue"</span><span style="color: #78DCE8;">)</span><span style="color: #AB9DF2;">)</span>
+
+<span style="color: #458588;">(</span><span style="color: #fb4933;">define</span> <span style="color: #b16286;">(</span><span style="color: #fabd2f;">max-dim</span> img<span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #fb4933;">if</span> <span style="color: #8ec07c;">(</span><span style="color: #fe8019;">&gt;</span> <span style="color: #458588;">(</span>image-width img<span style="color: #458588;">)</span> <span style="color: #458588;">(</span>image-height img<span style="color: #458588;">)</span><span style="color: #8ec07c;">)</span>
+      <span style="color: #8ec07c;">(</span>image-width img<span style="color: #8ec07c;">)</span>
+      <span style="color: #8ec07c;">(</span>image-height img<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
+
+
+<span style="color: #458588;">(</span>max-dim <span style="color: #b16286;">(</span>rectangle <span style="color: #d3869b;">10</span> <span style="color: #d3869b;">20</span> <span style="color: #b8bb26;">"solid"</span> <span style="color: #b8bb26;">"blue"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -837,9 +837,9 @@ RESULTS:
 </div>
 </div>
 
-<div id="outline-container-org94d6ddc" class="outline-2">
-<h2 id="org94d6ddc">Discovering primitives</h2>
-<div class="outline-text-2" id="text-org94d6ddc">
+<div id="outline-container-orga57cd1b" class="outline-2">
+<h2 id="orga57cd1b">Discovering primitives</h2>
+<div class="outline-text-2" id="text-orga57cd1b">
 <ul class="org-ul">
 <li>You can use <i>search and scroll</i> to find new functions related to what you're working on.
 <ul class="org-ul">
